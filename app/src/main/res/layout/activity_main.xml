@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.me.harris.androidanimations.utils.ActionCallBack" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.me.harris.androidanimations.MainActivity">
+
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/TextViewStyle"
+            android:onClick="@{(view) ->callback.onClickButton(view)}"
+            android:text="View Animation" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/TextViewStyle"
+
+            android:onClick="@{(view) ->callback.onClickButton(view)}"
+
+            android:text="Drawable Animation" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/TextViewStyle"
+            android:onClick="@{(view) ->callback.onClickButton(view)}"
+            android:text="Property Animation" />
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.me.harris.androidanimations.R" />
+
+    </data>
+    <ScrollView
+        android:id="@+id/rootScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                app:imageSrcId="@{R.drawable.image_1}"
+                style="@style/ImageView_style"
+                 />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                app:imageSrcId="@{R.drawable.image_2}"
+                style="@style/ImageView_style" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                app:imageSrcId="@{R.drawable.image_3}"
+                style="@style/imageView_style" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</layout>
