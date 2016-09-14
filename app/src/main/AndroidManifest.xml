@@ -19,6 +19,9 @@
         <activity android:name=".viewAnimations.ViewAnimationActivity"/>
         <activity android:name=".propertyanimations.PropertyAnimationActivity"/>
         <activity android:name=".drawableAnimations.DrawableAnimationActivity"/>
+        <activity android:name=".apidemo.BouncingBalls"/>
+        <activity android:name=".apidemo.ShadowCardDrag"/>
+        <activity android:name=".apidemo.MaterialWitness"/>
     </application>
 
 </manifest>
