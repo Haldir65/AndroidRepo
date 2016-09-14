@@ -4,35 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="com.me.harris.androidanimations.R" />
+        <variable
+            name="callback"
+            type="com.me.harris.androidanimations.utils.ActionCallBack" />
 
     </data>
+
     <ScrollView
         android:id="@+id/rootScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:animateLayoutChanges="true" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageView"
-                app:imageSrcId="@{R.drawable.image_1}"
                 style="@style/ImageView_style"
-                 />
+                app:imageSrcId="@{R.drawable.image_01}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                />
 
             <ImageView
                 android:id="@+id/imageView2"
-                app:imageSrcId="@{R.drawable.image_2}"
-                style="@style/ImageView_style" />
+                style="@style/ImageView_style"
+                app:imageSrcId="@{R.drawable.image_02}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                />
 
             <ImageView
                 android:id="@+id/imageView3"
-                app:imageSrcId="@{R.drawable.image_3}"
-                style="@style/imageView_style" />
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_03}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_04}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_05}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_06}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                /> <ImageView
+                android:id="@+id/imageView7"
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_07}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                /> <ImageView
+                android:id="@+id/imageView8"
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_08}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                /> <ImageView
+                android:id="@+id/imageView9"
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_09}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                /> <ImageView
+                android:id="@+id/imageView10"
+                style="@style/imageView_style"
+                app:imageSrcId="@{R.drawable.image_10}"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                />
+
+
         </LinearLayout>
     </ScrollView>
 

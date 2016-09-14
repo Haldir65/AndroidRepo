@@ -7,6 +7,6 @@ import android.view.View;
  */
 
 public interface ActionCallBack {
-    void onClickButton(View view);
+    void onClickView(View view);
 
 }

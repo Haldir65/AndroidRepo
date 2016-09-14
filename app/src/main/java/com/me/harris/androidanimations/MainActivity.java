@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements ActionCallBack {
     }
 
     @Override
-    public void onClickButton(View view) {
+    public void onClickView(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.button1:

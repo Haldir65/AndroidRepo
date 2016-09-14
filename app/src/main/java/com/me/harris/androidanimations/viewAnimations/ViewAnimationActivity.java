@@ -20,6 +20,6 @@ public class ViewAnimationActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_property);
-
+        setTitle("ViewAnimation");
     }
 }

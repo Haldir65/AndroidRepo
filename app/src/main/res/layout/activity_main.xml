@@ -28,21 +28,21 @@
         <Button
             android:id="@+id/button1"
             style="@style/TextViewStyle"
-            android:onClick="@{(view) ->callback.onClickButton(view)}"
+            android:onClick="@{(view) ->callback.onClickView(view)}"
             android:text="View Animation" />
 
         <Button
             android:id="@+id/button2"
             style="@style/TextViewStyle"
 
-            android:onClick="@{(view) ->callback.onClickButton(view)}"
+            android:onClick="@{(view) ->callback.onClickView(view)}"
 
             android:text="Drawable Animation" />
 
         <Button
             android:id="@+id/button3"
             style="@style/TextViewStyle"
-            android:onClick="@{(view) ->callback.onClickButton(view)}"
+            android:onClick="@{(view) ->callback.onClickView(view)}"
             android:text="Property Animation" />
     </LinearLayout>
 
