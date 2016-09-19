@@ -66,6 +66,11 @@
                 android:onClick="@{(view) ->callback.onClickView(view)}"
                 android:text="CardImageView" />
 
+            <Button
+                android:id="@+id/button7"
+                style="@style/TextViewStyle"
+                android:onClick="@{(view) ->callback.onClickView(view)}"
+                android:text="Canvas" />
 
         </LinearLayout>
 

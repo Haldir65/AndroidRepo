@@ -10,6 +10,7 @@ import android.view.View;
 import com.me.harris.androidanimations.apidemo.BouncingBalls;
 import com.me.harris.androidanimations.apidemo.MaterialWitness;
 import com.me.harris.androidanimations.apidemo.ShadowCardDrag;
+import com.me.harris.androidanimations.canvas.CanvasActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.drawableAnimations.DrawableAnimationActivity;
 import com.me.harris.androidanimations.propertyanimations.PropertyAnimationActivity;
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements ActionCallBack {
                 break;
             case R.id.button6:
                 intent.setClass(this, MaterialWitness.class);
+                break;
+            case R.id.button7:
+                intent.setClass(this, CanvasActivity.class);
                 break;
             default:
                 break;
