@@ -122,6 +122,8 @@ public class CanvasPath extends View {
         path2.addCircle(300, 150, 100, Path.Direction.CW);
         canvas.drawPath(path,paint);
 
+
+
     }
 
     private void setViewPaint(){

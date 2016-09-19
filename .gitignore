@@ -13,6 +13,11 @@ bin/
 gen/
 out/
 
+
+# Android Studio
+*.iml
+.idea
+
 # Gradle files
 .gradle/
 build/
@@ -34,7 +39,8 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
+
+.idea
 
 # Keystore files
 *.jks
