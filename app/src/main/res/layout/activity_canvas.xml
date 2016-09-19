@@ -13,7 +13,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.me.harris.androidanimations.canvas.CanvasPath
+            <com.me.harris.androidanimations.canvas.PieView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
