@@ -22,7 +22,8 @@
         <activity android:name=".apidemo.BouncingBalls"/>
         <activity android:name=".apidemo.ShadowCardDrag"/>
         <activity android:name=".apidemo.MaterialWitness"/>
-        <activity android:name=".canvas.CanvasActivity"/>
+        <activity android:name=".canvas.CanvasActivity"
+            />
     </application>
 
 </manifest>
