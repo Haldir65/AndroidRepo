@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.canvas;
+package com.me.harris.androidanimations.canvas.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;

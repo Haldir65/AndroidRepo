@@ -10,7 +10,7 @@ import android.view.View;
 import com.me.harris.androidanimations.apidemo.BouncingBalls;
 import com.me.harris.androidanimations.apidemo.MaterialWitness;
 import com.me.harris.androidanimations.apidemo.ShadowCardDrag;
-import com.me.harris.androidanimations.canvas.CanvasActivity;
+import com.me.harris.androidanimations.canvas.activity.CanvasActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.drawableAnimations.DrawableAnimationActivity;
 import com.me.harris.androidanimations.propertyanimations.PropertyAnimationActivity;

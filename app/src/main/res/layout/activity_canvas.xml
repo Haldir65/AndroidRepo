@@ -8,15 +8,18 @@
             type="com.me.harris.androidanimations.utils.ActionCallBack" />
     </data>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-            <com.me.harris.androidanimations.canvas.CanvasBitmap
-                android:layout_width="match_parent"
-                android:layout_height="300dp" />
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QQHealthView"
+            android:textAllCaps="false"
+            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
+    </LinearLayout>
 
 </layout>
