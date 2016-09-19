@@ -9,5 +9,6 @@ Android Graphic和Animation的一些整理
 感谢以上作者
 
 ###Todo
+1. 关于ActivityOptions，参考playStore点击后SharedElements的缩放，主要是动画
 
 ~~~~

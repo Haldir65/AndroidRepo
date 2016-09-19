@@ -1,8 +1,6 @@
 package com.me.harris.androidanimations.canvas.widget;
 
-/**
- * Created by Harris on 2016/9/19.
- */
+
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
@@ -34,6 +32,7 @@ import com.me.harris.androidanimations.utils.Utils;
  * Date:2016/4/10
  * Time:10:35
  * <p/>
+ * 参考 http://www.jianshu.com/p/740c64ba15ac
  * update:加入动画，动画由简书网友xsfelvis提供
  */
 public class QQHealthView extends View {
