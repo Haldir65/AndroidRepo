@@ -1,7 +1,6 @@
 package com.me.harris.androidanimations.canvas.widget;
 
 
-
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -35,7 +34,7 @@ import com.me.harris.androidanimations.utils.Utils;
  * 参考 http://www.jianshu.com/p/740c64ba15ac
  * update:加入动画，动画由简书网友xsfelvis提供
  */
-public class QQHealthView extends View {
+public class QQHealthViewV1 extends View {
 
     private static String TAG = "QQHealthView";
 
@@ -74,15 +73,15 @@ public class QQHealthView extends View {
 
     private Paint mAvatarPaint;
 
-    public QQHealthView(Context context) {
+    public QQHealthViewV1(Context context) {
         this(context, null);
     }
 
-    public QQHealthView(Context context, AttributeSet attrs) {
+    public QQHealthViewV1(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public QQHealthView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public QQHealthViewV1(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
         init();

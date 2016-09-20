@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements ActionCallBack {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setCallback(this);
+        setTitle(getClass().getSimpleName());
+
     }
 
     @Override

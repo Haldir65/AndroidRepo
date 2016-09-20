@@ -24,7 +24,9 @@
         <activity android:name=".apidemo.MaterialWitness"/>
         <activity android:name=".canvas.activity.CanvasActivity"
             />
-        <activity android:name=".canvas.activity.QQHealthViewActivity"/>
+        <activity android:name=".canvas.activity.QQHealthViewActivityV1"/>
+        <activity android:name=".canvas.activity.QQHealthViewActivityV2"/>
+        <activity android:name=".canvas.activity.AirConditionerViewActivity"/>
     </application>
 
 </manifest>

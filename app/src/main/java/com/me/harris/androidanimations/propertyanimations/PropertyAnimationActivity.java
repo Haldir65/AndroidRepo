@@ -49,7 +49,8 @@ public class PropertyAnimationActivity extends AppCompatActivity implements Acti
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_property);
         binding.setCallback(this);
-        setTitle("PropertyAnimation");
+        setTitle(getClass().getSimpleName());
+
     }
 
 

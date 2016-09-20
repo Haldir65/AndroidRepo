@@ -23,7 +23,7 @@ public class CanvasActivity extends AppCompatActivity implements ActionCallBack 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_canvas);
-        setTitle("canvas");
+        setTitle(getClass().getSimpleName());
         binding.setOnClickListener(this);
     }
 
@@ -32,7 +32,19 @@ public class CanvasActivity extends AppCompatActivity implements ActionCallBack 
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.button1:
-                intent.setClass(this, QQHealthViewActivity.class);
+                intent.setClass(this, QQHealthViewActivityV1.class);
+                break;
+            case R.id.button2:
+                intent.setClass(this, QQHealthViewActivityV2.class);
+                break;
+            case R.id.button3:
+                intent.setClass(this, AirConditionerViewActivity.class);
+                break;
+            case R.id.button4:
+                intent.setClass(this, QQHealthViewActivityV2.class);
+                break;
+            case R.id.button5:
+                intent.setClass(this, QQHealthViewActivityV2.class);
                 break;
             default:
                 break;

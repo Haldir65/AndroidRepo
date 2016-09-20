@@ -17,9 +17,42 @@
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="QQHealthView"
+            android:text="QQHealthViewV1"
             android:textAllCaps="false"
             android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QQHealthViewV2"
+            android:textAllCaps="false"
+            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AirconditionerView"
+            android:textAllCaps="false"
+            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="circularProgressView"
+            android:textAllCaps="false"
+            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LeafLoadingView"
+            android:textAllCaps="false"
+            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
+
     </LinearLayout>
 
 </layout>
