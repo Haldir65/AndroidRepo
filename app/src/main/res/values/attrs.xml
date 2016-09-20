@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <declare-styleable name="SesameCreditView">
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="outRectRadius" format="float"/>
+        <attr name="MiddleRectRadius" format="float"/>
+        <attr name="innerRectRadius" format="float"/>
+        <attr name="ratio" format="integer"/>
+    </declare-styleable>
+</resources>

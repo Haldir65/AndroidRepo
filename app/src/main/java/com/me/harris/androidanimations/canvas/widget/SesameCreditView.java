@@ -1,6 +1,7 @@
 package com.me.harris.androidanimations.canvas.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -18,7 +19,8 @@ import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.utils.LogUtil;
 
 /**
- * http://www.jianshu.com/p/f09feb25b54d#
+ * http://www.jianshu.com/p/f09feb25b54d# 版本一
+ * http://www.jianshu.com/p/8486a5baa708# 增添动画版本
  * Created by Fermi on 2016/9/20.
  * 添加一些自定义Attr
  */
@@ -60,7 +62,7 @@ public class SesameCreditView extends View {
 
     public SesameCreditView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+        init(context,attrs);
     }
 
 
@@ -72,7 +74,15 @@ public class SesameCreditView extends View {
         this(context, null);
     }
 
-    private void init() {
+    private void init(Context context,AttributeSet attrs) {
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SesameCreditView);
+        float innerRadius = a.getFloat(R.styleable.SesameCreditView_innerRectRadius,0.3f);
+        float MiddleRadius = a.getFloat(R.styleable.SesameCreditView_MiddleRectRadius, 0.5f);
+        LogUtil.w(TAG, "InnerRadius " + innerRadius + "\n MiddleRadius " + MiddleRadius);
+        a.recycle();
+
+
+
         setLayerType(View.LAYER_TYPE_SOFTWARE, null); //关闭硬件加速
         mRatio = 450.f / 525.f;
         mArcPaint = new Paint(Paint.ANTI_ALIAS_FLAG);// 渐变色环画笔，抗锯齿
