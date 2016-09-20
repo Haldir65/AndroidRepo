@@ -49,7 +49,7 @@
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LeafLoadingView"
+            android:text="ProgressBarActivity"
             android:textAllCaps="false"
             android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
 

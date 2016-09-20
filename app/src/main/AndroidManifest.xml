@@ -36,6 +36,7 @@
         <activity android:name=".canvas.activity.AirConditionerViewActivity"/>
         <activity android:name=".canvas.activity.SesameCreditActivity"/>
         <activity android:name=".canvas.activity.LoadingLeafActivity"/>
+        <activity android:name=".canvas.activity.ProgressBarViewActivity"/>
 
     </application>
 
