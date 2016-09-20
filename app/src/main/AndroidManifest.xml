@@ -8,6 +8,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +21,22 @@
         <activity android:name=".viewAnimations.ViewAnimationActivity"/>
         <activity android:name=".propertyanimations.PropertyAnimationActivity"/>
         <activity android:name=".drawableAnimations.DrawableAnimationActivity"/>
+
+
+        <!--ApiDemo中部分动画展示-->
         <activity android:name=".apidemo.BouncingBalls"/>
         <activity android:name=".apidemo.ShadowCardDrag"/>
         <activity android:name=".apidemo.MaterialWitness"/>
-        <activity android:name=".canvas.activity.CanvasActivity"
-            />
+
+
+        <!--Canva相关自定义View展示-->
+        <activity android:name=".canvas.activity.CanvasActivity" />
         <activity android:name=".canvas.activity.QQHealthViewActivityV1"/>
         <activity android:name=".canvas.activity.QQHealthViewActivityV2"/>
         <activity android:name=".canvas.activity.AirConditionerViewActivity"/>
+        <activity android:name=".canvas.activity.SesameCreditActivity"/>
+        <activity android:name=".canvas.activity.LoadingLeafActivity"/>
+
     </application>
 
 </manifest>

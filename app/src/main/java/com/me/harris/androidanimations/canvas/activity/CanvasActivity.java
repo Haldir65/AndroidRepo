@@ -41,9 +41,12 @@ public class CanvasActivity extends AppCompatActivity implements ActionCallBack 
                 intent.setClass(this, AirConditionerViewActivity.class);
                 break;
             case R.id.button4:
-                intent.setClass(this, QQHealthViewActivityV2.class);
+                intent.setClass(this, SesameCreditActivity.class);
                 break;
             case R.id.button5:
+                intent.setClass(this, QQHealthViewActivityV2.class);
+                break;
+            case R.id.button6:
                 intent.setClass(this, QQHealthViewActivityV2.class);
                 break;
             default:

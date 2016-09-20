@@ -41,7 +41,7 @@
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="circularProgressView"
+            android:text="芝麻信用圆盘"
             android:textAllCaps="false"
             android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
 
@@ -50,6 +50,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LeafLoadingView"
+            android:textAllCaps="false"
+            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="circularProgressView"
             android:textAllCaps="false"
             android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
 
