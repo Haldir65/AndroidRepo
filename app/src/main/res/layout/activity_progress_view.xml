@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -8,11 +9,23 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <com.me.harris.androidanimations.canvas.widget.ProgressView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:currentProgress="40"
+            app:maxProgress="100"
+            app:progressColor="#ccedf7e9"
+            app:radius="80dp"
+            app:strokeWidth="30dp"
+            app:text="40%"
+            app:textColor="#ffffff"
+            app:textSize="40dp"
+            app:innerColor="#89cc73"
+            app:outerColor="#9ad386"/>
 
     </LinearLayout>
 

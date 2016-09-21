@@ -34,6 +34,8 @@ public class ProgressView extends View {
     private Paint mOuterPaint;
     private Paint mProgressPaint;
     private TextPaint mTextPaint;
+    private RectF rect;
+
     public ProgressView(Context context) {
         this(context, null);
     }
@@ -111,7 +113,6 @@ public class ProgressView extends View {
         } else {
             height = (int) (getPaddingTop() + mRadius * 2 + mStrokeWidth * 2 + getPaddingBottom());
         }
-
         setMeasuredDimension(width, height);
     }
 
@@ -130,7 +131,9 @@ public class ProgressView extends View {
         int centerX = contentWidth / 2, centerY = contentHeight / 2;// view中心点位置
         float angle = mCurrentProgress / (mMaxProgress * 1.0f) * 360; // 进度条的圆弧角度
 
-        RectF rect = new RectF();
+        if (rect == null) {
+            rect = new RectF();
+        }
         int viewSize = (int) (mRadius * 2 + mStrokeWidth);
         int left = (int) mStrokeWidth / 2;
         int top = (int) mStrokeWidth / 2;
