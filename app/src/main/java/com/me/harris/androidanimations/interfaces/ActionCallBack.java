@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.utils;
+package com.me.harris.androidanimations.interfaces;
 
 import android.view.View;
 

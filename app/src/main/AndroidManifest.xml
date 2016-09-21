@@ -10,7 +10,9 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity"
+            android:theme="@style/MainActivityStyle"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

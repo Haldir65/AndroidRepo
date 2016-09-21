@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityCanvasBinding;
-import com.me.harris.androidanimations.utils.ActionCallBack;
+import com.me.harris.androidanimations.interfaces.ActionCallBack;
 
 /**
  * Created by Harris on 2016/9/19.

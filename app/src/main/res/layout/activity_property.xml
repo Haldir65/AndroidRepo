@@ -8,7 +8,7 @@
         <import type="com.me.harris.androidanimations.R" />
         <variable
             name="callback"
-            type="com.me.harris.androidanimations.utils.ActionCallBack" />
+            type="com.me.harris.androidanimations.interfaces.ActionCallBack" />
 
     </data>
 

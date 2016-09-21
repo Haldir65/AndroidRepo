@@ -5,7 +5,7 @@
 
         <variable
             name="onClickListener"
-            type="com.me.harris.androidanimations.utils.ActionCallBack" />
+            type="com.me.harris.androidanimations.interfaces.ActionCallBack" />
     </data>
 
     <LinearLayout

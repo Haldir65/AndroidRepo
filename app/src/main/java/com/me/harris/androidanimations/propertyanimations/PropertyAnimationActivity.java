@@ -12,20 +12,15 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityPropertyBinding;
-import com.me.harris.androidanimations.utils.ActionCallBack;
+import com.me.harris.androidanimations.interfaces.ActionCallBack;
 import com.me.harris.androidanimations.utils.Utils;
 
 import static android.animation.ValueAnimator.REVERSE;
