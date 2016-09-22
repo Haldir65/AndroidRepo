@@ -68,4 +68,8 @@ public class MainActivityAdapter extends DataBoundAdapter<ItemMainBinding> {
         }
         this.mDatas.addAll(mDatas);
     }
+
+    public void setActionCallBack(GenericCallBack<Pair<String, Class>> actionCallBack) {
+        this.actionCallBack = actionCallBack;
+    }
 }
