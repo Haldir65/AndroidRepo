@@ -1,66 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-        <variable
-            name="onClickListener"
-            type="com.me.harris.androidanimations.interfaces.ActionCallBack" />
-    </data>
-
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinateLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button1"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </android.support.v7.widget.RecyclerView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="QQHealthViewV1"
-            android:textAllCaps="false"
-            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="QQHealthViewV2"
-            android:textAllCaps="false"
-            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="AirconditionerView"
-            android:textAllCaps="false"
-            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="芝麻信用圆盘"
-            android:textAllCaps="false"
-            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ProgressBarActivity"
-            android:textAllCaps="false"
-            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="circularProgressView"
-            android:textAllCaps="false"
-            android:onClick="@{(view) ->onClickListener.onClickView(view)}"/>
-
-    </LinearLayout>
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            />
+    </android.support.design.widget.CoordinatorLayout>
 
 </layout>

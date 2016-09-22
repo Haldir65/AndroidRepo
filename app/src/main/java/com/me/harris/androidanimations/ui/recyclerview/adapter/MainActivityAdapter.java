@@ -5,17 +5,10 @@ import android.support.annotation.LayoutRes;
 import android.support.v4.util.Pair;
 import android.view.View;
 
-import com.me.harris.androidanimations.apidemo.BouncingBalls;
-import com.me.harris.androidanimations.apidemo.MaterialWitness;
-import com.me.harris.androidanimations.apidemo.ShadowCardDrag;
-import com.me.harris.androidanimations.canvas.activity.CanvasActivity;
 import com.me.harris.androidanimations.databinding.ItemMainBinding;
-import com.me.harris.androidanimations.drawableAnimations.DrawableAnimationActivity;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
-import com.me.harris.androidanimations.propertyanimations.PropertyAnimationActivity;
 import com.me.harris.androidanimations.ui.recyclerview.viewholer.DataBoundViewHolder;
 import com.me.harris.androidanimations.utils.Utils;
-import com.me.harris.androidanimations.viewAnimations.ViewAnimationActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,14 +29,14 @@ public class MainActivityAdapter extends DataBoundAdapter<ItemMainBinding> {
      */
     public MainActivityAdapter(@LayoutRes int layoutId) {
         super(layoutId);
-        mDatas = new ArrayList<>();
+        /*mDatas = new ArrayList<>();
         mDatas.add(new Pair<String,Class>("ViewAnimation", ViewAnimationActivity.class));
         mDatas.add(new Pair<String,Class>("DrawableAnimation", DrawableAnimationActivity.class));
         mDatas.add(new Pair<String,Class>("PropertyAnimation", PropertyAnimationActivity.class));
         mDatas.add(new Pair<String,Class>("BouncingBalls", BouncingBalls.class));
         mDatas.add(new Pair<String,Class>("ShadowCard", ShadowCardDrag.class));
         mDatas.add(new Pair<String,Class>("CardImageView", MaterialWitness.class));
-        mDatas.add(new Pair<String,Class>("Canvas", CanvasActivity.class));
+        mDatas.add(new Pair<String,Class>("Canvas", CanvasActivity.class));*/
        actionCallBack = new GenericCallBack<Pair<String,Class>>() {
            Intent intent = new Intent();
 
@@ -67,5 +60,12 @@ public class MainActivityAdapter extends DataBoundAdapter<ItemMainBinding> {
     @Override
     public int getItemCount() {
         return Utils.isListEmpty(mDatas) ? 0 : mDatas.size();
+    }
+
+    public void setmDatas(List<Pair<String, Class>> mDatas) {
+        if (this.mDatas == null) {
+            this.mDatas = new ArrayList<>();
+        }
+        this.mDatas.addAll(mDatas);
     }
 }
