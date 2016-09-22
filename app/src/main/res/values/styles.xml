@@ -38,5 +38,13 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="BezierViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">300dp</item>
+        <item name="android:background">@color/md_grey_100</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
 
 </resources>

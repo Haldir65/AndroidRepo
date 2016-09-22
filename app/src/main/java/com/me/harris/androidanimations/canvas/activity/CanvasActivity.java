@@ -36,6 +36,7 @@ public class CanvasActivity extends AppCompatActivity {
         mDatas.add(new Pair<String, Class>("BouncingBalls", SesameCreditActivity.class));
         mDatas.add(new Pair<String, Class>("ShadowCard", ProgressBarViewActivity.class));
         mDatas.add(new Pair<String, Class>("CardImageView", LoadingLeafActivity.class));
+        mDatas.add(new Pair<String, Class>("Path_Bezier", Path_BezierActivity.class));
         mAdapter.setmDatas(mDatas);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
