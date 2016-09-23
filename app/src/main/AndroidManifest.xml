@@ -11,7 +11,7 @@
 
 
         <activity android:name=".ui.MainActivity"
-            android:theme="@style/MainActivityStyle"
+            android:theme="@style/NoActionBarStyle"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
 
         <!--Canva相关自定义View展示-->
         <activity android:name=".canvas.activity.CanvasActivity"
-            android:theme="@style/MainActivityStyle"/>
+            android:theme="@style/NoActionBarStyle"/>
         <activity android:name=".canvas.activity.QQHealthViewActivityV1"/>
         <activity android:name=".canvas.activity.QQHealthViewActivityV2"/>
         <activity android:name=".canvas.activity.AirConditionerViewActivity"/>

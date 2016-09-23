@@ -18,7 +18,6 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.support.design.widget.Snackbar;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -275,7 +274,7 @@ public class QQHealthViewV1 extends View {
         int defaultHeight = (int) (width * 1.f / mRatio);
         height = defaultHeight;
         setMeasuredDimension(width, height);
-        Log.i(TAG, "width:" + width + "| height:" + height);
+        //Log.i(TAG, "width:" + width + "| height:" + height);
     }
 
     @Override

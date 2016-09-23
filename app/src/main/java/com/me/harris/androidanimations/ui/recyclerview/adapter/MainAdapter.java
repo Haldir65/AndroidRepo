@@ -1,9 +1,7 @@
 package com.me.harris.androidanimations.ui.recyclerview.adapter;
 
-import android.content.Intent;
 import android.support.annotation.LayoutRes;
 import android.support.v4.util.Pair;
-import android.view.View;
 
 import com.me.harris.androidanimations.databinding.ItemMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
@@ -17,18 +15,20 @@ import java.util.List;
  * Created by Fermi on 2016/9/21.
  */
 
-public class MainActivityAdapter extends DataBoundAdapter<ItemMainBinding> {
+public class MainAdapter<T> extends DataBoundAdapter<ItemMainBinding> {
 
     private List<Pair<String, Class>> mDatas;
 
-    private GenericCallBack<Pair<String,Class>> actionCallBack;
+    private GenericCallBack<T> actionCallBack;
+
     /**
      * Creates a DataBoundAdapter with the given item layout
      *
      * @param layoutId The layout to be used for items. It must use data binding.
      */
-    public MainActivityAdapter(@LayoutRes int layoutId) {
+    public MainAdapter(@LayoutRes int layoutId, GenericCallBack<T> callBack) {
         super(layoutId);
+        this.actionCallBack = callBack;
         /*mDatas = new ArrayList<>();
         mDatas.add(new Pair<String,Class>("ViewAnimation", ViewAnimationActivity.class));
         mDatas.add(new Pair<String,Class>("DrawableAnimation", DrawableAnimationActivity.class));
@@ -37,7 +37,7 @@ public class MainActivityAdapter extends DataBoundAdapter<ItemMainBinding> {
         mDatas.add(new Pair<String,Class>("ShadowCard", ShadowCardDrag.class));
         mDatas.add(new Pair<String,Class>("CardImageView", MaterialWitness.class));
         mDatas.add(new Pair<String,Class>("Canvas", CanvasActivity.class));*/
-       actionCallBack = new GenericCallBack<Pair<String,Class>>() {
+      /* actionCallBack = new GenericCallBack<Pair<String,Class>>() {
            Intent intent = new Intent();
 
            @Override
@@ -45,7 +45,7 @@ public class MainActivityAdapter extends DataBoundAdapter<ItemMainBinding> {
                intent.setClass((view.getContext()), pair.second);
                view.getContext().startActivity(intent);
            }
-       };
+       };*/
 
     }
 
@@ -69,7 +69,7 @@ public class MainActivityAdapter extends DataBoundAdapter<ItemMainBinding> {
         this.mDatas.addAll(mDatas);
     }
 
-    public void setActionCallBack(GenericCallBack<Pair<String, Class>> actionCallBack) {
+    public void setActionCallBack(GenericCallBack<T> actionCallBack) {
         this.actionCallBack = actionCallBack;
     }
 }

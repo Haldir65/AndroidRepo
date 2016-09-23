@@ -1,11 +1,13 @@
 package com.me.harris.androidanimations.ui;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.view.View;
 
 import com.me.harris.androidanimations.BuildConfig;
 import com.me.harris.androidanimations.R;
@@ -15,8 +17,9 @@ import com.me.harris.androidanimations.apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations.canvas.activity.CanvasActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.drawableAnimations.DrawableAnimationActivity;
+import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.propertyanimations.PropertyAnimationActivity;
-import com.me.harris.androidanimations.ui.recyclerview.adapter.MainActivityAdapter;
+import com.me.harris.androidanimations.ui.recyclerview.adapter.MainAdapter;
 import com.me.harris.androidanimations.ui.recyclerview.itemDecoration.MainAdapterItemDecoration;
 import com.me.harris.androidanimations.viewAnimations.ViewAnimationActivity;
 
@@ -26,7 +29,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-    private MainActivityAdapter mAdapter;
+    private MainAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        mAdapter = new MainActivityAdapter(R.layout.item_main);
+        mAdapter = new MainAdapter(R.layout.item_main, new GenericCallBack<Pair<String, Class>>() {
+            @Override
+            public void onClick(View view, Pair<String, Class> stringClassPair) {
+                Intent intent = new Intent(MainActivity.this, stringClassPair.second);
+                startActivity(intent);
+            }
+        });
         List<Pair<String, Class>> list = new ArrayList<>();
         list.add(new Pair<String, Class>("ViewAnimation", ViewAnimationActivity.class));
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
