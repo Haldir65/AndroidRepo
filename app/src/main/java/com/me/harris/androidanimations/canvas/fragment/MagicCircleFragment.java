@@ -15,7 +15,7 @@ import com.me.harris.androidanimations.databinding.FragmentMagicCircleBinding;
  * Created by Fermi on 2016/9/22.
  */
 
-public class MagicCircleFragment extends Fragment {
+public class MagicCircleFragment extends Fragment implements View.OnClickListener {
 
     private FragmentMagicCircleBinding binding;
 
@@ -35,5 +35,17 @@ public class MagicCircleFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding.button.setOnClickListener(this);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.button) {
+            binding.magicCircle.startAnimation();
+        }
+    }
 }

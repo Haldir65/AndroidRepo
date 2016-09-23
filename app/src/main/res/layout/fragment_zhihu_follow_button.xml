@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/MaterialPaddings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/test_bt"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:background="@drawable/bg_ripple_selector"
+            android:text="关注" />
+
+        <com.me.harris.androidanimations.canvas.widget.RippleButtonView
+            android:id="@+id/test_rbv"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:text="关注" />
+
+        <com.me.harris.androidanimations.canvas.widget.RevealFollowButton
+            android:id="@+id/test_rfb"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp" />
+
+    </LinearLayout>
+
+
+</layout>
+
+

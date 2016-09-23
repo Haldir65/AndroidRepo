@@ -73,6 +73,8 @@ public class canvasMainFragment extends Fragment {
         mDatas.add(new Pair<String, Class>("ProgressBarViewFragment", ProgressBarViewFragment.class));
         mDatas.add(new Pair<String, Class>("LoadingLeafFragment", LoadingLeafFragment.class));
         mDatas.add(new Pair<String, Class>("Path_BezierFragment", Path_BezierFragment.class));
+        mDatas.add(new Pair<String, Class>("MagicCircleFragment", MagicCircleFragment.class));
+        mDatas.add(new Pair<String, Class>("ZHFollowButtonFragment", ZHFollowButtonFragment.class));
         mAdapter.setmDatas(mDatas);
 
 

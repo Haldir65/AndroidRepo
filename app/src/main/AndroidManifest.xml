@@ -10,9 +10,7 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".ui.MainActivity"
-            android:theme="@style/NoActionBarStyle"
-            >
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,15 +30,8 @@
 
 
         <!--Canva相关自定义View展示-->
-        <activity android:name=".canvas.activity.CanvasActivity"
-            android:theme="@style/NoActionBarStyle"/>
-        <activity android:name=".canvas.activity.QQHealthViewActivityV1"/>
-        <activity android:name=".canvas.activity.QQHealthViewActivityV2"/>
-        <activity android:name=".canvas.activity.AirConditionerViewActivity"/>
-        <activity android:name=".canvas.activity.SesameCreditActivity"/>
-        <activity android:name=".canvas.activity.LoadingLeafActivity"/>
-        <activity android:name=".canvas.activity.ProgressBarViewActivity"/>
-        <activity android:name=".canvas.activity.Path_BezierActivity"/>
+        <activity android:name=".canvas.activity.CanvasActivity" />
+
 
     </application>
 
