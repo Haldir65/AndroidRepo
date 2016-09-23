@@ -30,7 +30,9 @@
 
 
         <!--Canva相关自定义View展示-->
-        <activity android:name=".canvas.activity.CanvasActivity" />
+        <activity android:name=".canvas.activity.CanvasActivity"
+            android:theme="@style/ControlRippleColorTheme"
+            />
 
 
     </application>

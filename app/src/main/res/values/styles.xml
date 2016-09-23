@@ -59,5 +59,9 @@
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
 
+    <style name="ControlRippleColorTheme" parent="AppTheme">
+        <item name="android:colorControlHighlight">@color/md_purple_500</item>
+    </style>
+
 
 </resources>
