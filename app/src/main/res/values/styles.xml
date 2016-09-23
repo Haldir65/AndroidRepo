@@ -50,18 +50,8 @@
         <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
     </style>
 
-    <style name="SelectableItemTheme">
-        <item name="colorControlHighlight">@color/md_blue_500</item>
-    </style>
 
-    <style name="SelectableItemBackground">
-        <item name="android:theme">@style/SelectableItemTheme</item>
-        <item name="android:background">?attr/selectableItemBackground</item>
-    </style>
 
-    <style name="ControlRippleColorTheme" parent="AppTheme">
-        <item name="android:colorControlHighlight">@color/md_purple_500</item>
-    </style>
 
 
 </resources>
