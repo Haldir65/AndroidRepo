@@ -19,8 +19,7 @@
         android:gravity="center"
         android:onClick="@{(view) -> callback.onClick(view,data)}"
         android:elevation="2dp"
-        android:background="@color/md_amber_200"
-        android:foreground="?android:attr/selectableItemBackground"
+        android:background="?android:attr/selectableItemBackground"
 
         >
 
