@@ -75,6 +75,7 @@ public class canvasMainFragment extends Fragment {
         mDatas.add(new Pair<String, Class>("Path_BezierFragment", Path_BezierFragment.class));
         mDatas.add(new Pair<String, Class>("MagicCircleFragment", MagicCircleFragment.class));
         mDatas.add(new Pair<String, Class>("ZHFollowButtonFragment", ZHFollowButtonFragment.class));
+        mDatas.add(new Pair<String, Class>("CirclingArrowFragment", CirclingArrowFragment.class));
         mAdapter.setmDatas(mDatas);
 
 
