@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <import type="com.me.harris.androidanimations.R" />
     </data>
 
@@ -17,15 +19,24 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/image_01"
+                app:imageSrcId="@{R.drawable.alamby}"
+                style="@style/round_image_view_style" />
+
             <com.me.harris.androidanimations.canvas.widget.RoundImageViewByXfermode
-                android:id="@+id/xfermode_imageView"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                app:type="circle"
+                android:id="@+id/image_02"
+                style="@style/round_image_view_style"
                 app:borderRadius="2dp"
-                android:src="@drawable/alamby"
-                android:scaleType="centerCrop"
-                />
+                app:imageSrcId="@{R.drawable.alamby}"
+                app:type="circle" />
+
+            <com.me.harris.androidanimations.canvas.widget.RoundImageViewByXfermondeV2
+                android:id="@+id/image_03"
+                style="@style/round_image_view_style"
+                app:borderRadius="8dp"
+                app:src="@drawable/alamby"
+                app:type="round" />
 
         </LinearLayout>
 

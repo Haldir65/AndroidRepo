@@ -81,12 +81,14 @@ public class RoundImageViewByXfermode extends ImageView {
         if (type == TYPE_CIRCLE) {
             int width = Math.min(getMeasuredWidth(), getMeasuredHeight());
             setMeasuredDimension(width, width);
-        }
+        } /*else {
+
+        } */
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+        //super.onDraw(canvas);
         Bitmap bitmap = mWeakBitmap == null ? null : mWeakBitmap.get();
         if (null == bitmap || bitmap.isRecycled()) {
             Drawable drawable = getDrawable();
@@ -100,7 +102,7 @@ public class RoundImageViewByXfermode extends ImageView {
                 Canvas drawCanvas = new Canvas(bitmap);
 
                 if (type == TYPE_ROUND) {
-                    scale = Math.max(getWidth() * 1.f / dWidth, getHeight() * 1.f / dHeight);
+                    scale = Math.max(getWidth() * 1.0f / dWidth, getHeight() * 1.0f / dHeight);
                 } else {
                     scale = getWidth() * 1.f / Math.min(dWidth, dHeight);
                 }
@@ -117,7 +119,7 @@ public class RoundImageViewByXfermode extends ImageView {
                 mPaint.setFilterBitmap(false);
                 mPaint.setXfermode(mXfermode);
 
-                drawCanvas.drawBitmap(mMaskBitmap, 0, 0, mPaint);
+                drawCanvas.drawBitmap(mMaskBitmap, 0, 0, mPaint); //关键在于这一点，等于在原来的正方形的图片上盖上一个白色的中心有个内切圆的正方形
                 mPaint.setXfermode(null);
 
                 canvas.drawBitmap(bitmap, 0, 0, null);
@@ -128,10 +130,12 @@ public class RoundImageViewByXfermode extends ImageView {
         }
         if (bitmap != null) {
             mPaint.setXfermode(null);
-            canvas.drawBitmap(bitmap, 0f, 0f, null);
+            canvas.drawBitmap(bitmap, 0f, 0f, mPaint);
         }
 
     }
+
+
 
     public Bitmap getBitmap()
     {
@@ -139,7 +143,7 @@ public class RoundImageViewByXfermode extends ImageView {
                 Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.GREEN);
 
         if (type == TYPE_ROUND)
         {

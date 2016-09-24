@@ -50,8 +50,12 @@
         <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
     </style>
 
-
-
+    <style name="round_image_view_style">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
 
 
 </resources>
