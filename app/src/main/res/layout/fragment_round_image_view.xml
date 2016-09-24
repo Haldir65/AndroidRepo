@@ -23,7 +23,9 @@
                 android:layout_height="200dp"
                 app:type="circle"
                 app:borderRadius="2dp"
-                app:imageSrcId="@{R.drawable.alamby}"/>
+                android:src="@drawable/alamby"
+                android:scaleType="centerCrop"
+                />
 
         </LinearLayout>
 
