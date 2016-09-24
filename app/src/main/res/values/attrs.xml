@@ -25,23 +25,27 @@
 
     <attr name="borderRadius" format="dimension" />
 
-    <declare-styleable name="RoundImageViewByXfermode">
-        <attr name="borderRadius"/>
-        <attr name="type" />
-    </declare-styleable>
-
     <attr name="type">
         <enum name="circle" value="0" />
         <enum name="round" value="1"/>
     </attr>
 
-
+    <declare-styleable name="RoundImageViewByXfermode">
+        <attr name="borderRadius"/>
+        <attr name="type" />
+    </declare-styleable>
 
     <declare-styleable name="RoundImageViewByXfermondeV2">
         <attr name="borderRadius"/>
         <attr name="type" />
         <attr name="src" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="RoundImageViewByShader">
+        <attr name="borderRadius"/>
+        <attr name="type" />
+    </declare-styleable>
+
 
 
 </resources>

@@ -38,6 +38,21 @@
                 app:src="@drawable/alamby"
                 app:type="round" />
 
+            <com.me.harris.androidanimations.canvas.widget.RoundImageViewByShader
+                android:id="@+id/image_04"
+                style="@style/round_image_view_style"
+                app:borderRadius="2dp"
+                app:imageSrcId="@{R.drawable.alamby}"
+                app:type="circle"
+                />
+
+
+            <ImageView
+                android:id="@+id/image_05"
+                style="@style/round_image_view_style" />
+
+
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
