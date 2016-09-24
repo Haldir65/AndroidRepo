@@ -51,6 +51,13 @@
                 android:id="@+id/image_05"
                 style="@style/round_image_view_style" />
 
+            <com.me.harris.androidanimations.canvas.widget.roundedDrawable.RoundedImageView
+                android:id="@+id/image06"
+                style="@style/round_image_view_style"
+                app:imageSrcId="@{R.drawable.alamby}"
+                app:riv_oval="true"
+                />
+
 
 
         </LinearLayout>
