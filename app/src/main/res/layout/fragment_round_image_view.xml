@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.me.harris.androidanimations.R" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            style="@style/MaterialPaddings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.me.harris.androidanimations.canvas.widget.RoundImageViewByXfermode
+                android:id="@+id/xfermode_imageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:type="circle"
+                app:borderRadius="2dp"
+                app:imageSrcId="@{R.drawable.alamby}"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</layout>

@@ -77,6 +77,7 @@ public class canvasMainFragment extends Fragment {
         mDatas.add(new Pair<String, Class>("ZHFollowButtonFragment", ZHFollowButtonFragment.class));
         mDatas.add(new Pair<String, Class>("CirclingArrowFragment", CirclingArrowFragment.class));
         mDatas.add(new Pair<String, Class>("SearchViewFragment", SearchViewFragment.class));
+        mDatas.add(new Pair<String, Class>("RoundImageViewsFragment", RoundImageViewsFragment.class));
         mAdapter.setmDatas(mDatas);
 
 

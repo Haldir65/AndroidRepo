@@ -22,4 +22,14 @@
         <attr name="maxProgress" format="integer" />
         <attr name="currentProgress" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="RoundImageViewByXfermode">
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="type" />
+    </declare-styleable>
+
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1"/>
+    </attr>
 </resources>
