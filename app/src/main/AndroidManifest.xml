@@ -34,6 +34,9 @@
             android:theme="@style/ControlRippleColorTheme"
             />
 
+        <!--用于展示ViewDragHelper-->
+        <activity android:name=".apidemo.ViewDragHelper"/>
+
 
     </application>
 
