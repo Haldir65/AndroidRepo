@@ -7,7 +7,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.me.harris.androidanimations.R;
 
@@ -41,7 +43,7 @@ public class DragLayout extends LinearLayout {
     }
 
     private void init() {
-
+        mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_ALL);
 
     }
 
@@ -91,7 +93,7 @@ public class DragLayout extends LinearLayout {
     private  class DragHelperCallback extends ViewDragHelper.Callback {
         @Override
         public boolean tryCaptureView(View child, int pointerId) {
-            return child == mDragView1;
+            return child instanceof ImageView;
         }
 
         @Override
@@ -102,6 +104,12 @@ public class DragLayout extends LinearLayout {
         @Override
         public void onEdgeDragStarted(int edgeFlags, int pointerId) {
             mDragHelper.captureChildView(mDragView1, pointerId);
+        }
+
+        @Override
+        public void onEdgeTouched(int edgeFlags, int pointerId) {
+            super.onEdgeTouched(edgeFlags, pointerId);
+            Toast.makeText(getContext(), "edgeTouched", Toast.LENGTH_SHORT).show();
         }
 
         @Override
