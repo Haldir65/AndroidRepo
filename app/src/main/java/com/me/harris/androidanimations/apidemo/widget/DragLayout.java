@@ -9,14 +9,21 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.me.harris.androidanimations.R;
+
 /**
  * Created by Fermi on 2016/10/2.
  */
 
 public class DragLayout extends LinearLayout {
 
-    private ViewDragHelper mDragHelper;
-    private View mDragView;
+    private final ViewDragHelper mDragHelper;
+    private View mDragView1,mDragView2,mDragView3;
+
+    private boolean mDragEdge;
+    private boolean mDragHorizontal;
+    private boolean mDragCapture;
+    private boolean mDragVertical;
 
     public DragLayout(Context context) {
         this(context, null);
@@ -28,14 +35,42 @@ public class DragLayout extends LinearLayout {
 
     public DragLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mDragHelper = ViewDragHelper.
+                create(this, 1.0f, new DragHelperCallback());
         init();
     }
 
     private void init() {
-        mDragHelper = ViewDragHelper.
-                create(this, 1.0f, new DragHelperCallback());
+
+
     }
 
+    @Override
+    protected void onFinishInflate() {
+        mDragView1 = findViewById(R.id.image_01);
+        mDragView2 = findViewById(R.id.image_02);
+        mDragView3 = findViewById(R.id.image_03);
+    }
+
+    public void setDragHorizontal(boolean dragHorizontal) {
+        mDragHorizontal = dragHorizontal;
+        mDragView2.setVisibility(View.GONE);
+    }
+
+    public void setDragVertical(boolean dragVertical) {
+        mDragVertical = dragVertical;
+        mDragView2.setVisibility(View.GONE);
+    }
+
+    public void setDragEdge(boolean dragEdge) {
+        mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_LEFT);
+        mDragEdge = dragEdge;
+        mDragView2.setVisibility(View.GONE);
+    }
+
+    public void setDragCapture(boolean dragCapture) {
+        mDragCapture = dragCapture;
+    }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -56,7 +91,17 @@ public class DragLayout extends LinearLayout {
     private  class DragHelperCallback extends ViewDragHelper.Callback {
         @Override
         public boolean tryCaptureView(View child, int pointerId) {
-            return true; // return child ==targetView
+            return child == mDragView1;
+        }
+
+        @Override
+        public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
+            super.onViewPositionChanged(changedView, left, top, dx, dy);
+        }
+
+        @Override
+        public void onEdgeDragStarted(int edgeFlags, int pointerId) {
+            mDragHelper.captureChildView(mDragView1, pointerId);
         }
 
         @Override

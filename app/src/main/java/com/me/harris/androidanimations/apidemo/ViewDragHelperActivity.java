@@ -12,7 +12,7 @@ import com.me.harris.androidanimations.databinding.ActivityViewDragBinding;
  * Created by Fermi on 2016/10/2.
  */
 
-public class ViewDragHelper extends AppCompatActivity {
+public class ViewDragHelperActivity extends AppCompatActivity {
     ActivityViewDragBinding binding;
 
     @Override

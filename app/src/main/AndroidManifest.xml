@@ -35,7 +35,7 @@
             />
 
         <!--用于展示ViewDragHelper-->
-        <activity android:name=".apidemo.ViewDragHelper"/>
+        <activity android:name=".apidemo.ViewDragHelperActivity"/>
 
 
     </application>
