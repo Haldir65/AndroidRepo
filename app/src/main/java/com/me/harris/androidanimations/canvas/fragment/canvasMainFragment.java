@@ -78,6 +78,7 @@ public class canvasMainFragment extends Fragment {
         mDatas.add(new Pair<String, Class>("CirclingArrowFragment", CirclingArrowFragment.class));
         mDatas.add(new Pair<String, Class>("SearchViewFragment", SearchViewFragment.class));
         mDatas.add(new Pair<String, Class>("RoundImageViewsFragment", RoundImageViewsFragment.class));
+        mDatas.add(new Pair<String, Class>("PloygonViewFragment", PloygonViewFragment.class));
         mAdapter.setmDatas(mDatas);
 
 

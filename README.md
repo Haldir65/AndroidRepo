@@ -7,6 +7,7 @@ Android Graphic和Animation的一些整理
 [Android动画](http://blog.csdn.net/yegongheng/article/details/38435553)ValueAnimator和ObjectAnimator的使用<br/>
 [伸手党系列](http://www.jianshu.com/p/13e975622b57)进阶教程，较为全面<br/>
 [zhihuAnswer](https://github.com/mutexliu/ZhihuAnswer)<br/>
+[ViewDragHelper](https://github.com/flavienlaurent/flavienlaurent.com)
 感谢以上作者
 
 ###Todo

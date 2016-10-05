@@ -37,6 +37,7 @@
         <!--用于展示ViewDragHelper-->
         <activity android:name=".apidemo.ViewDragHelperActivity"/>
         <activity android:name=".apidemo.YoutubeActivity"/>
+        <activity android:name=".apidemo.LoaderActivity"/>
 
 
     </application>

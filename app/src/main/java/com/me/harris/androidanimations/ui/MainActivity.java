@@ -12,6 +12,7 @@ import android.view.View;
 import com.me.harris.androidanimations.BuildConfig;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.apidemo.BouncingBalls;
+import com.me.harris.androidanimations.apidemo.LoaderActivity;
 import com.me.harris.androidanimations.apidemo.MaterialWitness;
 import com.me.harris.androidanimations.apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations.apidemo.ViewDragHelperActivity;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("Canvas", CanvasActivity.class));
         list.add(new Pair<String, Class>("ViewDragHelper", ViewDragHelperActivity.class));
         list.add(new Pair<String, Class>("YoutubeActivity", YoutubeActivity.class));
+        list.add(new Pair<String, Class>("LoaderActivity", LoaderActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
