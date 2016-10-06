@@ -39,6 +39,9 @@
         <activity android:name=".apidemo.YoutubeActivity"/>
         <activity android:name=".apidemo.LoaderActivity"/>
 
+        <!--用于展示View触控事件分发-->
+        <activity android:name=".touch.activity.TouchEventActivity"/>
+
 
     </application>
 

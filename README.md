@@ -9,6 +9,7 @@ Android Graphic和Animation的一些整理
 [zhihuAnswer](https://github.com/mutexliu/ZhihuAnswer)<br/>
 [ViewDragHelper](https://github.com/flavienlaurent/flavienlaurent.com)
 [PolygonView](https://github.com/jiangzehui/polygonsview)
+[仿QQ侧滑删除菜单](https://github.com/fanrunqi/SwipeLayout)
 感谢以上作者
 
 ###Todo
