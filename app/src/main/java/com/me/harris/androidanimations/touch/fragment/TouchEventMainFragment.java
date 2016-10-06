@@ -14,6 +14,7 @@ import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.canvas.activity.CanvasActivity;
 import com.me.harris.androidanimations.databinding.FragmentCanvasBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
+import com.me.harris.androidanimations.touch.activity.TouchEventActivity;
 import com.me.harris.androidanimations.ui.recyclerview.adapter.MainAdapter;
 import com.me.harris.androidanimations.ui.recyclerview.itemDecoration.MainAdapterItemDecoration;
 
@@ -53,7 +54,7 @@ public class TouchEventMainFragment extends Fragment {
                 getFragmentManager().beginTransaction()
                         .addToBackStack(fragmentClass.getSimpleName()).
                         replace(R.id.frameLayout, fragment).commit();
-                ((CanvasActivity) getActivity()).setToolBarTitle(fragmentClass.getSimpleName());
+                ((TouchEventActivity) getActivity()).setToolBarTitle(fragmentClass.getSimpleName());
 
             }
         });

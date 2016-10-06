@@ -22,6 +22,7 @@ import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.drawableAnimations.DrawableAnimationActivity;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.propertyanimations.PropertyAnimationActivity;
+import com.me.harris.androidanimations.touch.activity.TouchEventActivity;
 import com.me.harris.androidanimations.ui.recyclerview.adapter.MainAdapter;
 import com.me.harris.androidanimations.ui.recyclerview.itemDecoration.MainAdapterItemDecoration;
 import com.me.harris.androidanimations.viewAnimations.ViewAnimationActivity;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("ViewDragHelper", ViewDragHelperActivity.class));
         list.add(new Pair<String, Class>("YoutubeActivity", YoutubeActivity.class));
         list.add(new Pair<String, Class>("LoaderActivity", LoaderActivity.class));
+        list.add(new Pair<String, Class>("TouchEventActivity", TouchEventActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

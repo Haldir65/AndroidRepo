@@ -20,9 +20,14 @@ public class TouchEventActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_touch);
+        setSupportActionBar(binding.toolbar);
         getSupportFragmentManager().
                 beginTransaction().
                 add(R.id.frameLayout, TouchEventMainFragment.newInstance()).
                 commit();
+    }
+
+    public void setToolBarTitle(String name) {
+        getSupportActionBar().setTitle(name);
     }
 }
