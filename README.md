@@ -11,6 +11,17 @@ Android Graphic和Animation的一些整理
 [PolygonView](https://github.com/jiangzehui/polygonsview)
 感谢以上作者
 
+- 关于Drawable
+Drawable的 Direct SubClass
+AnimatedVectorDrawable, AnimatedVectorDrawableCompat, BitmapDrawable, ColorDrawable,
+DrawableContainer, DrawableWrapper, DrawerArrowDrawable, GradientDrawable, LayerDrawable,
+ NinePatchDrawable, PictureDrawable, RoundedBitmapDrawable, ShapeDrawable, VectorDrawable, VectorDrawableCompat
+
+InDirect SubClass
+AnimatedStateListDrawable, AnimationDrawable, ClipDrawable, InsetDrawable,
+LevelListDrawable, PaintDrawable, RippleDrawable, RotateDrawable, ScaleDrawable, StateListDrawable, TransitionDrawable
+
+
 ###Todo
 1. 关于ActivityOptions，参考playStore点击后SharedElements的缩放，主要是动画
 

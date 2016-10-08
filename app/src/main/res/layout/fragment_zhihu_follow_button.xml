@@ -15,7 +15,7 @@
             android:background="@drawable/bg_ripple_selector"
             android:text="关注" />
 
-        <com.me.harris.androidanimations.canvas.widget.RippleButtonView
+        <com.me.harris.androidanimations._04_customView.widget.RippleButtonView
             android:id="@+id/test_rbv"
             android:layout_width="78dp"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             android:clickable="true"
             android:text="关注" />
 
-        <com.me.harris.androidanimations.canvas.widget.RevealFollowButton
+        <com.me.harris.androidanimations._04_customView.widget.RevealFollowButton
             android:id="@+id/test_rfb"
             android:layout_width="78dp"
             android:layout_height="wrap_content"

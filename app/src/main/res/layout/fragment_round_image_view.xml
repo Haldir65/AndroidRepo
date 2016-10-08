@@ -24,21 +24,21 @@
                 app:imageSrcId="@{R.drawable.alamby}"
                 style="@style/round_image_view_style" />
 
-            <com.me.harris.androidanimations.canvas.widget.RoundImageViewByXfermode
+            <com.me.harris.androidanimations._04_customView.widget.RoundImageViewByXfermode
                 android:id="@+id/image_02"
                 style="@style/round_image_view_style"
                 app:borderRadius="2dp"
                 app:imageSrcId="@{R.drawable.alamby}"
                 app:type="circle" />
 
-            <com.me.harris.androidanimations.canvas.widget.RoundImageViewByXfermondeV2
+            <com.me.harris.androidanimations._04_customView.widget.RoundImageViewByXfermondeV2
                 android:id="@+id/image_03"
                 style="@style/round_image_view_style"
                 app:borderRadius="8dp"
                 app:src="@drawable/alamby"
                 app:type="round" />
 
-            <com.me.harris.androidanimations.canvas.widget.RoundImageViewByShader
+            <com.me.harris.androidanimations._04_customView.widget.RoundImageViewByShader
                 android:id="@+id/image_04"
                 style="@style/round_image_view_style"
                 app:borderRadius="2dp"
@@ -51,7 +51,7 @@
                 android:id="@+id/image_05"
                 style="@style/round_image_view_style" />
 
-            <com.me.harris.androidanimations.canvas.widget.roundedDrawable.RoundedImageView
+            <com.me.harris.androidanimations._04_customView.widget.roundedDrawable.RoundedImageView
                 android:id="@+id/image06"
                 style="@style/round_image_view_style"
                 app:imageSrcId="@{R.drawable.alamby}"

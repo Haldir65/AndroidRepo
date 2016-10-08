@@ -9,7 +9,7 @@
         android:gravity="center"
         style="@style/MaterialPaddings">
 
-        <com.me.harris.androidanimations.canvas.widget.ProgressView
+        <com.me.harris.androidanimations._04_customView.widget.ProgressView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"

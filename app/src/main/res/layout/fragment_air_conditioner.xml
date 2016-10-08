@@ -7,7 +7,7 @@
         android:orientation="vertical"
         style="@style/MaterialPaddings">
 
-        <com.me.harris.androidanimations.canvas.widget.AirConditionerView
+        <com.me.harris.androidanimations._04_customView.widget.AirConditionerView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

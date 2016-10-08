@@ -7,7 +7,7 @@
         android:orientation="vertical"
         style="@style/MaterialPaddings">
 
-        <com.me.harris.androidanimations.canvas.widget.QQHealthViewV1
+        <com.me.harris.androidanimations._04_customView.widget.QQHealthViewV1
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

@@ -8,7 +8,7 @@
         android:orientation="vertical"
         style="@style/MaterialPaddings">
 
-        <com.me.harris.androidanimations.canvas.widget.SesameCreditView
+        <com.me.harris.androidanimations._04_customView.widget.SesameCreditView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:innerRectRadius="0.5"

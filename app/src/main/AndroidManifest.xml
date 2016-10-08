@@ -18,26 +18,32 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".viewAnimations.ViewAnimationActivity"/>
-        <activity android:name=".propertyanimations.PropertyAnimationActivity"/>
-        <activity android:name=".drawableAnimations.DrawableAnimationActivity"/>
+        <activity android:name="._05_animation.ViewAnimationActivity"/>
+        <activity android:name="._05_animation.PropertyAnimationActivity"/>
+        <activity android:name="._05_animation.DrawableAnimationActivity"/>
 
 
         <!--ApiDemo中部分动画展示-->
-        <activity android:name=".apidemo.BouncingBalls"/>
-        <activity android:name=".apidemo.ShadowCardDrag"/>
-        <activity android:name=".apidemo.MaterialWitness"/>
+        <activity android:name="._03_apidemo.BouncingBalls"/>
+        <activity android:name="._03_apidemo.ShadowCardDrag"/>
+        <activity android:name="._03_apidemo.MaterialWitness"/>
 
 
         <!--Canva相关自定义View展示-->
-        <activity android:name=".canvas.activity.CanvasActivity"
+        <activity android:name="._04_customView.activity.CustomViewActivity"
             android:theme="@style/ControlRippleColorTheme"
             />
 
         <!--用于展示ViewDragHelper-->
-        <activity android:name=".apidemo.ViewDragHelperActivity"/>
-        <activity android:name=".apidemo.YoutubeActivity"/>
-        <activity android:name=".apidemo.LoaderActivity"/>
+        <activity android:name="._03_apidemo.ViewDragHelperActivity"/>
+        <activity android:name="._03_apidemo.YoutubeActivity"/>
+        <activity android:name="._03_apidemo.LoaderActivity"/>
+
+        <!--展示各种Drawable使用方式入口-->
+        <activity android:name="._01_drawable.activity.DrawableMainActivity"/>
+
+        <!--SurfaceView甚至TextureView入口-->
+        <activity android:name="._02_surfaceview.SurfaceViewActivity"/>
 
 
     </application>
