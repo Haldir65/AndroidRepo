@@ -45,6 +45,9 @@
         <!--SurfaceView甚至TextureView入口-->
         <activity android:name="._02_surfaceview.SurfaceViewActivity"/>
 
+        <!--用于展示View触控事件分发-->
+        <activity android:name=".touch.activity.TouchEventActivity"/>
+
 
     </application>
 
