@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.canvas.widget;
+package com.me.harris.androidanimations._04_customView.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

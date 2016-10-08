@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.canvas.fragment;
+package com.me.harris.androidanimations._04_customView.fragment;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
