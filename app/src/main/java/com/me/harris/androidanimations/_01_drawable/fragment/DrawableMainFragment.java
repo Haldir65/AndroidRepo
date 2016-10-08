@@ -73,7 +73,7 @@ public class DrawableMainFragment extends Fragment {
         });
         List<Pair<String, Class>> mDatas = new ArrayList<>();
         mDatas.add(new Pair<String, Class>("BitmapDrawable", BitmapDrawableFragment.class));
-        mDatas.add(new Pair<String, Class>("ShapeDrawable", ShapeDrawableFragment.class));
+        mDatas.add(new Pair<String, Class>("TransitionDrawableFragment", TransitionDrawableFragment.class));
         mDatas.add(new Pair<String, Class>("LayerDrawable", LayerDrawableFragment.class));
         mAdapter.setmDatas(mDatas);
     }

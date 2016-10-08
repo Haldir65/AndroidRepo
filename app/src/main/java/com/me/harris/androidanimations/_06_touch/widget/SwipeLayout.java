@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.touch.widget;
+package com.me.harris.androidanimations._06_touch.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

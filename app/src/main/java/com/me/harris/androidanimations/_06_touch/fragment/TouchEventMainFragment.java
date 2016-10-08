@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.touch.fragment;
+package com.me.harris.androidanimations._06_touch.fragment;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -11,10 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.me.harris.androidanimations.R;
-import com.me.harris.androidanimations.canvas.activity.CanvasActivity;
 import com.me.harris.androidanimations.databinding.FragmentCanvasBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
-import com.me.harris.androidanimations.touch.activity.TouchEventActivity;
+import com.me.harris.androidanimations._06_touch.activity.TouchEventActivity;
 import com.me.harris.androidanimations.ui.recyclerview.adapter.MainAdapter;
 import com.me.harris.androidanimations.ui.recyclerview.itemDecoration.MainAdapterItemDecoration;
 

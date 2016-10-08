@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.touch.fragment;
+package com.me.harris.androidanimations._06_touch.fragment;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -13,7 +13,7 @@ import android.widget.BaseAdapter;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.FragmentSwipeLayoutBinding;
 import com.me.harris.androidanimations.databinding.ItemSwipeListViewBinding;
-import com.me.harris.androidanimations.touch.widget.SwipeLayout;
+import com.me.harris.androidanimations._06_touch.widget.SwipeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
