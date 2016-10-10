@@ -19,6 +19,7 @@ import com.me.harris.androidanimations._03_apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
 import com.me.harris.androidanimations._03_apidemo.YoutubeActivity;
 import com.me.harris.androidanimations._04_customView.activity.CustomViewActivity;
+import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations._05_animation.DrawableAnimationActivity;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("YoutubeActivity", YoutubeActivity.class));
         list.add(new Pair<String, Class>("LoaderActivity", LoaderActivity.class));
         list.add(new Pair<String, Class>("DrawableMainActivity", DrawableMainActivity.class));
+        list.add(new Pair<String, Class>("Permission", MarshmallowPermissionActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

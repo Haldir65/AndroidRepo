@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.me.harris.androidanimations">
+          package="com.me.harris.androidanimations">
+
+    <uses-sdk
+        android:maxSdkVersion="19"
+        android:targetSdkVersion="24"/>
+
+    //Request a permission as runtime only
+    <uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS"/>
+
+    //Request a permission as install only,22以上不会请求
+    <uses-permission
+        android:name="android.permission.READ_CONTACTS"
+        android:maxSdkVersion="22"/>
+
 
     <application
         android:allowBackup="true"
@@ -12,9 +25,9 @@
 
         <activity android:name=".ui.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
@@ -30,7 +43,8 @@
 
 
         <!--Canva相关自定义View展示-->
-        <activity android:name="._04_customView.activity.CustomViewActivity"
+        <activity
+            android:name="._04_customView.activity.CustomViewActivity"
             android:theme="@style/ControlRippleColorTheme"
             />
 
@@ -47,6 +61,9 @@
 
         <!--用于展示View触控事件分发-->
         <activity android:name="._06_touch.activity.TouchEventActivity"/>
+
+        <!--用于展示Marshmallow运行时权限-->
+        <activity android:name="._07_permission.MarshmallowPermissionActivity"/>
 
 
     </application>
