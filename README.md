@@ -11,6 +11,7 @@ Android Graphic和Animation的一些整理
 [PolygonView](https://github.com/jiangzehui/polygonsview)
 [仿QQ侧滑删除菜单](https://github.com/fanrunqi/SwipeLayout)
 [自定义View实现水面上涨ProgressBar](https://github.com/sheng-xiaoya/360FloatWindow)
+[RuntimePermissionsBasic](https://github.com/googlesamples/android-RuntimePermissionsBasic)
 感谢以上作者
 
 - 关于Drawable

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+
+        <variable
+            name="callback"
+            type="com.me.harris.androidanimations.interfaces.ActionCallBack"/>
+    </data>
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -11,12 +18,14 @@
             android:id="@+id/button_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{(view) ->callback.onClickView(view)}"
             android:padding="5dp"/>
 
         <Button
             android:id="@+id/button_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{(view) ->callback.onClickView(view)}"
             android:padding="5dp"
             />
 
@@ -24,12 +33,14 @@
             android:id="@+id/button_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{(view) ->callback.onClickView(view)}"
             android:padding="5dp"/>
 
         <Button
             android:id="@+id/button_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{(view) ->callback.onClickView(view)}"
             android:padding="5dp"/>
 
     </LinearLayout>

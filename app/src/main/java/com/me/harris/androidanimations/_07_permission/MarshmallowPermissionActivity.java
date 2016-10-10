@@ -9,12 +9,14 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityPermissionBinding;
+import com.me.harris.androidanimations.interfaces.ActionCallBack;
 
 import static android.Manifest.permission.READ_CALENDAR;
-import static android.support.v4.content.PermissionChecker.PERMISSION_GRANTED;
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 /**
  * Created by Harris on 2016/10/10.
@@ -31,6 +33,14 @@ public class MarshmallowPermissionActivity extends AppCompatActivity {
 //        requestPermissions();
 //        onRequestPermissionsResult();
 //        shouldShowRequestPermissionRationale()
+        binding.setCallback(new ActionCallBack() {
+            @Override
+            public void onClickView(View view) {
+                Intent intent = new Intent(MarshmallowPermissionActivity.this, CameraPreviewActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public static final int REQUEST_CALENDAR = 1;
@@ -85,10 +95,15 @@ public class MarshmallowPermissionActivity extends AppCompatActivity {
     * Disable APIs instead of revoke permissions
     * Every permission has an app-op
     * Disable app-op makes an API a no-op
-    * 例如，请求CONTACTS,确实有权限，但android返回空数据
+    * 例如，假设App target sdk 为22
+    * 用户运行在API 23的手机上，用户在SETTING取消App CONTACT PERMISSION.
+    * 此时请求CONTACTS，android会返回空数据
     * 你可能以为手机上没有联系人，但实际上是有的
     * 只是对legacy app返回了空数据
-    * 简单说disable api了
+    * 这样就做到了对于Legacy app 和Modern app一视同仁
+    * 简单说对于legacy app,用户如果在setting里面disable permission了，系统会disable api，不同的API会有不同的返回值，有的是default，有的是empty array
+    * 这样，绝大多数的Legacy app不需要针对API 23的手机做太多变动，除非用户取消了特定权限
+    * 所以比较好的方式还是 target sdk 23 above ，
     * */
 
    /* 如何避免请求过多的permission
