@@ -87,6 +87,19 @@ public class MarshmallowPermissionActivity extends AppCompatActivity {
     }
 
     /*
+    * Permission分为normal permission和dangerous permission
+    * 在 API 23上, normal permission会被立即给予，不会打扰用户，只有dangerous permission需要请求
+    * dangerous permission 包括 CONTACT,CAMERA,LOCATIONS等等
+    * https://developer.android.com/guide/topics/security/permissions.html#normal-dangerous
+    *
+    * 还有需要注意的一点是，permission是按照group来给的，如果用户给了READ_CONTACT permission，
+    * 下次请求WRITE_CONTACT permission，系统立即给permission
+    * 但是，不是说就不需要请求了，还得请求，只是会立即给，因为future release可能会改掉，
+    *
+    * 请求dangerous permission会弹出一个dialog，这个dialog开发者无权定制
+    * */
+
+    /*
     *
     * 用户可以在setting里面关闭permission
     * 对于TargetSdk 22及以下的app
@@ -101,7 +114,9 @@ public class MarshmallowPermissionActivity extends AppCompatActivity {
     * 你可能以为手机上没有联系人，但实际上是有的
     * 只是对legacy app返回了空数据
     * 这样就做到了对于Legacy app 和Modern app一视同仁
-    * 简单说对于legacy app,用户如果在setting里面disable permission了，系统会disable api，不同的API会有不同的返回值，有的是default，有的是empty array
+    * 简单说对于legacy app,用户如果在setting里面disable permission了，系统会disable api，
+    * 不同的API会有不同的返回值，有的是default error，有的是empty array
+    * 测试下来Camera会抛出一个Exception(App target 22, 模拟器23，设置里关闭camera 权限 )
     * 这样，绝大多数的Legacy app不需要针对API 23的手机做太多变动，除非用户取消了特定权限
     * 所以比较好的方式还是 target sdk 23 above ，
     * */
