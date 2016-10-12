@@ -63,8 +63,12 @@
         <activity android:name="._07_permission.MarshmallowPermissionActivity"/>
         <activity android:name="._07_permission.CameraPreviewActivity"/>
 
+
         <!--用于展示CoordinateLayout及Behavior用法-->
+        <activity android:name="._08_coordinateLayout.CoordinateLayoutEntrance"/>
         <activity android:name="._08_coordinateLayout.CoordinateLayoutActivityOne"/>
+        <activity android:name="._08_coordinateLayout.CoordinateLayoutActivityTwo"/>
+
 
 
 
