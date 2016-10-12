@@ -14,7 +14,7 @@ Android Graphic和Animation的一些整理
 [RuntimePermissionsBasic](https://github.com/googlesamples/android-RuntimePermissionsBasic)<br/>
 [CoordinateLayout](http://saulmm.github.io/mastering-coordinator)<br/>
 [CoordinateLayoutTest](http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/)<br/>
-
+[Loader](https://medium.com/google-developers/making-loading-data-on-android-lifecycle-aware-897e12760832#.y6t5axsfw)<br/>
 感谢以上作者
 
 - 关于Drawable
