@@ -1,11 +1,11 @@
-package com.me.harris.androidanimations.ui.recyclerview.adapter;
+package com.me.harris.androidanimations._09_recyclerView.adapter;
 
 import android.support.annotation.LayoutRes;
 import android.support.v4.util.Pair;
 
+import com.me.harris.androidanimations._09_recyclerView.viewholer.DataBoundViewHolder;
 import com.me.harris.androidanimations.databinding.ItemMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
-import com.me.harris.androidanimations.ui.recyclerview.viewholer.DataBoundViewHolder;
 import com.me.harris.androidanimations.utils.Utils;
 
 import java.util.ArrayList;

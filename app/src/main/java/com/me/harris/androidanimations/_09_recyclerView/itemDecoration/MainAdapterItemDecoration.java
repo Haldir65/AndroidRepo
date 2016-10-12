@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.ui.recyclerview.itemDecoration;
+package com.me.harris.androidanimations._09_recyclerView.itemDecoration;
 
 import android.content.Context;
 import android.graphics.Canvas;

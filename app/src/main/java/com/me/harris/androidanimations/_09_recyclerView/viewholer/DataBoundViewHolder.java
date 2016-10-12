@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.me.harris.androidanimations.ui.recyclerview.viewholer;
+package com.me.harris.androidanimations._09_recyclerView.viewholer;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;

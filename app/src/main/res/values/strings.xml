@@ -1,23 +1,24 @@
 <resources>
     <string name="app_name">AndroidAnimations</string>
-
-
     <string name="hide_me">Hide Me!</string>
-
     <string name="density_title">Density: Unknown Screen</string>
     <string name="camera_alert">Device has only one camera!</string>
     <string name="switch_cam">Switch Camera</string>
     <string name="draggable_card">Draggable Card</string>
-
     <string name="enable_tilt">Enable Tilt</string>
     <string name="enable_shading">Enable Shading</string>
     <string name="select_shape">Select Shape</string>
     <string name="from">From Google I/O 2014 - Material witness: How Android material applications work</string>
-
     <string name="show_camera">Show camera preview</string>
     <string name="camera_unavailable"><b>Camera could not be opened.</b>\nThis occurs when the camera is not available (for example it is already in use) or if the system has denied access (for example when camera access has been disabled).</string>
     <string name="intro">This sample shows a basic implementation for requesting permissions at runtime.\nClick the button below to request the Camera permission and open a full-screen camera preview.</string>
     <string name="lorem">Some text in it </string>
-    <string name="text_header">header</string>
-    <string name="flexible_title">flexible_title</string>
+    <string name="text_header">内容</string>
+    <string name="flexible_title">曝高洪波下课足协早有预案 希丁克级名帅接手</string>
+   <string name="newsBody">昨晚在乌兹别克斯坦塔什干，当中国队以0比2完败乌兹别克斯坦队之后，中国队主帅高洪波在赛后公开请辞。昨晚足球圈内传出消息称，中国足协早在中乌比赛之前就对高洪波下课设计了预案，而即将接手中国队的有可能是一位希丁克这类级别的外籍名帅。当国足以3负1平的成绩战罢世预赛亚洲12强赛4轮过后，高洪波下课不过是为中国队糟糕战绩“扛雷”，如何问责相关人士也无主可寻。主帅换与不换，中国队小组最弱的表现都明明白白摆在面儿上，还有6轮未战的中国队还有机会跻身俄罗斯世界杯吗？相信明眼人都有自己理性的判断。
+在12强赛前3轮仅得一分的情况下，昨晚客战乌兹别克斯坦队，对志在冲击俄罗斯世界杯的中国队来说无异于背水一战。几天前在西安脆败叙利亚队后，中国队的用兵受到了外界质疑与批评。昨晚尽管中国队做客比赛，但也正是因为处境艰难，主教练高洪波不得不将5人的后卫配置缩减至4人，试图在进攻中找到突破口。张呈栋、孙可甚至中卫杜威、门将杨智两位老将都出现在首发阵容中。但连续几轮较大幅度的调整不仅没有取得理想的战术效果，反而还导致队员间配合默契度欠缺，孙可更因为久疏战阵而早早受伤下场。守住半场之后的中国队于是在下半时被主队彻底打散防线。比克马耶夫下半时4分钟的入球令杨智鞭长莫及，而此后的比赛成为乌队的集体射门表演。颇具讽刺意味的是，效力于中超北京国安的两名乌兹别克斯坦国脚谢尔盖耶夫、克里梅茨一前一后打得风生水起，主队4个门柱球有两个出自谢尔盖耶夫之脚，不知中国队的富豪国脚们还有没有资本去嘲弄这两位主队球员的低廉身价。
+昨晚的中国队在乌兹别克斯坦队缜密的攻防组织下，显得不堪一击。终场哨音响起后，高洪波站在原地，面无表情，而队员们在向远道而来的千余名球迷致谢的时候，甚至不敢抬头。高洪波在赛后新闻发布会的发言总共只有1分多钟，他说，“昨晚和协会领导有了深入交流，认为目前中国男足的问题应该由主教练担负主要责任，所以我提出离开。我感谢团队所有工作人员，感谢各界包括球迷的支持与帮助，感谢他们的不离不弃，也祝愿中国男足越走越好。”随后高洪波以身体不舒服为由，未等现场翻译工作进行，就独自离场。
+从高洪波简单的话中不难判断，下课的决定某种程度代表了中国足协的态度。据了解，其实早在上周国足兵败西安的时候，有关国足换帅的程序就已经悄然启动，而关于新帅的选定预案，甚至在当初高洪波二度接手国足帅印时就已经有所设计。对于昨晚国足的失利，可以说中国足协内部早有心理准备，毕竟中国队接下来还有6轮12强赛要踢。
+高洪波“下课”已成定局，那么谁将取而代之，这个问题的答案也亟待破解。昨天有圈内人士透露，中国足协在前任主帅佩兰下课的时候，就已经有意识地将选帅触角伸向海外。
+那么新帅人选到底是谁？从目前足球圈内反映的情况看，新帅非常有可能来自欧洲，甚至有业内人士将中国队的帅位与荷兰名帅希丁克联系到一起。无论如何，4轮仅积1分的中国队理论上还没有出局，中国足协在这个时候选择换帅相对来说还算及时。只不过，综合已经结束的4轮12强赛战况看，中国队不赢球除了教练员需要担责外，技不如人依然是重要原因。而无论新帅何许人也，想在短期内改变中国足球技术能力整体低下的局面都不大现实，中国队仍在煎熬中努力着，只不过对于能否出线这个问题，现场的球迷与中国记者相信都有着理智的判断。</string>
 </resources>

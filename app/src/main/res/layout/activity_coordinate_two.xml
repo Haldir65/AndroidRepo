@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:lineSpacingExtra="8dp"
-                        android:text="@string/lorem"
+                        android:text="@string/newsBody"
                         android:textSize="16sp"
                         />
                 </LinearLayout>

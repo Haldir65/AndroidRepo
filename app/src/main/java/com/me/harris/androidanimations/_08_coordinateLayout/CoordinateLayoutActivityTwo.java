@@ -27,12 +27,14 @@ public class CoordinateLayoutActivityTwo extends AppCompatActivity implements Ap
         setContentView(R.layout.activity_coordinate_two);
         mFab = findViewById(R.id.flexible_example_fab);
         Toolbar toolbar = (Toolbar) findViewById(R.id.flexible_example_toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        /*toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
-        });
+        });*/
         AppBarLayout appbar = (AppBarLayout) findViewById(R.id.flexible_example_appbar);
         appbar.addOnOffsetChangedListener(this);
     }

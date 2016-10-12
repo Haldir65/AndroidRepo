@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations.ui;
+package com.me.harris.androidanimations;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -9,8 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
 
-import com.me.harris.androidanimations.BuildConfig;
-import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations._03_apidemo.BouncingBalls;
 import com.me.harris.androidanimations._03_apidemo.LoaderActivity;
@@ -19,15 +17,15 @@ import com.me.harris.androidanimations._03_apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
 import com.me.harris.androidanimations._03_apidemo.YoutubeActivity;
 import com.me.harris.androidanimations._04_customView.activity.CustomViewActivity;
-import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
-import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutActivityOne;
-import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations._05_animation.DrawableAnimationActivity;
-import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations._05_animation.PropertyAnimationActivity;
-import com.me.harris.androidanimations.ui.recyclerview.adapter.MainAdapter;
-import com.me.harris.androidanimations.ui.recyclerview.itemDecoration.MainAdapterItemDecoration;
 import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
+import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
+import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
+import com.me.harris.androidanimations.databinding.ActivityMainBinding;
+import com.me.harris.androidanimations.interfaces.GenericCallBack;
+import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
+import com.me.harris.androidanimations._09_recyclerView.itemDecoration.MainAdapterItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("LoaderActivity", LoaderActivity.class));
         list.add(new Pair<String, Class>("DrawableMainActivity", DrawableMainActivity.class));
         list.add(new Pair<String, Class>("Permission", MarshmallowPermissionActivity.class));
-        list.add(new Pair<String, Class>("CoordinateLayout", CoordinateLayoutActivityOne.class));
+        list.add(new Pair<String, Class>("CoordinateLayout", CoordinateLayoutEntrance.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

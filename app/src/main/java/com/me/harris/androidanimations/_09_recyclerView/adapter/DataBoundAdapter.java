@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.me.harris.androidanimations.ui.recyclerview.adapter;
+package com.me.harris.androidanimations._09_recyclerView.adapter;
 
 import android.databinding.ViewDataBinding;
 import android.support.annotation.LayoutRes;

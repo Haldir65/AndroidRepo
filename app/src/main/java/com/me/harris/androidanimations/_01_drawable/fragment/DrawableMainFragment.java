@@ -14,8 +14,8 @@ import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations.databinding.FragmentCanvasBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
-import com.me.harris.androidanimations.ui.recyclerview.adapter.MainAdapter;
-import com.me.harris.androidanimations.ui.recyclerview.itemDecoration.MainAdapterItemDecoration;
+import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
+import com.me.harris.androidanimations._09_recyclerView.itemDecoration.MainAdapterItemDecoration;
 import com.me.harris.androidanimations.utils.LogUtil;
 
 import java.util.ArrayList;

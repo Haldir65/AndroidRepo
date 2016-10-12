@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -66,10 +66,13 @@
 
         <!--用于展示CoordinateLayout及Behavior用法-->
         <activity android:name="._08_coordinateLayout.CoordinateLayoutEntrance"/>
-        <activity android:name="._08_coordinateLayout.CoordinateLayoutActivityOne"/>
-        <activity android:name="._08_coordinateLayout.CoordinateLayoutActivityTwo"/>
-
-
+        <activity
+            android:name="._08_coordinateLayout.CoordinateLayoutActivityOne"
+            android:parentActivityName="._08_coordinateLayout.CoordinateLayoutEntrance"/>
+        <activity
+            android:name="._08_coordinateLayout.CoordinateLayoutActivityTwo"
+            android:parentActivityName="._08_coordinateLayout.CoordinateLayoutEntrance"
+            android:theme="@style/CoordinateLayoutActivityTwoTheme"/>
 
 
     </application>

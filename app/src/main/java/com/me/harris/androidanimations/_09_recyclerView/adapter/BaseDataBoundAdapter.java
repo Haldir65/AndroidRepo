@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.me.harris.androidanimations.ui.recyclerview.adapter;
+package com.me.harris.androidanimations._09_recyclerView.adapter;
 
 import android.databinding.OnRebindCallback;
 import android.databinding.ViewDataBinding;
@@ -24,7 +24,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.me.harris.androidanimations.ui.recyclerview.viewholer.DataBoundViewHolder;
+import com.me.harris.androidanimations._09_recyclerView.viewholer.DataBoundViewHolder;
 
 import java.util.List;
 
