@@ -13,6 +13,7 @@ Android Graphic和Animation的一些整理
 [自定义View实现水面上涨ProgressBar](https://github.com/sheng-xiaoya/360FloatWindow)<br/>
 [RuntimePermissionsBasic](https://github.com/googlesamples/android-RuntimePermissionsBasic)<br/>
 [CoordinateLayout](http://saulmm.github.io/mastering-coordinator)<br/>
+[CoordinateLayoutTest](http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/)<br/>
 
 感谢以上作者
 
