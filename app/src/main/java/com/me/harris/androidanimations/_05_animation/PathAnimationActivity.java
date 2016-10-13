@@ -63,8 +63,8 @@ public class PathAnimationActivity extends AppCompatActivity {
      * @param newLoc
      */
     public void setButtonLoc(PathPoint newLoc) {
-        mButton.setTranslationX(newLoc.mX);
-        mButton.setTranslationY(newLoc.mY);
+        mImageView.setTranslationX(newLoc.mX);
+        mImageView.setTranslationY(newLoc.mY);
     }
 
     /**
@@ -80,6 +80,7 @@ public class PathAnimationActivity extends AppCompatActivity {
         final ObjectAnimator anim = ObjectAnimator.ofObject(this, "buttonLoc",
                 new PathEvaluator(), path.getPoints().toArray());
         anim.setDuration(3000);
+        anim.start();
     }
 
     /**
