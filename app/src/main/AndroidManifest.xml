@@ -28,9 +28,11 @@
             </intent-filter>
         </activity>
 
+        <!--用于展示Animation，主要是属性动画-->
         <activity android:name="._05_animation.ViewAnimationActivity"/>
         <activity android:name="._05_animation.PropertyAnimationActivity"/>
         <activity android:name="._05_animation.DrawableAnimationActivity"/>
+        <activity android:name="._05_animation.PathAnimationActivity"/>
 
 
         <!--ApiDemo中部分动画展示-->

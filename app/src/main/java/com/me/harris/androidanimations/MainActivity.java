@@ -18,6 +18,7 @@ import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
 import com.me.harris.androidanimations._03_apidemo.YoutubeActivity;
 import com.me.harris.androidanimations._04_customView.activity.CustomViewActivity;
 import com.me.harris.androidanimations._05_animation.DrawableAnimationActivity;
+import com.me.harris.androidanimations._05_animation.PathAnimationActivity;
 import com.me.harris.androidanimations._05_animation.PropertyAnimationActivity;
 import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("ViewAnimation", ViewAnimationActivity.class));
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
+        list.add(new Pair<String, Class>("PathAnimation", PathAnimationActivity.class));
         list.add(new Pair<String, Class>("BouncingBalls", BouncingBalls.class));
         list.add(new Pair<String, Class>("ShadowCard", ShadowCardDrag.class));
         list.add(new Pair<String, Class>("CardImageView", MaterialWitness.class));
