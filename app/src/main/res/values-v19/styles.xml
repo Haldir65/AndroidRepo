@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--19以上版本会到这里来找Theme，可以添加一些api19以上共有的属性-->
+    <style name="AppTheme" parent="AppThemeBase">
+
+    </style>
+
+    <style name="translucentStatusBar" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+
+</resources>

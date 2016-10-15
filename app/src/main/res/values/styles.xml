@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -11,6 +11,17 @@
         类似的还有android:editTextStyle等等，想要全局修改某一种控件在整个App中或者整个Activity中的特定属性
         改Theme所需要的代码量最少-->
     </style>
+
+    <!--在这里添加一些针对全部api版本的item-->
+    <style name="AppTheme" parent="AppThemeBase">
+
+
+    </style>
+
+    <style name="translucentStatusBar" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
 
     <style name="CoordinateLayoutActivityTwoTheme" parent="Theme.Design.Light">
         <item name="colorPrimary">@color/md_blue_700</item>

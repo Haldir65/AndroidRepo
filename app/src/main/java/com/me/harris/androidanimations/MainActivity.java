@@ -23,10 +23,11 @@ import com.me.harris.androidanimations._05_animation.PropertyAnimationActivity;
 import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
-import com.me.harris.androidanimations.databinding.ActivityMainBinding;
-import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
 import com.me.harris.androidanimations._09_recyclerView.itemDecoration.MainAdapterItemDecoration;
+import com.me.harris.androidanimations._10_statusBar.StatusBarActivity_Activity_one;
+import com.me.harris.androidanimations.databinding.ActivityMainBinding;
+import com.me.harris.androidanimations.interfaces.GenericCallBack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view, Pair<String, Class> stringClassPair) {
                 Intent intent = new Intent(MainActivity.this, stringClassPair.second);
                 startActivity(intent);
+
             }
         });
         List<Pair<String, Class>> list = new ArrayList<>();
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("DrawableMainActivity", DrawableMainActivity.class));
         list.add(new Pair<String, Class>("Permission", MarshmallowPermissionActivity.class));
         list.add(new Pair<String, Class>("CoordinateLayout", CoordinateLayoutEntrance.class));
+        list.add(new Pair<String, Class>("StatusBar", StatusBarActivity_Activity_one.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="ControlRippleColorTheme" parent="AppTheme">
         <item name="android:colorControlHighlight">@color/md_purple_500</item>
     </style>
@@ -12,5 +13,11 @@
         <item name="android:theme">@style/SelectableItemTheme</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
+
+    <!--21以上版本会到这里来找theme，可以添加一些api21以上特有的属性-->
+    <style name="AppTheme" parent="AppThemeBase">
+
+    </style>
+
 
 </resources>

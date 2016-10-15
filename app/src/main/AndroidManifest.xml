@@ -77,6 +77,11 @@
             android:parentActivityName="._08_coordinateLayout.CoordinateLayoutEntrance"
             android:theme="@style/CoordinateLayoutActivityTwoTheme"/>
 
+        <!--用于测试沉浸式状态栏的问题-->
+        <activity android:name="._10_statusBar.StatusBarActivity_Activity_one"
+            android:parentActivityName=".MainActivity"/>
+
+
 
     </application>
 
