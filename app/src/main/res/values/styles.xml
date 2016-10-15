@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textViewStyle">@style/TextAppearance.AppCompat</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <!--android:textViewStyle相当于当前Theme中所有TextView的默认主题
         类似的还有android:editTextStyle等等，想要全局修改某一种控件在整个App中或者整个Activity中的特定属性
         改Theme所需要的代码量最少-->
