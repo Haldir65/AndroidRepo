@@ -51,7 +51,7 @@
         <!--用于展示ViewDragHelper-->
         <activity android:name="._03_apidemo.ViewDragHelperActivity"/>
         <activity android:name="._03_apidemo.YoutubeActivity"/>
-        <activity android:name="._03_apidemo.LoaderActivity"/>
+        <activity android:name="._11_Loader.LoaderActivity"/>
 
         <!--展示各种Drawable使用方式入口-->
         <activity android:name="._01_drawable.activity.DrawableMainActivity"/>

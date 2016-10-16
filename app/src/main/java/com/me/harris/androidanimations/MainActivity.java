@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations._03_apidemo.BouncingBalls;
-import com.me.harris.androidanimations._03_apidemo.LoaderActivity;
+import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._03_apidemo.MaterialWitness;
 import com.me.harris.androidanimations._03_apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
