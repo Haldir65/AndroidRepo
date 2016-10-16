@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         if (BuildConfig.DEBUG) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                    .detectDiskReads()
+                    .detectDiskReads()  //主线程上调用File.exists()方法就会出error Log
                     .detectDiskWrites()
                     .detectNetwork()   // or .detectAll() for all detectable problems
                     .penaltyLog()

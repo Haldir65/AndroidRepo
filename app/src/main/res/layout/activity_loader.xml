@@ -8,12 +8,6 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:text="implementation of Loader onAndroid"/>
 
     </LinearLayout>
 </layout>
