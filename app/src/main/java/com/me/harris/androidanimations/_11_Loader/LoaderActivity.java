@@ -31,12 +31,12 @@ public class LoaderActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_loader);
-
+        setSupportActionBar(binding.toolbar);
         // Create the ListFragment and add it as our sole content.
         FragmentManager fm = getSupportFragmentManager();
-        if (fm.findFragmentById(android.R.id.content) == null) {
+        if (fm.findFragmentById(R.id.frameLayout) == null) {
             AppListFragment list = new AppListFragment();
-            fm.beginTransaction().add(android.R.id.content, list).commit();
+            fm.beginTransaction().add(R.id.frameLayout, list).commit();
         }
     }
 

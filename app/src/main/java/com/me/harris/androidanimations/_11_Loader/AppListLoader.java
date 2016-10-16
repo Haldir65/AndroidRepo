@@ -10,6 +10,8 @@ import android.content.pm.PackageManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
 
+import com.me.harris.androidanimations.utils.LogUtil;
+
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,6 +38,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
         // The superclass constructor will store a reference to the Application
         // Context instead, and can be retrieved with a call to getContext().
         super(ctx);
+        LogUtil.p("");//主线程
         mPm = getContext().getPackageManager();
     }
 
@@ -51,7 +54,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
     @Override
     public List<AppEntry> loadInBackground() {
         if (DEBUG) Log.i(TAG, "+++ loadInBackground() called! +++");
-
+        LogUtil.p("");// 子线程
         // Retrieve all installed applications.
         List<ApplicationInfo> apps = mPm.getInstalledApplications(0);
 
@@ -84,6 +87,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
      */
     @Override
     public void deliverResult(List<AppEntry> apps) {
+        LogUtil.p("");//主线程
         if (isReset()) {
             if (DEBUG) Log.w(TAG, "+++ Warning! An async query came in while the Loader was reset! +++");
             // The Loader has been reset; ignore the result and invalidate the data.
