@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
@@ -78,7 +77,7 @@ public class MySurfaceView extends SurfaceView {
     }
 
     public void drawSomething(Canvas canvas) {
-        canvas.drawColor(Color.BLACK);
+
         canvas.drawBitmap(bmpIcon,
                 getWidth()/2, getHeight()/2, null);
 
