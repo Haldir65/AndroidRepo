@@ -10,6 +10,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
 
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
+import com.me.harris.androidanimations._02_surfaceview.SurfaceViewActivity;
 import com.me.harris.androidanimations._03_apidemo.BouncingBalls;
 import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._03_apidemo.MaterialWitness;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        mAdapter = new MainAdapter(R.layout.item_main, new GenericCallBack<Pair<String, Class>>() {
+        mAdapter = new MainAdapter<Pair<String, Class>>(R.layout.item_main, new GenericCallBack<Pair<String, Class>>() {
             @Override
             public void onClick(View view, Pair<String, Class> stringClassPair) {
                 Intent intent = new Intent(MainActivity.this, stringClassPair.second);
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("Permission", MarshmallowPermissionActivity.class));
         list.add(new Pair<String, Class>("CoordinateLayout", CoordinateLayoutEntrance.class));
         list.add(new Pair<String, Class>("StatusBar", StatusBarActivity_Activity_one.class));
+        list.add(new Pair<String, Class>("SurfaceView", SurfaceViewActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
