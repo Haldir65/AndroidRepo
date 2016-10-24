@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.me.harris.androidanimations.interfaces.ActionCallBack"/>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <TableRow
+            android:id="@+id/tabRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="allocate stuffs"
+                />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="Allocate Objects"
+                android:textAllCaps="false"
+                />
+
+        </TableRow>
+
+
+        <TableRow
+            android:id="@+id/tabRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="allocate stuffs"
+                />
+
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="make heap fragment"
+                android:textAllCaps="false"
+
+                />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tabRow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="How many ram available"
+                />
+
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="Remaining Ram"
+                android:textAllCaps="false"
+                />
+
+            <TextView
+                android:id="@+id/textViewRam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                tools:text="Remaining Ram"
+
+                />
+
+        </TableRow>
+
+
+        <TableRow
+            android:id="@+id/tabRow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/textview4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="Let's  OOM"
+                />
+
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="now we create bitmap"
+                android:textAllCaps="false"
+                />
+
+        </TableRow>
+
+
+    </LinearLayout>
+</layout>

@@ -12,7 +12,6 @@ import android.view.View;
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations._02_surfaceview.SurfaceViewActivity;
 import com.me.harris.androidanimations._03_apidemo.BouncingBalls;
-import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._03_apidemo.MaterialWitness;
 import com.me.harris.androidanimations._03_apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
@@ -27,7 +26,8 @@ import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntr
 import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
 import com.me.harris.androidanimations._09_recyclerView.itemDecoration.MainAdapterItemDecoration;
 import com.me.harris.androidanimations._10_statusBar.StatusBarActivity_Activity_one;
-import com.me.harris.androidanimations._12_FileProvider.FileProviderActivity;
+import com.me.harris.androidanimations._11_Loader.LoaderActivity;
+import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Pair<String, Class>("CoordinateLayout", CoordinateLayoutEntrance.class));
         list.add(new Pair<String, Class>("StatusBar", StatusBarActivity_Activity_one.class));
         list.add(new Pair<String, Class>("SurfaceView", SurfaceViewActivity.class));
-        list.add(new Pair<String, Class>("FileProvider", FileProviderActivity.class));
+        list.add(new Pair<String, Class>("OutOfMemoryActivity", OutOfMemoryActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
