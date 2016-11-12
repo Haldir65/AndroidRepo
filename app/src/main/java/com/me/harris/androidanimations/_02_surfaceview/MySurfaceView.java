@@ -10,6 +10,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.me.harris.androidanimations.R;
+import com.me.harris.androidanimations.utils.LogUtil;
 
 /**
  * Created by Fermi on 2016/10/18.
@@ -53,17 +54,21 @@ public class MySurfaceView extends SurfaceView {
             public void surfaceCreated(SurfaceHolder holder) {
                 myThread.setRunning(true);
                 myThread.start();
+                LogUtil.w("");
 
             }
 
             @Override
             public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+                LogUtil.w("");
+
             }
 
             @Override
             public void surfaceDestroyed(SurfaceHolder holder) {
                 boolean retry = true;
                 myThread.setRunning(false);
+                LogUtil.w("");
                 while (retry) {
                     try {
                         myThread.join();
