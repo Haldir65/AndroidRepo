@@ -8,9 +8,9 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityPermissionBinding;
 import com.me.harris.androidanimations.interfaces.ActionCallBack;
@@ -22,7 +22,7 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
  * Created by Harris on 2016/10/10.
  */
 
-public class MarshmallowPermissionActivity extends AppCompatActivity {
+public class MarshmallowPermissionActivity extends BaseAppCompatActivity {
     ActivityPermissionBinding binding;
 
     @Override
@@ -40,6 +40,7 @@ public class MarshmallowPermissionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        handleStatusBar();
 
     }
 

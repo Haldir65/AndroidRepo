@@ -3,8 +3,8 @@ package com.me.harris.androidanimations._01_drawable.activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations._01_drawable.fragment.DrawableMainFragment;
 import com.me.harris.androidanimations.databinding.ActivityCanvasBinding;
@@ -13,7 +13,7 @@ import com.me.harris.androidanimations.databinding.ActivityCanvasBinding;
  * Created by Fermi on 2016/10/8.
  */
 
-public class DrawableMainActivity extends AppCompatActivity {
+public class DrawableMainActivity extends BaseAppCompatActivity {
     ActivityCanvasBinding binding;
 
     @Override
@@ -26,6 +26,7 @@ public class DrawableMainActivity extends AppCompatActivity {
                 beginTransaction().
                 add(R.id.frameLayout, DrawableMainFragment.newInstance()).
                 commit();
+        handleStatusBar();
     }
 
     public void setToolBarTitle(String simpleName) {
