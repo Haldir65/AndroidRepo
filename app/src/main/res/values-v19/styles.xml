@@ -5,6 +5,10 @@
 
     </style>
 
+    <style name="ControlRippleColorTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
     <style name="translucentStatusBar" parent="AppTheme">
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>

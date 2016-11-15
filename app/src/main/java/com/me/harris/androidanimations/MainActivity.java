@@ -2,6 +2,7 @@ package com.me.harris.androidanimations;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.util.Pair;
@@ -30,6 +31,7 @@ import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
+import com.me.harris.androidanimations.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new MainAdapter<Pair<String, Class>>(R.layout.item_main, new GenericCallBack<Pair<String, Class>>() {
             @Override
             public void onClick(View view, Pair<String, Class> stringClassPair) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                    Class alass = stringClassPair.second;
+                    if (alass == MaterialWitness.class) { //Class is final, so its equals() cannot be overridden. Its equals() method is inherited from Object using ==
+                        ToastUtils.showTextShort(MainActivity.this,"当前API版本低于5.0！");
+                        return;
+                    }
+                }
                 Intent intent = new Intent(MainActivity.this, stringClassPair.second);
                 startActivity(intent);
 

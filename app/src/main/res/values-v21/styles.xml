@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ControlRippleColorTheme" parent="AppTheme">
+    <style name="ControlRippleColorTheme" parent="translucentStatusBar">
         <item name="android:colorControlHighlight">@color/md_purple_500</item>
     </style>
 
