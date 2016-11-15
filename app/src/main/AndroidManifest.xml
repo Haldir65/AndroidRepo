@@ -21,7 +21,8 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/ControlRippleColorTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -46,6 +47,7 @@
         <activity
             android:name="._04_customView.activity.CustomViewActivity"
             android:theme="@style/ControlRippleColorTheme"
+            android:parentActivityName=".MainActivity"
             />
 
         <!--用于展示ViewDragHelper-->

@@ -6,7 +6,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.util.Pair;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
 
@@ -36,7 +35,7 @@ import com.me.harris.androidanimations.utils.ToastUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseAppCompatActivity {
 
     ActivityMainBinding binding;
     private MainAdapter mAdapter;
@@ -97,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         binding.recyclerView.addItemDecoration(new MainAdapterItemDecoration(this));
         binding.toolbar.setTitle(getClass().getSimpleName());
+        handleStatusBar();
     }
 
 
