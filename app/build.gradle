@@ -50,8 +50,8 @@ dependencies {
     compile "com.android.support:support-core-utils:${supportLibVersion}"
     compile "com.android.support:support-compat:${supportLibVersion}"
     compile "com.android.support:design:${supportLibVersion}"
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta3'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 }

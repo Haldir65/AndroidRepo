@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.me.harris.androidanimations.R"/>
+        <variable
+            name="callback"
+            type="com.me.harris.androidanimations.interfaces.ActionCallBack" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+      <android.support.v7.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"/>
+
+        <com.me.harris.androidanimations._04_customView.widget.roundedDrawable.RoundedImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerCrop"
+            app:imageSrcId="@{R.drawable.image_17}"
+            app:riv_oval="true"
+            />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day"
+            android:textAllCaps="false"
+            android:onClick="@{(v) -> callback.onClickView(v)}"
+            android:layout_below="@id/imageView"
+            android:layout_alignLeft="@id/imageView"
+            android:textColor="?attr/colorPrimary"
+            />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Night"
+            android:textAllCaps="false"
+            android:onClick="@{(v) -> callback.onClickView(v)}"
+            android:layout_below="@id/button1"
+            android:layout_alignRight="@id/imageView"
+            android:layout_alignTop="@id/button1"
+            android:textColor="?attr/colorPrimary"
+
+            />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System"
+            android:textAllCaps="false"
+            android:onClick="@{(v) -> callback.onClickView(v)}"
+            android:layout_below="@id/button1"
+            android:layout_alignLeft="@id/imageView"
+            android:textColor="?attr/colorPrimary"
+
+            />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto"
+            android:textAllCaps="false"
+            android:onClick="@{(v) -> callback.onClickView(v)}"
+            android:layout_below="@id/button1"
+            android:layout_alignRight="@id/imageView"
+            android:layout_alignTop="@id/button3"
+            android:textColor="?attr/colorPrimary"
+
+            />
+
+    </RelativeLayout>
+</layout>
