@@ -15,23 +15,14 @@ Android Graphic和Animation的一些整理
 [CoordinateLayout](http://saulmm.github.io/mastering-coordinator)<br/>
 [CoordinateLayoutTest](http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/)<br/>
 [Loader](https://medium.com/google-developers/making-loading-data-on-android-lifecycle-aware-897e12760832#.y6t5axsfw)<br/>
-[AppListLoader](https://github.com/alexjlockwood/adp-applistloader)
-[SwipeBackLayout]右划finish的Activity
+[AppListLoader](https://github.com/alexjlockwood/adp-applistloader)<br/>
+[SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout)右划finish的Activity<br/>
 
 感谢以上作者
 
-- 关于Drawable
-Drawable的 Direct SubClass
-AnimatedVectorDrawable, AnimatedVectorDrawableCompat, BitmapDrawable, ColorDrawable,
-DrawableContainer, DrawableWrapper, DrawerArrowDrawable, GradientDrawable, LayerDrawable,
- NinePatchDrawable, PictureDrawable, RoundedBitmapDrawable, ShapeDrawable, VectorDrawable, VectorDrawableCompat
-
-InDirect SubClass
-AnimatedStateListDrawable, AnimationDrawable, ClipDrawable, InsetDrawable,
-LevelListDrawable, PaintDrawable, RippleDrawable, RotateDrawable, ScaleDrawable, StateListDrawable, TransitionDrawable
-
 
 ###Todo
-1. 关于ActivityOptions，参考playStore点击后SharedElements的缩放，主要是动画
-
+- [ ] 关于ActivityOptions，参考playStore点击后SharedElements的缩放，主要是动画
+- [ ] 包装SwipeBackLayout到BaseActivity中
+- [ X ] 添加OpenGlES Demo
 ~~~~
