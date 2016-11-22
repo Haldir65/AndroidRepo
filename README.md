@@ -17,6 +17,7 @@ Android Graphic和Animation的一些整理
 - [Loader](https://medium.com/google-developers/making-loading-data-on-android-lifecycle-aware-897e12760832#.y6t5axsfw) 	Medium上的关于Loader的解释 
 - [AppListLoader](https://github.com/alexjlockwood/adp-applistloader) 	谷歌员工提供的Loader查询设备上已安装App信息的Demo 
 - [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout) 	右划finish的Activity 
+- [Android：会呼吸的悬浮气泡](http://www.jianshu.com/p/5a672bac5ba9) 简书作者
 
 感谢以上作者
 
