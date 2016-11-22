@@ -28,7 +28,6 @@ public class CustomViewActivity extends BaseAppCompatActivity implements OnApply
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.frameLayout, canvasMainFragment.newInstance()).commit();
         setSupportActionBar(binding.toolbar);
-        handleStatusBar();
         ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(),this);
     }
 

@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ListView;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityPropertyBinding;
 import com.me.harris.androidanimations.interfaces.ActionCallBack;
@@ -36,7 +37,7 @@ import static android.animation.ValueAnimator.REVERSE;
  *   KeyFrame问题
  */
 
-public class PropertyAnimationActivity extends AppCompatActivity implements ActionCallBack {
+public class PropertyAnimationActivity extends BaseAppCompatActivity implements ActionCallBack {
     ActivityPropertyBinding binding;
 
     @Override

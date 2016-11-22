@@ -3,13 +3,13 @@ package com.me.harris.androidanimations._03_apidemo;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityYoutubeBinding;
 
@@ -17,7 +17,7 @@ import com.me.harris.androidanimations.databinding.ActivityYoutubeBinding;
  * Created by Fermi on 2016/10/2.
  */
 
-public class YoutubeActivity extends AppCompatActivity {
+public class YoutubeActivity extends BaseAppCompatActivity {
     ActivityYoutubeBinding binding;
 
     @Override

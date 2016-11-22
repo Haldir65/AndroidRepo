@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ import java.util.Collection;
  * limitations under the License.
  */
 
-public class PathAnimationActivity extends AppCompatActivity {
+public class PathAnimationActivity extends BaseAppCompatActivity {
     ImageView mImageView;
     Button mButton;
     CheckBox mCheckbox;

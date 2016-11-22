@@ -26,7 +26,6 @@ public class DrawableMainActivity extends BaseAppCompatActivity {
                 beginTransaction().
                 add(R.id.frameLayout, DrawableMainFragment.newInstance()).
                 commit();
-        handleStatusBar();
     }
 
     public void setToolBarTitle(String simpleName) {

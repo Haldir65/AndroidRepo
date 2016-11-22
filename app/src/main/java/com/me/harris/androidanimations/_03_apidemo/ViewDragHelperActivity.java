@@ -19,6 +19,5 @@ public class ViewDragHelperActivity extends BaseAppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_view_drag);
-        handleStatusBar();
     }
 }

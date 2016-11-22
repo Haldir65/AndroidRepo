@@ -40,7 +40,6 @@ public class MarshmallowPermissionActivity extends BaseAppCompatActivity {
                 startActivity(intent);
             }
         });
-        handleStatusBar();
 
     }
 

@@ -3,8 +3,8 @@ package com.me.harris.androidanimations._05_animation;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityPropertyBinding;
 import com.me.harris.androidanimations.utils.LogUtil;
@@ -14,7 +14,7 @@ import com.me.harris.androidanimations.utils.Utils;
  * Created by Harris on 2016/9/13.
  */
 
-public class ViewAnimationActivity extends AppCompatActivity {
+public class ViewAnimationActivity extends BaseAppCompatActivity {
 
     ActivityPropertyBinding binding;
 

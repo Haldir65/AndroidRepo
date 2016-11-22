@@ -9,12 +9,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityLoaderBinding;
 
@@ -24,7 +24,7 @@ import java.util.List;
  * Created by Fermi on 2016/10/2.
  */
 
-public class LoaderActivity extends AppCompatActivity {
+public class LoaderActivity extends BaseAppCompatActivity {
     ActivityLoaderBinding binding;
 
     @Override

@@ -4,9 +4,9 @@ import android.databinding.DataBindingUtil;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityDrawableBinding;
 
@@ -14,7 +14,7 @@ import com.me.harris.androidanimations.databinding.ActivityDrawableBinding;
  * Created by Harris on 2016/9/13.
  */
 
-public class DrawableAnimationActivity extends AppCompatActivity implements View.OnClickListener {
+public class DrawableAnimationActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
     ActivityDrawableBinding binding;
 

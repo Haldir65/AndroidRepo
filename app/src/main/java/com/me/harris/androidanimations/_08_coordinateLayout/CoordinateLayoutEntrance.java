@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityCoordinateEntranceBinding;
 import com.me.harris.androidanimations.interfaces.ActionCallBack;
@@ -15,7 +15,7 @@ import com.me.harris.androidanimations.interfaces.ActionCallBack;
  * Created by Harris on 2016/10/12.
  */
 
-public class CoordinateLayoutEntrance extends AppCompatActivity implements ActionCallBack {
+public class CoordinateLayoutEntrance extends BaseAppCompatActivity implements ActionCallBack {
     ActivityCoordinateEntranceBinding binding;
 
     @Override

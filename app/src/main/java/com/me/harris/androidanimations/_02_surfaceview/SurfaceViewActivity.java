@@ -19,6 +19,5 @@ public class SurfaceViewActivity extends BaseAppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        handleStatusBar();
     }
 }

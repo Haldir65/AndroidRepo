@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ import java.util.ArrayList;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class ShadowCardDrag extends Activity {
+public class ShadowCardDrag extends BaseAppCompatActivity {
     private static final float MAX_Z_DP = 10;
     private static final float MOMENTUM_SCALE = 10;
     private static final int MAX_ANGLE = 10;
