@@ -23,4 +23,14 @@
 那么新帅人选到底是谁？从目前足球圈内反映的情况看，新帅非常有可能来自欧洲，甚至有业内人士将中国队的帅位与荷兰名帅希丁克联系到一起。无论如何，4轮仅积1分的中国队理论上还没有出局，中国足协在这个时候选择换帅相对来说还算及时。只不过，综合已经结束的4轮12强赛战况看，中国队不赢球除了教练员需要担责外，技不如人依然是重要原因。而无论新帅何许人也，想在短期内改变中国足球技术能力整体低下的局面都不大现实，中国队仍在煎熬中努力着，只不过对于能否出线这个问题，现场的球迷与中国记者相信都有着理智的判断。</string>
     <string name="activity_title">Installed Applications</string>
     <string name="menu_configure_locale">Change language</string>
+
+    <string name="action_github">Github</string>
+    <string name="start_activity">Start new activity!</string>
+    <string name="finish_activity">Finish Activity</string>
+
+    <string name="key_tracking_mode">key_tracking_mode</string>
+    <string name="tracking_mode_left">Left</string>
+    <string name="tracking_mode_right">Right</string>
+    <string name="tracking_mode_bottom">Bottom</string>
+    <string name="tracking_mode_all">All</string>
 </resources>

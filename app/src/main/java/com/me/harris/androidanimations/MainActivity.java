@@ -30,6 +30,7 @@ import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
 import com.me.harris.androidanimations._13_night_mode.DayNightActivity;
 import com.me.harris.androidanimations._14_openGL_ES.OpenGLES20Activity;
+import com.me.harris.androidanimations._15_swipeBackLayout.demo.SwipeBackDemoActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -95,6 +96,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("OutOfMemoryActivity", OutOfMemoryActivity.class));
         list.add(new Pair<String, Class>("DayNightActivity", DayNightActivity.class));
         list.add(new Pair<String, Class>("OpenGLES20Activity", OpenGLES20Activity.class));
+        list.add(new Pair<String, Class>("SwipeBackDemoActivity", SwipeBackDemoActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

@@ -12,6 +12,9 @@
     <uses-permission
         android:name="android.permission.READ_CONTACTS"
         android:maxSdkVersion="22"/>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -99,6 +102,8 @@
             android:theme="@style/DayNightDemo"
             />
         <activity android:name="._14_openGL_ES.OpenGLES20Activity"/>
+
+        <activity android:name="._15_swipeBackLayout.demo.SwipeBackDemoActivity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.harris.me.fileprovider"

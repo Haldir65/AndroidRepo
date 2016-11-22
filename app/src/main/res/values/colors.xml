@@ -7,4 +7,10 @@
     <color name="two">#85cdd4</color>
     <color name="three">#48afb6</color>
     <color name="four">#22737b</color>
+
+    <color name="androidColorA">#33B5E5</color>
+    <color name="androidColorB">#AA66CC</color>
+    <color name="androidColorC">#99CC00</color>
+    <color name="androidColorD">#FFBB33</color>
+    <color name="androidColorE">#FF4444</color>
 </resources>
