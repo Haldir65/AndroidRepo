@@ -24,5 +24,5 @@ Android Graphic和Animation的一些整理
 ###Todo
 - [ ] 关于ActivityOptions，参考playStore点击后SharedElements的缩放，主要是动画
 - [ ] 包装SwipeBackLayout到BaseActivity中
-- [ X ] 添加OpenGlES Demo
+- [X] 添加OpenGlES Demo
 ~~~~
