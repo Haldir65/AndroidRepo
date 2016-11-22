@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.design.widget.Snackbar;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
@@ -104,6 +105,14 @@ public class MainActivity extends BaseAppCompatActivity {
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         binding.recyclerView.addItemDecoration(new MainAdapterItemDecoration(this));
         binding.toolbar.setTitle(getClass().getSimpleName());
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "AweSome Stuffs", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
     }
 
 
