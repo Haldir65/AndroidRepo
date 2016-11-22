@@ -98,6 +98,7 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/DayNightDemo"
             />
+        <activity android:name="._14_openGL_ES.OpenGLES20Activity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.harris.me.fileprovider"
