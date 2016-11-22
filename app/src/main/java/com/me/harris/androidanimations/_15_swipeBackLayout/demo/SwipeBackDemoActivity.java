@@ -81,6 +81,7 @@ public class SwipeBackDemoActivity extends SwipeBackActivity implements View.OnC
         });
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();

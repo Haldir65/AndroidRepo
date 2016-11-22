@@ -24,7 +24,12 @@ public class FloatingBubbleActivity extends BaseAppCompatActivity {
         // 给SurfaceView设置一个绘制者
         mFloatingBubble.setDrawer(bubbleDrawer);
     }
-    
+
+    @Override
+    public void setStatusBarMode(boolean isFullScreen) {
+        //do nothing here , full screen for those bubble !
+    }
+
     @Override
     protected void onResume() {
         super.onResume();

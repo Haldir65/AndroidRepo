@@ -107,7 +107,8 @@
             />
         <activity android:name="._14_openGL_ES.OpenGLES20Activity"/>
 
-        <activity android:name="._15_swipeBackLayout.demo.SwipeBackDemoActivity"/>
+        <activity android:name="._15_swipeBackLayout.demo.SwipeBackDemoActivity"
+            android:theme="@style/AppTheme"/>
 
         <activity android:name="._16_floatingBubble.FloatingBubbleActivity"
             />
