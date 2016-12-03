@@ -99,8 +99,9 @@
             android:theme="@style/DayNightDemo"
             />
 
-        <activity android:name="._14_popup_Window.PopupWindowActivity"
+        <activity android:name="._17_popup_Window.PopupWindowActivity"
             android:parentActivityName=".MainActivity"/>
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"

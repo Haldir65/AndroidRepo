@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations._02_surfaceview.SurfaceViewActivity;
-import com.me.harris.androidanimations._03_apidemo.BouncingBalls;
+import com.me.harris.androidanimations._03_apidemo.BouncingBallsActivity;
 import com.me.harris.androidanimations._03_apidemo.MaterialWitness;
 import com.me.harris.androidanimations._03_apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
@@ -29,7 +29,7 @@ import com.me.harris.androidanimations._10_statusBar.StatusBarActivity_Activity_
 import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
 import com.me.harris.androidanimations._13_night_mode.DayNightActivity;
-import com.me.harris.androidanimations._14_popup_Window.PopupWindowActivity;
+import com.me.harris.androidanimations._17_popup_Window.PopupWindowActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -80,7 +80,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
         list.add(new Pair<String, Class>("PathAnimation", PathAnimationActivity.class));
-        list.add(new Pair<String, Class>("BouncingBalls", BouncingBalls.class));
+        list.add(new Pair<String, Class>("BouncingBalls", BouncingBallsActivity.class));
         list.add(new Pair<String, Class>("ShadowCard", ShadowCardDrag.class));
         list.add(new Pair<String, Class>("CardImageView", MaterialWitness.class));
         list.add(new Pair<String, Class>("CustomView", CustomViewActivity.class));
@@ -100,7 +100,7 @@ public class MainActivity extends BaseAppCompatActivity {
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         binding.recyclerView.addItemDecoration(new MainAdapterItemDecoration(this));
         binding.toolbar.setTitle(getClass().getSimpleName());
-        handleStatusBar();
+        handleTintMode();
     }
 
 
