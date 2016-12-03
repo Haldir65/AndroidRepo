@@ -5,14 +5,13 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.design.widget.Snackbar;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
 
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations._02_surfaceview.SurfaceViewActivity;
-import com.me.harris.androidanimations._03_apidemo.BouncingBallsActivity;
+import com.me.harris.androidanimations._03_apidemo.BouncingBalls;
 import com.me.harris.androidanimations._03_apidemo.MaterialWitness;
 import com.me.harris.androidanimations._03_apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
@@ -30,9 +29,7 @@ import com.me.harris.androidanimations._10_statusBar.StatusBarActivity_Activity_
 import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
 import com.me.harris.androidanimations._13_night_mode.DayNightActivity;
-import com.me.harris.androidanimations._14_openGL_ES.OpenGLES20Activity;
-import com.me.harris.androidanimations._15_swipeBackLayout.demo.SwipeBackDemoActivity;
-import com.me.harris.androidanimations._16_floatingBubble.FloatingBubbleActivity;
+import com.me.harris.androidanimations._14_popup_Window.PopupWindowActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -83,7 +80,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
         list.add(new Pair<String, Class>("PathAnimation", PathAnimationActivity.class));
-        list.add(new Pair<String, Class>("BouncingBalls", BouncingBallsActivity.class));
+        list.add(new Pair<String, Class>("BouncingBalls", BouncingBalls.class));
         list.add(new Pair<String, Class>("ShadowCard", ShadowCardDrag.class));
         list.add(new Pair<String, Class>("CardImageView", MaterialWitness.class));
         list.add(new Pair<String, Class>("CustomView", CustomViewActivity.class));
@@ -97,22 +94,13 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("SurfaceView", SurfaceViewActivity.class));
         list.add(new Pair<String, Class>("OutOfMemoryActivity", OutOfMemoryActivity.class));
         list.add(new Pair<String, Class>("DayNightActivity", DayNightActivity.class));
-        list.add(new Pair<String, Class>("OpenGLES20Activity", OpenGLES20Activity.class));
-        list.add(new Pair<String, Class>("SwipeBackDemoActivity", SwipeBackDemoActivity.class));
-        list.add(new Pair<String, Class>("FloatingBubbleActivity", FloatingBubbleActivity.class));
+        list.add(new Pair<String, Class>("PopupWindowActivity", PopupWindowActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         binding.recyclerView.addItemDecoration(new MainAdapterItemDecoration(this));
         binding.toolbar.setTitle(getClass().getSimpleName());
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "AweSome Stuffs", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        handleStatusBar();
     }
 
 
