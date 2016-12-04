@@ -4,18 +4,20 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.CompoundButton;
 
 import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityAnimateBindingBinding;
 import com.me.harris.androidanimations.interfaces.ActionCallBack;
+import com.me.harris.androidanimations.interfaces.onCheckChangedCallback;
 
 /**
  * https://medium.com/google-developers/android-data-binding-animations-55f6b5956a64#.t71lgcjch
  * Created by Fermi on 2016/12/4.
  */
 
-public class AnimatingBindingActivity extends BaseAppCompatActivity implements ActionCallBack {
+public class AnimatingBindingActivity extends BaseAppCompatActivity implements ActionCallBack, onCheckChangedCallback {
     private ActivityAnimateBindingBinding binding;
     private GirlsAlpha data;
 
@@ -29,6 +31,7 @@ public class AnimatingBindingActivity extends BaseAppCompatActivity implements A
         data.setVisibility(R.id.finalVisibility);
         binding.setData(data);
         binding.setCallback(this);
+       binding.setPresenter(this);
 
     /* another way of doing things
     binding.addOnRebindCallback(new OnRebindCallback() {
@@ -46,5 +49,14 @@ public class AnimatingBindingActivity extends BaseAppCompatActivity implements A
     public void onClickView(View view) {
         //change data , make it reflect view appearance
         data.setVisibility(data.getVisibility() == 0 ? R.id.finalVisibility : 0);
+    }
+
+    /** CheckBox的onCheckChanged回调
+     * @param compoundButton
+     * @param checked
+     */
+    @Override
+    public void completeChanged(CompoundButton compoundButton, boolean checked) {
+        data.setVisibility(data.getVisibility() == View.VISIBLE?View.INVISIBLE:View.INVISIBLE);
     }
 }
