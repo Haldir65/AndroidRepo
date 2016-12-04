@@ -42,13 +42,16 @@ public class PopupWindowActivity extends BaseAppCompatActivity implements Action
     public void onClickView(View view) {
         switch (view.getId()) {
             case R.id.button_1:
-
+                showPopTop();
                 break;
             case R.id.button_2:
+                showPopBottom();
                 break;
-            case R.id.button3:
+            case R.id.button_3:
+                showPopListView();
                 break;
             case R.id.button_4:
+                showPopMenu();
                 break;
             default:
                 break;

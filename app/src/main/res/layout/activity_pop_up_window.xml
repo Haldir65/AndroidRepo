@@ -14,7 +14,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"/>
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -27,6 +28,8 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="Bottom"
+                android:layout_centerHorizontal="true"
                 />
             <Button
                 android:id="@+id/button_2"
@@ -34,6 +37,9 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="Top"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/button_1"
                 />
             <Button
                 android:id="@+id/button_3"
@@ -41,6 +47,9 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="listView"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/button_2"
                 />
 
             <Button
@@ -49,6 +58,9 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:text="menu"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/button_3"
                 />
 
         </RelativeLayout>
