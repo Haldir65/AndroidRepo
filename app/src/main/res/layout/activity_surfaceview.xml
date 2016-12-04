@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:fitsSystemWindows="true"
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
 
-              android:orientation="vertical">
+                    android:orientation="vertical">
 
-    <include layout="@layout/include_toolbar"/>
+        <include
+            android:id="@+id/included_toolbar"
+            layout="@layout/include_toolbar"/>
 
-    <com.me.harris.androidanimations._02_surfaceview.MySurfaceView
-        android:id="@+id/surfaceView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        />
+        <com.me.harris.androidanimations._02_surfaceview.MySurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            />
 
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

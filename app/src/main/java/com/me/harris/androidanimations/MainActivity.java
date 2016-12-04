@@ -30,6 +30,7 @@ import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
 import com.me.harris.androidanimations._13_night_mode.DayNightActivity;
 import com.me.harris.androidanimations._17_popup_Window.PopupWindowActivity;
+import com.me.harris.androidanimations._18_animating_binding.AnimatingBindingActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -95,6 +96,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("OutOfMemoryActivity", OutOfMemoryActivity.class));
         list.add(new Pair<String, Class>("DayNightActivity", DayNightActivity.class));
         list.add(new Pair<String, Class>("PopupWindowActivity", PopupWindowActivity.class));
+        list.add(new Pair<String, Class>("AnimateBinding", AnimatingBindingActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
