@@ -19,4 +19,5 @@ public class GirlsAlpha extends BaseObservable {
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
+
 }
