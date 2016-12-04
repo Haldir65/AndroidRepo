@@ -65,7 +65,7 @@ public class BindingAdapters {
         ObjectAnimator alpha = ObjectAnimator.ofFloat(view,
                 View.ALPHA, startAlpha, endAlpha);
         alpha.setAutoCancel(true);
-
+        alpha.setDuration(3000);
         alpha.addListener(new AnimatorListenerAdapter() {
             private boolean isCanceled;
 
