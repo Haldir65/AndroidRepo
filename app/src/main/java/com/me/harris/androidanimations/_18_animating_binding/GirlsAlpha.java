@@ -12,6 +12,10 @@ public class GirlsAlpha extends BaseObservable {
     @Bindable
     private boolean visible;
 
+    @Bindable
+    private int visibility;
+
+
     public boolean isVisible() {
         return visible;
     }
@@ -20,4 +24,11 @@ public class GirlsAlpha extends BaseObservable {
         this.visible = visible;
     }
 
+    public int getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(int visibility) {
+        this.visibility = visibility;
+    }
 }

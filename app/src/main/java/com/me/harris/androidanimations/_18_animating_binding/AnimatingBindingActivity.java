@@ -25,13 +25,26 @@ public class AnimatingBindingActivity extends BaseAppCompatActivity implements A
         binding = DataBindingUtil.setContentView(this, R.layout.activity_animate_binding);
         setSupportActionBar(binding.includedToolbar.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        data = new GirlsAlpha();
+        data.setVisibility(R.id.finalVisibility);
         binding.setData(data);
         binding.setCallback(this);
+
+    /* another way of doing things
+    binding.addOnRebindCallback(new OnRebindCallback() {
+            @Override
+            public boolean onPreBind(ViewDataBinding binding) {
+                TransitionManager.beginDelayedTransition(
+                        (ViewGroup)binding.getRoot());
+                return super.onPreBind(binding);
+            }
+        });*/
 
     }
 
     @Override
     public void onClickView(View view) {
         //change data , make it reflect view appearance
+        data.setVisibility(data.getVisibility() == 0 ? R.id.finalVisibility : 0);
     }
 }

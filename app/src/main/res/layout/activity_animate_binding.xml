@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,24 +29,44 @@
                 android:id="@+id/imageView_1"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/included_toolbar"
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="30dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_16"
                 android:onClick="@{(v) -> callback.onClickView(v)}"
-                app:androidVisiblity= "@{data.vi}"/>
+                app:animatedVisibility= "@{data.visibility}"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imageView_1"
+                android:layout_alignTop="@id/imageView_1"
+                android:text="capa"/>
 
             <ImageView
+                android:id="@+id/imageView_2"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imageView_1"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_18"
                 android:onClick="@{(v) -> callback.onClickView(v)}"
+                app:animatedVisibility= "@{data.visibility}"
                 />
 
-        </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkbox_2"
+                android:text="kapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imageView_2"
+                android:layout_alignTop="@id/imageView_2"/>
+
+        </RelativeLayout>
 
     </ScrollView>
 </layout>
