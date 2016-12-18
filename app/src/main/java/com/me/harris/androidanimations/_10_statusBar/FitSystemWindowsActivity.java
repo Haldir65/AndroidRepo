@@ -32,13 +32,13 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
         mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         mImage = (ImageView) findViewById(R.id.image);
         mImage.setOnClickListener(this);
-        setFullSreen();
+
 
     }
 
     @Override
-    public void setStatusBarMode(boolean isFullScreen) {
-
+    public void onSetStatusBarMode() {
+       setFullSreen();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -46,9 +46,11 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
     public void onClick(View view) {
         flag = !flag;
         if (flag) {
-            setStatusBarColor(R.color.md_amber_A100);
+            moveContentViewDownWards();
+
         } else {
-            setFullSreen();
+            moveContentViewupwards();
+
         }
     }
 

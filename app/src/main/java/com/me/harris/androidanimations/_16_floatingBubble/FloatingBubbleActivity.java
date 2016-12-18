@@ -26,7 +26,7 @@ public class FloatingBubbleActivity extends BaseAppCompatActivity {
     }
 
     @Override
-    public void setStatusBarMode(boolean isFullScreen) {
+    public void onSetStatusBarMode() {
         //do nothing here , full screen for those bubble !
     }
 

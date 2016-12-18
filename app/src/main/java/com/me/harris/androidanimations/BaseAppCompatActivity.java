@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.annotation.ColorRes;
 import android.support.annotation.LayoutRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,23 +27,14 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
-        setStatusBarMode(false);
+        onSetStatusBarMode();
     }
 
     /** 在setContentView之后会被调用，子类可以通过复写的方式决定具体实现
-     * @param isFullScreen
+     * @param
      */
-    public void setStatusBarMode(boolean isFullScreen) {
-        if (isFullScreen) {
-            ((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content))
-                    .getChildAt(0).setFitsSystemWindows(false);
-            handleFullScreen();
-        }
-        else {
-            ((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content))
-                    .getChildAt(0).setFitsSystemWindows(true);
-            handleTintMode();
-        }
+    public void onSetStatusBarMode() {
+        setStatusBarColor(R.color.colorPrimaryDark);
     }
 
     protected void handleFullScreen() {
@@ -61,6 +53,24 @@ public class BaseAppCompatActivity extends AppCompatActivity {
 //        moveToolbarDownwards();
     }
 
+    public void moveContentViewDownWards() {
+        ViewGroup contentview = (ViewGroup) ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
+        if (contentview != null) {
+            ViewCompat.setFitsSystemWindows(contentview, true);
+            contentview.setClipToPadding(false);
+        }
+
+    }
+
+
+    public void moveContentViewupwards() {
+        ViewGroup contentview = (ViewGroup) ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
+        if (contentview != null) {
+            ViewCompat.setFitsSystemWindows(contentview, false);
+            contentview.setClipToPadding(true);
+        }
+
+    }
     /** 对外提供的设置statusBar颜色的方法,子类请不要复写该方法
      * @param statusBarColor
      */
@@ -69,6 +79,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().setStatusBarColor(ContextCompat.getColor(this, statusBarColor));
+
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             ViewGroup decorView = (ViewGroup) getWindow().getDecorView();
