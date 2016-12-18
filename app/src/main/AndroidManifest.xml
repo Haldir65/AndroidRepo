@@ -114,6 +114,9 @@
                   android:theme="@style/translucentStatusBar"
             android:parentActivityName=".MainActivity"/>
 
+        <activity android:name="._19_rx_java_2.RxJava2MainActivity"
+            android:parentActivityName=".MainActivity"/>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.harris.me.fileprovider"

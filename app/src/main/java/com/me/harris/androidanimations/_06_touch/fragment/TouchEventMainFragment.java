@@ -66,7 +66,7 @@ public class TouchEventMainFragment extends Fragment {
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
-        mAdapter.setmDatas(mDatas);
+        mAdapter.setDatas(mDatas);
 
 
     }

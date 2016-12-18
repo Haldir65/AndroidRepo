@@ -62,7 +62,7 @@ public class MainAdapter<T> extends DataBoundAdapter<ItemMainBinding> {
         return Utils.isListEmpty(mDatas) ? 0 : mDatas.size();
     }
 
-    public void setmDatas(List<Pair<String, Class>> mDatas) {
+    public void setDatas(List<Pair<String, Class>> mDatas) {
         if (this.mDatas == null) {
             this.mDatas = new ArrayList<>();
         }

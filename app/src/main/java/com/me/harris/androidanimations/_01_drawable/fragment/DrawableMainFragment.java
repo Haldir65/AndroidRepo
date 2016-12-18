@@ -76,7 +76,7 @@ public class DrawableMainFragment extends Fragment {
         mDatas.add(new Pair<String, Class>("TransitionDrawable", TransitionDrawableFragment.class));
         mDatas.add(new Pair<String, Class>("ClipDrawable", ClipDrawableFragment.class));
         mDatas.add(new Pair<String, Class>("ProgressBar", ProgressBarClipFragment.class));
-        mAdapter.setmDatas(mDatas);
+        mAdapter.setDatas(mDatas);
     }
 
     @Override
