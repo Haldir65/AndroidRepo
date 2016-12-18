@@ -25,6 +25,7 @@ import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActiv
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
 import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
 import com.me.harris.androidanimations._09_recyclerView.itemDecoration.MainAdapterItemDecoration;
+import com.me.harris.androidanimations._10_statusBar.FitSystemWindowsActivity;
 import com.me.harris.androidanimations._10_statusBar.StatusBarActivity_Activity_one;
 import com.me.harris.androidanimations._11_Loader.LoaderActivity;
 import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
@@ -97,6 +98,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("DayNightActivity", DayNightActivity.class));
         list.add(new Pair<String, Class>("PopupWindowActivity", PopupWindowActivity.class));
         list.add(new Pair<String, Class>("AnimateBinding", AnimatingBindingActivity.class));
+        list.add(new Pair<String, Class>("FitSystemWindowsActivity", FitSystemWindowsActivity.class));
         mAdapter.setmDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

@@ -99,10 +99,15 @@
             android:theme="@style/DayNightDemo"
             />
 
-        <activity android:name="._17_popup_Window.PopupWindowActivity"
+        <activity
+            android:name="._17_popup_Window.PopupWindowActivity"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._18_animating_binding.AnimatingBindingActivity"
+        <activity
+            android:name="._18_animating_binding.AnimatingBindingActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="._10_statusBar.FitSystemWindowsActivity"
             android:parentActivityName=".MainActivity"/>
 
         <provider

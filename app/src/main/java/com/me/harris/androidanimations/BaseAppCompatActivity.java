@@ -1,18 +1,16 @@
 package com.me.harris.androidanimations;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.ColorRes;
 import android.support.annotation.LayoutRes;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.me.harris.androidanimations.utils.Utils;
 
@@ -52,7 +50,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
-        moveToolbarDownwards();
+
 
     }
 
@@ -85,22 +83,23 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         }
     }
 
-    protected Toolbar mToolbar;
 
-    protected void moveToolbarDownwards() {
-        if (mToolbar != null) {
-            ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
-            if (layoutParams != null) {
-                if (layoutParams instanceof LinearLayout.LayoutParams) {
-                    ((LinearLayout.LayoutParams) layoutParams).setMargins(0, Utils.getStatusBarHeight(), 0, 0);
-                } else if (layoutParams instanceof RelativeLayout.LayoutParams) {
-                    ((RelativeLayout.LayoutParams) layoutParams).setMargins(0, Utils.getStatusBarHeight(), 0, 0);
-                } else if (layoutParams instanceof CoordinatorLayout.LayoutParams) {
-                    ((CoordinatorLayout.LayoutParams) layoutParams).setMargins(0, Utils.getStatusBarHeight(), 0, 0);
-                }
-                mToolbar.setLayoutParams(layoutParams);
-            }
+
+    public   void setFullSreen(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+            );
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN| View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }else
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // 设置透明状态栏,这样才能让 ContentView 向上
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
+
+
 
 }
