@@ -19,12 +19,12 @@ import com.me.harris.androidanimations.databinding.FragmentBitmapDrawableBinding
  * Created by Fermi on 2016/10/8.
  */
 
-public class BitmapDrawableFragment extends Fragment {
+public class BitmapDrawableFragmEnt extends Fragment {
     FragmentBitmapDrawableBinding binding;
 
-    public static BitmapDrawableFragment newInstance() {
+    public static BitmapDrawableFragmEnt newInstance() {
         Bundle args = new Bundle();
-        BitmapDrawableFragment fragment = new BitmapDrawableFragment();
+        BitmapDrawableFragmEnt fragment = new BitmapDrawableFragmEnt();
         fragment.setArguments(args);
         return fragment;
     }

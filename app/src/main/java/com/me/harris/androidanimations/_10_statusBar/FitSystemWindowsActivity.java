@@ -38,7 +38,7 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
 
     @Override
     public void onSetStatusBarMode() {
-       setFullSreen();
+        setFullScreen();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -47,15 +47,11 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
         flag = !flag;
         if (flag) {
             moveContentViewDownWards();
-
+            setStatusBarColor(R.color.md_deep_purple_700);
         } else {
-            moveContentViewupwards();
-
+            moveContentViewUpwards();
+           setFullScreen();
         }
     }
-
-
-
-
 
 }
