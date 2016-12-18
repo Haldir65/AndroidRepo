@@ -1,13 +1,10 @@
 package com.me.harris.androidanimations._10_statusBar;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -30,12 +27,12 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fitsyswindows);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
         mRootView = (LinearLayout) findViewById(R.id.rootView);
         mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         mImage = (ImageView) findViewById(R.id.image);
         mImage.setOnClickListener(this);
-
+        setFullSreen();
 
     }
 
@@ -47,7 +44,12 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onClick(View view) {
-        setFullSreen();
+        flag = !flag;
+        if (flag) {
+            setStatusBarColor(R.color.md_amber_A100);
+        } else {
+            setFullSreen();
+        }
     }
 
 
