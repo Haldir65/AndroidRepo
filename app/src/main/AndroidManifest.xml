@@ -110,6 +110,10 @@
             android:name="._10_statusBar.FitSystemWindowsActivity"
             android:parentActivityName=".MainActivity"/>
 
+        <activity android:name="._10_statusBar.PlainActivity"
+                  android:theme="@style/translucentStatusBar"
+            android:parentActivityName=".MainActivity"/>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.harris.me.fileprovider"
