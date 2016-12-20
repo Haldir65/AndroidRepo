@@ -11,13 +11,19 @@ import com.me.harris.androidanimations.databinding.ActivityRxjava2Binding;
 import com.me.harris.androidanimations.interfaces.ActionCallBack;
 import com.me.harris.androidanimations.utils.LogUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -99,14 +105,42 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                         observeOn(AndroidSchedulers.mainThread()).doOnNext(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtil.p("doOnNext "+integer);
+                        LogUtil.p("doOnNext " + integer);
                     }
                 }).observeOn(Schedulers.computation()).doOnNext(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtil.p("2222222DoOnNext "+integer);
+                        LogUtil.p("2222222DoOnNext " + integer);
                     }
                 }).subscribe(consumer);
+                break;
+            case R.id.button3:
+                Observable.create(new ObservableOnSubscribe<Integer>() {
+                    @Override
+                    public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                        for (int i = 0; i < 5; i++) {
+                            emitter.onNext(i);
+                            LogUtil.p("onNext");
+                        }
+                    }
+                }).flatMap(new Function<Integer, ObservableSource<String>>() {
+                    @Override
+                    public ObservableSource<String> apply(Integer integer) throws Exception {
+                        final List<String> list = new ArrayList<>();
+                        for (int i = 0; i < 5; i++) {
+                            list.add("I am Value " + integer);
+                        }
+                        return Observable.fromIterable(list).delay(2, TimeUnit.SECONDS);
+                    }
+                }).subscribeOn(Schedulers.io()).observeOn(Schedulers.computation()).
+                        subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        LogUtil.p("accept " + s);
+
+                    }
+                });
+
                 break;
             default:
                 break;

@@ -52,6 +52,17 @@
                 android:textAllCaps="false"
                 android:text="线程调度"/>
 
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:layout_below="@id/button2"
+                android:onClick="@{(v) -> callback.onClickView(v)}"
+                android:textAllCaps="false"
+                android:text="FlatMap"/>
+
         </RelativeLayout>
 
 
