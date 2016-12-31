@@ -1,8 +1,5 @@
 package com.me.harris.androidanimations._20_annotations;
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.CheckResult;
 import android.support.annotation.DrawableRes;
@@ -11,19 +8,14 @@ import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresPermission;
 import android.support.annotation.Size;
 import android.support.annotation.StringRes;
 import android.support.annotation.UiThread;
-import android.telecom.Call;
 
 import com.me.harris.androidanimations.BaseAppCompatActivity;
-import com.me.harris.androidanimations.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-
-import static android.content.Intent.ACTION_CALL;
 
 /**
  * 用于演示Annotation warning的使用
@@ -63,13 +55,13 @@ public abstract class AnnotationDemo extends BaseAppCompatActivity {
         return currentDays;
     }
 
-    private void demo1() {
+   /* private void demo1() {
         Intent intent = new Intent(ACTION_CALL);
         intent.setData(Uri.parse("tel:1234567899"));
         startActivity(intent);//需要电话权限
 
     }
-
+*/
     public void setAlpha(@IntRange(from = 0, to = 255) int alppha) {
     }
 

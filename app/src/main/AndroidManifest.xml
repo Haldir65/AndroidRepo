@@ -39,7 +39,7 @@
 
 
         <!--ApiDemo中部分动画展示-->
-        <activity android:name="._03_apidemo.BouncingBalls"/>
+        <activity android:name="._03_apidemo.BouncingBallsActivity"/>
         <activity android:name="._03_apidemo.ShadowCardDrag"/>
         <activity android:name="._03_apidemo.MaterialWitness"/>
 
@@ -83,6 +83,10 @@
             android:parentActivityName="._08_coordinateLayout.CoordinateLayoutEntrance"
             android:theme="@style/CoordinateLayoutActivityTwoTheme"/>
 
+
+        <activity android:name="._09_recyclerView.PlainRecyclerViewActivity"
+                  android:parentActivityName=".MainActivity"/>
+
         <!--用于测试沉浸式状态栏的问题-->
         <activity
             android:name="._10_statusBar.StatusBarActivity_Activity_one"
@@ -120,8 +124,10 @@
         <activity android:name="._20_annotations.AnnotationDemo"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._09_recyclerView.PlainRecyclerViewActivity"
+        <activity android:name="._20_annotations.EliminateBoilerplate"
             android:parentActivityName=".MainActivity"/>
+
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
