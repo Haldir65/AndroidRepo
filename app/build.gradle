@@ -1,9 +1,10 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
+//apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
 
 
     defaultConfig {
@@ -58,5 +59,8 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-     compile 'com.squareup:javapoet:1.7.0'
+
+
+    compile project (':annotation')
+    annotationProcessor project(":compiler")
 }

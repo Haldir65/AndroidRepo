@@ -1,5 +1,11 @@
 package com.example;
 
+import com.google.auto.service.AutoService;
+import com.squareup.javapoet.ClassName;
+import com.squareup.javapoet.JavaFile;
+import com.squareup.javapoet.MethodSpec;
+import com.squareup.javapoet.TypeSpec;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,7 +29,7 @@ import javax.tools.Diagnostic;
 @AutoService(Processor.class)
 public class PojoStringProcessor extends AbstractProcessor {
     private static final String ANNOTATION = "@" + PojoString.class.getSimpleName();
-    private static final String CLASS_NAME = "StringUtil";
+    private static final String CLASS_NAME = "StringUtil2";
     private Messager messager;
 
     @Override
