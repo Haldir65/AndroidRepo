@@ -18,6 +18,7 @@ Android Graphic和Animation的一些整理
 - [AppListLoader](https://github.com/alexjlockwood/adp-applistloader) 	谷歌员工提供的Loader查询设备上已安装App信息的Demo 
 - [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout) 	右划finish的Activity 
 - [Android：会呼吸的悬浮气泡](http://www.jianshu.com/p/5a672bac5ba9) 简书作者
+- [注解](http://yeungeek.com/2016/04/27/Android%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8B%E4%BA%8C-Annotation-Processing-Tool/)
 
 感谢以上作者
 
