@@ -24,6 +24,7 @@ import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
 import com.me.harris.androidanimations._09_recyclerView.PlainRecyclerViewActivity;
+import com.me.harris.androidanimations._09_recyclerView.RecyclerViewPrefetcherActivity;
 import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
 import com.me.harris.androidanimations._09_recyclerView.itemDecoration.MainAdapterItemDecoration;
 import com.me.harris.androidanimations._10_statusBar.FitSystemWindowsActivity;
@@ -106,6 +107,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("PlainActivity", PlainActivity.class));
         list.add(new Pair<String, Class>("RxJava2", RxJava2MainActivity.class));
         list.add(new Pair<String, Class>("recyclerView", PlainRecyclerViewActivity.class));
+        list.add(new Pair<String, Class>("PrefetcherActivity", RecyclerViewPrefetcherActivity.class));
         list.add(new Pair<String, Class>("Annotation", EliminateBoilerplate.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);

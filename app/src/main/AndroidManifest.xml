@@ -129,6 +129,10 @@
 
 
 
+        <activity android:name="._09_recyclerView.RecyclerViewPrefetcherActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.harris.me.fileprovider"
