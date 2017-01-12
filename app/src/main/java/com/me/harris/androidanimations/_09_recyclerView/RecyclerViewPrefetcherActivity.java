@@ -18,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityRecyclerViewPrefetcherBinding;
 import com.me.harris.androidanimations.utils.Utils;
@@ -39,16 +41,18 @@ public class RecyclerViewPrefetcherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_recycler_view_prefetcher);
         setSupportActionBar(binding.included.toolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.recyclerView.setAdapter(new PrefetcherAdapter());
         layoutManager = new LinearLayoutManager(this);
-        layoutManager.setInitialPrefetchItemCount(4);
+        layoutManager.setInitialPrefetchItemCount(10);
         binding.recyclerView.setLayoutManager(layoutManager);
         binding.recyclerView.addItemDecoration(new PlainItemDecoration(this));
     }
 
 
     private static class PrefetcherAdapter extends RecyclerView.Adapter<PlainViewHolder> {
+
+        private Context mContext;
 
         private int[] Ids = new int[]{R.drawable.alamby, R.drawable.image_01, R.drawable.image_02, R.drawable.image_03, R.drawable.image_04,
                 R.drawable.image_05, R.drawable.image_06, R.drawable.image_07, R.drawable.image_08, R.drawable.image_09, R.drawable.image_10,
@@ -71,8 +75,11 @@ public class RecyclerViewPrefetcherActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(PlainViewHolder holder, int position) {
             holder.textView.setText("" + position);
-            holder.iv_left.setImageResource(generateRandomPicId());
-            holder.iv_right.setImageResource(generateRandomPicId());
+            if (mContext == null) {
+                mContext = holder.itemView.getContext();
+            }
+            Glide.with(mContext).load(generateRandomPicId()).diskCacheStrategy(DiskCacheStrategy.RESULT).crossFade().into(holder.iv_left);
+            Glide.with(mContext).load(generateRandomPicId()).diskCacheStrategy(DiskCacheStrategy.RESULT).into(holder.iv_right);
         }
 
         @Override

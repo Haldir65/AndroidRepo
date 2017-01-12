@@ -142,6 +142,32 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                 });
 
                 break;
+            case R.id.button4 :
+                Observable.create(new ObservableOnSubscribe<Integer>() {
+                    @Override
+                    public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+                        for (int i = 0; i < 3; i++) {
+                            e.onNext(i);
+                            LogUtil.p("onNext"+i);
+                        }
+                    }
+                }).concatMap(new Function<Integer, ObservableSource<String>>() {
+                    @Override
+                    public ObservableSource<String> apply(Integer integer) throws Exception {
+                        List<String> list = new ArrayList<String>();
+                        for (int i = 0; i < 3; i++) {
+                            LogUtil.p("applyChange integer is " + integer + " i is " + i);
+                            list.add("I am value " + i);
+                        }
+                        return Observable.fromIterable(list).delay(10, TimeUnit.SECONDS);
+                    }
+                }).subscribeOn(Schedulers.io()).observeOn(Schedulers.computation()).subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        LogUtil.p(s);
+                    }
+                });
+                break;
             default:
                 break;
         }
