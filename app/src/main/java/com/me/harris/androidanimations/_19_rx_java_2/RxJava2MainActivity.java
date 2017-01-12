@@ -142,11 +142,11 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                 });
 
                 break;
-            case R.id.button4 :
+            case R.id.button4 : //调用顺序apply走完>>>onNext走完>>>accept在主线程走完
                 Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override
                     public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-                        for (int i = 0; i < 3; i++) {
+                        for (int i = 0; i < 5; i++) {
                             e.onNext(i);
                             LogUtil.p("onNext"+i);
                         }
@@ -155,13 +155,13 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                     @Override
                     public ObservableSource<String> apply(Integer integer) throws Exception {
                         List<String> list = new ArrayList<String>();
-                        for (int i = 0; i < 3; i++) {
+                        for (int i = 0; i < 5; i++) {
                             LogUtil.p("applyChange integer is " + integer + " i is " + i);
                             list.add("I am value " + i);
                         }
-                        return Observable.fromIterable(list).delay(10, TimeUnit.SECONDS);
+                        return Observable.fromIterable(list).delay(1, TimeUnit.SECONDS).subscribeOn(Schedulers.computation()).observeOn(Schedulers.io());//每隔1秒会发送一个List的Observable，传递到accept方法中。先apply进行处理，随后发送到主线程
                     }
-                }).subscribeOn(Schedulers.io()).observeOn(Schedulers.computation()).subscribe(new Consumer<String>() {
+                }).subscribeOn(Schedulers.computation()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
                         LogUtil.p(s);
