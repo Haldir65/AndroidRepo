@@ -87,6 +87,11 @@
         <activity android:name="._09_recyclerView.PlainRecyclerViewActivity"
                   android:parentActivityName=".MainActivity"/>
 
+
+        <activity android:name="._09_recyclerView.RecyclerViewPrefetcherActivity"
+                  android:parentActivityName=".MainActivity"
+            />
+
         <!--用于测试沉浸式状态栏的问题-->
         <activity
             android:name="._10_statusBar.StatusBarActivity_Activity_one"
@@ -128,10 +133,12 @@
             android:parentActivityName=".MainActivity"/>
 
 
+        <activity android:name="._21_wave_animation.WaveAnimationActivity"
+            android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._09_recyclerView.RecyclerViewPrefetcherActivity"
-            android:parentActivityName=".MainActivity"
-            />
+
+
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
