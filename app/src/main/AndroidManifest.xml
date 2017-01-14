@@ -148,10 +148,12 @@
             android:parentActivityName=".MainActivity"
             />
         <activity
-            android:name="._22_TitanicTextView.TitanicTextViewActivity"
+            android:name="._23_TitanicTextView.TitanicTextViewActivity"
             android:parentActivityName=".MainActivity"
             />
 
+        <activity android:name="._24_shimmering.ShimmeringActivity"
+            android:parentActivityName=".MainActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

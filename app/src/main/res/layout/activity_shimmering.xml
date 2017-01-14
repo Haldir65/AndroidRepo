@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="callback"
+            type="com.me.harris.androidanimations.interfaces.ActionCallBack"/>
+    </data>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/md_blue_grey_700">
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/include_toolbar"/>
+    
+        <com.me.harris.androidanimations._24_shimmering.ShimmerTextView
+            android:id="@+id/shimmer_tv"
+            android:text="@string/shimmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#444"
+            android:textSize="50sp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle"
+            android:onClick="@{(v)-> callback.onClickView(v)}"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="?attr/colorPrimaryDark"
+            />
+
+
+
+    </FrameLayout>
+</layout>
