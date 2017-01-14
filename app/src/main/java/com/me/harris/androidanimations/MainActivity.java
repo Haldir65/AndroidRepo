@@ -37,6 +37,8 @@ import com.me.harris.androidanimations._17_popup_Window.PopupWindowActivity;
 import com.me.harris.androidanimations._18_animating_binding.AnimatingBindingActivity;
 import com.me.harris.androidanimations._19_rx_java_2.RxJava2MainActivity;
 import com.me.harris.androidanimations._20_annotations.EliminateBoilerplate;
+import com.me.harris.androidanimations._21_wave_animation.WaveAnimationActivity;
+import com.me.harris.androidanimations._22_circular_reveal.CreateCircularRevealAnimationActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -109,6 +111,8 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("recyclerView", PlainRecyclerViewActivity.class));
         list.add(new Pair<String, Class>("PrefetcherActivity", RecyclerViewPrefetcherActivity.class));
         list.add(new Pair<String, Class>("Annotation", EliminateBoilerplate.class));
+        list.add(new Pair<String, Class>("Titanic", WaveAnimationActivity.class));
+        list.add(new Pair<String, Class>("CircularReveal", CreateCircularRevealAnimationActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

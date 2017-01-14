@@ -136,6 +136,10 @@
         <activity android:name="._21_wave_animation.WaveAnimationActivity"
             android:parentActivityName=".MainActivity"/>
 
+        <activity android:name="._22_circular_reveal.CreateCircularRevealAnimationActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
 
 
 
