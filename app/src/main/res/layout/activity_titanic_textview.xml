@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_blue_grey_800"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/include_toolbar"/>
+
+        <com.me.harris.androidanimations._23_TitanicTextView.TitanicTextView
+            android:id="@+id/titanic"
+            android:text="@string/loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#212121"
+            android:textSize="70sp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            />
+
+    </FrameLayout>
+</layout>

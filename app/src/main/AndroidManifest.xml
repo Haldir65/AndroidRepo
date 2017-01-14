@@ -84,8 +84,15 @@
             android:theme="@style/CoordinateLayoutActivityTwoTheme"/>
 
 
-        <activity android:name="._09_recyclerView.PlainRecyclerViewActivity"
-                  android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="._09_recyclerView.PlainRecyclerViewActivity"
+            android:parentActivityName=".MainActivity"/>
+
+
+        <activity
+            android:name="._09_recyclerView.RecyclerViewPrefetcherActivity"
+            android:parentActivityName=".MainActivity"
+            />
 
         <!--用于测试沉浸式状态栏的问题-->
         <activity
@@ -114,24 +121,39 @@
             android:name="._10_statusBar.FitSystemWindowsActivity"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._10_statusBar.PlainActivity"
-                  android:theme="@style/translucentStatusBar"
+        <activity
+            android:name="._10_statusBar.PlainActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/translucentStatusBar"/>
+
+        <activity
+            android:name="._19_rx_java_2.RxJava2MainActivity"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._19_rx_java_2.RxJava2MainActivity"
+        <activity
+            android:name="._20_annotations.AnnotationDemo"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._20_annotations.AnnotationDemo"
+        <activity
+            android:name="._20_annotations.EliminateBoilerplate"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._20_annotations.EliminateBoilerplate"
+
+        <activity
+            android:name="._21_wave_animation.WaveAnimationActivity"
             android:parentActivityName=".MainActivity"/>
 
-
-
-        <activity android:name="._09_recyclerView.RecyclerViewPrefetcherActivity"
+        <activity
+            android:name="._22_circular_reveal.CreateCircularRevealAnimationActivity"
             android:parentActivityName=".MainActivity"
             />
+        <activity
+            android:name="._23_TitanicTextView.TitanicTextViewActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <activity android:name="._24_shimmering.ShimmeringActivity"
+            android:parentActivityName=".MainActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
