@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -46,6 +47,11 @@ public class WaveAnimationActivity extends BaseAppCompatActivity {
         binding.waveView.setShapeType(WaveView.TYPE_CIRCLE);
         binding.waveView.setBorder(10, ContextCompat.getColor(this, R.color.md_red_500));
 
+        binding.waveView.setWaveColor(
+                Color.parseColor("#28f16d7a"),
+                Color.parseColor("#3cf16d7a"));
+//        mBorderColor = Color.parseColor("#44f16d7a");
+//        binding.waveView.setBorder(ContextCompat, mBorderColor);
 
         List<Animator> animators = new ArrayList<>();
 
