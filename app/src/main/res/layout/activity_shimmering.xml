@@ -26,8 +26,10 @@
             android:textColor="#444"
             android:textSize="50sp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:fontFamily="sans-serif-light"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            />
 
         <Button
             android:id="@+id/button"
