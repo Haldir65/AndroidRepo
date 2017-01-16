@@ -35,7 +35,9 @@ public class CreateCircularRevealAnimationActivity extends BaseAppCompatActivity
     public void onClickView(View view) {
         switch (view.getId()) {
             case R.id.fab:
-                createAnimation(binding.cardView, 0).start();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    createAnimation(binding.cardView, 0).start();
+                }
                 break;
 
         }
