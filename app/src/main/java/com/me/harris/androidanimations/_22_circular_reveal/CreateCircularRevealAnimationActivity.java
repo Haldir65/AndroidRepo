@@ -19,6 +19,7 @@ public class CreateCircularRevealAnimationActivity extends BaseAppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_create_circular_reveal);
-
+        setSupportActionBar(binding.included.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
