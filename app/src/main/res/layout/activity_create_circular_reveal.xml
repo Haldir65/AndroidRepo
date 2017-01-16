@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="callback"
+            type="com.me.harris.androidanimations.interfaces.ActionCallBack"/>
+    </data>
+
     <FrameLayout
         android:id="@+id/frameLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
         <include
             android:id="@+id/included"
@@ -18,6 +26,7 @@
             android:layout_gravity="center"
             app:cardElevation="@dimen/cardview_default_elevation"
             app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardBackgroundColor="@color/md_light_blue_500"
             >
 
         </android.support.v7.widget.CardView>
@@ -28,7 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_gravity="bottom|end"
-            android:background="@color/md_blue_400"
+
+            android:onClick="@{(v) -> callback.onClickView(v)}"
+            app:backgroundTint="@color/md_light_blue_300"
             />
 
     </FrameLayout>
