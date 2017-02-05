@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,4 +99,26 @@ public class PlainRecyclerViewActivity extends BaseAppCompatActivity {
             }
         }
     }
+
+    DiffUtil.Callback callback = new DiffUtil.Callback() {
+        @Override
+        public int getOldListSize() {
+            return 0;
+        }
+
+        @Override
+        public int getNewListSize() {
+            return 0;
+        }
+
+        @Override
+        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+            return false;
+        }
+
+        @Override
+        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+            return false;
+        }
+    };
 }
