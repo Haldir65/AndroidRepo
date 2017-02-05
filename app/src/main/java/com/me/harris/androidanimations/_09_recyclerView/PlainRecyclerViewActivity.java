@@ -20,6 +20,9 @@ import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityPlainRecyclerViewBinding;
 import com.me.harris.androidanimations.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Harris on 2016/12/24.
  */
@@ -27,6 +30,7 @@ import com.me.harris.androidanimations.utils.Utils;
 public class PlainRecyclerViewActivity extends BaseAppCompatActivity {
 
     ActivityPlainRecyclerViewBinding binding;
+    private PlainAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,12 +38,16 @@ public class PlainRecyclerViewActivity extends BaseAppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_plain_recycler_view);
         setSupportActionBar(binding.included.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        binding.recyclerView.setAdapter(new PlainAdapter());
+        binding.recyclerView.setAdapter(mAdapter = new PlainAdapter());
         binding.recyclerView.addItemDecoration(new PlainItemDecoration(this));
 
     }
 
     private static class PlainAdapter extends RecyclerView.Adapter<PlainViewHolder> {
+
+        public void setItems(List<Person> list) {
+            // TODO: 2017/2/5 更新列表只需调用set函数，后续UI更新由DiffUtil完成
+        }
 
         @Override
         public PlainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -100,25 +108,53 @@ public class PlainRecyclerViewActivity extends BaseAppCompatActivity {
         }
     }
 
-    DiffUtil.Callback callback = new DiffUtil.Callback() {
+    public void updateList(ArrayList<Person> oldList,ArrayList<Person> newList) {
+        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new MyDiffCallback(oldList, newList));
+        mAdapter.setItems(newList);
+        diffResult.dispatchUpdatesTo(mAdapter);//无需notifyDataSetChanged
+    }
+
+
+
+    private static class Person{
+        int id;
+    }
+
+    public class MyDiffCallback extends DiffUtil.Callback{
+
+        List<Person> oldPersons;
+        List<Person> newPersons;
+
+        public MyDiffCallback(List<Person> newPersons, List<Person> oldPersons) {
+            this.newPersons = newPersons;
+            this.oldPersons = oldPersons;
+        }
+
         @Override
         public int getOldListSize() {
-            return 0;
+            return oldPersons.size();
         }
 
         @Override
         public int getNewListSize() {
-            return 0;
+            return newPersons.size();
         }
 
         @Override
         public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-            return false;
+            return oldPersons.get(oldItemPosition).id == newPersons.get(newItemPosition).id;
         }
 
         @Override
         public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-            return false;
+            return oldPersons.get(oldItemPosition).equals(newPersons.get(newItemPosition));
         }
-    };
+
+        @Nullable
+        @Override
+        public Object getChangePayload(int oldItemPosition, int newItemPosition) {
+            //you can return particular field for changed item.
+            return super.getChangePayload(oldItemPosition, newItemPosition);
+        }
+    }
 }
