@@ -94,7 +94,7 @@
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._09_recyclerView.DiffUtilActivity"
+        <activity android:name="._09_recyclerView.diffUtil.DiffUtilActivity"
             android:parentActivityName=".MainActivity"
             />
 

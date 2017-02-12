@@ -23,6 +23,7 @@ import com.me.harris.androidanimations._05_animation.PropertyAnimationActivity;
 import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
+import com.me.harris.androidanimations._09_recyclerView.diffUtil.DiffUtilActivity;
 import com.me.harris.androidanimations._09_recyclerView.PlainRecyclerViewActivity;
 import com.me.harris.androidanimations._09_recyclerView.RecyclerViewPrefetcherActivity;
 import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
@@ -117,6 +118,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("CircularReveal", CreateCircularRevealAnimationActivity.class));
         list.add(new Pair<String, Class>("Titanic", TitanicTextViewActivity.class));
         list.add(new Pair<String, Class>("Shimmering", ShimmeringActivity.class));
+        list.add(new Pair<String, Class>("DiffUtil", DiffUtilActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
