@@ -94,6 +94,10 @@
             android:parentActivityName=".MainActivity"
             />
 
+        <activity android:name="._09_recyclerView.DiffUtilActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <!--用于测试沉浸式状态栏的问题-->
         <activity
             android:name="._10_statusBar.StatusBarActivity_Activity_one"

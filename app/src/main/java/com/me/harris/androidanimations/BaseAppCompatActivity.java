@@ -27,7 +27,9 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
-        onSetStatusBarMode();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            onSetStatusBarMode();
+        }
     }
 
     /**
@@ -36,12 +38,12 @@ public class BaseAppCompatActivity extends AppCompatActivity {
      * @param
      */
     public void onSetStatusBarMode() {
-        setStatusBarColor(R.color.colorPrimaryDark);
+            setStatusBarColor(R.color.colorPrimaryDark);
     }
 
     protected void handleFullScreen() {
-        Window window = getWindow();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
