@@ -22,6 +22,7 @@ Android Graphic和Animation的一些整理
 - [WaveView](https://github.com/gelitenight/WaveView)
 - [CircularReveal on Android 4.0 +](https://github.com/ozodrukh/CircularReveal)
 - [DiffUtil Sample](https://github.com/mrmike/DiffUtil-sample)
+- [仿京东天猫下拉刷新](https://github.com/shenminjie/jd_tmall_refresh_demo)
 
 感谢以上作者
 

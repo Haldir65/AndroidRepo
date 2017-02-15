@@ -42,6 +42,7 @@ import com.me.harris.androidanimations._21_wave_animation.WaveAnimationActivity;
 import com.me.harris.androidanimations._23_TitanicTextView.TitanicTextViewActivity;
 import com.me.harris.androidanimations._22_circular_reveal.CreateCircularRevealAnimationActivity;
 import com.me.harris.androidanimations._24_shimmering.ShimmeringActivity;
+import com.me.harris.androidanimations._25_pull_to_refresh.Jd_PullToRefreshActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -119,6 +120,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("Titanic", TitanicTextViewActivity.class));
         list.add(new Pair<String, Class>("Shimmering", ShimmeringActivity.class));
         list.add(new Pair<String, Class>("DiffUtil", DiffUtilActivity.class));
+        list.add(new Pair<String, Class>("JD", Jd_PullToRefreshActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
