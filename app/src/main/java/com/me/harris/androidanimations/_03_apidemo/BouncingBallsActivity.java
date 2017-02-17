@@ -33,19 +33,19 @@ import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
 
-import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 
 import java.util.ArrayList;
 
 
-public class BouncingBallsActivity extends BaseAppCompatActivity {
+public class BouncingBallsActivity extends AppCompatActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -186,4 +186,5 @@ public class BouncingBallsActivity extends BaseAppCompatActivity {
             }
         }
     }
+
 }

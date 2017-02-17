@@ -114,6 +114,14 @@
             android:theme="@style/DayNightDemo"
             />
 
+        <activity android:name="._14_openGL_ES.OpenGLES20Activity"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <activity android:name="._14_openGL_ES.bouncing_cube.BouncyCubeActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <activity
             android:name="._17_popup_Window.PopupWindowActivity"
             android:parentActivityName=".MainActivity"/>
