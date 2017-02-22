@@ -171,6 +171,10 @@
             android:parentActivityName=".MainActivity"
             />
 
+        <activity android:name="._26_min_height.TestMinHeightActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.harris.me.fileprovider"
