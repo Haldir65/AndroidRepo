@@ -21,6 +21,8 @@
         android:layout_gravity="bottom"
         android:minHeight="45dp"
         android:layout_alignParentBottom="true"
+android:visibility="gone"
+
         >
         <FrameLayout
             android:layout_width="0dp"
@@ -58,6 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/image_08"
+                    android:scaleType="fitEnd"
                     />
 
             </LinearLayout>
