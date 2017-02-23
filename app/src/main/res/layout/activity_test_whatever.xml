@@ -21,7 +21,6 @@
         android:layout_gravity="bottom"
         android:minHeight="45dp"
         android:layout_alignParentBottom="true"
-android:visibility="gone"
 
         >
         <FrameLayout
@@ -41,6 +40,13 @@ android:visibility="gone"
             android:background="@color/md_blue_600"
             >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Hello World\n你好啊"
+                />
+
         </FrameLayout>
 
     </LinearLayout>
@@ -55,6 +61,12 @@ android:visibility="gone"
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
 
                 <ImageView
                     android:layout_width="match_parent"
