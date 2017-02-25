@@ -175,6 +175,11 @@
             android:parentActivityName=".MainActivity"
             />
 
+        <activity android:name="._27_data_binding.ActivityDataBindingEntrance"
+            android:parentActivityName=".MainActivity"
+            />
+
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.harris.me.fileprovider"
