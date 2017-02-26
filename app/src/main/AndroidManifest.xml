@@ -36,6 +36,7 @@
         <activity android:name="._05_animation.PropertyAnimationActivity"/>
         <activity android:name="._05_animation.DrawableAnimationActivity"/>
         <activity android:name="._05_animation.PathAnimationActivity"/>
+        <activity android:name="._05_animation.SimpleSlideInAnimationActivity"/>
 
 
         <!--ApiDemo中部分动画展示-->

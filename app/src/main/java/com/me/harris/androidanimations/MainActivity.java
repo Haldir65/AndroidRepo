@@ -20,6 +20,7 @@ import com.me.harris.androidanimations._04_customView.activity.CustomViewActivit
 import com.me.harris.androidanimations._05_animation.DrawableAnimationActivity;
 import com.me.harris.androidanimations._05_animation.PathAnimationActivity;
 import com.me.harris.androidanimations._05_animation.PropertyAnimationActivity;
+import com.me.harris.androidanimations._05_animation.SimpleSlideInAnimationActivity;
 import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
@@ -97,6 +98,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
         list.add(new Pair<String, Class>("PathAnimation", PathAnimationActivity.class));
+        list.add(new Pair<String, Class>("SlideIn", SimpleSlideInAnimationActivity.class));
         list.add(new Pair<String, Class>("BouncingBalls", BouncingBallsActivity.class));
         list.add(new Pair<String, Class>("ShadowCard", ShadowCardDrag.class));
         list.add(new Pair<String, Class>("CardImageView", MaterialWitness.class));
