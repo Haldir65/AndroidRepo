@@ -48,6 +48,7 @@ import com.me.harris.androidanimations._24_shimmering.ShimmeringActivity;
 import com.me.harris.androidanimations._25_pull_to_refresh.Jd_PullToRefreshActivity;
 import com.me.harris.androidanimations._26_min_height.TestMinHeightActivity;
 import com.me.harris.androidanimations._27_data_binding.ActivityDataBindingEntrance;
+import com.me.harris.androidanimations._28_percent.PercentLayoutActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -132,6 +133,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("JD", Jd_PullToRefreshActivity.class));
         list.add(new Pair<String, Class>("MinHeight", TestMinHeightActivity.class));
         list.add(new Pair<String, Class>("DataBinding", ActivityDataBindingEntrance.class));
+        list.add(new Pair<String, Class>("PercentLayout", PercentLayoutActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
