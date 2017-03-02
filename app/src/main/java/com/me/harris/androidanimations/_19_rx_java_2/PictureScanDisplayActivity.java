@@ -12,6 +12,7 @@ import com.me.harris.androidanimations.databinding.ActivityPictureScanDisplayBin
  * Created by Harris on 2017/3/2.
  * Scanning all the pic on the phone and display on the screen
  * http://blog.csdn.net/carrey1989/article/details/12002033
+ * http://blog.csdn.net/xiaanming/article/details/18730223
  */
 
 public class PictureScanDisplayActivity extends BaseAppCompatActivity {
