@@ -143,6 +143,10 @@
             android:name="._19_rx_java_2.RxJava2MainActivity"
             android:parentActivityName=".MainActivity"/>
 
+        <activity android:name="._19_rx_java_2.PictureScanDisplayActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <activity
             android:name="._20_annotations.AnnotationDemo"
             android:parentActivityName=".MainActivity"/>
