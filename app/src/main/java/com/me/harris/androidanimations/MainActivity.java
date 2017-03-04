@@ -22,6 +22,7 @@ import com.me.harris.androidanimations._05_animation.PathAnimationActivity;
 import com.me.harris.androidanimations._05_animation.PropertyAnimationActivity;
 import com.me.harris.androidanimations._05_animation.SimpleSlideInAnimationActivity;
 import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
+import com.me.harris.androidanimations._06_touch.activity.TouchEventActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
 import com.me.harris.androidanimations._09_recyclerView.PlainRecyclerViewActivity;
@@ -50,6 +51,7 @@ import com.me.harris.androidanimations._25_pull_to_refresh.Jd_PullToRefreshActiv
 import com.me.harris.androidanimations._26_min_height.TestMinHeightActivity;
 import com.me.harris.androidanimations._27_data_binding.ActivityDataBindingEntrance;
 import com.me.harris.androidanimations._28_percent.PercentLayoutActivity;
+import com.me.harris.androidanimations._29_velocity.VelocityTrackerActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -136,6 +138,8 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("MinHeight", TestMinHeightActivity.class));
         list.add(new Pair<String, Class>("DataBinding", ActivityDataBindingEntrance.class));
         list.add(new Pair<String, Class>("PercentLayout", PercentLayoutActivity.class));
+        list.add(new Pair<String, Class>("TouchEventActivity", TouchEventActivity.class));
+        list.add(new Pair<String, Class>("VelocityTracker", VelocityTrackerActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

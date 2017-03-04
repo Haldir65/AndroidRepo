@@ -6,9 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.OnApplyWindowInsetsListener;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations._04_customView.fragment.canvasMainFragment;
 import com.me.harris.androidanimations.databinding.ActivityCanvasBinding;
@@ -17,7 +17,7 @@ import com.me.harris.androidanimations.databinding.ActivityCanvasBinding;
  * Created by Harris on 2016/9/19.
  */
 
-public class CustomViewActivity extends BaseAppCompatActivity implements OnApplyWindowInsetsListener {
+public class CustomViewActivity extends AppCompatActivity implements OnApplyWindowInsetsListener {
     
     ActivityCanvasBinding binding;
     
@@ -37,6 +37,7 @@ public class CustomViewActivity extends BaseAppCompatActivity implements OnApply
 
     @Override
     public WindowInsetsCompat onApplyWindowInsets(View v, WindowInsetsCompat insets) {
-        return null;
+        insets.replaceSystemWindowInsets(0, 0, 0, com.me.harris.androidanimations.utils.Utils.getStatusBarHeight());
+        return insets;
     }
 }

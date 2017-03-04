@@ -188,6 +188,10 @@
             android:parentActivityName=".MainActivity"
             />
 
+        <activity android:name="._29_velocity.VelocityTrackerActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
 
 
         <provider
