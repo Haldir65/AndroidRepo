@@ -32,6 +32,7 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
         mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         mImage = (ImageView) findViewById(R.id.image);
         mImage.setOnClickListener(this);
+//        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
 
     }
@@ -45,13 +46,18 @@ public class FitSystemWindowsActivity extends BaseAppCompatActivity implements V
     @Override
     public void onClick(View view) {
         flag = !flag;
-        if (flag) {
+       setDarkStatusIcon(flag);
+    /*    if (flag) {
             moveContentViewDownWards();
-            setStatusBarColor(R.color.md_deep_purple_700);
+//            setStatusBarColor(R.color.md_deep_purple_700);
         } else {
             moveContentViewUpwards();
            setFullScreen();
-        }
+        }*/
+
+
     }
+
+
 
 }

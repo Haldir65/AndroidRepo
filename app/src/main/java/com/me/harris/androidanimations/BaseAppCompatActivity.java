@@ -118,4 +118,20 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         }
     }
 
+
+    public void setDarkStatusIcon(boolean bDark) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            View decorView = getWindow().getDecorView();
+            if(decorView != null){
+                int vis = decorView.getSystemUiVisibility();
+                if(bDark){
+                    vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+                } else{
+                    vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+                }
+                decorView.setSystemUiVisibility(vis);
+            }
+        }
+    }
+
 }

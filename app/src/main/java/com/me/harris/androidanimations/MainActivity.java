@@ -48,7 +48,7 @@ import com.me.harris.androidanimations._22_circular_reveal.CreateCircularRevealA
 import com.me.harris.androidanimations._23_TitanicTextView.TitanicTextViewActivity;
 import com.me.harris.androidanimations._24_shimmering.ShimmeringActivity;
 import com.me.harris.androidanimations._25_pull_to_refresh.Jd_PullToRefreshActivity;
-import com.me.harris.androidanimations._26_min_height.TestMinHeightActivity;
+import com.me.harris.androidanimations._26_min_height.TestWhatEverActivity;
 import com.me.harris.androidanimations._27_data_binding.ActivityDataBindingEntrance;
 import com.me.harris.androidanimations._28_percent.PercentLayoutActivity;
 import com.me.harris.androidanimations._29_velocity.VelocityTrackerActivity;
@@ -135,7 +135,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("Shimmering", ShimmeringActivity.class));
         list.add(new Pair<String, Class>("DiffUtil", DiffUtilActivity.class));
         list.add(new Pair<String, Class>("JD", Jd_PullToRefreshActivity.class));
-        list.add(new Pair<String, Class>("MinHeight", TestMinHeightActivity.class));
+        list.add(new Pair<String, Class>("MinHeight", TestWhatEverActivity.class));
         list.add(new Pair<String, Class>("DataBinding", ActivityDataBindingEntrance.class));
         list.add(new Pair<String, Class>("PercentLayout", PercentLayoutActivity.class));
         list.add(new Pair<String, Class>("TouchEventActivity", TouchEventActivity.class));
