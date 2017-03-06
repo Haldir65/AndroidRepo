@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/included"
+                layout="@layout/include_toolbar"/>
+
+            <android.support.percent.PercentFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="left|top"
+                    android:contentDescription="Image on The Left"
+                    android:textAllCaps="false"
+                    app:layout_heightPercent="40%"
+                    app:layout_widthPercent= "40%"
+                    android:background="@color/md_blue_grey_200"
+                   android:src="@drawable/image_05"
+                    />
+
+
+                <ImageView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="right|bottom"
+                    android:contentDescription="Text on The Right"
+                    android:textAllCaps="false"
+                    app:layout_marginLeftPercent="25%"
+                    app:layout_marginTopPercent="25%"
+                    app:layout_heightPercent="45%"
+                    app:layout_widthPercent="45%"
+                    android:src="@drawable/image_09"
+                    android:background="@color/md_amber_200"
+                    />
+
+
+            </android.support.percent.PercentFrameLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</layout>
+

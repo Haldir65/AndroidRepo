@@ -20,7 +20,9 @@ import com.me.harris.androidanimations._04_customView.activity.CustomViewActivit
 import com.me.harris.androidanimations._05_animation.DrawableAnimationActivity;
 import com.me.harris.androidanimations._05_animation.PathAnimationActivity;
 import com.me.harris.androidanimations._05_animation.PropertyAnimationActivity;
+import com.me.harris.androidanimations._05_animation.SimpleSlideInAnimationActivity;
 import com.me.harris.androidanimations._05_animation.ViewAnimationActivity;
+import com.me.harris.androidanimations._06_touch.activity.TouchEventActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
 import com.me.harris.androidanimations._09_recyclerView.PlainRecyclerViewActivity;
@@ -38,6 +40,7 @@ import com.me.harris.androidanimations._14_openGL_ES.OpenGLES20Activity;
 import com.me.harris.androidanimations._14_openGL_ES.bouncing_cube.BouncyCubeActivity;
 import com.me.harris.androidanimations._17_popup_Window.PopupWindowActivity;
 import com.me.harris.androidanimations._18_animating_binding.AnimatingBindingActivity;
+import com.me.harris.androidanimations._19_rx_java_2.PictureScanDisplayActivity;
 import com.me.harris.androidanimations._19_rx_java_2.RxJava2MainActivity;
 import com.me.harris.androidanimations._20_annotations.EliminateBoilerplate;
 import com.me.harris.androidanimations._21_wave_animation.WaveAnimationActivity;
@@ -45,7 +48,10 @@ import com.me.harris.androidanimations._22_circular_reveal.CreateCircularRevealA
 import com.me.harris.androidanimations._23_TitanicTextView.TitanicTextViewActivity;
 import com.me.harris.androidanimations._24_shimmering.ShimmeringActivity;
 import com.me.harris.androidanimations._25_pull_to_refresh.Jd_PullToRefreshActivity;
-import com.me.harris.androidanimations._26_min_height.TestWhatEverActivity;
+import com.me.harris.androidanimations._26_min_height.TestMinHeightActivity;
+import com.me.harris.androidanimations._27_data_binding.ActivityDataBindingEntrance;
+import com.me.harris.androidanimations._28_percent.PercentLayoutActivity;
+import com.me.harris.androidanimations._29_velocity.VelocityTrackerActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -96,6 +102,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
         list.add(new Pair<String, Class>("PathAnimation", PathAnimationActivity.class));
+        list.add(new Pair<String, Class>("SlideIn", SimpleSlideInAnimationActivity.class));
         list.add(new Pair<String, Class>("BouncingBalls", BouncingBallsActivity.class));
         list.add(new Pair<String, Class>("ShadowCard", ShadowCardDrag.class));
         list.add(new Pair<String, Class>("CardImageView", MaterialWitness.class));
@@ -118,6 +125,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("FitSystemWindows", FitSystemWindowsActivity.class));
         list.add(new Pair<String, Class>("PlainActivity", PlainActivity.class));
         list.add(new Pair<String, Class>("RxJava2", RxJava2MainActivity.class));
+        list.add(new Pair<String, Class>("PictureScan", PictureScanDisplayActivity.class));
         list.add(new Pair<String, Class>("recyclerView", PlainRecyclerViewActivity.class));
         list.add(new Pair<String, Class>("PrefetcherActivity", RecyclerViewPrefetcherActivity.class));
         list.add(new Pair<String, Class>("Annotation", EliminateBoilerplate.class));
@@ -127,7 +135,11 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("Shimmering", ShimmeringActivity.class));
         list.add(new Pair<String, Class>("DiffUtil", DiffUtilActivity.class));
         list.add(new Pair<String, Class>("JD", Jd_PullToRefreshActivity.class));
-        list.add(new Pair<String, Class>("MinHeight", TestWhatEverActivity.class));
+        list.add(new Pair<String, Class>("MinHeight", TestMinHeightActivity.class));
+        list.add(new Pair<String, Class>("DataBinding", ActivityDataBindingEntrance.class));
+        list.add(new Pair<String, Class>("PercentLayout", PercentLayoutActivity.class));
+        list.add(new Pair<String, Class>("TouchEventActivity", TouchEventActivity.class));
+        list.add(new Pair<String, Class>("VelocityTracker", VelocityTrackerActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

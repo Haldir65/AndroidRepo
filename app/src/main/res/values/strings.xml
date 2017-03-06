@@ -8,7 +8,7 @@
     <string name="enable_tilt">Enable Tilt</string>
     <string name="enable_shading">Enable Shading</string>
     <string name="select_shape">Select Shape</string>
-    <string name="from">From Google I/O 2014 - Material witness: How Android material applications work</string>
+    <string name="from">From Google I/O 2014 - Material witness: How Android material applications work\n This is not a CardView, it may demonstrate how the internal implementation of cardView is</string>
     <string name="show_camera">Show camera preview</string>
     <string name="camera_unavailable"><b>Camera could not be opened.</b>\nThis occurs when the camera is not available (for example it is already in use) or if the system has denied access (for example when camera access has been disabled).</string>
     <string name="intro">This sample shows a basic implementation for requesting permissions at runtime.\nClick the button below to request the Camera permission and open a full-screen camera preview.</string>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="data"
+            type="com.me.harris.androidanimations._27_data_binding.Fish"/>
+        
+    </data>
+    
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:background="@color/md_green_500"
+        >
+
+        <TextView
+            android:id="@+id/tv_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            tools:text="Fishy"
+            android:layout_gravity="center"
+            android:text="@{data.name}"
+            />
+
+        <TextView
+            android:id="@+id/tv_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Camel"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="16dp"
+            />
+        
+        
+
+    </android.support.v7.widget.CardView>    
+</layout>

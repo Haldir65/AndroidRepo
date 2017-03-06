@@ -33,6 +33,7 @@ import io.reactivex.schedulers.Schedulers;
 public class RxJava2MainActivity extends BaseAppCompatActivity implements ActionCallBack {
 
     ActivityRxjava2Binding binding;
+    // TODO: 2017/2/25 扫描手机上所有的Pic,再显示到List中
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

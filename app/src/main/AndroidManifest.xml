@@ -36,6 +36,7 @@
         <activity android:name="._05_animation.PropertyAnimationActivity"/>
         <activity android:name="._05_animation.DrawableAnimationActivity"/>
         <activity android:name="._05_animation.PathAnimationActivity"/>
+        <activity android:name="._05_animation.SimpleSlideInAnimationActivity"/>
 
 
         <!--ApiDemo中部分动画展示-->
@@ -142,6 +143,10 @@
             android:name="._19_rx_java_2.RxJava2MainActivity"
             android:parentActivityName=".MainActivity"/>
 
+        <activity android:name="._19_rx_java_2.PictureScanDisplayActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <activity
             android:name="._20_annotations.AnnotationDemo"
             android:parentActivityName=".MainActivity"/>
@@ -174,6 +179,20 @@
         <activity android:name="._26_min_height.TestWhatEverActivity"
             android:parentActivityName=".MainActivity"
             />
+
+        <activity android:name="._27_data_binding.ActivityDataBindingEntrance"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <activity android:name="._28_percent.PercentLayoutActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <activity android:name="._29_velocity.VelocityTrackerActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
