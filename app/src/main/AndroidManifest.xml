@@ -192,6 +192,9 @@
             android:parentActivityName=".MainActivity"
             />
 
+        <activity android:name="._30_constraintlayout.ConstraintLayoutActivity"
+            android:parentActivityName=".MainActivity"
+            />
 
 
         <provider
