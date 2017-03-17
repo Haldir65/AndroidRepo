@@ -53,6 +53,7 @@ import com.me.harris.androidanimations._27_data_binding.ActivityDataBindingEntra
 import com.me.harris.androidanimations._28_percent.PercentLayoutActivity;
 import com.me.harris.androidanimations._29_velocity.VelocityTrackerActivity;
 import com.me.harris.androidanimations._30_constraintlayout.ConstraintLayoutActivity;
+import com.me.harris.androidanimations._31_picker.PickerActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -142,6 +143,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("TouchEventActivity", TouchEventActivity.class));
         list.add(new Pair<String, Class>("VelocityTracker", VelocityTrackerActivity.class));
         list.add(new Pair<String, Class>("Constraint", ConstraintLayoutActivity.class));
+        list.add(new Pair<String, Class>("Picker", PickerActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

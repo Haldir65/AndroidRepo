@@ -13,4 +13,10 @@
     <color name="androidColorC">#99CC00</color>
     <color name="androidColorD">#FFBB33</color>
     <color name="androidColorE">#FF4444</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_light_deep">#ECECEC</color>
+    <color name="gray_dark">#999999</color>
+    <color name="white">#FFFFFF</color>
+    <color name="accent_orange">#FF7700</color>
+
 </resources>

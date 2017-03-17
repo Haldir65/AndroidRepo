@@ -94,4 +94,13 @@
     <declare-styleable name="ShimmerView">
         <attr name="reflectionColor" format="color"/>
     </declare-styleable>
+
+    <!--Picker-->
+    <declare-styleable name="PickerView">
+        <attr name="selectorIndex" format="integer" />
+        <attr name="selectorCount" format="integer" />
+        <attr name="selectorForeground" format="reference" />
+        <attr name="fixedWidth" format="dimension|reference" />
+        <attr name="fixedHeight" format="dimension|reference" />
+    </declare-styleable>
 </resources>

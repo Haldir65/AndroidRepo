@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="horizontal_page_margin">16dp</dimen>
     <dimen name="vertical_page_margin">6dp</dimen>
+    <dimen name="picker_item_default_fixed_height">36dp</dimen>
+    <dimen name="picker_item_default_fixed_width">100dp</dimen>
 </resources>

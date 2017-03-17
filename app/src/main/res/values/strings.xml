@@ -46,4 +46,7 @@
     <string name="title_activity_tm">天猫</string>
     <string name="title_activity_home">主页</string>
 
+    <string name="date_until_now">至今</string>
+
+
 </resources>
