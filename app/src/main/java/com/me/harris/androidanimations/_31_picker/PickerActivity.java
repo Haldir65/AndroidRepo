@@ -36,8 +36,8 @@ public class PickerActivity extends BaseAppCompatActivity implements View.OnClic
 //        Calendar curCal = Calendar.getInstance();
         picker.setDate(2008, 6, 17, 1900, 2200);
         mYear = 2016;
-        mMonth = 5;
-        mDay = 19;
+        mMonth = 3;
+        mDay = 31;
         binding.button1.setOnClickListener(this);
         binding.button2.setOnClickListener(this);
     }

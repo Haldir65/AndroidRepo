@@ -34,7 +34,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
 
     int mDay; //当前的日期 例如12号
 
-    int currentYear, currentMonth, currentDay;//记录今天的时间 ，不允许今天之后的时间
+    final int currentYear, currentMonth, currentDay;//记录今天的时间 ，不允许今天之后的时间
 
     int minYear; //minYear必传
 
