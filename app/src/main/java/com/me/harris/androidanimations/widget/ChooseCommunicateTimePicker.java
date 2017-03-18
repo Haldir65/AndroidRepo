@@ -38,7 +38,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
 
     int minYear; //minYear必传
 
-    private boolean mFirst = true; //是不是刚弹出来 如果用户触摸过 这个值就是false 这主要是为了能够刚弹出来能够自动滑动到指定日期时间
+    private boolean mFirst = true; //目前存在刚进来不能滑动到指定位置的问题
 
     List<Integer> mYearsList = new ArrayList<>();
     List<Integer> mMonthsList = new ArrayList<>();
@@ -181,25 +181,18 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
             case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:
                 break;
             case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
-                /*if (view == mYearPicker) {
-                    if (mYear - 1 != mYearPicker.getCurrentItem()) {
-                        mYearPicker.setCurrentItem(mYear - 1);
-                    }
-
-                } else if (view == mMonthPicker) {
-                    if (mMonth - 1 != mMonthPicker.getCurrentItem()) {
-                        mMonthPicker.setCurrentItem(mMonth - 1);
-                    }
-                } else if (view == mDayPicker) {
-                    if (mDay - 1 != mDayPicker.getCurrentItem()) {
-                        mDayPicker.setCurrentItem(mDay - 1);
-                    }
+                /*if (mDayPicker.getCurrentItem() != mDay-1) {
+                    mDayPicker.setCurrentItem(mDay-1);
+                }
+                if (mYearPicker.getCurrentItem() != mYear-minYear) {
+                    mYearPicker.setCurrentItem(mYear-minYear);
+                }
+                if (mMonthPicker.getCurrentItem() != mMonth-1) {
+                    mMonthPicker.setCurrentItem(mMonth-1);
                 }*/
                 break;
         }
     }
-
-
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
@@ -219,9 +212,9 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
 
         @Override
         public void onPickerSelected(int position) {
-            if (monDateChangeListener != null) {
-                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
-            }
+           /* if (mYearPicker.currentScrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
+                return;
+            }*/
             if (mFirst) {
                 if (position == mYear - minYear && mMonthPicker.getCurrentItem() != mMonth - 1) {
 //                    mMonthPicker.setCurrentItem(mMonth-1);
@@ -278,6 +271,9 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
                     }
                 }
             }
+            if (monDateChangeListener != null) {
+                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
+            }
         }
     };
 
@@ -285,9 +281,9 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
 
         @Override
         public void onPickerSelected(int position) {
-            if (monDateChangeListener != null) {
-                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
-            }
+           /* if (mMonthPicker.currentScrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
+                return;
+            }*/
             if (mFirst) {
                 if (position == mMonth - 1 && mDayPicker.getCurrentItem() != mDay - 1) {
 //                    mDayPicker.setCurrentItem(mDay-1);
@@ -310,6 +306,23 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
 //                    mDayPicker.setCurrentItem(mDay-1);
                 }
             }
+            if (monDateChangeListener != null) {
+                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, position + 1, mDay);
+            }
+        }
+    };
+
+    private PickerView.OnPickerSelectedListener mDaySelectedListener = new PickerView.OnPickerSelectedListener() {
+
+        @Override
+        public void onPickerSelected(int position) {
+            /*if (mDayPicker.currentScrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
+                return;
+            }*/
+            mDay = position + 1;
+            if (monDateChangeListener != null) {
+                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
+            }
         }
     };
 
@@ -324,17 +337,6 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
         calendar.set(Calendar.MONTH, month - 1);
         return calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
     }
-
-    private PickerView.OnPickerSelectedListener mDaySelectedListener = new PickerView.OnPickerSelectedListener() {
-
-        @Override
-        public void onPickerSelected(int position) {
-            if (monDateChangeListener != null) {
-                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
-            }
-            mDay = position + 1;
-        }
-    };
 
     YearAdapter createYearAdapter(int minYear, int maxYear) {
         if (mYearsList == null) {
@@ -366,6 +368,10 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
             mDayList = new ArrayList<>();
         } else {
             mDayList.clear();
+        }
+        int size = getDaysOfMonth(mYear, mMonth);
+        for (int i = 0; i < size; i++) {
+            mDayList.add(i);
         }
         return new DayAdapter(getContext(), mDayList);
     }

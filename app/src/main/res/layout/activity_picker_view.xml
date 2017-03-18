@@ -53,12 +53,12 @@
             </TableRow>
 
 
-            <com.me.harris.androidanimations.widget.ChooseCommunicateTimePicker
+           <!-- <com.me.harris.androidanimations.widget.ChooseCommunicateTimePicker
                 android:id="@+id/timePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </com.me.harris.androidanimations.widget.ChooseCommunicateTimePicker>
+            </com.me.harris.androidanimations.widget.ChooseCommunicateTimePicker>-->
         </LinearLayout>
 
     </ScrollView>

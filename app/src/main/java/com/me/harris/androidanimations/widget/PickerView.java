@@ -320,9 +320,10 @@ public class PickerView extends ListView {
         @Override
         public void onScrollStateChanged(AbsListView view, int scrollState) {
             Log.i(TAG, "onScrollStateChanged scrollState = " + scrollState);
-            onPickerSelectedChange(getCurrentItem());
+                onPickerSelectedChange(getCurrentItem());
             /** 滑动停止 */
-            if (scrollState == SCROLL_STATE_IDLE) {
+            currentScrollState = scrollState;
+            if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
                 scrollTo(0, 0);
                 post(new Runnable() {
                     @Override
@@ -352,6 +353,8 @@ public class PickerView extends ListView {
             }
         }
     };
+
+   public int currentScrollState;
     
     @Override
     public void setOnScrollListener(OnScrollListener l) {
@@ -468,99 +471,5 @@ public class PickerView extends ListView {
     public interface OnPickerSelectedListener {
         public void onPickerSelected(int position);
     }
-    
-    // public static class PickerAdapter extends BaseAdapter {
-    //
-    // List<String> mPickerList = new ArrayList<String>();
-    //
-    // public PickerAdapter() {
-    // for (int i = 0; i < 100; i++) {
-    // mPickerList.add("item" + i);
-    // }
-    // }
-    //
-    // @Override
-    // public int getCount() {
-    // return mPickerList.size();
-    // }
-    //
-    // @Override
-    // public Object getItem(int position) {
-    // return mPickerList.get(position);
-    // }
-    //
-    // @Override
-    // public long getItemId(int position) {
-    // return position;
-    // }
-    //
-    // @Override
-    // public View getView(int position, View convertView, ViewGroup parent) {
-    // PickerHolder holder;
-    // if (convertView == null) {
-    // holder = new PickerHolder();
-    // holder.textView = new TextView(parent.getContext());
-    // holder.textView.setGravity(Gravity.CENTER);
-    // PickerItemView itemView = new PickerItemView(parent.getContext());
-    // itemView.addView(holder.textView);
-    // convertView = itemView;
-    // convertView.setTag(holder);
-    // } else {
-    // holder = (PickerHolder) convertView.getTag();
-    // }
-    // holder.textView.setText(mPickerList.get(position));
-    // return convertView;
-    // }
-    // }
-    //
-    // public static class PickerHolder {
-    // TextView textView;
-    // }
-    //
-    // private static class PickerItemView extends RelativeLayout {
-    //
-    // public PickerItemView(Context context) {
-    // this(context, null);
-    // }
-    //
-    // public PickerItemView(Context context, AttributeSet attrs) {
-    // this(context, attrs, 0);
-    // }
-    //
-    // public PickerItemView(Context context, AttributeSet attrs, int
-    // defStyleAttr) {
-    // super(context, attrs, defStyleAttr);
-    // setWillNotDraw(false);
-    // }
-    //
-    // @Override
-    // public void addView(View child, int index, ViewGroup.LayoutParams params)
-    // {
-    // if (params instanceof RelativeLayout.LayoutParams) {
-    // RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) params;
-    // rlp.addRule(RelativeLayout.CENTER_IN_PARENT);
-    // }
-    // super.addView(child, index, params);
-    // }
-    //
-    // @Override
-    // protected void onDraw(Canvas canvas) {
-    // super.onDraw(canvas);
-    // canvas.save();
-    // int strokeWidth = (int)
-    // TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1,
-    // getResources().getDisplayMetrics());
-    // GradientDrawable drawable = new GradientDrawable();
-    // final int scrollX = getScrollX();
-    // final int scrollY = getScrollY();
-    // drawable.setShape(GradientDrawable.RECTANGLE);
-    // drawable.setStroke(strokeWidth, Color.BLUE);
-    // drawable.setBounds(0, 0, getWidth(), getHeight());
-    // canvas.translate(scrollX, scrollY);
-    // drawable.draw(canvas);
-    // canvas.translate(-scrollX, -scrollY);
-    // canvas.restore();
-    // }
-    // }
-    
+
 }
