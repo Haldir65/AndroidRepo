@@ -101,7 +101,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
         mDay = day;
         yearAdapter = createYearAdapter(minYear, currentYear);
         mYearPicker.setAdapter(yearAdapter);
-        mYearPicker.setCurrentItem(mYear - minYear);
+        mYearPicker.setSelection(mYear - minYear);
         if (mMonthsList == null) {
             mMonthsList = new ArrayList<>();
         } else {
@@ -121,6 +121,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
                 monthAdapter = new MonthAdapter(getContext(), mMonthsList);
                 mMonthPicker.setAdapter(monthAdapter);
 //                mMonthPicker.setCurrentItem(mMonth - 1);
+                mMonthPicker.setSelection(mMonth - 1);
                 if (mMonth == currentMonth) {
                     if (mDay <= currentDay) {
                         for (int i = 0; i < currentDay; i++) {
@@ -128,7 +129,8 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
                         }
                         dayAdapter = new DayAdapter(getContext(), mDayList);
                         mDayPicker.setAdapter(dayAdapter);
-                        mDayPicker.setCurrentItem(mDay - 1);
+//                        mDayPicker.setCurrentItem(mDay - 1);
+                        mDayPicker.setSelection(mDay - 1);
                     } else {
                         throw new RuntimeException("不允许选择未来的时间");
                     }
@@ -139,10 +141,12 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
         } else {
             monthAdapter = createMonthAdapter();
             mMonthPicker.setAdapter(monthAdapter);
-            mMonthPicker.setCurrentItem(mMonth - 1);
+//            mMonthPicker.setCurrentItem(mMonth - 1);
+            mMonthPicker.setSelection(mMonth - 1);
             dayAdapter = createDayAdapter();
             mDayPicker.setAdapter(dayAdapter);
-            mDayPicker.setCurrentItem(mDay - 1);
+//            mDayPicker.setCurrentItem(mDay - 1);
+            mDayPicker.setSelection(mDay - 1);
         }
     }
 
@@ -245,7 +249,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
                             dayAdapter.notifyDataSetChanged();
                             if (mDay > size) {
                                 mDay = size;
-                                mDayPicker.setCurrentItem(size - 1);
+                                mDayPicker.setSelection(size - 1);
                             }
                         }
                     }
