@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,7 +22,7 @@ import java.util.List;
 /**
  * 用于在助教端 助教和老师新增沟通时间的Picker
  */
-public class ChooseCommunicateTimePicker extends LinearLayout {
+public class ChooseCommunicateTimePicker extends LinearLayout implements AbsListView.OnScrollListener {
 
     private PickerView mYearPicker;
     private PickerView mMonthPicker;
@@ -60,16 +61,19 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
         lp = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1);
         addView(mYearPicker, lp);
         mYearPicker.setOnPickerSelectedListener(mYearSelectedListener);
+        mYearPicker.setOnScrollListener(this);
         mMonthPicker = (PickerView) inflater.inflate(R.layout.view_date_picker, this,
                 false);
         lp = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1);
         addView(mMonthPicker, lp);
         mMonthPicker.setOnPickerSelectedListener(mMonthSelectedListener);
+        mMonthPicker.setOnScrollListener(this);
         mDayPicker = (PickerView) inflater.inflate(R.layout.view_date_picker, this,
                 false);
         lp = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1);
         addView(mDayPicker, lp);
         mDayPicker.setOnPickerSelectedListener(mDaySelectedListener);
+        mDayPicker.setOnScrollListener(this);
         setBackgroundColor(getResources().getColor(R.color.white));
         minYear = 2010; //最早年份默认设置成2010年
         Calendar calendar = Calendar.getInstance();
@@ -124,7 +128,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
                         }
                         dayAdapter = new DayAdapter(getContext(), mDayList);
                         mDayPicker.setAdapter(dayAdapter);
-//                        mDayPicker.setCurrentItem(mDay - 1);
+                        mDayPicker.setCurrentItem(mDay - 1);
                     } else {
                         throw new RuntimeException("不允许选择未来的时间");
                     }
@@ -135,10 +139,10 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
         } else {
             monthAdapter = createMonthAdapter();
             mMonthPicker.setAdapter(monthAdapter);
-//            mMonthPicker.setCurrentItem(mMonth - 1);
+            mMonthPicker.setCurrentItem(mMonth - 1);
             dayAdapter = createDayAdapter();
             mDayPicker.setAdapter(dayAdapter);
-//            mDayPicker.setCurrentItem(mDay - 1);
+            mDayPicker.setCurrentItem(mDay - 1);
         }
     }
 
@@ -171,6 +175,42 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
         return super.dispatchTouchEvent(ev);
     }
 
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+        switch (scrollState) {
+            case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:
+                break;
+            case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
+                /*if (view == mYearPicker) {
+                    if (mYear - 1 != mYearPicker.getCurrentItem()) {
+                        mYearPicker.setCurrentItem(mYear - 1);
+                    }
+
+                } else if (view == mMonthPicker) {
+                    if (mMonth - 1 != mMonthPicker.getCurrentItem()) {
+                        mMonthPicker.setCurrentItem(mMonth - 1);
+                    }
+                } else if (view == mDayPicker) {
+                    if (mDay - 1 != mDayPicker.getCurrentItem()) {
+                        mDayPicker.setCurrentItem(mDay - 1);
+                    }
+                }*/
+                break;
+        }
+    }
+
+
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+    }
+
+    public interface onDateChangeListener {
+        void onDateChanged(ChooseCommunicateTimePicker view, int year, int monthOfYear, int dayOfMonth);
+    }
+
+    public onDateChangeListener monDateChangeListener;
+
     /**
      * @return 返回的是0-31这种，0表示当天，1表示明天，依次往后推
      */
@@ -179,9 +219,12 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
 
         @Override
         public void onPickerSelected(int position) {
+            if (monDateChangeListener != null) {
+                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
+            }
             if (mFirst) {
-                if (position == mYear - minYear&&mMonthPicker.getCurrentItem()!=mMonth-1) {
-                    mMonthPicker.setCurrentItem(mMonth-1);
+                if (position == mYear - minYear && mMonthPicker.getCurrentItem() != mMonth - 1) {
+//                    mMonthPicker.setCurrentItem(mMonth-1);
                 }
             } else {
                 mYear = position + minYear;
@@ -208,7 +251,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
                             dayAdapter.notifyDataSetChanged();
                             if (mDay > size) {
                                 mDay = size;
-                                mDayPicker.setCurrentItem(size-1);
+                                mDayPicker.setCurrentItem(size - 1);
                             }
                         }
                     }
@@ -233,7 +276,6 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
                         }
                         mDayPicker.setCurrentItem(mDay - 1);
                     }
-
                 }
             }
         }
@@ -243,9 +285,12 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
 
         @Override
         public void onPickerSelected(int position) {
+            if (monDateChangeListener != null) {
+                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
+            }
             if (mFirst) {
-                if (position == mDay - 1 && mDayPicker.getCurrentItem() != mDay - 1) {
-                    mDayPicker.setCurrentItem(mDay-1);
+                if (position == mMonth - 1 && mDayPicker.getCurrentItem() != mDay - 1) {
+//                    mDayPicker.setCurrentItem(mDay-1);
                 }
             } else {
                 mMonth = position + 1;
@@ -262,9 +307,8 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
                 }
                 if (mDay > size) {
                     mDay = size;
-                    mDayPicker.setCurrentItem(mDay-1);
+//                    mDayPicker.setCurrentItem(mDay-1);
                 }
-
             }
         }
     };
@@ -285,6 +329,9 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
 
         @Override
         public void onPickerSelected(int position) {
+            if (monDateChangeListener != null) {
+                monDateChangeListener.onDateChanged(ChooseCommunicateTimePicker.this, mYear, mMonth, mDay);
+            }
             mDay = position + 1;
         }
     };

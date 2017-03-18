@@ -15,7 +15,7 @@ import com.me.harris.androidanimations.widget.DatePicker;
  * Created by Harris on 2017/3/17.
  */
 
-public class PickerActivity extends BaseAppCompatActivity implements View.OnClickListener {
+public class PickerActivity extends BaseAppCompatActivity implements View.OnClickListener, ChooseCommunicateTimePicker.onDateChangeListener {
 
     ActivityPickerViewBinding binding;
 
@@ -31,6 +31,7 @@ public class PickerActivity extends BaseAppCompatActivity implements View.OnClic
 //        Calendar curCal = Calendar.getInstance();
         picker.setDate(2008, 6, 17, 1900, 2200);
         timePicker.setDate(2017,3,18,2000);
+        timePicker.monDateChangeListener = this;
         binding.button1.setOnClickListener(this);
         binding.button2.setOnClickListener(this);
     }
@@ -47,5 +48,10 @@ public class PickerActivity extends BaseAppCompatActivity implements View.OnClic
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onDateChanged(ChooseCommunicateTimePicker view, int year, int monthOfYear, int dayOfMonth) {
+        binding.textView.setText(year + ":" + monthOfYear + "" + dayOfMonth);
     }
 }
