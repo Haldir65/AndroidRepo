@@ -231,7 +231,8 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
                             mMonthsList.add(i);
                         }
                         monthAdapter.notifyDataSetChanged();
-                        mMonthPicker.setCurrentItem(mMonth - 1);
+//                        mMonthPicker.setCurrentItem(mMonth - 1);
+                        mMonthPicker.setSelection(currentMonth-1);
                         int size = getDaysOfMonth(mYear, mMonth);
                         if (mMonth == currentMonth) {
                             size = currentDay;
