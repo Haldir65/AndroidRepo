@@ -249,19 +249,20 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
                 }
             } else {
                 mMonth = position + 1;
-                int days = getDaysOfMonth(mYear, mMonth);
+                int size = getDaysOfMonth(mYear, mMonth);
                 if (mYear == currentYear && mMonth == currentMonth) {
-                    if (mDay > currentDay || mDay > days) {
-                        mDay = Math.min(currentDay, days);
-                        mDayPicker.setCurrentItem(mDay - 1);
-                    }
+                    size = Math.min(currentDay, size);
                 }
-                if (mDayList.size() != days) {
+                if (mDayList.size() != size) {
                     mDayList.clear();
-                    for (int i = 0; i < days; i++) {
+                    for (int i = 0; i < size; i++) {
                         mDayList.add(i);
                     }
                     dayAdapter.notifyDataSetChanged();
+                }
+                if (mDay > size) {
+                    mDay = size;
+                    mDayPicker.setCurrentItem(mDay-1);
                 }
 
             }
