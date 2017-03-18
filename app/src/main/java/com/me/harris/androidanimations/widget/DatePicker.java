@@ -412,7 +412,7 @@ public class DatePicker extends LinearLayout {
     }
     
     public static long getTime(int year, int month, int day) {
-        Calendar c = Calendar.getInstance(Locale.getDefault());
+        Calendar c = Calendar.getInstance(Locale.SIMPLIFIED_CHINESE);
         c.clear();
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month - 1);
@@ -421,7 +421,7 @@ public class DatePicker extends LinearLayout {
     }
     
     public static int getMonthDays(int year, int month) {
-        Calendar c = Calendar.getInstance(Locale.getDefault());
+        Calendar c = Calendar.getInstance(Locale.SIMPLIFIED_CHINESE);
         c.clear();
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month - 1);
