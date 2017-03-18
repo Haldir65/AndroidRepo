@@ -91,12 +91,13 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
         if (mYear > currentYear) {
             throw new RuntimeException("不能选择未来的时间");
         }
+        this.minYear = minYear;
         mYear = year;
         mMonth = month;
         mDay = day;
         yearAdapter = createYearAdapter(minYear, currentYear);
         mYearPicker.setAdapter(yearAdapter);
-        mYearPicker.setCurrentItem(mYear-minYear);
+        mYearPicker.setCurrentItem(mYear - minYear);
         if (mMonthsList == null) {
             mMonthsList = new ArrayList<>();
         } else {
@@ -115,7 +116,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
                 }
                 monthAdapter = new MonthAdapter(getContext(), mMonthsList);
                 mMonthPicker.setAdapter(monthAdapter);
-                mMonthPicker.setCurrentItem(mMonth-1);
+//                mMonthPicker.setCurrentItem(mMonth - 1);
                 if (mMonth == currentMonth) {
                     if (mDay <= currentDay) {
                         for (int i = 0; i < currentDay; i++) {
@@ -123,7 +124,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
                         }
                         dayAdapter = new DayAdapter(getContext(), mDayList);
                         mDayPicker.setAdapter(dayAdapter);
-                        mDayPicker.setCurrentItem(mDay-1);
+//                        mDayPicker.setCurrentItem(mDay - 1);
                     } else {
                         throw new RuntimeException("不允许选择未来的时间");
                     }
@@ -134,10 +135,10 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
         } else {
             monthAdapter = createMonthAdapter();
             mMonthPicker.setAdapter(monthAdapter);
-            mMonthPicker.setCurrentItem(mMonth-1);
+//            mMonthPicker.setCurrentItem(mMonth - 1);
             dayAdapter = createDayAdapter();
             mDayPicker.setAdapter(dayAdapter);
-            mDayPicker.setCurrentItem(mDay-1);
+//            mDayPicker.setCurrentItem(mDay - 1);
         }
     }
 
@@ -178,40 +179,61 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
 
         @Override
         public void onPickerSelected(int position) {
-            mYear = position+minYear;
-            if (mYear == currentYear) {
-                if (mMonth > currentMonth) {
-                    mMonth = currentMonth;
+            if (mFirst) {
+                if (position == mYear - minYear&&mMonthPicker.getCurrentItem()!=mMonth-1) {
+                    mMonthPicker.setCurrentItem(mMonth-1);
                 }
-                mMonthsList.clear();
-                for (int i = 0; i < currentMonth; i++) {
-                    mMonthsList.add(i);
-                }
-                monthAdapter.notifyDataSetChanged();
-                mMonthPicker.setCurrentItem(mMonth-1);
-                int size = getDaysOfMonth(mYear, mMonth);
-                if (size != mDayList.size()) {
-                    mDayList.clear();
-                    for (int i = 0; i < size; i++) {
-                        mDayList.add(i);
+            } else {
+                mYear = position + minYear;
+                if (mYear == currentYear) {
+                    if (mMonth > currentMonth) {
+                        mMonth = currentMonth;
                     }
-                    dayAdapter.notifyDataSetChanged();
-                }
+                    if (currentMonth != 12) {
+                        mMonthsList.clear();
+                        for (int i = 0; i < currentMonth; i++) {
+                            mMonthsList.add(i);
+                        }
+                        monthAdapter.notifyDataSetChanged();
+                        mMonthPicker.setCurrentItem(mMonth - 1);
+                        int size = getDaysOfMonth(mYear, mMonth);
+                        if (mMonth == currentMonth) {
+                            size = currentDay;
+                        }
+                        if (size != mDayList.size()) {
+                            mDayList.clear();
+                            for (int i = 0; i < size; i++) {
+                                mDayList.add(i);
+                            }
+                            dayAdapter.notifyDataSetChanged();
+                            if (mDay > size) {
+                                mDay = size;
+                                mDayPicker.setCurrentItem(size-1);
+                            }
+                        }
+                    }
+                } else {// 当前年份不是今年，月份恢复12，
+                    if (mMonthsList.size() != 12) {
+                        mMonthsList.clear();
+                        for (int i = 0; i < 12; i++) {
+                            mMonthsList.add(i);
+                        }
+                        monthAdapter.notifyDataSetChanged();
+                        mMonthPicker.setCurrentItem(mMonth - 1);
+                    }
+                    int size = getDaysOfMonth(mYear, mMonth);
+                    if (mDayList.size() != size) {
+                        mDayList.clear();
+                        for (int i = 0; i < size; i++) {
+                            mDayList.add(i);
+                        }
+                        dayAdapter.notifyDataSetChanged();
+                        if (mDay > size) {
+                            mDay = size;
+                        }
+                        mDayPicker.setCurrentItem(mDay - 1);
+                    }
 
-            } else {// 当前年份不是今年，月份回恢复12，
-                mMonthsList.clear();
-                for (int i = 0; i < 12; i++) {
-                    mMonthsList.add(i);
-                }
-                monthAdapter.notifyDataSetChanged();
-                mMonthPicker.setCurrentItem(mMonth-1);
-                if (mDayList.size() != getDaysOfMonth(mYear, mMonth)) {
-                    mDayList.clear();
-                    for (int i = 0; i < getDaysOfMonth(mYear, mMonth); i++) {
-                        mDayList.add(i);
-                    }
-                    dayAdapter.notifyDataSetChanged();
-                    mDayPicker.setCurrentItem(mDay-1);
                 }
             }
         }
@@ -221,32 +243,28 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
 
         @Override
         public void onPickerSelected(int position) {
-            mMonth = position+1;
-            mDayList.clear();
-            int days = getDaysOfMonth(mYear+minYear, mMonth);
-            if (mMonth == currentMonth) {
-                days = currentDay;
-            }
-            for (int i = 0; i < days; i++) {
-                mDayList.add(i);
-            }
-            dayAdapter.notifyDataSetChanged();
-            if (mDay > days) {
-                mDayPicker.setCurrentItem(days-1);
-            }
-            /*if (mMonth > currentMonth) {
-                mMonth = currentMonth;
-            }
-            if (mDay <= currentDay) {
-                for (int i = 0; i < currentDay; i++) {
-                    mDayList.add(i);
+            if (mFirst) {
+                if (position == mDay - 1 && mDayPicker.getCurrentItem() != mDay - 1) {
+                    mDayPicker.setCurrentItem(mDay-1);
                 }
-                dayAdapter = new DayAdapter(getContext(), mDayList);
-                mDayPicker.setAdapter(dayAdapter);
-                mDayPicker.setCurrentItem(mDay);
             } else {
-                throw new RuntimeException("不允许选择未来的时间");
-            }*/
+                mMonth = position + 1;
+                int days = getDaysOfMonth(mYear, mMonth);
+                if (mYear == currentYear && mMonth == currentMonth) {
+                    if (mDay > currentDay || mDay > days) {
+                        mDay = Math.min(currentDay, days);
+                        mDayPicker.setCurrentItem(mDay - 1);
+                    }
+                }
+                if (mDayList.size() != days) {
+                    mDayList.clear();
+                    for (int i = 0; i < days; i++) {
+                        mDayList.add(i);
+                    }
+                    dayAdapter.notifyDataSetChanged();
+                }
+
+            }
         }
     };
 
@@ -266,7 +284,7 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
 
         @Override
         public void onPickerSelected(int position) {
-            mDay = position+1;
+            mDay = position + 1;
         }
     };
 
@@ -476,6 +494,6 @@ public class ChooseCommunicateTimePicker extends LinearLayout {
         String result = mdSdf.format(date);
         return result;
     }
-    public static SimpleDateFormat mdSdf = new SimpleDateFormat("MM月dd日");
 
+    public static SimpleDateFormat mdSdf = new SimpleDateFormat("MM月dd日");
 }

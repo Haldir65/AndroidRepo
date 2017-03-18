@@ -42,7 +42,7 @@ public class PickerActivity extends BaseAppCompatActivity implements View.OnClic
                 binding.textView.setText("时间 " + picker.getYear() + "年" + picker.getMonth() + "月" + picker.getDay() + "日");
                 break;
             case R.id.button2:
-                binding.textView.setText("时间 " + timePicker.getYear() + "年" + timePicker.getMonth() + "月" + timePicker.getDay() + "日");
+                binding.textView.setText("" + timePicker.getYear() + ":" + timePicker.getMonth() + ":" + timePicker.getDay());
                 break;
             default:
                 break;

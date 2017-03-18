@@ -41,8 +41,8 @@ public class DatePicker extends LinearLayout {
     private boolean mMonthVisible = true;
     private boolean mDayVisible = true;
     
-    private boolean mNeedRemoveMonthFromNow = false;// 是否删除超过本月的月份
-    private boolean mSupportYearUntilNow = false;// 是否支持年份为至今
+    private boolean mNeedRemoveMonthFromNow = true;// 是否删除超过本月的月份
+    private boolean mSupportYearUntilNow = true;// 是否支持年份为至今
     private boolean mSupportMonthFromStartTime = false;//是否支持月份从开始时间的月份之后设置
     private boolean mSupportMonthBeforeEndTime = false;//是否支持月份从结束时间的月份之前设置
     private boolean mEndTimeIsUntil = false;//结束时间是否是至今
