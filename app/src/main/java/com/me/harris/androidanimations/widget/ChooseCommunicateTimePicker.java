@@ -134,6 +134,11 @@ public class ChooseCommunicateTimePicker extends LinearLayout implements AbsList
                     } else {
                         throw new RuntimeException("不允许选择未来的时间");
                     }
+                } else {
+                    dayAdapter = createDayAdapter();
+                    mDayPicker.setAdapter(dayAdapter);
+//            mDayPicker.setCurrentItem(mDay - 1);
+                    mDayPicker.setSelection(mDay - 1);
                 }
             } else {
                 throw new RuntimeException("不允许选择未来的时间");
