@@ -100,7 +100,6 @@ public class MainActivity extends BaseAppCompatActivity {
             }
         });
         List<Pair<String, Class>> list = new ArrayList<>();
-        list.add(new Pair<String, Class>("Picker", PickerActivity.class));
         list.add(new Pair<String, Class>("ViewAnimation", ViewAnimationActivity.class));
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
@@ -144,6 +143,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("TouchEventActivity", TouchEventActivity.class));
         list.add(new Pair<String, Class>("VelocityTracker", VelocityTrackerActivity.class));
         list.add(new Pair<String, Class>("Constraint", ConstraintLayoutActivity.class));
+        list.add(new Pair<String, Class>("Picker", PickerActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
