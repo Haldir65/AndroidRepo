@@ -199,6 +199,9 @@
         <activity android:name="._31_picker.PickerActivity"
             android:parentActivityName=".MainActivity"
             />
+        <activity android:name="._32_boing.BoingActivity"
+            android:parentActivityName=".MainActivity"
+            />
 
 
         <provider
