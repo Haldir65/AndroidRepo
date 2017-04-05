@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.me.harris.androidanimations.R;
+import com.me.harris.androidanimations._06_touch.swipelistview.SwipeListViewFragment;
 import com.me.harris.androidanimations.databinding.FragmentCanvasBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations._06_touch.activity.TouchEventActivity;
@@ -59,13 +60,13 @@ public class TouchEventMainFragment extends Fragment {
         });
         List<Pair<String, Class>> mDatas = new ArrayList<>();
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
+        mDatas.add(new Pair<String, Class>("SwipeListViewFragment", SwipeListViewFragment.class));
+        /*mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
         mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
-        mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
-        mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
-        mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));
+        mDatas.add(new Pair<String, Class>("SwipeLayoutFragment", SwipeLayoutFragment.class));*/
         mAdapter.setDatas(mDatas);
 
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.me.harris.androidanimations._06_touch.swipelistview.SwipeListView
+            android:id="@+id/swipeListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:swipeActionLeft="dismiss"
+            app:swipeFrontView="@+id/ll_front_view"
+            app:swipeBackView="@+id/ll_back_view"
+            >
+
+        </com.me.harris.androidanimations._06_touch.swipelistview.SwipeListView>
+
+    </LinearLayout>
+</layout>
