@@ -8,8 +8,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.FragmentSwipeListviewBinding;
@@ -37,7 +39,7 @@ public class SwipeListViewFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         mList = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             mList.add("值" + i);
         }
         mAdapter = new SwipeAdapter(getActivity(), mList);
@@ -63,19 +65,28 @@ public class SwipeListViewFragment extends Fragment {
     }
 
     static class SwipeViewHolder extends BaseAdapter.ViewHolder<String> {
-        LinearLayout mLlRootView;
-        ImageView mIvTopView;
-        LinearLayout mLlBackView;
+        private LinearLayout mLlRootView;
+        private LinearLayout mLlFrontView;
+        private TextView mTvFront;
+        private ImageView mIvTopView;
+        private FrameLayout mLlBackView;
+        private TextView mTvBack;
 
         @Override
         public void init(Context context, View convertView) {
             mLlRootView = (LinearLayout) convertView.findViewById(R.id.ll_rootView);
+            mLlFrontView = (LinearLayout) convertView.findViewById(R.id.ll_front_view);
+            mTvFront = (TextView) convertView.findViewById(R.id.tv_front);
             mIvTopView = (ImageView) convertView.findViewById(R.id.iv_top_view);
-            mLlBackView = (LinearLayout) convertView.findViewById(R.id.ll_back_view);
+            mLlBackView = (FrameLayout) convertView.findViewById(R.id.ll_back_view);
+            mTvBack = (TextView) convertView.findViewById(R.id.tv_back);
+
         }
 
         @Override
         public void update(Context context, String data) {
+            mTvFront.setText("前面的"+data);
+            mTvBack.setText("后面的"+data);
         }
     }
 }
