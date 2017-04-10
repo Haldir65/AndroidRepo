@@ -83,6 +83,7 @@ public class canvasMainFragment extends Fragment {
         mDatas.add(new Pair<String, Class>("SearchViewFragment", SearchViewFragment.class));
         mDatas.add(new Pair<String, Class>("RoundImageViewsFragment", RoundImageViewsFragment.class));
         mDatas.add(new Pair<String, Class>("PloygonViewFragment", PloygonViewFragment.class));
+        mDatas.add(new Pair<String, Class>("Merge", MergeViewFragment.class));
         mAdapter.setDatas(mDatas);
     }
 }
