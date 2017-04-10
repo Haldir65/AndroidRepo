@@ -10,10 +10,10 @@
         <LinearLayout
             android:id="@+id/rainBow"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="5dp"
             android:layout_centerInParent="true"
             android:orientation="horizontal"
-            tools:background="@drawable/gradient_rain_bow"
+            android:background="@drawable/gradient_rain_bow"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             />

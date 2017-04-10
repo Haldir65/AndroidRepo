@@ -8,6 +8,6 @@
              android:bottom="20dp" />
     <gradient android:type="linear"
               android:startColor="@color/md_red_900"
-              android:centerColor="@color/md_green_A400"
-              android:endColor="@color/md_blue_900" />
+              android:centerColor="@color/md_yellow_500"
+              android:endColor="@color/md_green_500" />
 </shape>
