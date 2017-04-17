@@ -81,6 +81,17 @@
                     android:text="concatMap"
                     android:textAllCaps="false"/>
 
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/button3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="@{(v) -> callback.onClickView(v)}"
+                    android:text="Callable"
+                    android:textAllCaps="false"/>
+
             </RelativeLayout>
 
         </ScrollView>
