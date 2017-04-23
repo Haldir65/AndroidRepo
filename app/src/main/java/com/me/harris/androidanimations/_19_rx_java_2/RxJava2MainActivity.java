@@ -14,9 +14,12 @@ import com.me.harris.androidanimations.utils.LogUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Completable;
+import io.reactivex.CompletableEmitter;
+import io.reactivex.CompletableOnSubscribe;
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Observable;
@@ -28,6 +31,8 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Cancellable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.observers.DisposableCompletableObserver;
@@ -44,7 +49,8 @@ import io.reactivex.subscribers.DisposableSubscriber;
 public class RxJava2MainActivity extends BaseAppCompatActivity implements ActionCallBack {
 
     ActivityRxjava2Binding binding;
-    // TODO: 2017/2/25 扫描手机上所有的Pic,再显示到List中
+
+    CompositeDisposable disposables = new CompositeDisposable();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,33 +73,46 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                 Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override
                     public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                        emitter.setCancellable(new Cancellable() {
+                            @Override
+                            public void cancel() throws Exception {
+                            }
+                        });
                         for (int i = 0; i < 5; i++) {
-                            emitter.onNext(i);
-                            LogUtil.d("subscribe " + i);
+                            if (!emitter.isDisposed()) {
+                                emitter.onNext(i);
+                                LogUtil.p("subscribe " + i);
+                                try {
+                                    blockThread(2000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
                         }
                     }
-                }).subscribeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Integer>() {
+                }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Integer>() {
                     private Disposable mDisposable;
                     private int i;
 
                     @Override
                     public void onSubscribe(Disposable d) {
                         mDisposable = d;
+                        disposables.add(mDisposable);
                     }
 
                     @Override
                     public void onNext(Integer value) {
-                        LogUtil.e("onNext " + value);
+                        LogUtil.p("onNext " + value);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtil.d("onError");
+                        LogUtil.p("onError");
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtil.d("onComplete");
+                        LogUtil.p("onComplete");
                     }
                 });
                 break;
@@ -113,16 +132,20 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                         }
                     }
                 });
-                observable.subscribeOn(Schedulers.io()).
-                        observeOn(AndroidSchedulers.mainThread()).doOnNext(new Consumer<Integer>() {
+                observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).doOnNext(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
                         LogUtil.p("doOnNext " + integer);
                     }
+                }).doAfterNext(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        LogUtil.p("do After Next" + integer);
+                    }
                 }).observeOn(Schedulers.computation()).doOnNext(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtil.p("2222222DoOnNext " + integer);
+                        LogUtil.p("2222222  Accept " + integer);
                     }
                 }).subscribe(consumer);
                 break;
@@ -179,20 +202,6 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                 });
                 break;
             case R.id.button5:
-               /* Observable.fromCallable(new Callable<List<String>>() {
-                    @Override
-                    public List<String> call() throws Exception {
-                        LogUtil.p("call");
-                        return Arrays.asList(array);
-                    }
-                }).subscribeOn(Schedulers.computation())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Consumer<List<String>>() {
-                            @Override
-                            public void accept(List<String> strings) throws Exception {
-                                LogUtil.p("ACCEPT");
-                            }
-                        });*/
                 disposables.add(Observable.just(array).map(new Function<String[], List<String>>() {
                     @Override
                     public List<String> apply(String[] strings) throws Exception {
@@ -214,9 +223,34 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
                             @Override
                             public void onComplete() {
                                 LogUtil.p("onComplete");
-
                             }
                         }));
+                break;
+            case R.id.button6:
+             Disposable disposable =   Observable.just("Hello").subscribeWith(new DisposableObserver<String>() {
+                    @Override
+                    public void onNext(String value) {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+
+//                completable();
+                break;
+            case R.id.button7:
+                single();
+                break;
+            case R.id.button8:
+                maybe();
+                break;
+            case R.id.button9:
+                fromCallable();
                 break;
             default:
                 break;
@@ -229,12 +263,9 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
         disposables.dispose();
     }
 
-    CompositeDisposable disposables = new CompositeDisposable();
-
-
     void Flowable() {
-        Flowable<String> flowable  = Flowable.just("Hello");
-        Disposable d1 = flowable.subscribeWith(new DisposableSubscriber<String>(){
+        Flowable<String> flowable = Flowable.just("Hello");
+        Disposable d1 = flowable.subscribeWith(new DisposableSubscriber<String>() {
             @Override
             public void onNext(String s) {
             }
@@ -248,7 +279,6 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
             }
         });
     }
-
 
     void Observable() {
         Observable<String> o = Observable.just("Hello");
@@ -267,53 +297,132 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
         });
     }
 
+    void fromCallable() {
+        Observable.fromCallable(new Callable<List<String>>() {
+            @Override
+            public List<String> call() throws Exception {
+                LogUtil.p("call do on thread any");
+                blockThread(2000); // block 2s
+                return Arrays.asList(array);
+            }
+        }).subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        LogUtil.p("");
+                    }
+                }).doOnComplete(new Action() {
+            @Override
+            public void run() throws Exception {
+                LogUtil.p("");
+            }
+        }).doOnNext(new Consumer<List<String>>() {
+            @Override
+            public void accept(List<String> strings) throws Exception {
+                LogUtil.p("" + strings.get(0));
+            }
+        }).doAfterNext(new Consumer<List<String>>() {
+            @Override
+            public void accept(List<String> strings) throws Exception {
+                LogUtil.p(""+strings.get(0));
+            }
+        }).subscribe(new Observer<List<String>>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                LogUtil.p("onSubscribe " + d.isDisposed());
+            }
+
+            @Override
+            public void onNext(List<String> value) {
+                LogUtil.p(" get Response " + value.size());
+                value.set(0, "change first element!");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+            }
+
+            @Override
+            public void onComplete() {
+                LogUtil.p("");
+            }
+        });
+    }
+
     void maybe() {
         Maybe<String> maybe = Maybe.just("Hello");
         Disposable d3 = maybe.subscribeWith(new DisposableMaybeObserver<String>() {
 
-                    @Override
-                    public void onSuccess(String value) {
-                    }
+            @Override
+            public void onSuccess(String value) {
+            }
 
-                    @Override
-                    public void onError(Throwable e) {
-                    }
+            @Override
+            public void onError(Throwable e) {
+            }
 
-                    @Override
-                    public void onComplete() {
-                    }
-                });
+            @Override
+            public void onComplete() {
+            }
+        });
         disposables.add(d3);
     }
 
-
-    void singel() {
+    void single() {
         Single<String> s = Single.just("Hello");
-        Disposable d4  = s.subscribeWith(new DisposableSingleObserver<String>() {
-
+        Disposable d4 = s.subscribeOn(Schedulers.io()).map(new Function<String, String>() {
+            @Override
+            public String apply(String s) throws Exception {
+                LogUtil.p("apply");
+                return s + " 加工之后";
+            }
+        }).observeOn(AndroidSchedulers.mainThread()).
+                subscribeWith(new DisposableSingleObserver<String>() {
 
                     @Override
                     public void onSuccess(String value) {
+                        LogUtil.p("value is " + value);
                     }
 
                     @Override
                     public void onError(Throwable e) {
                     }
                 });
+        disposables.add(d4);
     }
 
-    void completeable() {
-        Completable c = Completable.complete();
-        Disposable d5 = c.subscribeWith(new DisposableCompletableObserver() {
+    void completable() {
+        Completable c = Completable.create(new CompletableOnSubscribe() {
+            @Override
+            public void subscribe(CompletableEmitter e) throws Exception {
+                LogUtil.p("");
+                blockThread(2000);
+                e.onComplete();
+            }
+        });
+        Disposable d5 = c.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribeWith(new DisposableCompletableObserver() {
             @Override
             public void onComplete() {
+                LogUtil.p("complete on ");
             }
 
             @Override
             public void onError(Throwable e) {
             }
         });
+        disposables.add(d5);
     }
 
     String[] array = new String[]{"天大圣", "dsa", "dsa", "sdsadsa"};
+
+    void blockThread(long time) throws InterruptedException {
+        Thread.sleep(time);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        disposables.dispose();
+    }
 }

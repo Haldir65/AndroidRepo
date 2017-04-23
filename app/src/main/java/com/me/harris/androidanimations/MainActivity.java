@@ -106,6 +106,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
         list.add(new Pair<String, Class>("PathAnimation", PathAnimationActivity.class));
         list.add(new Pair<String, Class>("SlideIn", SimpleSlideInAnimationActivity.class));
+        list.add(new Pair<String, Class>("RxJava2", RxJava2MainActivity.class));
         list.add(new Pair<String, Class>("BouncingBalls", BouncingBallsActivity.class));
         list.add(new Pair<String, Class>("ShadowCard", ShadowCardDrag.class));
         list.add(new Pair<String, Class>("CardImageView", MaterialWitness.class));
@@ -127,7 +128,6 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("AnimateBinding", AnimatingBindingActivity.class));
         list.add(new Pair<String, Class>("FitSystemWindows", FitSystemWindowsActivity.class));
         list.add(new Pair<String, Class>("PlainActivity", PlainActivity.class));
-        list.add(new Pair<String, Class>("RxJava2", RxJava2MainActivity.class));
         list.add(new Pair<String, Class>("PictureScan", PictureScanDisplayActivity.class));
         list.add(new Pair<String, Class>("recyclerView", PlainRecyclerViewActivity.class));
         list.add(new Pair<String, Class>("PrefetcherActivity", RecyclerViewPrefetcherActivity.class));
