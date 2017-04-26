@@ -42,11 +42,18 @@
     <string name="sort_by_birth">Sort by year of birth</string>
 
 
-    <string name="action_settings">Settings</string>
     <string name="title_activity_tm">天猫</string>
     <string name="title_activity_home">主页</string>
 
     <string name="date_until_now">至今</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="active_notification_count_zero">No active notification</string>
+    <plurals name="active_notification_count_nonzero">
+        <item quantity="one">%d active notification</item>
+        <item quantity="other">%d active notifications</item>
+    </plurals>
 
 
 </resources>

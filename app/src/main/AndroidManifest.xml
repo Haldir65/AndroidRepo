@@ -203,6 +203,18 @@
             android:parentActivityName=".MainActivity"
             />
 
+        <activity android:name="._33_notificationservice.NotificationMainActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <service
+            android:name="._33_notificationservice.NotificationMonitor"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
