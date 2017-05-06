@@ -56,6 +56,7 @@ import com.me.harris.androidanimations._30_constraintlayout.ConstraintLayoutActi
 import com.me.harris.androidanimations._31_picker.PickerActivity;
 import com.me.harris.androidanimations._32_boing.BoingActivity;
 import com.me.harris.androidanimations._33_notificationservice.NotificationMainActivity;
+import com.me.harris.androidanimations._34_bottomsheet.BottomSheetActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -148,6 +149,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("Picker", PickerActivity.class));
         list.add(new Pair<String, Class>("Boing", BoingActivity.class));
         list.add(new Pair<String, Class>("Notification", NotificationMainActivity.class));
+        list.add(new Pair<String, Class>("BottomSheet", BottomSheetActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
