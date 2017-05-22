@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidAnimations.iml" filepath="$PROJECT_DIR$/AndroidAnimations.iml" />
+      <module fileurl="file://D:\workspace\clones\AndroidRepo\AndroidAnimations.iml" filepath="D:\workspace\clones\AndroidRepo\AndroidAnimations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidRepo.iml" filepath="$PROJECT_DIR$/AndroidRepo.iml" />
       <module fileurl="file://D:\private\AndroidAnimations\AndroidRepo.iml" filepath="D:\private\AndroidAnimations\AndroidRepo.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotation/annotation.iml" filepath="$PROJECT_DIR$/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
