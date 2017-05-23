@@ -58,6 +58,7 @@ import com.me.harris.androidanimations._32_boing.BoingActivity;
 import com.me.harris.androidanimations._33_notificationservice.NotificationMainActivity;
 import com.me.harris.androidanimations._34_bottomsheet.BottomSheetActivity;
 import com.me.harris.androidanimations._35_shimmer_layout.ShimmerActivity;
+import com.me.harris.androidanimations._36_fun_kt.KActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -152,6 +153,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("Notification", NotificationMainActivity.class));
         list.add(new Pair<String, Class>("BottomSheet", BottomSheetActivity.class));
         list.add(new Pair<String, Class>("Shimmer", ShimmerActivity.class));
+        list.add(new Pair<String, Class>("Kotlin", KActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
