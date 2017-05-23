@@ -21,6 +21,7 @@ class KActivity : BaseAppCompatActivity() {
         mIvBeauty = findViewById(R.id.iv_beauty)
 
 
+
     }
 
     fun calTime() {
