@@ -94,6 +94,25 @@ fun findEmails(user: List<User>, prdicate: (String) -> (Boolean)) :List<User> {
     TODO("Later!") // filtering users
 }
 
+fun bindHolder(payloads: List<Any>, pair: Pair<String,Int>) {
+
+    // the way to iterate a list
+    payloads.forEach {
+        when (it) {
+            is Payloads.Favorite -> print("is Favorite")
+            is Payloads.Retweet -> {
+                print("is Retweet")
+                pair.apply {
+                    var text = first
+                    text = it.toString()
+
+                }
+            }
+        }
+    }
+
+}
+
 
 
 
@@ -105,6 +124,9 @@ fun convertVerboseRealMoney(m: DecMoney): DecMoney {
         "EUR" -> return DecMoney(m.amount * BigDecimal(1.10),"$")
        else -> TODO()
     }
+
+
+
 }
 
 // a much more simple expression
