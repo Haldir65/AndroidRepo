@@ -24,6 +24,7 @@ Android Graphic和Animation的一些整理
 - [DiffUtil Sample](https://github.com/mrmike/DiffUtil-sample)
 - [仿京东天猫下拉刷新](https://github.com/shenminjie/jd_tmall_refresh_demo)
 - [dataBinding blog](https://medium.com/@georgemount007)
+- [可能是东半球最全的RxJava使用场景小结](http://blog.csdn.net/theone10211024/article/details/50435325) 手动斜眼
 
 感谢以上作者
 

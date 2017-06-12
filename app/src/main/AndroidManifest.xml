@@ -226,6 +226,11 @@
         <activity android:name="._38_asyncLayoutInflater.AsyncLayoutInflaterActivity"
             android:parentActivityName=".MainActivity"
             />
+        <activity android:name="._39_render_script.RenderScriptActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+
 
         <service
             android:name="._33_notificationservice.NotificationMonitor"
