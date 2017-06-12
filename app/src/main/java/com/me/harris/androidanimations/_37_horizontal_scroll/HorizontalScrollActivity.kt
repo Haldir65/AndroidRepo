@@ -6,7 +6,7 @@ import com.me.harris.androidanimations.BaseAppCompatActivity
 /**
  * Courtesy of https://github.com/adityagohad/HorizontalPicker
  */
-class HorizontalScrollActivity : BaseAppCompatActivity {
+class HorizontalScrollActivity : BaseAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
