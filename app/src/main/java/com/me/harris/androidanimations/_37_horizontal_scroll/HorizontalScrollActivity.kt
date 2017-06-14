@@ -17,7 +17,6 @@ class HorizontalScrollActivity : BaseAppCompatActivity() {
         setContentView(R.layout.activity_horizontal_picker)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
-
     }
 
 
