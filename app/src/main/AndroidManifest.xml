@@ -12,6 +12,15 @@
     <uses-permission
         android:name="android.permission.READ_CONTACTS"
         android:maxSdkVersion="22"/>
+
+
+    <permission
+        android:name="com.me.harris.androidanimations.permission.REMOTE_SERVICE_PERMISSION"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="com.me.harris.androidanimations.permission.REMOTE_SERVICE_PERMISSION" />
+
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -95,7 +104,8 @@
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._09_recyclerView.diffUtil.DiffUtilActivity"
+        <activity
+            android:name="._09_recyclerView.diffUtil.DiffUtilActivity"
             android:parentActivityName=".MainActivity"
             />
 
@@ -115,11 +125,13 @@
             android:theme="@style/DayNightDemo"
             />
 
-        <activity android:name="._14_openGL_ES.OpenGLES20Activity"
+        <activity
+            android:name="._14_openGL_ES.OpenGLES20Activity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._14_openGL_ES.bouncing_cube.BouncyCubeActivity"
+        <activity
+            android:name="._14_openGL_ES.bouncing_cube.BouncyCubeActivity"
             android:parentActivityName=".MainActivity"
             />
 
@@ -143,7 +155,8 @@
             android:name="._19_rx_java_2.RxJava2MainActivity"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._19_rx_java_2.PictureScanDisplayActivity"
+        <activity
+            android:name="._19_rx_java_2.PictureScanDisplayActivity"
             android:parentActivityName=".MainActivity"
             />
 
@@ -169,74 +182,108 @@
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._24_shimmering.ShimmeringActivity"
+        <activity
+            android:name="._24_shimmering.ShimmeringActivity"
             android:parentActivityName=".MainActivity"/>
 
-        <activity android:name="._25_pull_to_refresh.Jd_PullToRefreshActivity"
+        <activity
+            android:name="._25_pull_to_refresh.Jd_PullToRefreshActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._26_min_height.TestWhatEverActivity"
+        <activity
+            android:name="._26_min_height.TestWhatEverActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._27_data_binding.ActivityDataBindingEntrance"
+        <activity
+            android:name="._27_data_binding.ActivityDataBindingEntrance"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._28_percent.PercentLayoutActivity"
+        <activity
+            android:name="._28_percent.PercentLayoutActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._29_velocity.VelocityTrackerActivity"
+        <activity
+            android:name="._29_velocity.VelocityTrackerActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._30_constraintlayout.ConstraintLayoutActivity"
+        <activity
+            android:name="._30_constraintlayout.ConstraintLayoutActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._31_picker.PickerActivity"
+        <activity
+            android:name="._31_picker.PickerActivity"
             android:parentActivityName=".MainActivity"
             />
-        <activity android:name="._32_boing.BoingActivity"
-            android:parentActivityName=".MainActivity"
-            />
-
-        <activity android:name="._33_notificationservice.NotificationMainActivity"
-            android:parentActivityName=".MainActivity"
-            />
-
-        <activity android:name="._34_bottomsheet.BottomSheetActivity"
+        <activity
+            android:name="._32_boing.BoingActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._35_shimmer_layout.ShimmerActivity"
+        <activity
+            android:name="._33_notificationservice.NotificationMainActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._36_fun_kt.KActivity"
+        <activity
+            android:name="._34_bottomsheet.BottomSheetActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._37_horizontal_scroll.HorizontalScrollActivity"
+        <activity
+            android:name="._35_shimmer_layout.ShimmerActivity"
             android:parentActivityName=".MainActivity"
             />
 
-        <activity android:name="._38_asyncLayoutInflater.AsyncLayoutInflaterActivity"
+        <activity
+            android:name="._36_fun_kt.KActivity"
             android:parentActivityName=".MainActivity"
             />
-        <activity android:name="._39_render_script.RenderScriptActivity"
+
+        <activity
+            android:name="._37_horizontal_scroll.HorizontalScrollActivity"
             android:parentActivityName=".MainActivity"
             />
+
+        <activity
+            android:name="._38_asyncLayoutInflater.AsyncLayoutInflaterActivity"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity
+            android:name="._39_render_script.RenderScriptActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <activity
+            android:name="._40_ipc.IPCMainActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
+
+
+
+
 
 
 
         <service
+            android:name=".aidl.MessageService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote"
+            />
+
+
+        <service
             android:name="._33_notificationservice.NotificationMonitor"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService" />
+                <action android:name="android.service.notification.NotificationListenerService"/>
             </intent-filter>
         </service>
 

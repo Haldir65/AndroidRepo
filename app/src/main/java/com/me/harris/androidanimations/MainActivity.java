@@ -62,6 +62,7 @@ import com.me.harris.androidanimations._36_fun_kt.KActivity;
 import com.me.harris.androidanimations._37_horizontal_scroll.HorizontalScrollActivity;
 import com.me.harris.androidanimations._38_asyncLayoutInflater.AsyncLayoutInflaterActivity;
 import com.me.harris.androidanimations._39_render_script.RenderScriptActivity;
+import com.me.harris.androidanimations._40_ipc.IPCMainActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -160,6 +161,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("Scroll", HorizontalScrollActivity.class));
         list.add(new Pair<String, Class>("AsyncInflate", AsyncLayoutInflaterActivity.class));
         list.add(new Pair<String, Class>("RenderScript", RenderScriptActivity.class));
+        list.add(new Pair<String, Class>("IPC", IPCMainActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
