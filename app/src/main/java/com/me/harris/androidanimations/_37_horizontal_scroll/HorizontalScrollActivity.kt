@@ -21,4 +21,5 @@ class HorizontalScrollActivity : BaseAppCompatActivity() {
 
 
 
+
 }

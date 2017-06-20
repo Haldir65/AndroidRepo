@@ -63,7 +63,9 @@ public class IPCMainActivity extends BaseAppCompatActivity implements View.OnCli
                 e.printStackTrace();
             }
         }
-        unbindService(serviceConnection);
+        if (registerd) {
+            unbindService(serviceConnection);
+        }
         super.onDestroy();
     }
 
@@ -76,9 +78,11 @@ public class IPCMainActivity extends BaseAppCompatActivity implements View.OnCli
      */
     private void setupService() {
         Intent intent = new Intent(this, MessageService.class);
-        bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
-        startService(intent);
+       registerd =  bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+       startService(intent);
     }
+
+    boolean registerd;
 
     /**
      * Binder可能会意外死忙（比如Service Crash），Client监听到Binder死忙后可以进行重连服务等操作
