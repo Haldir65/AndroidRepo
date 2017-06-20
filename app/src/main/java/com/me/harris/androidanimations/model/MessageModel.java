@@ -1,4 +1,4 @@
-package com.me.harris.androidanimations;
+package com.me.harris.androidanimations.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

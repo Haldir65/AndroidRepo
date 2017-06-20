@@ -267,12 +267,8 @@
 
 
 
-
-
-
-
         <service
-            android:name=".aidl.MessageService"
+            android:name="._40_ipc.MessageService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote"

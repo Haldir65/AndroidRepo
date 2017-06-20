@@ -13,7 +13,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.me.harris.androidanimations.BaseAppCompatActivity;
-import com.me.harris.androidanimations.MessageModel;
+import com.me.harris.androidanimations.model.MessageModel;
 import com.me.harris.androidanimations.MessageReceiver;
 import com.me.harris.androidanimations.MessageSender;
 import com.me.harris.androidanimations.R;
@@ -108,6 +108,7 @@ public class IPCMainActivity extends BaseAppCompatActivity implements View.OnCli
         @Override
         public void onMessageReceived(MessageModel receivedMessage) throws RemoteException {
             Log.d(TAG, "onMessageReceived: " + receivedMessage.toString());
+            binding.tvPs.setText(receivedMessage.toString());
         }
     };
 
