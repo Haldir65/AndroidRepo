@@ -26,6 +26,7 @@ import com.me.harris.androidanimations._06_touch.activity.TouchEventActivity;
 import com.me.harris.androidanimations._07_permission.MarshmallowPermissionActivity;
 import com.me.harris.androidanimations._08_coordinateLayout.CoordinateLayoutEntrance;
 import com.me.harris.androidanimations._09_recyclerView.PlainRecyclerViewActivity;
+import com.me.harris.androidanimations._09_recyclerView.RecyclerViewInNesetdScrollViewActivity;
 import com.me.harris.androidanimations._09_recyclerView.RecyclerViewPrefetcherActivity;
 import com.me.harris.androidanimations._09_recyclerView.adapter.MainAdapter;
 import com.me.harris.androidanimations._09_recyclerView.diffUtil.DiffUtilActivity;
@@ -138,6 +139,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("PlainActivity", PlainActivity.class));
         list.add(new Pair<String, Class>("PictureScan", PictureScanDisplayActivity.class));
         list.add(new Pair<String, Class>("recyclerView", PlainRecyclerViewActivity.class));
+        list.add(new Pair<String, Class>("nestedScroll", RecyclerViewInNesetdScrollViewActivity.class));
         list.add(new Pair<String, Class>("PrefetcherActivity", RecyclerViewPrefetcherActivity.class));
         list.add(new Pair<String, Class>("Annotation", EliminateBoilerplate.class));
         list.add(new Pair<String, Class>("WaveView", WaveAnimationActivity.class));

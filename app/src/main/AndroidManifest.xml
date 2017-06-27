@@ -99,6 +99,10 @@
             android:parentActivityName=".MainActivity"/>
 
 
+        <activity android:name="._09_recyclerView.RecyclerViewInNesetdScrollViewActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <activity
             android:name="._09_recyclerView.RecyclerViewPrefetcherActivity"
             android:parentActivityName=".MainActivity"

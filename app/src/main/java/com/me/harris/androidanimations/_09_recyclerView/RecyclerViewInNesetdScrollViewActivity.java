@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
-import com.me.harris.androidanimations.databinding.ActivityPlainRecyclerViewBinding;
+import com.me.harris.androidanimations.databinding.ActivityNestedScrollRecyclerViewBinding;
 import com.me.harris.androidanimations.utils.Utils;
 
 import java.util.ArrayList;
@@ -27,15 +27,15 @@ import java.util.List;
  * Created by Harris on 2016/12/24.
  */
 
-public class PlainRecyclerViewActivity extends BaseAppCompatActivity {
+public class RecyclerViewInNesetdScrollViewActivity extends BaseAppCompatActivity {
 
-    ActivityPlainRecyclerViewBinding binding;
+    ActivityNestedScrollRecyclerViewBinding binding;
     private PlainAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_plain_recycler_view);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_nested_scroll_recycler_view);
         setSupportActionBar(binding.included.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.recyclerView.setAdapter(mAdapter = new PlainAdapter());
