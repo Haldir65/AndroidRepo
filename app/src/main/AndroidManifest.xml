@@ -20,6 +20,7 @@
 
     <uses-permission android:name="com.me.harris.androidanimations.permission.REMOTE_SERVICE_PERMISSION" />
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".App"
@@ -267,8 +268,8 @@
             android:name="._40_ipc.IPCMainActivity"
             android:parentActivityName=".MainActivity"
             />
-
-
+        <activity android:name="._15_swipeBackLayout.demo.SwipeBackDemoActivity"
+            />
 
 
         <service

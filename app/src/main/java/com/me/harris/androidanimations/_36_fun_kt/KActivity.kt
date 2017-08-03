@@ -4,7 +4,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import com.me.harris.androidanimations.BaseAppCompatActivity
 import com.me.harris.androidanimations.R
 import java.net.ServerSocket
@@ -16,7 +15,7 @@ import kotlin.system.measureTimeMillis
  */
 class KActivity : BaseAppCompatActivity() {
 
-    var mIvBeauty: ImageView? = null
+    var mIvBeauty: View? = null
 
     private val deleteByFirstName by lazy {
         // lazy load

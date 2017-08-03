@@ -24,6 +24,11 @@ class KDesugar :Runnable {
     class Maac : AppCompatActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
+            // iterating iterabale with index
+            val quoteParts = " YOU JUST TALKED TO MUCH !".split(" ")
+            for ((index, value) in quoteParts.withIndex()) {
+                print("reading index $index: $value ")
+            }
         }
     }
 

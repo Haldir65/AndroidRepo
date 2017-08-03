@@ -39,6 +39,7 @@ import com.me.harris.androidanimations._12_oom_example.OutOfMemoryActivity;
 import com.me.harris.androidanimations._13_night_mode.DayNightActivity;
 import com.me.harris.androidanimations._14_openGL_ES.OpenGLES20Activity;
 import com.me.harris.androidanimations._14_openGL_ES.bouncing_cube.BouncyCubeActivity;
+import com.me.harris.androidanimations._15_swipeBackLayout.demo.SwipeBackDemoActivity;
 import com.me.harris.androidanimations._17_popup_Window.PopupWindowActivity;
 import com.me.harris.androidanimations._18_animating_binding.AnimatingBindingActivity;
 import com.me.harris.androidanimations._19_rx_java_2.PictureScanDisplayActivity;
@@ -114,6 +115,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("DrawableAnimation", DrawableAnimationActivity.class));
         list.add(new Pair<String, Class>("PropertyAnimation", PropertyAnimationActivity.class));
         list.add(new Pair<String, Class>("PathAnimation", PathAnimationActivity.class));
+        list.add(new Pair<String, Class>("SwipeBack", SwipeBackDemoActivity.class));
         list.add(new Pair<String, Class>("SlideIn", SimpleSlideInAnimationActivity.class));
         list.add(new Pair<String, Class>("RxJava2", RxJava2MainActivity.class));
         list.add(new Pair<String, Class>("BouncingBalls", BouncingBallsActivity.class));

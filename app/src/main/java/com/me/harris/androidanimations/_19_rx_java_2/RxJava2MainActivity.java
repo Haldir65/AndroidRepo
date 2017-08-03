@@ -252,9 +252,23 @@ public class RxJava2MainActivity extends BaseAppCompatActivity implements Action
             case R.id.button9:
                 fromCallable();
                 break;
+            case R.id.button10:
+                fromWorker(); //do stuff on worker thread
+                break;
             default:
                 break;
         }
+    }
+
+    private void fromWorker() {
+        Schedulers.computation()
+                .createWorker()
+                .schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        LogUtil.p("do Crazy Stuff on Worker Thread in one Second");
+                    }
+                },1000,TimeUnit.MILLISECONDS);
     }
 
     @Override
