@@ -270,6 +270,7 @@
             />
         <activity android:name="._15_swipeBackLayout.demo.SwipeBackDemoActivity"
             />
+        <activity android:name="._41_cute_animation.WeatherMainActivity"/>
 
 
         <service

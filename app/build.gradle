@@ -3,8 +3,8 @@ apply plugin: 'kotlin-android'
 //apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 'android-O'
-    buildToolsVersion '26.0.0'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
 
 
     repositories {
@@ -42,41 +42,41 @@ android {
 }
 
 ext {
-    supportLibVersion = "26.0.0-beta2"
+    supportLibVersion = "25.3.1"
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile ("com.android.support:appcompat-v7:${supportLibVersion}") {
+    implementation ("com.android.support:appcompat-v7:${supportLibVersion}") {
         exclude module: 'support-media-compat'
     }
-    compile "com.android.support:support-fragment:${supportLibVersion}"
-    compile "com.android.support:cardview-v7:${supportLibVersion}"
+    implementation "com.android.support:support-fragment:${supportLibVersion}"
+    implementation "com.android.support:cardview-v7:${supportLibVersion}"
     /*v4包拆分成几个小包*/
-  //  compile "com.android.support:support-media-compat:${supportLibVersion}"
-    compile "com.android.support:support-core-ui:${supportLibVersion}"
-    compile "com.android.support:support-core-utils:${supportLibVersion}"
-    compile "com.android.support:support-compat:${supportLibVersion}"
-    compile "com.android.support:design:${supportLibVersion}"
-    compile "com.android.support:percent:${supportLibVersion}"
-    compile "com.android.support:support-dynamic-animation:${supportLibVersion}"
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
-    compile 'com.squareup.okhttp3:okhttp:3.7.0'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+  //  implementation "com.android.support:support-media-compat:${supportLibVersion}"
+    implementation "com.android.support:support-core-ui:${supportLibVersion}"
+    implementation "com.android.support:support-core-utils:${supportLibVersion}"
+    implementation "com.android.support:support-compat:${supportLibVersion}"
+    implementation "com.android.support:design:${supportLibVersion}"
+    implementation "com.android.support:percent:${supportLibVersion}"
+    implementation "com.android.support:support-dynamic-animation:${supportLibVersion}"
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 
-    compile 'in.srain.cube:ultra-ptr:1.0.11' //添加下拉刷新组件
+    implementation 'in.srain.cube:ultra-ptr:1.0.11' //添加下拉刷新组件
 
 
-    compile project (':annotation')
+    implementation project (':annotation')
     annotationProcessor project(":compiler")
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
