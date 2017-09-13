@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.me.harris.androidanimations._04_customView.widget.ShapeButton
+            android:id="@+id/sbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/holo_purple"
+            android:text="确定"
+            app:backgroundColor_normal="#3F51B5"
+            app:backgroundColor_selected="#FF5E73EB"
+            app:bottomLeftRadius="0dp"
+            app:bottomRightRadius="0dp"
+            app:shapeType="oval"
+            app:textColor_normal="#FaFaFa"
+            app:textColor_selected="#FFFFFF"
+            app:topLeftRadius="0dp"
+            app:topRightRadius="0dp"
+            android:layout_gravity="center"
+            />
+
+    </RelativeLayout>
+</layout>
