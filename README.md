@@ -26,6 +26,7 @@ Android Graphic和Animation的一些整理
 - [dataBinding blog](https://medium.com/@georgemount007)
 - [可能是东半球最全的RxJava使用场景小结](http://blog.csdn.net/theone10211024/article/details/50435325) 手动斜眼
 - [自定义view实现超萌动感天气小太阳](https://github.com/fengivy/Weather)
+- [仿探探卡片滑动](https://github.com/mcxtzhang/ZLayoutManager)以及[模仿探探卡片滑动效果的布局](https://github.com/yuqirong/CardSwipeLayout)
 
 感谢以上作者
 
