@@ -18,6 +18,10 @@ cache:
 
  - $HOME/.gradle/wrapper/
 
+env:
+  matrix:
+    - ANDROID_TARGET=android-22  ANDROID_ABI=armeabi-v7a
+
 android:
   components:
     # Uncomment the lines below if you want to
@@ -42,15 +46,16 @@ android:
     - sys-img-armeabi-v7a-android-26
     - sys-img-armeabi-v7a-android-17
 
-env:
-  matrix:
-    - ANDROID_TARGET=android-22  ANDROID_ABI=armeabi-v7a
+  before_script:
+      - android update sdk --no-ui --filter build-tools-24.0.1,android-24,extra-android-m2repository
+      # Create and start emulator
+      - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+      - emulator -avd test -no-skin -no-audio -no-window &
+      - adb wait-for-device
+      - adb shell input keyevent 82 &
 
-before_script:
-  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+
+
 
 script:
 - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace --daemon"
