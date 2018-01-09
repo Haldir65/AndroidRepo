@@ -51,7 +51,7 @@ public class Jd_PullToRefreshActivity extends BaseAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jd_pull_to_refresh);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         mDatas=new ArrayList<>();
@@ -59,8 +59,8 @@ public class Jd_PullToRefreshActivity extends BaseAppCompatActivity {
             mDatas.add(new Object());
         }
 
-        mLayout = (JdRefreshLayout) findViewById(R.id.test_recycler_view_frame);
-        mRecyclerView = (RecyclerView) findViewById(R.id.test_recycler_view);
+        mLayout = findViewById(R.id.test_recycler_view_frame);
+        mRecyclerView = findViewById(R.id.test_recycler_view);
        /* mManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mManager);*/
         mAdapter=new MyAdapter(mDatas);
@@ -68,7 +68,8 @@ public class Jd_PullToRefreshActivity extends BaseAppCompatActivity {
         mLayout.setPtrHandler(new PtrDefaultHandler() {
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-                doSth();
+//                doSth();
+                frame.postDelayed(frame::refreshComplete,5000);
             }
         });
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
