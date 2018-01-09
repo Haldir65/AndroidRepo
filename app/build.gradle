@@ -25,6 +25,10 @@ android {
         renderscriptSupportModeEnabled true
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     dexOptions {
 //        javaMaxHeapSize "6g"# just delete this line , according to the google io 2017 talk
     }

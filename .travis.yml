@@ -42,4 +42,4 @@ android:
 
 script:
 
-- "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
+- "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace --daemon"
