@@ -44,18 +44,9 @@ android:
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
 #    - sys-img-armeabi-v7a-android-26
-    - sys-img-armeabi-v7a-android-19
-
-  before_script:
-      - android update sdk --no-ui --filter build-tools-24.0.1,android-24,extra-android-m2repository
-      # Create and start emulator
-      - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
-      - emulator -avd test -no-skin -no-audio -no-window &
-      - adb wait-for-device
-      - adb shell input keyevent 82 &
-
+#    - sys-img-armeabi-v7a-android-19
 
 
 
 script:
-- "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace --daemon"
+- "./gradlew clean build --stacktrace --daemon"
