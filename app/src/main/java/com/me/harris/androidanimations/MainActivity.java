@@ -6,8 +6,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.util.Pair;
+import android.support.v4.view.AsyncLayoutInflater;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations._02_surfaceview.SurfaceViewActivity;
@@ -96,6 +98,7 @@ public class MainActivity extends BaseAppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
         mAdapter = new MainAdapter<Pair<String, Class>>(R.layout.item_main, new GenericCallBack<Pair<String, Class>>() {
             @Override
             public void onClick(View view, Pair<String, Class> stringClassPair) {

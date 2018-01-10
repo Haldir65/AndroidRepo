@@ -1,6 +1,8 @@
 # AndroidAnimations
 Android Graphic和Animation的一些整理
 
+### Status
+[![Build Status](https://travis-ci.org/Haldir65/AndroidRepo.svg?branch=master)](https://travis-ci.org/Haldir65/AndroidRepo)
 
 ## references 
 - [AndroidNotes](https://github.com/GcsSloop/AndroidNote) 	关于Canvas的写的非常用心的md文档
