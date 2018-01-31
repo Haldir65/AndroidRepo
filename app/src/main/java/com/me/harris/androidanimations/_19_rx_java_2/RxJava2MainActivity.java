@@ -29,6 +29,9 @@ import io.reactivex.CompletableEmitter;
 import io.reactivex.CompletableOnSubscribe;
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
+import io.reactivex.MaybeEmitter;
+import io.reactivex.MaybeObserver;
+import io.reactivex.MaybeOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -42,6 +45,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Cancellable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.internal.operators.maybe.MaybeFromCallable;
 import io.reactivex.observers.DisposableCompletableObserver;
 import io.reactivex.observers.DisposableMaybeObserver;
 import io.reactivex.observers.DisposableObserver;
@@ -92,6 +96,7 @@ public class RxJava2MainActivity extends AppCompatActivity implements OnItemClic
         mList.add(new Person("Flowable"));
         mList.add(new Person("Observable",R.color.md_green_500));
         mList.add(new Person("Periodical",R.color.md_red_400));
+        mList.add(new Person("onComplete",R.color.md_green_500));
     }
 
     @Override
@@ -138,6 +143,8 @@ public class RxJava2MainActivity extends AppCompatActivity implements OnItemClic
                     Observable();
                 case 13:
                     schedulePeriodicallyTasks();
+                case 14:
+                    testOnComplete();
                 default:
                     break;
             }
@@ -334,6 +341,68 @@ public class RxJava2MainActivity extends AppCompatActivity implements OnItemClic
         }, 1000,1000,TimeUnit.MILLISECONDS);
     }
 
+    boolean flag = true;
+    void testOnComplete() {
+        flag = !flag;
+
+        Maybe observable1, observable2;
+
+        observable1 = Maybe.create(new MaybeOnSubscribe<String>() {
+            @Override
+            public void subscribe(MaybeEmitter<String> e) throws Exception {
+                binding.linearLayout.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        e.onSuccess("111111111111111111");
+                        LogUtil.p("");
+                    }
+                }, 1500);
+
+            }
+        });
+
+        observable2 = Maybe.create(new MaybeOnSubscribe<String>() {
+            @Override
+            public void subscribe(MaybeEmitter<String> e) throws Exception {
+                binding.linearLayout.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (flag) {
+                            e.onSuccess("22222222222222");
+                            LogUtil.p("");
+                        } else {
+                            e.onComplete();
+                            LogUtil.p("");
+                        }
+
+                    }
+                }, 200);
+
+            }
+        });
+
+        Maybe.merge(observable1,observable2)
+                .subscribeWith(new DisposableSubscriber<String>() {
+                    @Override
+                    public void onNext(String o) {
+                        LogUtil.p("" + o);
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        LogUtil.p("" );
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        LogUtil.p(""); // we dont' need call onComplete on the emitter side
+
+                    }
+                });
+
+
+
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
