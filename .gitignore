@@ -43,5 +43,5 @@ captures/
 .idea
 
 # Keystore files
-*.jks
+#*.jks   // just some dummy key
 

@@ -49,4 +49,4 @@ android:
 
 
 script:
-- "./gradlew clean assembleDebug --stacktrace --daemon"
+- "./gradlew clean assembleRelease--stacktrace --daemon"
