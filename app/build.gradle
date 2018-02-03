@@ -7,12 +7,12 @@ android {
     buildToolsVersion '26.0.2'
 
 
-    repositories {
-        maven{
-            url "https://maven.google.com"
-        }
-        mavenCentral()
-    }
+//    repositories {
+//        maven{
+//            url "https://maven.google.com"
+//        }
+//        mavenCentral()
+//    }
 
     defaultConfig {
         applicationId "com.me.harris.androidanimations"
@@ -25,6 +25,61 @@ android {
         renderscriptSupportModeEnabled true
     }
 
+    // Specifies the flavor dimensions you want to use. The order in which you
+    // list each dimension determines its priority, from highest to lowest,
+    // when Gradle merges variant sources and configurations. You must assign
+    // each product flavor you configure to one of the flavor dimensions.
+    flavorDimensions "api", "mode"
+
+
+    productFlavors {
+        demo {
+            // Assigns this product flavor to the "mode" flavor dimension.
+            dimension "mode"
+
+        }
+
+        full {
+            dimension "mode"
+
+        }
+
+        // Configurations in the "api" product flavors override those in "mode"
+        // flavors and the defaultConfig block. Gradle determines the priority
+        // between flavor dimensions based on the order in which they appear next
+        // to the flavorDimensions property above--the first dimension has a higher
+        // priority than the second, and so on.
+        minApi24 {
+            dimension "api"
+            minSdkVersion 24
+            // To ensure the target device receives the version of the app with
+            // the highest compatible API level, assign version codes in increasing
+            // value with API level. To learn more about assigning version codes to
+            // support app updates and uploading to Google Play, read Multiple APK Support
+            versionCode 30000 + android.defaultConfig.versionCode
+            versionNameSuffix "-minApi24"
+
+        }
+
+        minApi23 {
+            dimension "api"
+            minSdkVersion 23
+            versionCode 20000  + android.defaultConfig.versionCode
+            versionNameSuffix "-minApi23"
+        }
+
+        minApi21 {
+            dimension "api"
+            minSdkVersion 21
+            versionCode 10000  + android.defaultConfig.versionCode
+            versionNameSuffix "-minApi21"
+        }
+    }
+
+
+
+
+
     lintOptions {
         abortOnError false
     }
@@ -34,8 +89,14 @@ android {
     }
 
     buildTypes {
-        release {
+
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -43,11 +104,31 @@ android {
     dataBinding {
         enabled = true
     }
+
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+
+//    applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            def file = output.outputFile
+//            def apkName = 'xxx-xxx-xxx-signed.apk'
+//            output.outputFile = new File(file.parent, apkName)
+//        }
+//    }
+
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def apkName = 'mySigned.apk'
+            print(apkName)
+            outputFileName = "${variant.name}-${variant.versionName}.apk"
+        }
+    }
 }
+
+
 
 ext {
     supportLibVersion = "26.1.0"
@@ -73,8 +154,8 @@ dependencies {
     implementation "com.android.support:support-dynamic-animation:${supportLibVersion}"
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
-    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
     testImplementation 'junit:junit:4.12'
