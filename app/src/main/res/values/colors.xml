@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/md_red_400</color>
-    <color name="colorPrimaryDark">@color/md_red_800</color>
-    <color name="colorAccent">@color/md_red_200</color>
-    <color name="one">#c3e3e5</color>
-    <color name="two">#85cdd4</color>
-    <color name="three">#48afb6</color>
-    <color name="four">#22737b</color>
-
-    <color name="androidColorA">#33B5E5</color>
-    <color name="androidColorB">#AA66CC</color>
-    <color name="androidColorC">#99CC00</color>
-    <color name="androidColorD">#FFBB33</color>
-    <color name="androidColorE">#FF4444</color>
-    <color name="transparent">#00000000</color>
-    <color name="gray_light_deep">#ECECEC</color>
-    <color name="gray_dark">#999999</color>
-    <color name="white">#FFFFFF</color>
-    <color name="accent_orange">#FF7700</color>
-
-    <color name="preset_button_background">@android:color/transparent</color>
-    <color name="preset_button_background_selected">#66000000</color>
-
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
 </resources>
