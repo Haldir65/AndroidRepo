@@ -103,7 +103,8 @@ public class MessageService extends Service {
              * beginBroadcast和finishBroadcast一定要配对使用
              */
             final int listenerCount = listenerList.beginBroadcast();
-            Log.d(TAG, "listenerCount == " + listenerCount);
+            Log.d(TAG, "listenerCount == " + listenerCount+"=========process id is"+android.os.Process.myPid());
+
             for (int i = 0; i < listenerCount; i++) {
                 MessageReceiver messageReceiver = listenerList.getBroadcastItem(i);
                 if (messageReceiver != null) {

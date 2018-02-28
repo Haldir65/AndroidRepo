@@ -13,6 +13,8 @@
         android:name="android.permission.READ_CONTACTS"
         android:maxSdkVersion="22"/>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
         android:name="com.me.harris.androidanimations.permission.REMOTE_SERVICE_PERMISSION"
@@ -275,13 +277,16 @@
         <activity android:name="._042_layoutmanager.LayoutManagerActivity"
             android:parentActivityName=".MainActivity"
             />
+        <activity android:name="._40_ipc.SocketIPCActivity"
+                  android:windowSoftInputMode="stateVisible|adjustResize"
+            />
 
 
         <service
             android:name="._40_ipc.MessageService"
             android:enabled="true"
             android:exported="true"
-            android:process=":remote"
+            android:process=":tools"
             />
 
 
@@ -292,6 +297,11 @@
                 <action android:name="android.service.notification.NotificationListenerService"/>
             </intent-filter>
         </service>
+        <service android:name="._40_ipc.SocketServerService"
+                 android:enabled="true"
+                 android:exported="true"
+                 android:process=":socket"
+            />
 
 
         <provider

@@ -18,6 +18,7 @@ import com.me.harris.androidanimations.MessageReceiver;
 import com.me.harris.androidanimations.MessageSender;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityIpcBinding;
+import com.me.harris.androidanimations.utils.LogUtil;
 
 /**
  * Created by Harris on 2017/6/18.
@@ -37,13 +38,21 @@ public class IPCMainActivity extends BaseAppCompatActivity implements View.OnCli
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.button.setOnClickListener(this);
+        binding.button1.setOnClickListener(this);
+
+
     }
+
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
                 setupService();
+                break;
+            case R.id.button1:
+                Intent intent = new Intent(this, SocketIPCActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
@@ -79,6 +88,8 @@ public class IPCMainActivity extends BaseAppCompatActivity implements View.OnCli
     private void setupService() {
         Intent intent = new Intent(this, MessageService.class);
        registerd =  bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+        int pid = android.os.Process.myPid();
+        LogUtil.p("---------------------currentProcess id is "+pid);
        startService(intent);
     }
 
