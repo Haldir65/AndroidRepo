@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidRepo.iml" filepath="$PROJECT_DIR$/AndroidRepo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dumbplugin/dumbplugin.iml" filepath="$PROJECT_DIR$/dumbplugin/dumbplugin.iml" />
-      <module fileurl="file://F:\workspace\clones\AndroidRepo\sampleplugin\sampleplugin.iml" filepath="F:\workspace\clones\AndroidRepo\sampleplugin\sampleplugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/time/time.iml" filepath="$PROJECT_DIR$/time/time.iml" />
+      <module fileurl="file://F:\workspace\clones\AndroidRepo\time\time.iml" filepath="F:\workspace\clones\AndroidRepo\time\time.iml" />
     </modules>
   </component>
 </project>

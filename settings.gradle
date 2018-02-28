@@ -1,1 +1,1 @@
-include ':app', ':dumbplugin'
+include ':app', ':time'
