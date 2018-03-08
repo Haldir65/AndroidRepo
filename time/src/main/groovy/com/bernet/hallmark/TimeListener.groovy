@@ -32,9 +32,10 @@ class TimeListener implements TaskExecutionListener, BuildListener {
     void buildFinished(BuildResult result) {
         println "Task spend time:"
         for (time in times) {
-            if (time[0] >= 50) {
-                printf "%7sms  %s\n", time
-            }
+            printf "%7sms  %s\n", time
+//            if (time[0] >= 50) {
+//                printf "%7sms  %s\n", time
+//            }
         }
     }
 
