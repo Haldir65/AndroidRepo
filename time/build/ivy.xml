@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="com.bernet.hallmark" module="time" revision="1.0.0" status="integration" default="true" publication="20180308152527"/>
+  <info organisation="com.bernet.hallmark" module="time" revision="1.0.0" status="integration" default="true" publication="20180309191553"/>
   <configurations>
     <conf name="apiElements" visibility="private" extends="runtime"/>
     <conf name="archives" visibility="public"/>
@@ -28,5 +28,7 @@
     <dependency org="org.javassist" name="javassist" rev="3.21.0-GA" conf="compile-&gt;default"/>
     <dependency org="com.android.tools.build" name="gradle-api" rev="3.0.1" conf="compile-&gt;default"/>
     <dependency org="com.android.tools.build" name="gradle" rev="3.0.1" conf="compile-&gt;default"/>
+    <dependency org="commons-io" name="commons-io" rev="2.5" conf="compile-&gt;default"/>
+    <dependency org="net.lingala.zip4j" name="zip4j" rev="1.2.5" conf="compile-&gt;default"/>
   </dependencies>
 </ivy-module>

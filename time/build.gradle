@@ -1,6 +1,25 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
+task copy(type: Copy, group: "Custom", description: "Copies sources to the dest directory") {
+    from "src" //直接将src文件夹复制到dest文件夹中
+    into "dest" // gradlew copy执行
+}
+
+task zip(type: Zip, group: "Archive", description: "Archives sources in a zip file") {
+    from "src"
+}
+
+task hello {
+
+    group 'Welcome'
+    description 'Produces a greeting'
+
+    doLast {
+        println 'Hello, World!'
+    }
+}
+
 dependencies {
     compile gradleApi()
     compile localGroovy()
@@ -9,11 +28,42 @@ dependencies {
 
     compile 'com.android.tools.build:gradle-api:3.0.1'
     compile 'com.android.tools.build:gradle:3.0.1'
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'net.lingala.zip4j', name: 'zip4j', version: '1.2.5'
+
+
+
 }
+
+class GreetingPluginExtension {
+    String message = 'Hello from GreetingPlugin'
+}
+
+class GreetingPlugin implements Plugin<Project> {
+    void apply(Project project) {
+        // Add the 'greeting' extension object
+        def extension = project.extensions.create('greeting', GreetingPluginExtension)
+        // Add a task that uses configuration from the extension object
+        project.task('hello2') {
+            doLast {
+                println extension.message+" you catch me "
+            }
+        }
+    }
+}
+
+apply plugin: GreetingPlugin
+
+// Configure the extension
+greeting.message = 'Hi from Gradle'
+
+
+
 
 repositories {
     jcenter()
     mavenCentral()
+    google()
 }
 
 sourceSets {

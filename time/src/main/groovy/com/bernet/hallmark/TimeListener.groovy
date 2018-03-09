@@ -16,14 +16,14 @@ class TimeListener implements TaskExecutionListener, BuildListener {
     @Override
     void beforeExecute(Task task) {
         clock = new Clock(System.currentTimeMillis())
-        clock.name = "====================name============================"
+//        clock.name = "====================name============================"
     }
 
     @Override
     void afterExecute(Task task, TaskState taskState) {
         def ms = clock.timeInMs
-        print(clock.name+"\n")
-        print("task name = "+task.name+ " task path == "+task.path+"\n")
+//        print(clock.name+"\n")
+//        print("task name = "+task.name+ " task path == "+task.path+"\n")
         times.add([ms, task.path])
         task.project.logger.warn "${task.path} spend ${ms}ms"
     }
