@@ -18,9 +18,9 @@
 
     <permission
         android:name="com.me.harris.androidanimations.permission.REMOTE_SERVICE_PERMISSION"
-        android:protectionLevel="normal" />
+        android:protectionLevel="normal"/>
 
-    <uses-permission android:name="com.me.harris.androidanimations.permission.REMOTE_SERVICE_PERMISSION" />
+    <uses-permission android:name="com.me.harris.androidanimations.permission.REMOTE_SERVICE_PERMISSION"/>
 
     <uses-permission android:name="android.permission.VIBRATE"/>
 
@@ -102,7 +102,8 @@
             android:parentActivityName=".MainActivity"/>
 
 
-        <activity android:name="._09_recyclerView.RecyclerViewInNesetdScrollViewActivity"
+        <activity
+            android:name="._09_recyclerView.RecyclerViewInNesetdScrollViewActivity"
             android:parentActivityName=".MainActivity"
             />
 
@@ -277,10 +278,15 @@
         <activity android:name="._042_layoutmanager.LayoutManagerActivity"
             android:parentActivityName=".MainActivity"
             />
+
         <activity android:name="._40_ipc.SocketIPCActivity"
                   android:windowSoftInputMode="stateVisible|adjustResize"
             />
 
+        <activity
+            android:name="._41_span.SpannableActivity"
+            android:parentActivityName=".MainActivity"
+            />
 
         <service
             android:name="._40_ipc.MessageService"
