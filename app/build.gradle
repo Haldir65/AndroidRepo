@@ -20,25 +20,52 @@ android {
 
 
 
+//
+//buildscript {
+//
+//
+//    repositories {
+//
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//        }
+//
+//        maven {
+//            url uri('../repo')
+//        }
+//    }
+//    dependencies {
+//        classpath 'com.bernet.hallmark:time:1.0.0'
+//    }
+//}
+//apply plugin: 'plugin.demo'
+
+
 
 buildscript {
-
-
     repositories {
-
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-
         maven {
             url uri('../repo')
         }
     }
     dependencies {
-        classpath 'com.bernet.hallmark:time:1.0.0'
+        classpath group: 'com.johndoe', name: 'dexcount', version: '1.0.2'
     }
 }
-apply plugin: 'plugin.demo'
+
+apply plugin: 'com.johndoe.dexcountplugin'
+
+//buildscript {
+//    repositories {
+//        maven {
+//            url uri('../repo')
+//        }
+//    }
+//    dependencies {
+//        classpath group: 'org.gradle', name: 'customPlugin',
+//                version: '1.0-SNAPSHOT'
+//    }
+//}
 
 
 

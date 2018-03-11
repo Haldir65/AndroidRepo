@@ -9,6 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cloak" />
+            <option value="$PROJECT_DIR$/dexcount" />
+            <option value="$PROJECT_DIR$/lazydex" />
             <option value="$PROJECT_DIR$/time" />
           </set>
         </option>

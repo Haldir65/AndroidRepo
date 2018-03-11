@@ -1,0 +1,1 @@
+[the original source](https://github.com/JLLK/multidex-hook)

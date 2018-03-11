@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidRepo.iml" filepath="$PROJECT_DIR$/AndroidRepo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloak/cloak.iml" filepath="$PROJECT_DIR$/cloak/cloak.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dexcount/dexcount.iml" filepath="$PROJECT_DIR$/dexcount/dexcount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lazydex/lazydex.iml" filepath="$PROJECT_DIR$/lazydex/lazydex.iml" />
       <module fileurl="file://$PROJECT_DIR$/time/time.iml" filepath="$PROJECT_DIR$/time/time.iml" />
     </modules>
   </component>

@@ -18,3 +18,5 @@ plugin 的包名不建议和app的包名一样
 [gradle 4.4之后Clock 被Deprecated的方案是自己创建一个groovy文件](https://github.com/HujiangTechnology/gradle_plugin_android_aspectjx/pull/75/files#diff-a5277607f48bf80ac7edd5dbafa307ae)
 [ClassHandlerPlugin-Android](https://github.com/kaiyangjia/ClassHandlerPlugin-Android)
 
+[multidex-hook](https://github.com/JLLK/multidex-hook)
+

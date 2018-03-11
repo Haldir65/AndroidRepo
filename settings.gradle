@@ -1,1 +1,1 @@
-include ':app', ':time'
+include ':app', ':time', ':dexcount', ':cloak', ':lazydex'
