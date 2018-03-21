@@ -6,6 +6,9 @@ import net.lingala.zip4j.model.ZipParameters
 import org.apache.commons.io.FileUtils
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.Task
+import org.gradle.api.execution.TaskExecutionListener
+import org.gradle.api.tasks.TaskState
 
 
 public class PluginImpl implements Plugin<Project> {
@@ -17,6 +20,18 @@ public class PluginImpl implements Plugin<Project> {
         project.gradle.addListener(new TimeListener())
 //        project.gradle.addProjectEvaluationListener(new MyProjectEvaluationListner())
         project.getGradle().taskGraph.addTaskExecutionGraphListener(new MyTaskExecutionGraphListener(project) )
+        project.gradle.addProjectEvaluationListener()
+        project.gradle.addListener(new TaskExecutionListener() {
+            @Override
+            void beforeExecute(Task task) {
+
+            }
+
+            @Override
+            void afterExecute(Task task, TaskState taskState) {
+
+            }
+        })
         project.android.sourceSets.main.java.srcDirs.each { srcDir->
             println("==srcDir: ${srcDir}") //输出当前app/src/main/java/所在的绝对路径
         }

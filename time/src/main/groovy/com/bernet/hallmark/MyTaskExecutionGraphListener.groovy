@@ -7,7 +7,6 @@ import org.gradle.api.execution.TaskExecutionGraphListener
 
 class MyTaskExecutionGraphListener implements TaskExecutionGraphListener{
 
-
     Project project
 
     MyTaskExecutionGraphListener(Project project) {
@@ -17,7 +16,6 @@ class MyTaskExecutionGraphListener implements TaskExecutionGraphListener{
     @Override
     void graphPopulated(TaskExecutionGraph taskExecutionGraph) {
         for (Task task :taskExecutionGraph.getAllTasks()){
-
             project.logger.warn("find task with group name" + task.getGroup()+ " . task name: " + task.name)
         }
     }

@@ -22,7 +22,81 @@ android {
     }
 
 
+
 }
+
+afterEvaluate { project ->
+    logger.info("=========afterEvaluate==============")
+    project.tasks.each { task ->
+        if (task.name == "test"||task.name.contains("lint")){
+            task.enabled = false
+        }
+//        task.enabled = false
+       println("-------------${task.name}----")
+    }
+}
+
+tasks.whenTaskAdded { task->
+    logger.info("you catch me ${task.name} is this enabled ${task.enabled}")
+}
+
+task iDependOnAssembleFlavor1(dependsOn: preBuild) {
+    doLast {
+        println 'I need assembleFlavor1 to run before me.'
+    }
+}
+
+
+
+
+gradle.afterProject {project, projectState ->
+    if (projectState.failure) {
+        println "Evaluation of $project FAILED"
+    } else {
+        println "Evaluation of $project succeeded"
+    }
+}
+
+android.applicationVariants.all { variant ->
+    println("==========${variant.name}=======")
+//    project.task "fix${variant.name.capitalize()}MainDexClassList"  {
+//        doLast {
+//            println("=============$variant.name=====================")
+//            Map stuff = asMap("1","2")
+//            logger.info "Hello there ${stuff.size()}"
+//            logger.info "Fixing main dex keep file for $variant.name"
+//            File keepFile = new File("$buildDir/intermediates/multi-dex/$variant.buildType.name/maindexlist.txt")
+//            keepFile.withWriterAppend { w ->
+//                // Get a reader for the input file
+//                w.append('\n')
+//                new File("${projectDir}/multidex.keep").withReader { r ->
+//                    // And write data from the input into the output
+//                    w << r << '\n'
+//                }
+//                logger.info "Updated main dex keep file for ${keepFile.getAbsolutePath()}\n$keepFile.text"
+//            }
+//        }
+//    }
+}
+
+def asMap(arg1, arg2) {
+    return [arg1: arg2]
+}
+
+Map asMapWithTypedArgs(String arg1, String arg2) {
+    return [arg1: arg2]
+}
+
+
+tasks.whenTaskAdded { task ->
+    android.applicationVariants.all { variant ->
+        if (task.name == "create${variant.name.capitalize()}MainDexClassList") {
+            task.finalizedBy "fix${variant.name.capitalize()}MainDexClassList"
+        }
+    }
+}
+
+
 
 repositories {
         maven {
@@ -56,3 +130,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':lazydex')
 }
+
+task('hello3') {
+    doLast {
+        println "hello3=============="
+    }
+}
+
