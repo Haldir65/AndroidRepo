@@ -4,9 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -17,12 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
-import com.me.harris.androidanimations.BaseAppCompatActivity;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.utils.ToastUtils;
 import com.me.harris.androidanimations.utils.Utils;
-
-import java.lang.reflect.Method;
 
 import static android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
 
@@ -58,7 +53,7 @@ public class PlainActivity extends AppCompatActivity implements View.OnClickList
         mButton2 = (Button) findViewById(R.id.button2);
         mButton3 = (Button) findViewById(R.id.button3);
         mButton4 = (Button) findViewById(R.id.button4);
-        ViewCompat.setFitsSystemWindows(mScrollView,false);
+        mScrollView.setFitsSystemWindows(false);
         moveContentViewDownWards();
         mImage.setOnClickListener(this);
         mButton1.setOnClickListener(this);
@@ -78,7 +73,7 @@ public class PlainActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.button1:
                 flag = !flag;
-                ViewCompat.setFitsSystemWindows(mScrollView, flag);
+                mScrollView.setFitsSystemWindows( flag);
                 ToastUtils.showTextShort(this, "当前" + (flag ? "设置了fitSystemWindows" : ""));
                 break;
             case R.id.button2:

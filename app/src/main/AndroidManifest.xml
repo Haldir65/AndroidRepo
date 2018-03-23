@@ -287,6 +287,7 @@
             android:name="._41_span.SpannableActivity"
             android:parentActivityName=".MainActivity"
             />
+        <activity android:name="._43_ipc_provider.ProviderActivity"/>
 
         <service
             android:name="._40_ipc.MessageService"
@@ -320,6 +321,17 @@
                 android:resource="@xml/filepath"/>
 
         </provider>
+
+        <provider
+            android:authorities="com.me.book.provider"
+            android:name="._43_ipc_provider.BookProvider"
+            android:permission="com.me.special_permission"
+            android:process=":provider"
+            />
+
+
+
+
 
 
     </application>

@@ -6,10 +6,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.util.Pair;
-import android.support.v4.view.AsyncLayoutInflater;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;
 import com.me.harris.androidanimations._02_surfaceview.SurfaceViewActivity;
@@ -68,6 +66,7 @@ import com.me.harris.androidanimations._38_asyncLayoutInflater.AsyncLayoutInflat
 import com.me.harris.androidanimations._39_render_script.RenderScriptActivity;
 import com.me.harris.androidanimations._40_ipc.IPCMainActivity;
 import com.me.harris.androidanimations._41_cute_animation.WeatherMainActivity;
+import com.me.harris.androidanimations._43_ipc_provider.ProviderActivity;
 import com.me.harris.androidanimations.databinding.ActivityMainBinding;
 import com.me.harris.androidanimations.interfaces.GenericCallBack;
 import com.me.harris.androidanimations.utils.ToastUtils;
@@ -171,6 +170,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("RenderScript", RenderScriptActivity.class));
         list.add(new Pair<String, Class>("IPC", IPCMainActivity.class));
         list.add(new Pair<String, Class>("Cute", WeatherMainActivity.class));
+        list.add(new Pair<String, Class>("Provider", ProviderActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
