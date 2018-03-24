@@ -106,6 +106,7 @@ repositories {
 
 buildscript {
     repositories {
+        jcenter()
         maven {
             url uri('../repo')
         }
@@ -113,11 +114,12 @@ buildscript {
     }
     dependencies {
         classpath group: 'com.johndoe', name: 'dexcount', version: '1.0.2'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.2'
     }
 }
 
 apply plugin: 'com.johndoe.dexcountplugin'
-
+apply plugin: 'com.getkeepsafe.dexcount'
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -131,9 +133,26 @@ dependencies {
     implementation project(':lazydex')
 }
 
+
 task('hello3') {
     doLast {
         println "hello3=============="
     }
 }
+
+
+//task judge {
+//
+//    group 'John'
+//    description 'Check if we have properties'
+//
+//    doLast {
+//        if (project.hasProperty("randomName")) {
+//            def name = project.property("randomName")
+//            println "Hello , $name"
+//        } else {
+//            println 'Nope'
+//        }
+//    }
+//}
 

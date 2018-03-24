@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.harris.starry.Configuration;
 import com.harris.starry.Utils;
 
 import java.io.IOException;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Utils.dip2px(this, 20);
+        System.out.println(Configuration.MAGIC_CODE);
     }
 
     @Override
