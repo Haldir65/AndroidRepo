@@ -1,6 +1,9 @@
 package com.me.harris.androidanimations;
 
 import android.app.Application;
+import android.os.Looper;
+import android.util.Log;
+import android.util.LogPrinter;
 
 import com.me.harris.androidanimations.utils.CrashHandler;
 import com.me.harris.androidanimations.utils.LogUtil;
@@ -25,6 +28,9 @@ public class App extends Application {
         Runtime runtime = Runtime.getRuntime();
         LogUtil.w(TAG, String.valueOf(toMB(runtime.freeMemory())));
         LogUtil.w(TAG, String.valueOf(toMB(runtime.totalMemory())));
+
+        Looper looper = Looper.getMainLooper();
+        looper.setMessageLogging(new LogPrinter(Log.WARN, "???????????????????"));
 
 
     }
