@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.me.harris.androidanimations">
+
+    <uses-sdk
+        android:maxSdkVersion="19"
+        android:targetSdkVersion="24"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    //Request a permission as runtime only
+    <uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS"/>
+    //Request a permission as install only,22以上不会请求
+    <uses-permission
+        android:name="android.permission.READ_CONTACTS"
+        android:maxSdkVersion="22"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.NoActionBar">
+
+
+        <activity
+            android:name="com.me.harris.debug.repo.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>

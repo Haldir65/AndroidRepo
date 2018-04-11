@@ -1,22 +1,47 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 //apply plugin: 'com.neenbedankt.android-apt'
-
+apply from: "${project.rootDir}/config.gradle"
 android {
-    compileSdkVersion "${COMPILE_SDK_VERSION}" as int
-    buildToolsVersion "${BUILD_TOOLS_VERSION}"
+    compileSdkVersion "${project.ext.COMPILE_SDK_VERSION}" as int
+    buildToolsVersion "${project.ext.BUILD_TOOLS_VERSION}"
 
 
     defaultConfig {
         applicationId "com.me.harris.androidanimations"
-        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
-        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+        minSdkVersion project.ext.ANDROID_BUILD_MIN_SDK_VERSION
+        targetSdkVersion project.ext.ANDROID_BUILD_TARGET_SDK_VERSION
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         renderscriptTargetApi 21
         renderscriptSupportModeEnabled true
     }
+    sourceSets {
+        main {
+            if (project.ext.splitSrc){
+                manifest.srcFile 'src/debug/AndroidManifest.xml'
+                java.srcDirs = ['src/debug/java']
+                res.srcDirs = ['src/debug/res'] // 因为使用了databinding,main/res文件夹中的layout包含了main/java/中的一些java类，所以这里如果要加上main的话，还需要把java的srcDir加上main
+                aidl.srcDirs = ['src/debug/aidl']
+            }else {
+				manifest.srcFile  'src/main/AndroidManifest.xml'
+                java.srcDirs = ['src/main/java']
+				java {
+					//排除java/debug文件夹下的所有文件
+					exclude 'src/debug/**'
+				}
+				res.srcDirs = ['src/main/res']
+//                resources.srcDirs = ['src']
+//                aidl.srcDirs = ['src']
+//                renderscript.srcDirs = ['src']
+//                res.srcDirs = ['res']
+//                assets.srcDirs = ['assets']
+//                jniLibs.srcDirs = ['libs']
+			}
+        }
+    }
+
 
     // Specifies the flavor dimensions you want to use. The order in which you
     // list each dimension determines its priority, from highest to lowest,
@@ -142,19 +167,19 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation ("com.android.support:appcompat-v7:${SupportLibVersion}") {
+    implementation ("com.android.support:appcompat-v7:${project.ext.SupportLibVersion}") {
         exclude module: 'support-media-compat'
     }
-    implementation "com.android.support:support-fragment:${SupportLibVersion}"
-    implementation "com.android.support:cardview-v7:${SupportLibVersion}"
+    implementation "com.android.support:support-fragment:${project.ext.SupportLibVersion}"
+    implementation "com.android.support:cardview-v7:${project.ext.SupportLibVersion}"
     /*v4包拆分成几个小包*/
   //  implementation "com.android.support:support-media-compat:${SupportLibVersion}"
-    implementation "com.android.support:support-core-ui:${SupportLibVersion}"
-    implementation "com.android.support:support-core-utils:${SupportLibVersion}"
-    implementation "com.android.support:support-compat:${SupportLibVersion}"
-    implementation "com.android.support:design:${SupportLibVersion}"
-    implementation "com.android.support:percent:${SupportLibVersion}"
-    implementation "com.android.support:support-dynamic-animation:${SupportLibVersion}"
+    implementation "com.android.support:support-core-ui:${project.ext.SupportLibVersion}"
+    implementation "com.android.support:support-core-utils:${project.ext.SupportLibVersion}"
+    implementation "com.android.support:support-compat:${project.ext.SupportLibVersion}"
+    implementation "com.android.support:design:${project.ext.SupportLibVersion}"
+    implementation "com.android.support:percent:${project.ext.SupportLibVersion}"
+    implementation "com.android.support:support-dynamic-animation:${project.ext.SupportLibVersion}"
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
@@ -166,8 +191,10 @@ dependencies {
     implementation 'in.srain.cube:ultra-ptr:1.0.11' //添加下拉刷新组件
 
 
-    implementation project (':annotation')
-    annotationProcessor project(":compiler")
+    if (project.ext.use_annotation){
+        implementation project (':annotation')
+        annotationProcessor project(":compiler")
+    }
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
