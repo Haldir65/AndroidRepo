@@ -137,5 +137,9 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style name="WindowNoTitle" parent="AppThemeBase">
+        <item name="windowActionBar">false</item>
+    </style>
+
 
 </resources>

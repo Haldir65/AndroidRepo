@@ -16,6 +16,7 @@ import com.me.harris.androidanimations._03_apidemo.MaterialWitness;
 import com.me.harris.androidanimations._03_apidemo.ShadowCardDrag;
 import com.me.harris.androidanimations._03_apidemo.ViewDragHelperActivity;
 import com.me.harris.androidanimations._03_apidemo.YoutubeActivity;
+import com.me.harris.androidanimations._044_plugin_sample.PluginMainActivity;
 import com.me.harris.androidanimations._04_customView.activity.CustomViewActivity;
 import com.me.harris.androidanimations._05_animation.DrawableAnimationActivity;
 import com.me.harris.androidanimations._05_animation.PathAnimationActivity;
@@ -171,6 +172,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list.add(new Pair<String, Class>("IPC", IPCMainActivity.class));
         list.add(new Pair<String, Class>("Cute", WeatherMainActivity.class));
         list.add(new Pair<String, Class>("Provider", ProviderActivity.class));
+        list.add(new Pair<String, Class>("Plugin", PluginMainActivity.class));
         mAdapter.setDatas(list);
         binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

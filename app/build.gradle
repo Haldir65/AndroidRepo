@@ -17,30 +17,30 @@ android {
         renderscriptTargetApi 21
         renderscriptSupportModeEnabled true
     }
-    sourceSets {
-        main {
-            if (project.ext.splitSrc){
-                manifest.srcFile 'src/debug/AndroidManifest.xml'
-                java.srcDirs = ['src/debug/java']
-                res.srcDirs = ['src/debug/res'] // 因为使用了databinding,main/res文件夹中的layout包含了main/java/中的一些java类，所以这里如果要加上main的话，还需要把java的srcDir加上main
-                aidl.srcDirs = ['src/debug/aidl']
-            }else {
-				manifest.srcFile  'src/main/AndroidManifest.xml'
-                java.srcDirs = ['src/main/java']
-				java {
-					//排除java/debug文件夹下的所有文件
-					exclude 'src/debug/**'
-				}
-				res.srcDirs = ['src/main/res']
-//                resources.srcDirs = ['src']
-//                aidl.srcDirs = ['src']
-//                renderscript.srcDirs = ['src']
-//                res.srcDirs = ['res']
-//                assets.srcDirs = ['assets']
-//                jniLibs.srcDirs = ['libs']
-			}
-        }
-    }
+//    sourceSets {
+//        main {
+//            if (project.ext.splitSrc){
+//                manifest.srcFile 'src/debug/AndroidManifest.xml'
+//                java.srcDirs = ['src/debug/java']
+//                res.srcDirs = ['src/debug/res'] // 因为使用了databinding,main/res文件夹中的layout包含了main/java/中的一些java类，所以这里如果要加上main的话，还需要把java的srcDir加上main
+//                aidl.srcDirs = ['src/debug/aidl']
+//            }else {
+//				manifest.srcFile  'src/main/AndroidManifest.xml'
+//                java.srcDirs = ['src/main/java']
+//				java {
+//					//排除java/debug文件夹下的所有文件
+//					exclude 'src/debug/**'
+//				}
+//				res.srcDirs = ['src/main/res']
+////                resources.srcDirs = ['src']
+////                aidl.srcDirs = ['src']
+////                renderscript.srcDirs = ['src']
+////                res.srcDirs = ['res']
+////                assets.srcDirs = ['assets']
+////                jniLibs.srcDirs = ['libs']
+//			}
+//        }
+//    }
 
 
     // Specifies the flavor dimensions you want to use. The order in which you
@@ -163,17 +163,17 @@ android {
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation ("com.android.support:appcompat-v7:${project.ext.SupportLibVersion}") {
+    implementation("com.android.support:appcompat-v7:${project.ext.SupportLibVersion}") {
         exclude module: 'support-media-compat'
     }
     implementation "com.android.support:support-fragment:${project.ext.SupportLibVersion}"
     implementation "com.android.support:cardview-v7:${project.ext.SupportLibVersion}"
     /*v4包拆分成几个小包*/
-  //  implementation "com.android.support:support-media-compat:${SupportLibVersion}"
+    //  implementation "com.android.support:support-media-compat:${SupportLibVersion}"
     implementation "com.android.support:support-core-ui:${project.ext.SupportLibVersion}"
     implementation "com.android.support:support-core-utils:${project.ext.SupportLibVersion}"
     implementation "com.android.support:support-compat:${project.ext.SupportLibVersion}"
@@ -185,17 +185,15 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-
     testImplementation 'junit:junit:4.12'
-
-    implementation 'in.srain.cube:ultra-ptr:1.0.11' //添加下拉刷新组件
-
-
-    if (project.ext.use_annotation){
-        implementation project (':annotation')
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+    //添加下拉刷新组件
+    if (project.ext.use_annotation) {
+        implementation project(':annotation')
         annotationProcessor project(":compiler")
     }
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation project(':pluginlib')
 }
 
