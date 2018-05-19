@@ -9,6 +9,7 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
@@ -48,5 +49,6 @@ public class TextViewActivity extends AppCompatActivity {
         mTextView.setText(spanString);
         mTextView.setMaxLines(8);
         mTextView.setEllipsize(TextUtils.TruncateAt.END);
+        mTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }

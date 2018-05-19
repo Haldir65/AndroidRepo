@@ -45,5 +45,6 @@ public class MaxLineTextView extends android.support.v7.widget.AppCompatTextView
 //            setText(spannableStringBuilder);
 //        }
         super.onDraw(canvas);
+        setText("",BufferType.SPANNABLE);
     }
 }
