@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.me.harris.textviewtest.R
+import com.me.harris.textviewtest.model.*
 import com.me.harris.textviewtest.utils.screenHeight
 import com.me.harris.textviewtest.utils.screenWitdth
 import kotlinx.android.synthetic.main.activity_main.*
@@ -67,12 +68,15 @@ class BitmapActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
+
+        val production1 : Production<Food> = FoodStore()
+        val production2 : Production<Food> = FastFoodStore()
+        val production3 : Production<Food> = InOutBurger()
+
         return true
     }
 
-    fun copy(from:Array<out Int>,to:Array<in Number>){
 
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will

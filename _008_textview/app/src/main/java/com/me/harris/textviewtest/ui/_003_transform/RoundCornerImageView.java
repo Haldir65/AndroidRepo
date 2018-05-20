@@ -39,7 +39,14 @@ public class RoundCornerImageView extends AppCompatImageView {
 
     public void load(String url){
         Glide.with(getContext())
-                .setDefaultRequestOptions(new RequestOptions().transforms(new RoundedCorners(radius*3)))
+//                .applyDefaultRequestOptions(new RequestOptions().transforms(new RoundedCorners(radius*3)))
+                .load(url)
+                .apply(new RequestOptions().transforms(new RoundedCorners(radius*3)))
+                .into(this);
+    }
+
+    public void load2(String url){
+        Glide.with(getContext())
                 .load(url)
                 .into(this);
     }
