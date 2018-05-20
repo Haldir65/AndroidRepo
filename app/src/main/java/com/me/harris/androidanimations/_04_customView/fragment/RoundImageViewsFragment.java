@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.me.harris.androidanimations.R;
+import com.me.harris.androidanimations._04_customView.widget.RoundCornerImageView;
 import com.me.harris.androidanimations.databinding.FragmentRoundImageViewBinding;
 
 /**
@@ -20,6 +21,8 @@ import com.me.harris.androidanimations.databinding.FragmentRoundImageViewBinding
 
 public class RoundImageViewsFragment extends Fragment {
     FragmentRoundImageViewBinding binding;
+
+    RoundCornerImageView mIamge007;
 
     @Nullable
     @Override
@@ -36,6 +39,8 @@ public class RoundImageViewsFragment extends Fragment {
                         (getResources(), R.drawable.alamby));
         drawable.setCircular(true);
         binding.image05.setImageDrawable(drawable);
+        mIamge007 = view.findViewById(R.id.image07);
+        mIamge007.load("http://b.hiphotos.baidu.com/image/pic/item/d8f9d72a6059252d9dedd4b0389b033b5ab5b988.jpg");
 
     }
 }

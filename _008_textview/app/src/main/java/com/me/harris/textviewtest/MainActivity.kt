@@ -1,81 +1,63 @@
 package com.me.harris.textviewtest
 
-import android.graphics.Bitmap
-import android.os.Build
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.SimpleTarget
-import com.bumptech.glide.request.transition.Transition
-import com.me.harris.textviewtest.utils.screenHeight
-import com.me.harris.textviewtest.utils.screenWitdth
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.view.View
+import com.me.harris.textviewtest.interfaces.ItemClickListener
+import com.me.harris.textviewtest.ui.CustomAdapter
+import com.me.harris.textviewtest.ui._001_retrofit.RetrofitSampleActivity
+import com.me.harris.textviewtest.ui._002_bitmap.BitmapActivity
+import com.me.harris.textviewtest.ui._003_transform.GlideTransformActivity
+import kotlinx.android.synthetic.main.activity_recycler_view.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity :AppCompatActivity(), ItemClickListener {
 
-    companion object {
-        const val IMAGE_PATH = ""
-        const val MAX_BITMAP_SIZE = 100 * 1024 * 1024; // 100 MB
-    }
+
+
+    lateinit var mAdapter: CustomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setContentView(R.layout.activity_recycler_view)
+        initAdapter()
+    }
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+    private fun initAdapter() {
+        val userList = mutableListOf<Triple<String,Int,Class<out Activity>>>(
+               Triple("BitmapSample",1, BitmapActivity::class.java),
+                Triple("Retrofit",2,RetrofitSampleActivity::class.java),
+                Triple("RoundCorner",3,GlideTransformActivity::class.java)
+
+
+        ).apply {
+//            this.addAll(this)
+//            this.addAll(this)
+//            this.addAll(this)
+//            this.addAll(this)
+//            this.addAll(this)
         }
 
-        Glide.with(this)
-                .asBitmap()
-                .load(IMAGE_PATH)
-                .into(object : SimpleTarget<Bitmap>(){
-                    override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N&&resource.allocationByteCount>MAX_BITMAP_SIZE) {
-                            val screenWidth = screenWitdth()
-                            val screenHeight = screenHeight()
-                            val scaled:Bitmap = Bitmap.createScaledBitmap(resource,screenWidth,resource.height*screenHeight/resource.width,false)
-                            imageone.setImageBitmap(scaled)
-                        } else {
-                            imageone.setImageBitmap(resource)
-                        }
-//                        val screenWidth = screenWitdth()
-//                        val screenHeight = screenHeight()
-//                        val scaled:Bitmap = Bitmap.createScaledBitmap(resource,screenWidth,resource.height*screenHeight/(resource.width),false)
-//                        val scaled2:Bitmap = Bitmap.createScaledBitmap(resource,screenWidth,resource.height*screenHeight/(resource.width),true) //
-                        // https://stackoverflow.com/questions/2895065/what-does-the-filter-parameter-to-createscaledbitmap-do
-                        //第四个参数传true会在downSampling的时候取样更加smooth，效果
-                        // Passing filter = false will result in a blocky, pixellated image.
-//                        Passing filter = true will give you smoother edges.
-
-//                        imageone.setImageBitmap(scaled)
-
-//
-
-                    }
-                })
-
+        mAdapter = CustomAdapter(userList,this)
+        recyclerView1.adapter = mAdapter
+        recyclerView1.layoutManager = LinearLayoutManager(this)
+        recyclerView1.addItemDecoration(object :  RecyclerView.ItemDecoration(){
+            override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
+                super.getItemOffsets(outRect, view, parent, state)
+                outRect?.set(12,5,12,5)
+            }
+        })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+    override fun onItemClick(position: Int, view: View) {
+        val target = mAdapter.userList[position].third
+        val intent = Intent(this,target)
+        startActivity(intent)
+//        Toast.makeText(this,"点击了 $position 以及View的id 是 ${view.id}",Toast.LENGTH_SHORT).show()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 }

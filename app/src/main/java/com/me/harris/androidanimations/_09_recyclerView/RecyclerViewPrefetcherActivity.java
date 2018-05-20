@@ -2,7 +2,6 @@ package com.me.harris.androidanimations._09_recyclerView;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -19,12 +18,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.bumptech.glide.request.target.ImageViewTarget;
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityRecyclerViewPrefetcherBinding;
 import com.me.harris.androidanimations.utils.Utils;
@@ -83,20 +76,20 @@ public class RecyclerViewPrefetcherActivity extends AppCompatActivity {
             if (mContext == null) {
                 mContext = holder.itemView.getContext();
             }
-            Glide.with(mContext).load(generateRandomPicId()).diskCacheStrategy(DiskCacheStrategy.RESULT).crossFade().into(new GlideDrawableImageViewTarget(holder.iv_left,10){
-                @Override
-                public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> animation) {
-                    resource.isAnimated();
-                    animation.animate(resource, new ImageViewTarget<Bitmap>(holder.iv_left) {
-                        @Override
-                        protected void setResource(Bitmap resource) {
-
-                        }
-                    });
-                    super.onResourceReady(resource, animation);
-                }
-            });
-            Glide.with(mContext).load(generateRandomPicId()).diskCacheStrategy(DiskCacheStrategy.RESULT).into(holder.iv_right);
+//            Glide.with(mContext).load(generateRandomPicId()).diskCacheStrategy(DiskCacheStrategy.RESULT).crossFade().into(new GlideDrawableImageViewTarget(holder.iv_left,10){
+//                @Override
+//                public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> animation) {
+//                    resource.isAnimated();
+//                    animation.animate(resource, new ImageViewTarget<Bitmap>(holder.iv_left) {
+//                        @Override
+//                        protected void setResource(Bitmap resource) {
+//
+//                        }
+//                    });
+//                    super.onResourceReady(resource, animation);
+//                }
+//            });
+//            Glide.with(mContext).load(generateRandomPicId()).diskCacheStrategy(DiskCacheStrategy.RESULT).into(holder.iv_right);
         }
 
         @Override

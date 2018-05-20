@@ -25,6 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui._002_bitmap.BitmapActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".ui._001_retrofit.RetrofitSampleActivity"/>
+        <activity android:name=".ui._003_transform.GlideTransformActivity"/>
     </application>
 
 </manifest>
