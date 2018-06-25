@@ -30,6 +30,7 @@
             />
         <activity android:name=".ui._001_retrofit.RetrofitSampleActivity"/>
         <activity android:name=".ui._003_transform.GlideTransformActivity"/>
+        <activity android:name=".layer_list.LayerListSampleActivity" />
     </application>
 
 </manifest>

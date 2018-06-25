@@ -45,3 +45,6 @@ captures/
 # Keystore files
 #*.jks   // just some dummy key
 
+# 忽略当前目录的DS_Store以及自目录下的DS_Store文件
+*/.DS_Store
+*.DS_Store
