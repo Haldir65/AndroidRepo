@@ -4,11 +4,22 @@
 对应的客户端使用的protobuf.jar文件也得是版本一致的，[这个jar文件不是很好找，在maven里面](https://stackoverflow.com/questions/15723099/where-to-find-protobuf-jar-for-using-google-protocol-buffers-in-java)
 <br>
 
+这个是生成普通java文件的命令
 ```
 absolute/path/of/protoc-3.6.0-osx-x86_64/bin/protoc -I=proto/ --java_out=/absolute/path/of/the/generated/files/projectname/src/main/  path/of/your/protofiles/*.proto
 ```
 
-- 一些比较坑的店
+这个是生成java-lit的文件的命令
+```
+$ protoc --javalite_out=${OUTPUT_DIR} path/to/your/proto/file
+```
+
+个人猜测，无论是使用java还是java-lite生成的文件，最终通过网络传输的binary信息都是一致的。另外,java-lite是不是在java的基础上删除了一些冗余的方法。
+所以,protobuf可以由后台提供一致的proto文件定义，同时为android和ios平台提供服务。
+
+
+
+- 一些比较坑的点
 注意的是proto文件有一个import的问题
 还有就是protoc生成的java文件是不应该修改的
 
