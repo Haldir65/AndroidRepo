@@ -1,0 +1,9 @@
+syntax = "proto3";// 版本
+package com.me.harris.gen; // 命名空间
+option java_package = "com.me.harris.gen";//生成java包名
+option java_outer_classname = "HobbyProto"; //生成Java类名
+option java_multiple_files = true;
+message Hobby {
+    string name = 1;
+    int32 level =2;
+}

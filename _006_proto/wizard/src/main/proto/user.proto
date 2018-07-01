@@ -1,0 +1,22 @@
+syntax = "proto3";
+package com.me.harris.gen;
+import "hobby.proto";// 导入上一个文件
+option java_package = "com.me.harris.gen";// 指定生成的java文件的包名
+option java_outer_classname = "UserProto";
+option java_multiple_files = true;
+message User {
+    reserved "Person";// 保留标识符
+    string firstName = 1;
+    string lastName = 2;
+    string emailAddress = 3;
+    string homeAddress = 4;
+    repeated Hobby hobbies =5;
+    repeated Skill skills =6;
+    enum Skill {
+        GOLANG = 0;
+        PYTHON = 1;
+        JAVA = 2;
+        RUST = 3;
+        CPP = 4;
+    }
+}
