@@ -10,6 +10,11 @@ before_cache:
 
  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
+
+before_install:
+  - chmod +x gradlew
+  
+  
 cache:
 
  directories:
