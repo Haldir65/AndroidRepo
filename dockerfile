@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 
-COPY sources.list /etc/apt/sources.list
+# COPY sources.list /etc/apt/sources.list
 
 ENV JAVA_HOME /jdk1.8.0_65
 ENV ANDROID_HOME /opt/android-sdk-linux/
