@@ -32,6 +32,10 @@ Android Graphic和Animation的一些整理
 
 感谢以上作者
 
+using docker
+
+> ./script/pack_sdk_docker_run.sh ./script/compile.sh
+
 
 ###Todo
 - [ ] 关于ActivityOptions，参考playStore点击后SharedElements的缩放，主要是动画
