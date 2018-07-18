@@ -38,11 +38,10 @@ jobs:
       - run:
           name: Deploy Release to GitHub
           command: bash .circleci/setup-github.sh
-            
           # if [ $CIRCLE_BRANCH == 'dev' ]; then
           #    bash .circleci/setup-github.sh
           # fi
- build2:
+  build2:
     branches:
       only:
         - master
@@ -73,10 +72,10 @@ jobs:
           command: ./gradlew assembleRelease
 
 
- workflows:
-   version: 2
+workflows:
+ version: 2
 
-   awesome-workflow:
-     jobs:
-	- build
-	- build2
+ awesome-workflow:
+   jobs:
+    - build
+    - build2
