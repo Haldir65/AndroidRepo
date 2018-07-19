@@ -33,8 +33,8 @@ jobs:
       #     command: .circleci/ci-scripts/ci-mock-google-services-setup.sh
 
       - run:
-          name: Run Gradle :aseemble command
-          command: ./gradlew aseembleDebug --stacktrace
+          name: Run Gradle :assemble command
+          command: ./gradlew assembleDebug --stacktrace
 
       # Run the main job command, delegating to Gradle
       # See https://issuetracker.google.com/issues/62217354 for the parallelism option
