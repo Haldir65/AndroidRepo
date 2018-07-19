@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master
     working_directory: ~/code
     docker:
       - image: circleci/android:api-27-alpha
@@ -42,9 +39,6 @@ jobs:
           #    bash .circleci/setup-github.sh
           # fi
   build2:
-      branches:
-        only:
-          - master
       working_directory: ~/code
       docker:
         - image: circleci/android:api-27-alpha
