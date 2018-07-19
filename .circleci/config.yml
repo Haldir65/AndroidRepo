@@ -3,9 +3,9 @@ version: 2
 jobs:
   build:
     working_directory: ~/androidRepo
-    # branches:
-    #   only:
-    #     - master
+    branches:
+      only:
+        - master
 
     docker:
       - image: circleci/android:api-27-alpha
@@ -32,7 +32,7 @@ jobs:
       #     name: Create mock Play Services JSON
       #     command: .circleci/ci-scripts/ci-mock-google-services-setup.sh
 
-       - run:
+      - run:
           name: Run Gradle :aseemble command
           command: ./gradlew aseembleDebug --stacktrace
 
