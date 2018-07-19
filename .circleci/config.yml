@@ -3,9 +3,9 @@ version: 2
 jobs:
   build:
     working_directory: ~/androidRepo
-    branches:
-      only:
-        - master
+    # branches:
+    #   only:
+    #     - master
 
     docker:
       - image: circleci/android:api-27-alpha
