@@ -8,7 +8,9 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.me.harris.textviewtest.clippath.CustomDrawingActivity
 import com.me.harris.textviewtest.constraint.ConstraintActivity
+import com.me.harris.textviewtest.flowable.FlowableMainActivity
 import com.me.harris.textviewtest.interfaces.ItemClickListener
 import com.me.harris.textviewtest.ui.CustomAdapter
 import com.me.harris.textviewtest.ui._001_retrofit.RetrofitSampleActivity
@@ -33,8 +35,9 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
                Triple("BitmapSample",1, BitmapActivity::class.java),
                 Triple("Retrofit",2,RetrofitSampleActivity::class.java),
                 Triple("RoundCorner",3,GlideTransformActivity::class.java),
-                Triple("Constraint",4,ConstraintActivity::class.java)
-
+                Triple("Constraint",4,ConstraintActivity::class.java),
+                Triple("Flowable",5,FlowableMainActivity::class.java),
+                Triple("ClipPath",6,CustomDrawingActivity::class.java)
 
         ).apply {
 //            this.addAll(this)
