@@ -21,6 +21,17 @@ add_library( # Specifies the name of the library.
              src/main/jni/Crypto.c
              )
 
+
+add_library( # Specifies the name of the library.
+             validator-lib   ## this is the name of the generated .so file
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             src/main/jni/validator.cpp
+             )
+
 ### Library that already exists on Android Platform
 find_library( # Defines the name of the path variable that stores the
               # location of the NDK library.

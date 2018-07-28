@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,28 +13,35 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView textView;
 
-
+    public static final String TAG = MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textView = findViewById(R.id.textView1);
+        textView = findViewById(R.id.textView1);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        String signature = Validator.getSHA1Signature(this);
+        String signature = Validator.getSignature(this);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String keyFromjni = PackageValidate.getPublicKey(MainActivity.this);
+                textView.setText(keyFromjni);
+                Log.e(TAG,keyFromjni);
+
+                Log.e(TAG,textView.getText().toString());
+
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-        textView.setText(signature);
+        textView.setText(signature.substring(10,20));
 
         TextView textView1 = findViewById(R.id.textView2);
         TextView textView2 = findViewById(R.id.textView);
@@ -45,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         String decoded = crypto.decrypt(crypted);
         textView2.setText(decoded);
+
 
 
     }

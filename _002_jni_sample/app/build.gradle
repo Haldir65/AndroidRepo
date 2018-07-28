@@ -11,9 +11,15 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
+                cFlags "-DSTDC_HEADERS"
                 cppFlags ""
+                abiFilters "arm64-v8a", "armeabi-v7a"
+
             }
         }
+
+
+
     }
     buildTypes {
         release {
@@ -21,9 +27,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
+//            cppFlags ""
+//            cFlags "-DSTDC_HEADERS"
+            // Sets optional flags for the C compiler.
+//                cFlags "-D_EXAMPLE_C_FLAG1", "-D_EXAMPLE_C_FLAG2"
+//
+//                // Sets a flag to enable format macro constants for the C++ compiler.
+//                cppFlags "-D__STDC_FORMAT_MACROS"
         }
     }
 }
@@ -36,4 +50,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "io.reactivex.rxjava2:rxjava:2.1.17"
 }
