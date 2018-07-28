@@ -33,6 +33,8 @@
 
         <activity android:name=".constraint.ConstraintActivity"/>
         <activity android:name=".pattern.SubjectActivity"/>
+        <activity android:name=".flowable.FlowableMainActivity" />
+        <activity android:name=".clippath.CustomDrawingActivity" />
     </application>
 
 </manifest>
