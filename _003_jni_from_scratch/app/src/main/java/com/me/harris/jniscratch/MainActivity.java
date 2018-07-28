@@ -12,15 +12,14 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    static {
-        System.loadLibrary("native-lib");
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView textView = findViewById(R.id.textView1);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         textView.setText(signature);
+
+        TextView textView1 = findViewById(R.id.textView2);
+        TextView textView2 = findViewById(R.id.textView);
+
+        Crypto crypto = new Crypto();
+
+        String crypted = crypto.encrypt("textView1");
+        textView1.setText(crypted);
+
+        String decoded = crypto.decrypt(crypted);
+        textView2.setText(decoded);
+
 
     }
 

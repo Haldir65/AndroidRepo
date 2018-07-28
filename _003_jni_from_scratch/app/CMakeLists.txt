@@ -11,13 +11,15 @@ cmake_minimum_required(VERSION 3.4.1)
 # automatically packages shared libraries with your APK.
 
 add_library( # Specifies the name of the library.
-             native-lib
+             crypto-lib   ## this is the name of the generated .so file
 
              # Sets the library as a shared library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/jni/native-lib.cpp )
+             #src/main/jni/native-lib.cpp
+             src/main/jni/Crypto.c
+             )
 
 ### Library that already exists on Android Platform
 find_library( # Defines the name of the path variable that stores the
@@ -31,7 +33,7 @@ find_library( # Defines the name of the path variable that stores the
 
 # Links your native library against one or more other native libraries.
 target_link_libraries( # Specifies the target library.
-                       native-lib
+                       crypto-lib
 
                        # Links the log library to the target library.
                        ${log-lib} )
