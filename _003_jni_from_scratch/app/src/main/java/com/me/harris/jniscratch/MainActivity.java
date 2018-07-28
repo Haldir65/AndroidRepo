@@ -12,13 +12,21 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    static {
+        System.loadLibrary("native-lib");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView textView = findViewById(R.id.textView1);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        String signature = Validator.getSHA1Signature(this);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        TextView textView = findViewById(R.id.textView1);
-        NdkJniUtils jniUtils = new NdkJniUtils();
-        textView.setText(jniUtils.getCLanguageString());
+        textView.setText(signature);
 
     }
 
