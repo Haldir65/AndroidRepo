@@ -35,6 +35,7 @@
         <activity android:name=".pattern.SubjectActivity"/>
         <activity android:name=".flowable.FlowableMainActivity" />
         <activity android:name=".clippath.CustomDrawingActivity" />
+        <activity android:name=".config.UpdatingConfigActivity" />
     </application>
 
 </manifest>

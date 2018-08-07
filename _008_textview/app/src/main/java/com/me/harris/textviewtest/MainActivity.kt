@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.me.harris.textviewtest.clippath.CustomDrawingActivity
+import com.me.harris.textviewtest.config.UpdatingConfigActivity
 import com.me.harris.textviewtest.constraint.ConstraintActivity
 import com.me.harris.textviewtest.flowable.FlowableMainActivity
 import com.me.harris.textviewtest.interfaces.ItemClickListener
@@ -37,7 +38,8 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
                 Triple("RoundCorner",3,GlideTransformActivity::class.java),
                 Triple("Constraint",4,ConstraintActivity::class.java),
                 Triple("Flowable",5,FlowableMainActivity::class.java),
-                Triple("ClipPath",6,CustomDrawingActivity::class.java)
+                Triple("ClipPath",6,CustomDrawingActivity::class.java),
+                Triple("Locale",6,UpdatingConfigActivity::class.java)
 
         ).apply {
 //            this.addAll(this)
