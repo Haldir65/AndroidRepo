@@ -13,6 +13,7 @@ import com.me.harris.textviewtest.config.UpdatingConfigActivity
 import com.me.harris.textviewtest.constraint.ConstraintActivity
 import com.me.harris.textviewtest.flowable.FlowableMainActivity
 import com.me.harris.textviewtest.interfaces.ItemClickListener
+import com.me.harris.textviewtest.mail.SendMailActivity
 import com.me.harris.textviewtest.ui.CustomAdapter
 import com.me.harris.textviewtest.ui._001_retrofit.RetrofitSampleActivity
 import com.me.harris.textviewtest.ui._002_bitmap.BitmapActivity
@@ -39,7 +40,8 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
                 Triple("Constraint",4,ConstraintActivity::class.java),
                 Triple("Flowable",5,FlowableMainActivity::class.java),
                 Triple("ClipPath",6,CustomDrawingActivity::class.java),
-                Triple("Locale",6,UpdatingConfigActivity::class.java)
+                Triple("Locale",6,UpdatingConfigActivity::class.java),
+                Triple("Mail",7,SendMailActivity::class.java)
 
         ).apply {
 //            this.addAll(this)

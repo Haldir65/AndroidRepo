@@ -36,6 +36,7 @@
         <activity android:name=".flowable.FlowableMainActivity" />
         <activity android:name=".clippath.CustomDrawingActivity" />
         <activity android:name=".config.UpdatingConfigActivity" />
+        <activity android:name=".mail.SendMailActivity" />
     </application>
 
 </manifest>
