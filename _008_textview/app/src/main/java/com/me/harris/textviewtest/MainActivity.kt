@@ -11,6 +11,7 @@ import android.view.View
 import com.me.harris.textviewtest.clippath.CustomDrawingActivity
 import com.me.harris.textviewtest.config.UpdatingConfigActivity
 import com.me.harris.textviewtest.constraint.ConstraintActivity
+import com.me.harris.textviewtest.coordinated.CoordinateActivity
 import com.me.harris.textviewtest.flowable.FlowableMainActivity
 import com.me.harris.textviewtest.interfaces.ItemClickListener
 import com.me.harris.textviewtest.mail.SendMailActivity
@@ -40,8 +41,10 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
                 Triple("Constraint",4,ConstraintActivity::class.java),
                 Triple("Flowable",5,FlowableMainActivity::class.java),
                 Triple("ClipPath",6,CustomDrawingActivity::class.java),
-                Triple("Locale",6,UpdatingConfigActivity::class.java),
-                Triple("Mail",7,SendMailActivity::class.java)
+                Triple("Coordinate",7,CoordinateActivity::class.java),
+                Triple("ClipPath",8,CustomDrawingActivity::class.java),
+                Triple("Locale",9,UpdatingConfigActivity::class.java),
+                Triple("Mail",10,SendMailActivity::class.java)
 
         ).apply {
 //            this.addAll(this)
