@@ -38,6 +38,7 @@
         <activity android:name=".coordinated.CoordinateActivity" />
         <activity android:name=".config.UpdatingConfigActivity" />
         <activity android:name=".mail.SendMailActivity" />
+        <activity android:name=".view_pager.PagerActivity" />
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
+import android.support.v4.view.PagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -19,6 +20,7 @@ import com.me.harris.textviewtest.ui.CustomAdapter
 import com.me.harris.textviewtest.ui._001_retrofit.RetrofitSampleActivity
 import com.me.harris.textviewtest.ui._002_bitmap.BitmapActivity
 import com.me.harris.textviewtest.ui._003_transform.GlideTransformActivity
+import com.me.harris.textviewtest.view_pager.PagerActivity
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class MainActivity :AppCompatActivity(), ItemClickListener {
@@ -44,7 +46,8 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
                 Triple("Coordinate",7,CoordinateActivity::class.java),
                 Triple("ClipPath",8,CustomDrawingActivity::class.java),
                 Triple("Locale",9,UpdatingConfigActivity::class.java),
-                Triple("Mail",10,SendMailActivity::class.java)
+                Triple("Mail",10,SendMailActivity::class.java),
+                Triple("pager",11,PagerActivity::class.java)
 
         ).apply {
 //            this.addAll(this)
