@@ -39,6 +39,9 @@
         <activity android:name=".config.UpdatingConfigActivity" />
         <activity android:name=".mail.SendMailActivity" />
         <activity android:name=".view_pager.PagerActivity" />
+        <activity android:name=".edittextpassword.EditTextActivity" />
+        <activity android:name=".progressbarstuyle.ProgressBarStyleActivity" />
+        <activity android:name=".shadow_layer_list.ShadowLayerListActivity" />
     </application>
 
 </manifest>
