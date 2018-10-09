@@ -5,6 +5,7 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,7 +33,10 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+//                Toast.makeText(this,"hello dumb ass",Toast.LENGTH_LONG).show()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
