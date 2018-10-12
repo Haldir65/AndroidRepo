@@ -28,4 +28,6 @@
 -keep class com.tencent.tinker.** { *; }
 
  -keep class android.support.**{*;}
+ -keep class androidx.**{*;}
+ -keep class com.google.android.**{*;}
 
