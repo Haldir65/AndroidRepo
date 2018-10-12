@@ -8,7 +8,7 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.multidex.MultiDex;
+import android.support.multidex.MultiDex;
 
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
@@ -102,7 +102,7 @@ public class SampleApplicationLike extends DefaultApplicationLike {
 
         // 这里实现SDK初始化，appId替换成你的在Bugly平台申请的appId
         // 调试时，将第三个参数改为true
-        Bugly.init(mContext, "", true);
+        Bugly.init(getApplication(), "", false);
     }
 
 
