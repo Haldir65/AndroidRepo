@@ -1,6 +1,5 @@
 package com.me.harris.fixsolution
 
-import android.app.Application
 import com.tencent.tinker.loader.app.TinkerApplication
 import com.tencent.tinker.loader.shareutil.ShareConstants
 
