@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener { view ->
 //            startActivity(Intent(this,MainActivity::class.java))
-            Snackbar.make(view, "this is some sample", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "this is some stuff", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
     }
