@@ -19,6 +19,7 @@ import com.me.harris.textviewtest.interfaces.ItemClickListener
 import com.me.harris.textviewtest.mail.SendMailActivity
 import com.me.harris.textviewtest.progressbarstuyle.ProgressBarStyleActivity
 import com.me.harris.textviewtest.shadow_layer_list.ShadowLayerListActivity
+import com.me.harris.textviewtest.strikeThrough.StrikeThroughActivity
 import com.me.harris.textviewtest.ui.CustomAdapter
 import com.me.harris.textviewtest.ui._001_retrofit.RetrofitSampleActivity
 import com.me.harris.textviewtest.ui._002_bitmap.BitmapActivity
@@ -53,7 +54,8 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
                 Triple("pager",11,PagerActivity::class.java),
                 Triple("EditText",12,EditTextActivity::class.java),
                 Triple("progressbar",13,ProgressBarStyleActivity::class.java),
-                Triple("shadow",14,ShadowLayerListActivity::class.java)
+                Triple("shadow",14,ShadowLayerListActivity::class.java),
+                Triple("Strike",15,StrikeThroughActivity::class.java)
 
         ).apply {
 //            this.addAll(this)

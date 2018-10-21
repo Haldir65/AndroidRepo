@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+        <TextView
+            android:id="@+id/tv_strike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忍痛甩卖，"
+            />
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="@color/md_red_50"
+            tools:text="现价399元"
+            android:background="@drawable/shape_strike_through"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
