@@ -22,7 +22,7 @@ class PickerLayoutManager(context: Context?, orientation: Int, reverseLayout: Bo
             val unitScaleDownDist = scaleDownDistance * mid
             for (i in 0..childCount - 1) {
                 val child = getChildAt(i)
-                val childMid = (getDecoratedLeft(child) + getDecoratedRight(child)) / 2.0f
+                val childMid = (getDecoratedLeft(child!!) + getDecoratedRight(child)) / 2.0f
                 val scale = 1.0f + -1 * scaleDownBy * Math.min(unitScaleDownDist, Math.abs(mid - childMid)) / unitScaleDownDist
                 child.scaleX = scale
                 child.scaleY = scale
@@ -41,13 +41,13 @@ class PickerLayoutManager(context: Context?, orientation: Int, reverseLayout: Bo
             if (scrollListener != null) {
                 var selected = 0
                 var lastHeight = 0f
-                for (i in 0..childCount - 1) {
-                    if (lastHeight < getChildAt(i).scaleY) {
-                        lastHeight = getChildAt(i).scaleY
+                for (i in 0 until childCount) {
+                    if (lastHeight < getChildAt(i)!!.scaleY) {
+                        lastHeight = getChildAt(i)!!.scaleY
                         selected = i
                     }
                 }
-                (scrollListener as onScrollStopListener).selectedView(getChildAt(selected))
+                (scrollListener as onScrollStopListener).selectedView(getChildAt(selected)!!)
             }
         }
     }

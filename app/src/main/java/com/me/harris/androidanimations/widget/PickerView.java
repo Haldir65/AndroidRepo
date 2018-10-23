@@ -427,7 +427,8 @@ public class PickerView extends ListView {
         boolean drawTop = mSelectorIndex > 0;
         boolean drawBottom = mSelectorIndex < mSelectorCount - 1;
         
-        final int flags = Canvas.HAS_ALPHA_LAYER_SAVE_FLAG;
+//        final int flags = Canvas.HAS_ALPHA_LAYER_SAVE_FLAG;
+        final int flags =  0x04;
         if (drawTop) {
             canvas.saveLayer(left, top, right, top + length, null, flags);
         }
