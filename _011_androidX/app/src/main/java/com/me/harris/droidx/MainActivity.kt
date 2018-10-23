@@ -1,24 +1,69 @@
 package com.me.harris.droidx
 
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.me.harris.droidx.adapter.CustomAdapter
+import com.me.harris.droidx.adapter.ItemClickListener
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_recycler_view.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ItemClickListener {
+
+
+    lateinit var mAdapter: CustomAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setContentView(R.layout.activity_recycler_view)
+        initAdapter()
+    }
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
+    fun initAdapter(){
+        val userList = mutableListOf<Triple<String,Int,Class<out Activity>>>(
+            Triple("Main",1, MainActivity::class.java)
+//            Triple("Retrofit",2,RetrofitSampleActivity::class.java),
+//            Triple("RoundCorner",3,GlideTransformActivity::class.java),
+//            Triple("Constraint",4,ConstraintActivity::class.java),
+//            Triple("Flowable",5,FlowableMainActivity::class.java),
+//            Triple("ClipPath",6,CustomDrawingActivity::class.java),
+//            Triple("Coordinate",7,CoordinateActivity::class.java),
+//            Triple("ClipPath",8,CustomDrawingActivity::class.java),
+//            Triple("Locale",9,UpdatingConfigActivity::class.java),
+//            Triple("Mail",10,SendMailActivity::class.java),
+//            Triple("pager",11,PagerActivity::class.java),
+//            Triple("EditText",12,EditTextActivity::class.java),
+//            Triple("progressbar",13,ProgressBarStyleActivity::class.java),
+//            Triple("shadow",14,ShadowLayerListActivity::class.java),
+//            Triple("Strike",15,StrikeThroughActivity::class.java)
+        )
+        mAdapter = CustomAdapter(userList,this)
+        recyclerView1.adapter = mAdapter
+        recyclerView1.layoutManager = LinearLayoutManager(this)
+        recyclerView1.addItemDecoration(object :  RecyclerView.ItemDecoration(){
+
+            override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+                super.getItemOffsets(outRect, view, parent, state)
+                outRect.set(12,5,12,5)
+            }
+        })
+    }
+
+    override fun onItemClick(position: Int, view: View) {
+        val target = mAdapter.userList[position].third
+        val intent = Intent(this,target)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
