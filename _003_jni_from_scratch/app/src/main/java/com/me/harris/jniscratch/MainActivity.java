@@ -1,6 +1,7 @@
 package com.me.harris.jniscratch;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,25 +24,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView1);
-
+        findViewById(R.id.textView3).setOnClickListener(v -> {
+            String abs = Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+Environment.DIRECTORY_MOVIES+File.separator+"sometext.txt";
+            Log.e(TAG,abs);
+            String result =  new CreatingFileUsingJni().createFileUsingJni(abs,"this is just some file content");
+           Log.e(TAG,result);
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         String signature = Validator.getSignature(this);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String keyFromjni = PackageValidate.getPublicKey(MainActivity.this);
-                textView.setText(keyFromjni);
-                Log.e(TAG,keyFromjni);
+        fab.setOnClickListener(view -> {
+            String keyFromjni = PackageValidate.getPublicKey(MainActivity.this);
+            textView.setText(keyFromjni);
+            Log.e(TAG,keyFromjni);
 
-                Log.e(TAG,textView.getText().toString());
+            Log.e(TAG,textView.getText().toString());
 
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
         });
         textView.setText(signature.substring(10,20));
 
