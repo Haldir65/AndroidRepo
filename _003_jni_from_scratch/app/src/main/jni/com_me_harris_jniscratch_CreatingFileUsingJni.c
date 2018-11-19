@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <string.h>
 #include <errno.h>
+#include <android/log.h>
 
 /* Header for class com_me_harris_jniscratch_CreatingFileUsingJni */
 
@@ -12,40 +13,57 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#define TAG    "===JNI===" // 这个是自定义的LOG的标识
+#define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,TAG,__VA_ARGS__) // 定义LOGD类型
+#define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,TAG,__VA_ARGS__) // 定义LOGD类型
 /*
  * Class:     com_me_harris_jniscratch_CreatingFileUsingJni
  * Method:    createFileUsingJni
  * Signature: (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_com_me_harris_jniscratch_CreatingFileUsingJni_createFileUsingJni
-  (JNIEnv *env , jobject obj, jstring file_path, jstring file_content){
+        (JNIEnv *env, jobject obj, jstring file_path, jstring file_content) {
     const char *p_file_path = (*env)->GetStringUTFChars(env, file_path, 0);
     const char *p_file_content = (*env)->GetStringUTFChars(env, file_content, 0);
-    printf("the file name you want to create is %s\n",p_file_path);
-    printf("the file content you want to write is %s\n",p_file_content);
+//    printf("the file name you want to create is %s\n",p_file_path);
+//    printf("the file content you want to write is %s\n",p_file_content);
 
-    FILE* file = fopen(file_path,"w+");
-
-    char *f_result = (char*)malloc(100 * sizeof(char));;
-    if (file != NULL)
-    {
+//    FILE *file = fopen(file_path,"r");
+    LOGE("##### trying to open file  %s", p_file_path);
+    FILE *file = fopen(p_file_path, "a+");
+    char *f_result = (char *) malloc(100 * sizeof(char));;
+//    __android_log_print(ANDROID_LOG_ERROR,"HelloJni","greeting from jni");
+    if (file != NULL) {
         fputs(p_file_content, file);
         fflush(file);
+//        char* readInPtr = fgets(f_result,20,file);
         fclose(file);
-        f_result = "successfully";
-        fputs("successfully creating file", stderr);
-        sprintf(f_result, " %s!","successfully creating file");
+        LOGE("##### successfully creating file %s", p_file_path);
+        LOGE("##### successfully writing content %s to  file %s", p_file_content, p_file_path);
+//        if (NULL!=readInPtr){
+//            LOGE("##### successfully creating file %s",p_file_path);
+//        }
+//        f_result = "successfully";
+//        fputs("successfully creating file", stderr);
+//        sprintf(f_result, " %s!","successfully creating file");
     } else {
-        printf("open fail errno = %d reason = %s \n", errno, strerror(errno));
-        fputs("Error creating file", stderr);
+//        printf("open fail errno = %d reason = %s \n", errno, strerror(errno));
+//        __android_log_print(ANDROID_LOG_ERROR,"opening file failed with fail message %d \n ",errno);
+
+//        fputs("Error creating file", stderr);
         // Allocates storage
 // Prints "Hello world!" on hello_world
-        strcat(f_result,"error creating file ");
-        sprintf(f_result, "%d %s!", errno,strerror(errno));
+        LOGE("##### error num = %d", errno);
+        LOGE("##### error msg = %s", strerror(errno));
+
+        strcat(f_result, "error creating file ");
+        sprintf(f_result, "%d %s!", errno, strerror(errno));
     }
 //    return (*env)->NewStringUTF(env, p_file_path);
     return (*env)->NewStringUTF(env, f_result);
 }
+
 #ifdef __cplusplus
 }
 #endif

@@ -54,7 +54,13 @@ find_library( # Defines the name of the path variable that stores the
 
 # Links your native library against one or more other native libraries.
 target_link_libraries( # Specifies the target library.
-                       crypto-lib
-
+#                       crypto-lib
+                        fileutility-lib
                        # Links the log library to the target library.
                        ${log-lib} )
+
+# Links your native library against one or more other native libraries.
+target_link_libraries( # Specifies the target library.
+        crypto-lib
+        # Links the log library to the target library.
+        ${log-lib})

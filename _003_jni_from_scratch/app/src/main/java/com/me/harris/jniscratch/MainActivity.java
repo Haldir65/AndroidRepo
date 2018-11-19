@@ -1,5 +1,6 @@
 package com.me.harris.jniscratch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
@@ -7,7 +8,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -16,48 +16,25 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
 
     public static final String TAG = MainActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView = findViewById(R.id.textView1);
-        findViewById(R.id.textView3).setOnClickListener(v -> {
-            String abs = Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+Environment.DIRECTORY_MOVIES+File.separator+"sometext.txt";
-            Log.e(TAG,abs);
-            String result =  new CreatingFileUsingJni().createFileUsingJni(abs,"this is just some file content");
-           Log.e(TAG,result);
-        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        String signature = Validator.getSignature(this);
+
 
         fab.setOnClickListener(view -> {
-            String keyFromjni = PackageValidate.getPublicKey(MainActivity.this);
-            textView.setText(keyFromjni);
-            Log.e(TAG,keyFromjni);
+            startActivity(new Intent(view.getContext(), PlayGroundActivity.class));
 
-            Log.e(TAG,textView.getText().toString());
-
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
         });
-        textView.setText(signature.substring(10,20));
 
-        TextView textView1 = findViewById(R.id.textView2);
-        TextView textView2 = findViewById(R.id.textView);
 
-        Crypto crypto = new Crypto();
-
-        String crypted = crypto.encrypt("textView1");
-        textView1.setText(crypted);
-
-        String decoded = crypto.decrypt(crypted);
-        textView2.setText(decoded);
 
 
 
