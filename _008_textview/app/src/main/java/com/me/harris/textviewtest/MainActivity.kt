@@ -19,6 +19,7 @@ import com.me.harris.textviewtest.interfaces.ItemClickListener
 import com.me.harris.textviewtest.linebreak.TextLineBreakActivity
 import com.me.harris.textviewtest.mail.SendMailActivity
 import com.me.harris.textviewtest.progressbarstuyle.ProgressBarStyleActivity
+import com.me.harris.textviewtest.round_img.RoundBgActivity
 import com.me.harris.textviewtest.shadow_layer_list.ShadowLayerListActivity
 import com.me.harris.textviewtest.strikeThrough.StrikeThroughActivity
 import com.me.harris.textviewtest.ui.CustomAdapter
@@ -42,7 +43,8 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
 
     private fun initAdapter() {
         val userList = mutableListOf<Triple<String,Int,Class<out Activity>>>(
-               Triple("BitmapSample",1, BitmapActivity::class.java),
+                Triple("RoundedBg",17,RoundBgActivity::class.java),
+                        Triple("BitmapSample",1, BitmapActivity::class.java),
                 Triple("Retrofit",2,RetrofitSampleActivity::class.java),
                 Triple("RoundCorner",3,GlideTransformActivity::class.java),
                 Triple("Constraint",4,ConstraintActivity::class.java),
