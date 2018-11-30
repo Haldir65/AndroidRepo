@@ -44,6 +44,7 @@
         <activity android:name=".shadow_layer_list.ShadowLayerListActivity" />
         <activity android:name=".strikeThrough.StrikeThroughActivity" />
         <activity android:name=".user_guide.UserGuideActivity" />
+        <activity android:name=".linebreak.TextLineBreakActivity" />
     </application>
 
 </manifest>

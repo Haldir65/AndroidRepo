@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <com.me.harris.textviewtest.linebreak.MyTextView
+        android:id="@+id/tv_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:text="现阶段主网正在进行压力测试，导致CPU大涨，很多DAPP游戏运行会有卡顿。缺CPU资源的可以在MOREWallet钱包的柚资银行租赁资源。 （IMEOS）\n\n缺CPU资源的可以在MOREWallet钱包的柚资银行租赁资源。"
+        />
+    <TextView
+        android:id="@+id/tv_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:text="现阶段主网正在进行压力测试，导致CPU大涨，很多DAPP游戏运行会有卡顿。缺CPU资源的可以在MOREWallet钱包的柚资银行租赁资源。 （IMEOS）"
+        />
+
+
+
+</LinearLayout>

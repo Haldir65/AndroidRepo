@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.me.harris.droidx.adapter.CustomAdapter
 import com.me.harris.droidx.adapter.ItemClickListener
+import com.me.harris.droidx.cronet.CronetActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recycler_view.*
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
 
     fun initAdapter(){
         val userList = mutableListOf<Triple<String,Int,Class<out Activity>>>(
-            Triple("Main",1, MainActivity::class.java)
+            Triple("Cronet",1, CronetActivity::class.java)
 //            Triple("Retrofit",2,RetrofitSampleActivity::class.java),
 //            Triple("RoundCorner",3,GlideTransformActivity::class.java),
 //            Triple("Constraint",4,ConstraintActivity::class.java),
