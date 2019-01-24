@@ -57,4 +57,5 @@ dependencies {
     implementation files('src/libs/activation.jar')
     implementation files('src/libs/additionnal.jar')
     implementation files('src/libs/mail.jar')
+    implementation 'com.alibaba:fastjson:1.1.67.android'
 }

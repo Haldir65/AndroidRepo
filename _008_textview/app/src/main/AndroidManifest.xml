@@ -46,6 +46,7 @@
         <activity android:name=".user_guide.UserGuideActivity" />
         <activity android:name=".linebreak.TextLineBreakActivity" />
         <activity android:name=".round_img.RoundBgActivity" />
+        <activity android:name=".jsonfast.FastJsonDemoActivity" />
     </application>
 
 </manifest>

@@ -16,6 +16,7 @@ import com.me.harris.textviewtest.coordinated.CoordinateActivity
 import com.me.harris.textviewtest.edittextpassword.EditTextActivity
 import com.me.harris.textviewtest.flowable.FlowableMainActivity
 import com.me.harris.textviewtest.interfaces.ItemClickListener
+import com.me.harris.textviewtest.jsonfast.FastJsonDemoActivity
 import com.me.harris.textviewtest.linebreak.TextLineBreakActivity
 import com.me.harris.textviewtest.mail.SendMailActivity
 import com.me.harris.textviewtest.progressbarstuyle.ProgressBarStyleActivity
@@ -59,7 +60,8 @@ class MainActivity :AppCompatActivity(), ItemClickListener {
                 Triple("progressbar",13,ProgressBarStyleActivity::class.java),
                 Triple("shadow",14,ShadowLayerListActivity::class.java),
                 Triple("Strike",15,StrikeThroughActivity::class.java),
-                Triple("LineBreak",16,TextLineBreakActivity::class.java)
+                Triple("LineBreak",16,TextLineBreakActivity::class.java),
+                Triple("JSOSON",17,FastJsonDemoActivity::class.java)
 
         ).apply {
 //            this.addAll(this)
