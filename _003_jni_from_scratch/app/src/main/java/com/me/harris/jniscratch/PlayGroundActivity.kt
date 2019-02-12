@@ -43,7 +43,7 @@ class PlayGroundActivity : AppCompatActivity() {
 
         textView4.setOnClickListener {
 //            val abs = "/sdcard/hello.txt"
-            val abs = Environment.getExternalStorageDirectory().absolutePath+File.separator+Environment.DIRECTORY_MOVIES+File.separator+"hellothere.txt"
+            val abs = Environment.getExternalStorageDirectory().absolutePath+File.separator+Environment.DIRECTORY_DOWNLOADS+File.separator+"hellothere.txt"
 //            Log.e(TAG, abs)
             val result = CreatingFileUsingJni().createFileUsingJni(abs, "we think this is indeed awesome\n")
 //            Log.e(TAG, result)

@@ -10,7 +10,7 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-# 定义变量
+# 定义变量，不写成这种多个上层目录的就是不行
 set(distribution_DIR ../../../../libs)
 
 # 添加库——自己编写的库
@@ -18,13 +18,13 @@ set(distribution_DIR ../../../../libs)
 # 库类型：SHARED，表示动态库，后缀为.so（如果是STATIC，则表示静态库，后缀为.a）
 # 库源码文件：src/main/cpp/native-lib.cpp
 add_library( # Sets the name of the library.
-        native-lib
+        ffmpeg-lib
 
         # Sets the library as a shared library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        src/main/cpp/native-lib.cpp)
+        src/main/cpp/native-lib.c)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -103,7 +103,7 @@ include_directories(libs/include)
 
 # 告诉编译器生成native-lib库需要链接的库
 # native-lib库需要依赖avcodec、avfilter等库
-target_link_libraries( native-lib
+target_link_libraries( ffmpeg-lib
         avcodec
         avfilter
         avformat
