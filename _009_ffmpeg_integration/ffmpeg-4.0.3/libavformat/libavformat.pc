@@ -1,0 +1,14 @@
+prefix=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput
+exec_prefix=${prefix}
+libdir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/lib
+includedir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 58.12.100
+Requires: 
+Requires.private: libavcodec >= 58.18.100, libswresample >= 3.1.100, libavutil >= 56.14.100
+Conflicts:
+Libs: -L${libdir}  -lavformat 
+Libs.private: -lm -lz
+Cflags: -I${includedir}

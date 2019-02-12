@@ -1,0 +1,14 @@
+prefix=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput
+exec_prefix=${prefix}
+libdir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/lib
+includedir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/include
+
+Name: libswresample
+Description: FFmpeg audio resampling library
+Version: 3.1.100
+Requires: 
+Requires.private: libavutil >= 56.14.100
+Conflicts:
+Libs: -L${libdir}  -lswresample 
+Libs.private: -lm
+Cflags: -I${includedir}

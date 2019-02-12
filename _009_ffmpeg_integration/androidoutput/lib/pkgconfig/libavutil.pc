@@ -1,0 +1,14 @@
+prefix=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput
+exec_prefix=${prefix}
+libdir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/lib
+includedir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 56.14.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil 
+Libs.private: -pthread -lm
+Cflags: -I${includedir}
