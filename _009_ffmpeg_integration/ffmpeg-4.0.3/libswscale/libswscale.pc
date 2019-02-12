@@ -1,14 +1,14 @@
-prefix=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput
+prefix=/usr/local
 exec_prefix=${prefix}
-libdir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/lib
-includedir=/home/harris/Documents/github/AndroidRepo/_009_ffmpeg_integration/androidoutput/include
+libdir=/usr/local/lib
+includedir=/usr/local/include
 
 Name: libswscale
 Description: FFmpeg image rescaling library
 Version: 5.1.100
-Requires: 
-Requires.private: libavutil >= 56.14.100
+Requires: libavutil >= 56.14.100
+Requires.private: 
 Conflicts:
-Libs: -L${libdir}  -lswscale 
-Libs.private: -lm
+Libs: -L${libdir}  -lswscale -lm
+Libs.private: 
 Cflags: -I${includedir}

@@ -49,3 +49,5 @@ captures/
 */.DS_Store
 ## 亲测，貌似只有下面这个才有效
 *.DS_Store
+
+*.a
