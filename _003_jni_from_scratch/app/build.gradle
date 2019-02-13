@@ -15,12 +15,32 @@ android {
 
 //        ndk{
 //            moduleName "awesomeJni"         //生成的so名字
-//            abiFilters "armeabi", "armeabi-v7a", "x86"  //输出指定三种abi体系结构下的so库。目前可有可无。
+//            abiFilters "arm64-v8a", "armeabi-v7a", "x86", "x86_64"  //我想要打包这些到apk里面
 //        }
+
+        // This block is different from the one you use to link Gradle
+        // to your CMake or ndk-build script.
+        externalNativeBuild {
+
+            // For ndk-build, instead use the ndkBuild block.
+            cmake {
+                // Passes optional arguments to CMake.
+//                arguments "-DANDROID_ABI=arm64-v8a"
+                abiFilters "arm64-v8a" //只帮我打这个架构的就好了
+
+                // Sets a flag to enable format macro constants for the C compiler.
+                cFlags "-D__STDC_FORMAT_MACROS"
+
+                // Sets optional flags for the C++ compiler.
+                cppFlags "-fexceptions", "-frtti"
+            }
+        }
     }
-
-
-
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
     signingConfigs {
         release {
             keyAlias 'key0'
@@ -44,11 +64,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    externalNativeBuild {
-        cmake {
-            path 'CMakeLists.txt'
-        }
-    }
+
 }
 
 ext {
