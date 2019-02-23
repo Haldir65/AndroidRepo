@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         // Used to load the 'native-lib' library on application startup.
         init {
-            System.loadLibrary("ffmpeg-lib")
+            System.loadLibrary("xffmpeg")
         }
     }
 

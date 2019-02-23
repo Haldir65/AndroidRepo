@@ -18,7 +18,7 @@ set(distribution_DIR ../../../../libs)
 # 库类型：SHARED，表示动态库，后缀为.so（如果是STATIC，则表示静态库，后缀为.a）
 # 库源码文件：src/main/cpp/native-lib.cpp
 add_library( # Sets the name of the library.
-        ffmpeg-lib
+        xffmpeg
 
         # Sets the library as a shared library.
         SHARED
@@ -103,7 +103,7 @@ include_directories(libs/include)
 
 # 告诉编译器生成native-lib库需要链接的库
 # native-lib库需要依赖avcodec、avfilter等库
-target_link_libraries( ffmpeg-lib
+target_link_libraries( xffmpeg
         avcodec
         avfilter
         avformat
@@ -112,10 +112,3 @@ target_link_libraries( ffmpeg-lib
         swscale
         -landroid
         ${log-lib} )
-
-#target_link_libraries( # Specifies the target library.
-#        native-lib
-#
-#        # Links the target library to the log library
-#        # included in the NDK.
-#        ${log-lib})

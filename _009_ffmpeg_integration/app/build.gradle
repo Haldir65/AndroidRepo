@@ -26,6 +26,10 @@ android {
                 jniLibs.srcDirs = ['libs']
             }
         }
+
+        ndk{
+            abiFilters "armeabi-v7a"
+        }
     }
     buildTypes {
         release {

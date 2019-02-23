@@ -1,7 +1,7 @@
 ADDI_CFLAGS="-marm"
 API=19
 PLATFORM=arm-linux-androideabi
-CPU=armv7-a
+CPU=armv7-a ##这里只编译armv7的
 NDK=/home/harris/Documents/github/android-ndk-r16b # 修改成自己本地的ndk路径。
 SYSROOT=$NDK/platforms/android-$API/arch-arm/
 ISYSROOT=$NDK/sysroot
@@ -30,8 +30,10 @@ function build
 --extra-ldflags="-marm" \
 $ADDITIONAL_CONFIGURE_FLAG
   make clean
-  make
+  make -j4
   make install
 }
 
 build
+
+
