@@ -51,4 +51,4 @@ captures/
 *.DS_Store
 
 *.a
-
+_009_ffmpeg_integration/ffmpeg-4.0.3/lib*
