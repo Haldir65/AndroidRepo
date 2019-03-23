@@ -1,0 +1,33 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle-api:3.3.2'
+    compile 'com.android.tools.build:gradle:3.3.2'
+}
+
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
+}
+
+// 发布到本地
+repositories {
+    mavenCentral()
+}
+group='com.me.harris'
+version='1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}
+
+//发布到本地结束
+
