@@ -1,6 +1,8 @@
 package com.me.harris.droidx
 
 import android.app.Activity
+import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
@@ -8,7 +10,9 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import android.view.TextureView
 import android.view.View
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.me.harris.droidx.adapter.CustomAdapter
@@ -28,6 +32,17 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
         initAdapter()
+        showDlg()
+    }
+
+    fun showDlg(){
+        val d = Dialog(this as Context)
+            .apply {
+                setTitle("title")
+                setCancelable(true)
+                setCanceledOnTouchOutside(true)
+            }.show()
+
     }
 
 

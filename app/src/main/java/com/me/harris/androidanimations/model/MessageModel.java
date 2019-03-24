@@ -44,6 +44,8 @@ public class MessageModel implements Parcelable{
         parcel.writeString(extra);
     }
 
+
+
     public long getId() {
         return id;
     }
