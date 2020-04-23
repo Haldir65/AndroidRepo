@@ -19,7 +19,7 @@
             android:textAllCaps="false"
             />
 
-        <com.me.harris.androidanimations._04_customView.widget.MagicCircle
+        <com.me.harris.androidanimations.customview.widget.MagicCircle
             android:id="@+id/magicCircle"
             android:layout_width="match_parent"
             android:layout_height="200dp" />

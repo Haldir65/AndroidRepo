@@ -11,7 +11,7 @@
             android:id="@+id/included_toolbar"
             layout="@layout/include_toolbar"/>
 
-        <com.me.harris.androidanimations._02_surfaceview.MySurfaceView
+        <com.me.harris.androidanimations.surfaceview.MySurfaceView
             android:id="@+id/surfaceView"
             android:layout_width="300dp"
             android:layout_height="300dp"

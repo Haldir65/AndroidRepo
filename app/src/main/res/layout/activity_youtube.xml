@@ -13,7 +13,7 @@
             android:tag="list"
             />
 
-        <com.me.harris.androidanimations._03_apidemo.widget.YoutubeLayout
+        <com.me.harris.androidanimations.apidemo.widget.YoutubeLayout
             android:id="@+id/dragLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -45,7 +45,7 @@
                 android:background="#FF00FF"/>
 
 
-        </com.me.harris.androidanimations._03_apidemo.widget.YoutubeLayout>
+        </com.me.harris.androidanimations.apidemo.widget.YoutubeLayout>
 
     </FrameLayout>
 </layout>

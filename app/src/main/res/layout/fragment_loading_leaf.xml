@@ -7,7 +7,7 @@
         android:orientation="vertical"
         style="@style/MaterialPaddings">
 
-        <com.me.harris.androidanimations._04_customView.widget.LeafLoading
+        <com.me.harris.androidanimations.customview.widget.LeafLoading
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

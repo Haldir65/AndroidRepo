@@ -13,11 +13,11 @@
             android:orientation="vertical"
             style="@style/MaterialPaddings">
 
-            <com.me.harris.androidanimations._04_customView.widget.Bezier1 style="@style/BezierViewStyle" />
+            <com.me.harris.androidanimations.customview.widget.Bezier1 style="@style/BezierViewStyle" />
 
-            <com.me.harris.androidanimations._04_customView.widget.Bezier2 style="@style/BezierViewStyle" />
+            <com.me.harris.androidanimations.customview.widget.Bezier2 style="@style/BezierViewStyle" />
 
-            <com.me.harris.androidanimations._04_customView.widget.Bezier3 style="@style/BezierViewStyle" />
+            <com.me.harris.androidanimations.customview.widget.Bezier3 style="@style/BezierViewStyle" />
 
         </LinearLayout>
 

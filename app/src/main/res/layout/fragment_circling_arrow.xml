@@ -10,7 +10,7 @@
             android:orientation="vertical"
             style="@style/MaterialPaddings">
 
-          <com.me.harris.androidanimations._04_customView.widget.CirclingArrow
+          <com.me.harris.androidanimations.customview.widget.CirclingArrow
             android:id="@+id/circlingArrow"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

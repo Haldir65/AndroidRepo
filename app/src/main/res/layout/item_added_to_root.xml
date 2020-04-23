@@ -5,7 +5,7 @@
     <data>
         <variable
             name="data"
-            type="com.me.harris.androidanimations._27_data_binding.Fish"/>
+            type="com.me.harris.androidanimations.databinding.Fish"/>
         
     </data>
     

@@ -4,12 +4,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <com.me.harris.androidanimations._04_customView.widget.MergeView
+    <com.me.harris.androidanimations.customview.widget.MergeView
         android:id="@+id/mergeView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:background="@color/md_yellow_400"
-        ></com.me.harris.androidanimations._04_customView.widget.MergeView>
+        ></com.me.harris.androidanimations.customview.widget.MergeView>
 
 </LinearLayout>

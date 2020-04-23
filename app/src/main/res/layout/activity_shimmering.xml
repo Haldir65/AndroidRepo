@@ -18,7 +18,7 @@
             android:id="@+id/included"
             layout="@layout/include_toolbar"/>
     
-        <com.me.harris.androidanimations._24_shimmering.ShimmerTextView
+        <com.me.harris.androidanimations.shimmering.ShimmerTextView
             android:id="@+id/shimmer_tv"
             android:text="@string/hideous"
             android:layout_width="wrap_content"

@@ -12,7 +12,7 @@
             android:id="@+id/included"
             layout="@layout/include_toolbar"/>
 
-        <com.me.harris.androidanimations._23_TitanicTextView.TitanicTextView
+        <com.me.harris.androidanimations.titanictextview.TitanicTextView
             android:id="@+id/titanic"
             android:text="@string/loading"
             android:layout_width="match_parent"

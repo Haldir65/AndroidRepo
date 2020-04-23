@@ -3,13 +3,11 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.me.harris.androidanimations">
 
-    <uses-sdk
-        android:maxSdkVersion="19"
-        android:targetSdkVersion="24"/>
+
     <uses-permission android:name="android.permission.CAMERA"/>
-    //Request a permission as runtime only
+    <!--Request a permission as runtime only-->
     <uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS"/>
-    //Request a permission as install only,22以上不会请求
+   <!-- Request a permission as install only,22以上不会请求-->
     <uses-permission
         android:name="android.permission.READ_CONTACTS"
         android:maxSdkVersion="22"/>
@@ -55,21 +53,21 @@
 
 
         <!--ApiDemo中部分动画展示-->
-        <activity android:name="._03_apidemo.BouncingBallsActivity"/>
-        <activity android:name="._03_apidemo.ShadowCardDrag"/>
-        <activity android:name="._03_apidemo.MaterialWitness"/>
+        <activity android:name=".apidemo.BouncingBallsActivity"/>
+        <activity android:name=".apidemo.ShadowCardDrag"/>
+        <activity android:name=".apidemo.MaterialWitness"/>
 
 
         <!--Canva相关自定义View展示-->
         <activity
-            android:name="._04_customView.activity.CustomViewActivity"
+            android:name=".customview.activity.CustomViewActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/ControlRippleColorTheme"
             />
 
         <!--用于展示ViewDragHelper-->
-        <activity android:name="._03_apidemo.ViewDragHelperActivity"/>
-        <activity android:name="._03_apidemo.YoutubeActivity"/>
+        <activity android:name=".apidemo.ViewDragHelperActivity"/>
+        <activity android:name=".apidemo.YoutubeActivity"/>
         <activity android:name="._11_Loader.LoaderActivity"/>
 
         <!--展示各种Drawable使用方式入口-->
@@ -77,12 +75,12 @@
 
         <!--SurfaceView甚至TextureView入口-->
         <activity
-            android:name="._02_surfaceview.SurfaceViewActivity"
+            android:name=".surfaceview.SurfaceViewActivity"
             android:parentActivityName=".MainActivity"
             />
 
         <!--用于展示View触控事件分发-->
-        <activity android:name="._06_touch.activity.TouchEventActivity"/>
+        <activity android:name=".touch.activity.TouchEventActivity"/>
 
         <!--用于展示Marshmallow运行时权限-->
         <activity android:name="._07_permission.MarshmallowPermissionActivity"/>
@@ -151,7 +149,7 @@
             android:parentActivityName=".MainActivity"/>
 
         <activity
-            android:name="._18_animating_binding.AnimatingBindingActivity"
+            android:name=".animatingbinding.AnimatingBindingActivity"
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name="._10_statusBar.FitSystemWindowsActivity"
@@ -181,7 +179,7 @@
 
 
         <activity
-            android:name="._21_wave_animation.WaveAnimationActivity"
+            android:name=".waveanimation.WaveAnimationActivity"
             android:parentActivityName=".MainActivity"/>
 
         <activity
@@ -189,12 +187,12 @@
             android:parentActivityName=".MainActivity"
             />
         <activity
-            android:name="._23_TitanicTextView.TitanicTextViewActivity"
+            android:name=".titanictextview.TitanicTextViewActivity"
             android:parentActivityName=".MainActivity"
             />
 
         <activity
-            android:name="._24_shimmering.ShimmeringActivity"
+            android:name=".shimmering.ShimmeringActivity"
             android:parentActivityName=".MainActivity"/>
 
         <activity
@@ -208,17 +206,12 @@
             />
 
         <activity
-            android:name="._27_data_binding.ActivityDataBindingEntrance"
+            android:name=".databinding.ActivityDataBindingEntrance"
             android:parentActivityName=".MainActivity"
             />
 
         <activity
-            android:name="._28_percent.PercentLayoutActivity"
-            android:parentActivityName=".MainActivity"
-            />
-
-        <activity
-            android:name="._29_velocity.VelocityTrackerActivity"
+            android:name=".velocity.VelocityTrackerActivity"
             android:parentActivityName=".MainActivity"
             />
 

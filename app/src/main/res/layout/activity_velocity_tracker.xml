@@ -14,7 +14,7 @@
             layout="@layout/include_toolbar"
             ></include>
 
-        <com.me.harris.androidanimations._29_velocity.VelocityDetectLayout
+        <com.me.harris.androidanimations.velocity.VelocityDetectLayout
             android:id="@+id/velocity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,7 +32,7 @@
                 android:textSize="16sp"
                 />
 
-        </com.me.harris.androidanimations._29_velocity.VelocityDetectLayout>
+        </com.me.harris.androidanimations.velocity.VelocityDetectLayout>
 
 
     </FrameLayout>

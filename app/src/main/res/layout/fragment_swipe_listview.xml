@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.me.harris.androidanimations._06_touch.swipelistview.SwipeListView
+        <com.me.harris.androidanimations.touch.swipelistview.SwipeListView
             android:id="@+id/swipeListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -17,7 +17,7 @@
             app:swipeBackView="@+id/ll_back_view"
             >
 
-        </com.me.harris.androidanimations._06_touch.swipelistview.SwipeListView>
+        </com.me.harris.androidanimations.touch.swipelistview.SwipeListView>
 
     </LinearLayout>
 </layout>

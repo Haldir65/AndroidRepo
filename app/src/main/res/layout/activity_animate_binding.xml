@@ -7,10 +7,7 @@
             type="com.me.harris.androidanimations.interfaces.ActionCallBack"/>
         <variable
             name="data"
-            type="com.me.harris.androidanimations._18_animating_binding.GirlsAlpha"/>
-        <variable
-            name="presenter"
-            type="com.me.harris.androidanimations.interfaces.onCheckChangedCallback"/>
+            type="com.me.harris.androidanimations.animatingbinding.GirlsAlpha"/>
     </data>
 
     <ScrollView
@@ -48,7 +45,6 @@
                 android:layout_toRightOf="@id/imageView_1"
                 android:layout_alignTop="@id/imageView_1"
                 android:text="capa"
-                android:onCheckedChanged="@{(cb, isChecked) -> presenter.completeChanged(cb, isChecked)}"
                 />
 
             <ImageView
@@ -70,7 +66,6 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/imageView_2"
                 android:layout_alignTop="@id/imageView_2"
-                android:onCheckedChanged="@{(cb, isChecked) -> presenter.completeChanged(cb, isChecked)}"
                 />
 
         </RelativeLayout>

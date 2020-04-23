@@ -13,3 +13,4 @@
 .externalNativeBuild
 *.o
 *.d
+*/.cxx/
