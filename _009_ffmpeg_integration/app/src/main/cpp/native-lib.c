@@ -1,15 +1,24 @@
 #include <jni.h>
 #include <strings.h>
-
-#include <android/native_window_jni.h>
-#include <libavfilter/avfilter.h>
-#include <libavcodec/avcodec.h>
-
-//封装格式处理
-#include <libavformat/avformat.h>
-//像素处理
-#include <libswscale/swscale.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/time.h>
+#include <android/native_window_jni.h>
+
+#include <libavfilter/avfilter.h>
+//封装格式
+#include "libavformat/avformat.h"
+//解码
+#include "libavcodec/avcodec.h"
+//缩放
+#include "libswscale/swscale.h"
+//重采样
+#include "libswresample/swresample.h"
+
+#include "logger.h"
+
+#define MAX_AUDIO_FRME_SIZE 48000 * 4
 
 
 //JNIEXPORT jstring JNICALL
@@ -19,10 +28,13 @@
 //    std::string hello = "Hello from C++";
 //    return env->NewStringUTF(hello.c_str());
 //}
+// https://xiaozhuanlan.com/topic/3418209675
+static volatile int stop = 0 ;
 
 JNIEXPORT void JNICALL
-Java_com_me_harris_ffmpegintegration_FFCommand_render(JNIEnv *env, jobject instance, jstring url_,
-                                                 jobject surface) {
+Java_com_me_harris_ffmpegintegration_FFSurfaceView_render(JNIEnv *env, jobject instance, jstring url_,
+                                                          jobject surface) {
+    stop = 0;
     const char *url = (*env)->GetStringUTFChars(env, url_, 0);
     // 注册。
     av_register_all();
@@ -33,9 +45,14 @@ Java_com_me_harris_ffmpegintegration_FFCommand_render(JNIEnv *env, jobject insta
 
     // 找出视频流
     int video_index = -1;
+    int audio_stream_idx = -1;
     for (int i = 0; i < avFormatContext->nb_streams; ++i) {
         if (avFormatContext->streams[i]->codec->codec_type == AVMEDIA_TYPE_VIDEO) {
+            LOGE("video code %s at index %d","AVMEDIA_TYPE_VIDEO",i);
             video_index = i;
+        } else if(avFormatContext->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO){
+            LOGE("%s at index %d","AVMEDIA_TYPE_AUDIO",i);
+            audio_stream_idx = i;
         }
     }
     // 解码  转换  绘制
@@ -46,6 +63,7 @@ Java_com_me_harris_ffmpegintegration_FFCommand_render(JNIEnv *env, jobject insta
     // 打开解码器
     if (avcodec_open2(avCodecContext, avCodec, NULL) < 0) {
         // 打开失败。
+        LOGE("%s failed","avcodec_open2");
         return;
     }
     // 申请AVPacket和AVFrame，
@@ -59,6 +77,7 @@ Java_com_me_harris_ffmpegintegration_FFCommand_render(JNIEnv *env, jobject insta
     AVFrame *rgb_frame = av_frame_alloc();
     // rgb_frame是一个缓存区域，所以需要设置。
     // 缓存区
+
     uint8_t *out_buffer = (uint8_t *) av_malloc(
             avpicture_get_size(AV_PIX_FMT_RGBA, avCodecContext->width, avCodecContext->height));
     // 与缓存区相关联，设置rgb_frame缓存区
@@ -85,10 +104,17 @@ Java_com_me_harris_ffmpegintegration_FFCommand_render(JNIEnv *env, jobject insta
     ANativeWindow_Buffer native_outBuffer;
     // 开始解码了。
     int frameCount;
-    while (av_read_frame(avFormatContext, avPacket) >= 0) {
+
+    struct timeval start, end;
+
+    const double FRAME_RATE = (1000/24.0)* 1000; //纳秒 24fps 41ms更新一次
+
+    while (stop!=1&&av_read_frame(avFormatContext, avPacket) >= 0) {
+        gettimeofday( &start, NULL );
         if (avPacket->stream_index == video_index) {
             avcodec_decode_video2(avCodecContext, avFrame, &frameCount, avPacket);
             // 当解码一帧成功过后，我们转换成rgb格式并且绘制。
+            LOGD("%s %d","frameCount = ",frameCount);
             if (frameCount) {
                 ANativeWindow_setBuffersGeometry(pANativeWindow, avCodecContext->width,
                                                  avCodecContext->height, WINDOW_FORMAT_RGBA_8888);
@@ -105,8 +131,19 @@ Java_com_me_harris_ffmpegintegration_FFCommand_render(JNIEnv *env, jobject insta
                     memcpy(dst + i * destStride, src + i * srcStride, srcStride);
                 }
                 ANativeWindow_unlockAndPost(pANativeWindow);
-//                usleep(1000 * 16);
             }
+            gettimeofday( &end, NULL );
+            long timeuse = 1000000 * ( end.tv_sec - start.tv_sec ) + end.tv_usec - start.tv_usec;
+            LOGE("timeuse %ld FRAME_RATE %f",timeuse,FRAME_RATE);
+            if(timeuse<FRAME_RATE){
+                LOGE("slept %f",FRAME_RATE-timeuse);
+                usleep(FRAME_RATE-timeuse); // 单位是毫秒 一百万分之一秒
+            }
+
+//            LOGD("time: %d us\n",timeuse);
+             // tv_sec是时间戳 单位秒  272424是微秒
+        }if(avPacket->stream_index == audio_stream_idx){
+
         }
         av_free_packet(avPacket);
 
@@ -203,4 +240,12 @@ Java_com_me_harris_ffmpegintegration_MainActivity_avfilterinfo(JNIEnv *env, jobj
         f_temp = f_temp->next;
     }
     return (*env)->NewStringUTF(env, info);
+}
+
+
+JNIEXPORT jstring JNICALL
+Java_com_me_harris_ffmpegintegration_MainActivity_stopPlay(JNIEnv *env, jobject instance) {
+    stop = 1;
+    LOGE("%s","stopPlay!!!");
+    return (*env)->NewStringUTF(env, "info");
 }

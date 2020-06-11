@@ -27,12 +27,28 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
 
     lateinit var mAdapter: CustomAdapter
 
+    class GenericThing<T>(constructorArg: T) {
+        // 1. Define a member property
+        private val thing: T = constructorArg
+
+        // 2. Define the type of a function argument
+        fun doSomething(thing: T) = println(thing)
+
+        // 3. Use as a type argument
+        fun emptyList() = listOf<T>()
+
+        // 4. Use as a type parameter constraint, and...
+        // 5. Cast to the type (produces "unchecked cast" warning)
+        fun <U : T> castIt(): T = thing as U
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
         initAdapter()
         showDlg()
+
     }
 
     fun showDlg(){

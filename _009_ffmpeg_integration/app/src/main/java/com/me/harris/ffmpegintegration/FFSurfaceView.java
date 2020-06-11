@@ -6,17 +6,17 @@ import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.SurfaceView;
 
-public class FFCommand extends SurfaceView {
+public class FFSurfaceView extends SurfaceView {
 
-    public FFCommand(Context context) {
+    public FFSurfaceView(Context context) {
         this(context, null);
     }
 
-    public FFCommand(Context context, AttributeSet attrs) {
+    public FFSurfaceView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public FFCommand(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FFSurfaceView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         getHolder().setFormat(PixelFormat.RGBA_8888);
     }
@@ -27,7 +27,7 @@ public class FFCommand extends SurfaceView {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                render(url, FFCommand.this.getHolder().getSurface());
+                render(url, FFSurfaceView.this.getHolder().getSurface());
             }
         }).start();
     }

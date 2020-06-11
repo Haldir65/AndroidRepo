@@ -51,7 +51,16 @@
             android:layout_margin="2dp"
             android:text="Player"
             android:textAllCaps="false" />
-    <com.me.harris.ffmpegintegration.FFCommand
+
+    <Button
+        android:id="@+id/btn_stop_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="Stop"
+        android:textAllCaps="false" />
+
+    <com.me.harris.ffmpegintegration.FFSurfaceView
             android:id="@+id/ffVideoPlayer"
             android:layout_width="match_parent"
             android:layout_height="220dp" />
