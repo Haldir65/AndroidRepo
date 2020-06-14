@@ -8,7 +8,7 @@ jobs:
         - master
 
     docker:
-      - image: circleci/android:api-29
+      - image: circleci/android:api-28
 
     environment:
       ANDROID_HOME: /opt/android/sdk
