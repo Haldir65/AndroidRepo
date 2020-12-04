@@ -56,8 +56,8 @@ android:
 
 before_script:
   - cd _011_androidX
-  - yes | sdkmanager --licenses
-  - yes | sdkmanager "platforms;android-30"
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - cp ./licenses/* "$ANDROID_HOME/licenses/"
 
 
 script:
