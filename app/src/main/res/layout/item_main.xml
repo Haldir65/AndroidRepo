@@ -7,7 +7,7 @@
             type="com.me.harris.androidanimations.interfaces.GenericCallBack"/>
 <variable
     name="data"
-    type="android.support.v4.util.Pair"/>
+    type="androidx.core.util.Pair"/>
 
     </data>
 

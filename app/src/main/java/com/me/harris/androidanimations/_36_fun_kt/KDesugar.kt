@@ -1,7 +1,7 @@
 package com.me.harris.androidanimations._36_fun_kt
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Created by Harris on 2017/5/23.

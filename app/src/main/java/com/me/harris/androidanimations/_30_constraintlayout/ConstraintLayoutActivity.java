@@ -1,11 +1,11 @@
 package com.me.harris.androidanimations._30_constraintlayout;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.transition.Scene;
-import android.support.transition.TransitionManager;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.transition.Scene;
+import androidx.transition.TransitionManager;
 import android.view.View;
 
 import com.me.harris.androidanimations.BaseAppCompatActivity;

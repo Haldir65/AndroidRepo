@@ -1,6 +1,6 @@
 package com.me.harris.androidanimations._042_layoutmanager;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Harris on 2017/9/13.

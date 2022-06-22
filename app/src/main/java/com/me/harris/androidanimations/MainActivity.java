@@ -1,12 +1,12 @@
 package com.me.harris.androidanimations;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.v4.util.Pair;
-import android.support.v7.widget.GridLayoutManager;
+import androidx.core.util.Pair;
+import androidx.recyclerview.widget.GridLayoutManager;
 import android.view.View;
 
 import com.me.harris.androidanimations._01_drawable.activity.DrawableMainActivity;

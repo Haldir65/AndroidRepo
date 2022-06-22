@@ -1,6 +1,6 @@
 package com.me.harris.androidanimations._34_bottomsheet;
 
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 
 /**
  * Created by Harris on 2017/5/6.

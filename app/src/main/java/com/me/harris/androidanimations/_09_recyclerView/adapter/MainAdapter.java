@@ -1,7 +1,7 @@
 package com.me.harris.androidanimations._09_recyclerView.adapter;
 
-import android.support.annotation.LayoutRes;
-import android.support.v4.util.Pair;
+import androidx.annotation.LayoutRes;
+import androidx.core.util.Pair;
 
 import com.me.harris.androidanimations._09_recyclerView.viewholer.DataBoundViewHolder;
 import com.me.harris.androidanimations.databinding.ItemMainBinding;

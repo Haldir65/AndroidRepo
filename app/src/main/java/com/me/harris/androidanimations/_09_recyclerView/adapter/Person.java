@@ -1,6 +1,6 @@
 package com.me.harris.androidanimations._09_recyclerView.adapter;
 
-import android.support.annotation.ColorRes;
+import androidx.annotation.ColorRes;
 
 /**
  * Created by Harris on 2017/8/16.

@@ -16,8 +16,8 @@
 
 package com.me.harris.androidanimations._09_recyclerView.adapter;
 
-import android.databinding.ViewDataBinding;
-import android.support.annotation.LayoutRes;
+import androidx.databinding.ViewDataBinding;
+import androidx.annotation.LayoutRes;
 
 /**
  * An Adapter implementation that works with a {@link com.me.harris.ganstuff.ui.recyclerView.viewholder.DataBoundViewHolder}.

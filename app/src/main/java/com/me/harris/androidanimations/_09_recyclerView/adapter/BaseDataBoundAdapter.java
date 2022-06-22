@@ -16,12 +16,12 @@
 
 package com.me.harris.androidanimations._09_recyclerView.adapter;
 
-import android.databinding.OnRebindCallback;
-import android.databinding.ViewDataBinding;
-import android.support.annotation.CallSuper;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
+import androidx.databinding.OnRebindCallback;
+import androidx.databinding.ViewDataBinding;
+import androidx.annotation.CallSuper;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.me.harris.androidanimations._09_recyclerView.viewholer.DataBoundViewHolder;

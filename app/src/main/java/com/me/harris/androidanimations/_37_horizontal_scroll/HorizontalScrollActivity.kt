@@ -1,7 +1,7 @@
 package com.me.harris.androidanimations._37_horizontal_scroll
 
 import android.os.Bundle
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import com.me.harris.androidanimations.BaseAppCompatActivity
 import com.me.harris.androidanimations.R
 

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 
-public class MaxLineTextView extends android.support.v7.widget.AppCompatTextView {
+public class MaxLineTextView extends androidx.appcompat.widget.AppCompatTextView {
     public MaxLineTextView(Context context) {
         super(context);
     }

@@ -1,6 +1,6 @@
 package com.me.harris.androidanimations;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import org.junit.Test;

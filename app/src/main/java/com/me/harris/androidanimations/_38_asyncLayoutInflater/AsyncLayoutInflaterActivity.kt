@@ -1,10 +1,10 @@
 package com.me.harris.androidanimations._38_asyncLayoutInflater
 
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v4.view.AsyncLayoutInflater
+import androidx.annotation.LayoutRes
 import android.view.View
 import android.view.ViewGroup
+import androidx.asynclayoutinflater.view.AsyncLayoutInflater
 import com.me.harris.androidanimations.BaseAppCompatActivity
 import com.me.harris.androidanimations.R
 import com.me.harris.androidanimations.utils.LogUtil
@@ -38,7 +38,8 @@ class AsyncLayoutInflaterActivity : BaseAppCompatActivity() {
 
     fun asyncInflate(@LayoutRes id: Int) {
         time = System.currentTimeMillis()
-        AsyncLayoutInflater(this).inflate(id, null,
+        AsyncLayoutInflater(this)
+            .inflate(id, null,
                 { view: View, i: Int, viewGroup: ViewGroup? ->
                     setContentView(view)
                     val elapse = System.currentTimeMillis() - time

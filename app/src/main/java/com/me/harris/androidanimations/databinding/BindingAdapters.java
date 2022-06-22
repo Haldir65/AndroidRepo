@@ -1,13 +1,12 @@
 package com.me.harris.androidanimations.databinding;
 
 import android.content.Context;
-import android.databinding.BindingAdapter;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.android.databinding.library.baseAdapters.BR;
 
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class BindingAdapters {
                 T entry = entries.get(i);
                 ViewDataBinding binding = DataBindingUtil
                         .inflate(inflater, layoutId, viewGroup, true);
-                binding.setVariable(BR.data, entry);
+//                binding.setVariable(BR.data, entry);
             }
         }
     }

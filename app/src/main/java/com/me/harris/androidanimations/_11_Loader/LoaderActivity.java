@@ -2,13 +2,13 @@ package com.me.harris.androidanimations._11_Loader;
 
 import android.content.Intent;
 import android.content.Loader;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.ListFragment;
-import android.support.v4.app.LoaderManager;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.ListFragment;
+import androidx.loader.app.LoaderManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -86,13 +86,13 @@ public class LoaderActivity extends BaseAppCompatActivity {
         /**********************/
 
         @Override
-        public android.support.v4.content.Loader<List<AppEntry>> onCreateLoader(int id, Bundle args) {
+        public androidx.loader.content.Loader<List<AppEntry>> onCreateLoader(int id, Bundle args) {
             if (DEBUG) Log.i(TAG, "+++ onCreateLoader() called! +++");
             return new AppListLoader(getActivity());
         }
 
         @Override
-        public void onLoadFinished(android.support.v4.content.Loader<List<AppEntry>> loader, List<AppEntry> data) {
+        public void onLoadFinished(androidx.loader.content.Loader<List<AppEntry>> loader, List<AppEntry> data) {
             if (DEBUG) Log.i(TAG, "+++ onLoadFinished() called! +++");
             mAdapter.setData(data);
 
@@ -104,7 +104,7 @@ public class LoaderActivity extends BaseAppCompatActivity {
         }
 
         @Override
-        public void onLoaderReset(android.support.v4.content.Loader<List<AppEntry>> loader) {
+        public void onLoaderReset(androidx.loader.content.Loader<List<AppEntry>> loader) {
             if (DEBUG) Log.i(TAG, "+++ onLoadReset() called! +++");
             mAdapter.setData(null);
         }
@@ -140,7 +140,7 @@ public class LoaderActivity extends BaseAppCompatActivity {
          * are called as a result!
          */
         private void configureLocale() {
-            android.support.v4.content.Loader<Object> loader = getLoaderManager().getLoader(LOADER_ID);
+            androidx.loader.content.Loader<Object> loader = getLoaderManager().getLoader(LOADER_ID);
             if (loader != null) {
                 startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS));
             }

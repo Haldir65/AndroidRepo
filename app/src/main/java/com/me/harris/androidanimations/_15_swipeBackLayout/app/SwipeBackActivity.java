@@ -2,7 +2,7 @@
 package com.me.harris.androidanimations._15_swipeBackLayout.app;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.me.harris.androidanimations._15_swipeBackLayout.SwipeBackLayout;

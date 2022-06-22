@@ -1,10 +1,10 @@
 package com.me.harris.androidanimations._10_statusBar;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.me.harris.androidanimations.R;
 import com.me.harris.androidanimations.databinding.ActivityStatusbarOneBinding;

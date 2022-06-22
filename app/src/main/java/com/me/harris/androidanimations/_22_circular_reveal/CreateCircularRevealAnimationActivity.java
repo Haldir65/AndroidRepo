@@ -2,10 +2,10 @@ package com.me.harris.androidanimations._22_circular_reveal;
 
 import android.animation.Animator;
 import android.annotation.TargetApi;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;

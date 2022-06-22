@@ -1,8 +1,8 @@
 package com.me.harris.androidanimations.databinding;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
-import android.databinding.ObservableLong;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.ObservableLong;
 
 /**
  * Created by Harris on 2017/2/25.

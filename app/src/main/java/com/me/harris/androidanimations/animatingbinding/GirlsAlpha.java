@@ -1,7 +1,7 @@
 package com.me.harris.androidanimations.animatingbinding;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 
 /**
  * Created by Fermi on 2016/12/4.

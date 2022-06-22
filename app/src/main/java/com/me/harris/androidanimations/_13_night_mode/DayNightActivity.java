@@ -1,10 +1,10 @@
 package com.me.harris.androidanimations._13_night_mode;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import android.view.View;
 
 import com.me.harris.androidanimations.BaseAppCompatActivity;

@@ -7,7 +7,7 @@ package com.me.harris.androidanimations._11_Loader;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.loader.content.AsyncTaskLoader;
 import android.util.Log;
 
 import com.me.harris.androidanimations.utils.LogUtil;

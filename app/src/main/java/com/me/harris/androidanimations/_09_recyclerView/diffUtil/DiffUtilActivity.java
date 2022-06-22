@@ -1,8 +1,8 @@
 package com.me.harris.androidanimations._09_recyclerView.diffUtil;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.Menu;
 import android.view.MenuItem;
 

@@ -1,7 +1,7 @@
 package com.me.harris.androidanimations._09_recyclerView.diffUtil;
 
-import android.support.annotation.Nullable;
-import android.support.v7.util.DiffUtil;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.DiffUtil;
 
 import java.util.List;
 

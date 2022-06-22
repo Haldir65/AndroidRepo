@@ -16,8 +16,8 @@
 package com.me.harris.androidanimations._32_boing;
 
 import android.os.Bundle;
-import android.support.animation.SpringAnimation;
-import android.support.v7.app.AppCompatActivity;
+import androidx.dynamicanimation.animation.SpringAnimation;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;

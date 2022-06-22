@@ -1,9 +1,9 @@
 package com.me.harris.androidanimations._05_animation;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 
 import com.me.harris.androidanimations.BaseAppCompatActivity;
