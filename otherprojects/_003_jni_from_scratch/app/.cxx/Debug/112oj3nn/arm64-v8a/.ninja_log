@@ -1,0 +1,7 @@
+# ninja log v5
+3	223	677650368	CMakeFiles/validator-lib.dir/src/main/jni/validator.cpp.o	b6b2f57328872ad4
+5	238	677650368	CMakeFiles/fileutility-lib.dir/src/main/jni/com_me_harris_jniscratch_CreatingFileUsingJni.c.o	f52796d1e23200f4
+1	246	677650368	CMakeFiles/crypto-lib.dir/src/main/jni/Crypto.c.o	9c7e12c2d3e8433b
+246	468	677650368	../../../../build/intermediates/cxx/Debug/112oj3nn/obj/arm64-v8a/libcrypto-lib.so	144e95254b0fa94a
+238	468	677650368	../../../../build/intermediates/cxx/Debug/112oj3nn/obj/arm64-v8a/libfileutility-lib.so	223503c0d72ae5d3
+224	476	677650368	../../../../build/intermediates/cxx/Debug/112oj3nn/obj/arm64-v8a/libvalidator-lib.so	ca973d1d6ca6d5b0

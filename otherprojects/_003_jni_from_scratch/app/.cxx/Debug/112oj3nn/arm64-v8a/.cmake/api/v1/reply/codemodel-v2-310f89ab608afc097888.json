@@ -1,0 +1,77 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "crypto-lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-crypto-lib-Debug-65340f8a1fe005f723fa.json",
+					"name" : "crypto-lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fileutility-lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fileutility-lib-Debug-2be615122e239d62e6f3.json",
+					"name" : "fileutility-lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "validator-lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-validator-lib-Debug-e54492662827d68c7ba1.json",
+					"name" : "validator-lib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "H:/program/github/AndroidRepo/otherprojects/_003_jni_from_scratch/app/.cxx/Debug/112oj3nn/arm64-v8a",
+		"source" : "H:/program/github/AndroidRepo/otherprojects/_003_jni_from_scratch/app"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}

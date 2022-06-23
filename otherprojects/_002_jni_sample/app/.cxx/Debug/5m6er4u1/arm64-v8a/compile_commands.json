@@ -1,0 +1,107 @@
+[
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\SimpleLame.cpp.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\SimpleLame.cpp",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/SimpleLame.cpp"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\VbrTag.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\VbrTag.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/VbrTag.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\bitstream.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\bitstream.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/bitstream.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\encoder.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\encoder.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/encoder.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\fft.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\fft.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/fft.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\gain_analysis.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\gain_analysis.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/gain_analysis.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\id3tag.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\id3tag.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/id3tag.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\lame.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\lame.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/lame.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\mpglib_interface.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\mpglib_interface.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/mpglib_interface.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\newmdct.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\newmdct.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/newmdct.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\presets.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\presets.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/presets.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\psymodel.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\psymodel.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/psymodel.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\quantize.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\quantize.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/quantize.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\quantize_pvt.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\quantize_pvt.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/quantize_pvt.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\reservoir.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\reservoir.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/reservoir.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\set_get.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\set_get.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/set_get.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\tables.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\tables.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/tables.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\takehiro.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\takehiro.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/takehiro.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\util.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\util.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/util.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\vbrquantize.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\vbrquantize.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/vbrquantize.c"
+},
+{
+  "directory": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/.cxx/Debug/5m6er4u1/arm64-v8a",
+  "command": "C:\\android\\sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android26 --gcc-toolchain=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dlibmp3lame_EXPORTS -I../../../../src/main/cpp/libmp3lame -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSTDC_HEADERS -fno-limit-debug-info  -fPIC -o CMakeFiles\\libmp3lame.dir\\src\\main\\cpp\\libmp3lame\\version.c.o -c H:\\program\\github\\AndroidRepo\\otherprojects\\_002_jni_sample\\app\\src\\main\\cpp\\libmp3lame\\version.c",
+  "file": "H:/program/github/AndroidRepo/otherprojects/_002_jni_sample/app/src/main/cpp/libmp3lame/version.c"
+}
+]

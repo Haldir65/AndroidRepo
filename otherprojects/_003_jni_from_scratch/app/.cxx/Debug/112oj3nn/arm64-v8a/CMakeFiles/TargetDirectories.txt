@@ -1,0 +1,5 @@
+H:/program/github/AndroidRepo/otherprojects/_003_jni_from_scratch/app/.cxx/Debug/112oj3nn/arm64-v8a/CMakeFiles/crypto-lib.dir
+H:/program/github/AndroidRepo/otherprojects/_003_jni_from_scratch/app/.cxx/Debug/112oj3nn/arm64-v8a/CMakeFiles/fileutility-lib.dir
+H:/program/github/AndroidRepo/otherprojects/_003_jni_from_scratch/app/.cxx/Debug/112oj3nn/arm64-v8a/CMakeFiles/validator-lib.dir
+H:/program/github/AndroidRepo/otherprojects/_003_jni_from_scratch/app/.cxx/Debug/112oj3nn/arm64-v8a/CMakeFiles/edit_cache.dir
+H:/program/github/AndroidRepo/otherprojects/_003_jni_from_scratch/app/.cxx/Debug/112oj3nn/arm64-v8a/CMakeFiles/rebuild_cache.dir

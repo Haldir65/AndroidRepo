@@ -1,0 +1,9 @@
+Executable : C:\android\sdk\cmake\3.18.1\bin\ninja.exe
+arguments : 
+-C
+H:\program\github\AndroidRepo\otherprojects\_003_jni_from_scratch\app\.cxx\Debug\112oj3nn\arm64-v8a
+crypto-lib
+fileutility-lib
+validator-lib
+jvmArgs : 
+
