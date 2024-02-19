@@ -8,14 +8,27 @@ plugins {
 //apply plugin: 'com.neenbedankt.android-apt'
 apply from: "${project.rootDir}/config.gradle"
 android {
-    compileSdkVersion 31
-    buildToolsVersion '31.0.0'
+    compileSdk =  34
 
-    viewBinding { enabled = true }
+    namespace 'com.me.harris.androidanimations'
+    
+    java {
+        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    }
+
+    buildToolsVersion = '34.0.0'
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+        aidl true
+    }
+
+
     defaultConfig {
         applicationId "com.me.harris.androidanimations"
-        minSdkVersion project.ext.ANDROID_BUILD_MIN_SDK_VERSION
-        targetSdkVersion project.ext.ANDROID_BUILD_TARGET_SDK_VERSION
+        minSdkVersion 27
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -74,7 +87,6 @@ android {
 //        // priority than the second, and so on.
 //        minApi24 {
 //            dimension "api"
-//            minSdkVersion 24
 //            // To ensure the target device receives the version of the app with
 //            // the highest compatible API level, assign version codes in increasing
 //            // value with API level. To learn more about assigning version codes to
@@ -86,14 +98,12 @@ android {
 //
 //        minApi23 {
 //            dimension "api"
-//            minSdkVersion 23
 //            versionCode 20000  + android.defaultConfig.versionCode
 //            versionNameSuffix "-minApi23"
 //        }
 //
 //        minApi21 {
 //            dimension "api"
-//            minSdkVersion 21
 //            versionCode 10000  + android.defaultConfig.versionCode
 //            versionNameSuffix "-minApi21"
 //        }
@@ -141,8 +151,8 @@ android {
     }
 
     compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
     }
 
     testOptions {
@@ -172,10 +182,11 @@ android {
 
 
 dependencies {
+    implementation 'androidx.cardview:cardview:1.0.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
@@ -183,16 +194,16 @@ dependencies {
     implementation "androidx.asynclayoutinflater:asynclayoutinflater:1.0.0"
     def activity_version = "1.4.0"
     implementation("androidx.activity:activity:$activity_version")
-    implementation 'androidx.activity:activity-ktx:1.4.0'
-    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+    implementation 'androidx.activity:activity-ktx:1.8.2'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
     def lifecycle_version = "2.4.1"
     def arch_version = "2.1.0"
     // ViewModelScope
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
     // LifecycleScope
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
     // LiveData
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
     // Annotation processor
 //    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
@@ -210,27 +221,27 @@ dependencies {
     // optional - Test helpers for LiveData
     testImplementation "androidx.arch.core:core-testing:$arch_version"
 
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'org.greenrobot:eventbus:3.2.0'
 
 
     //ViewModel and LiveData
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
-    kapt("androidx.lifecycle:lifecycle-common-java8:2.4.0")
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    kapt("androidx.lifecycle:lifecycle-common-java8:2.7.0")
 
     //Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
 
     //Image Loading
-    implementation("io.coil-kt:coil:0.8.0")
+    implementation("io.coil-kt:coil:2.4.0")
 
     //Webservices
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.14.9'
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.12.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
@@ -247,12 +258,12 @@ dependencies {
     implementation 'org.aspectj:aspectjtools:1.6.2'
 
     // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect
-    implementation"org.jetbrains.kotlin:kotlin-reflect:${kotlin_version}"
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.9.21'
 
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
     implementation 'com.github.bumptech.glide:okhttp3-integration:4.7.1@aar'
-    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     testImplementation 'junit:junit:4.13.2'
     implementation 'in.srain.cube:ultra-ptr:1.0.11'

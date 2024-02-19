@@ -57,12 +57,8 @@ public class PluginMainActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button1:
-                startApk(v);
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.button1) {
+            startApk(v);
         }
     }
 }

@@ -44,30 +44,26 @@ public class PickerActivity extends BaseAppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button1:
-                binding.textView.setText("时间 " + picker.getYear() + "年" + picker.getMonth() + "月" + picker.getDay() + "日");
-                break;
-            case R.id.button2:
-                if (dialog == null) {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                    dialog = alertDialogBuilder.create();
-                    alertDialogBuilder.setTitle("选择事件");//
-                    dialog.setCanceledOnTouchOutside(true);
-                    picker1 = new ChooseCommunicateTimePicker(this);
-                    picker1.monDateChangeListener = this;
-                    dialog.setView(picker1);
-                    dialog.setButton(DialogInterface.BUTTON_POSITIVE,"确定", (DialogInterface.OnClickListener) PickerActivity.this);
-                    dialog.setButton(DialogInterface.BUTTON_NEGATIVE,"取消", (DialogInterface.OnClickListener) PickerActivity.this);
-                    dialog.getWindow().setGravity(Gravity.BOTTOM);
-                    dialog.setOnDismissListener(this);
-                }
-                picker1.setDate(mYear, mMonth, mDay, 2000);
-                dialog.show();//将dialog显示出来
+        int id = v.getId();
+        if (id == R.id.button1) {
+            binding.textView.setText("时间 " + picker.getYear() + "年" + picker.getMonth() + "月" + picker.getDay() + "日");
+        } else if (id == R.id.button2) {
+            if (dialog == null) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                dialog = alertDialogBuilder.create();
+                alertDialogBuilder.setTitle("选择事件");//
+                dialog.setCanceledOnTouchOutside(true);
+                picker1 = new ChooseCommunicateTimePicker(this);
+                picker1.monDateChangeListener = this;
+                dialog.setView(picker1);
+                dialog.setButton(DialogInterface.BUTTON_POSITIVE, "确定", (DialogInterface.OnClickListener) PickerActivity.this);
+                dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", (DialogInterface.OnClickListener) PickerActivity.this);
+                dialog.getWindow().setGravity(Gravity.BOTTOM);
+                dialog.setOnDismissListener(this);
+            }
+            picker1.setDate(mYear, mMonth, mDay, 2000);
+            dialog.show();//将dialog显示出来
 //                binding.textView.setText("" + timePicker.getYear() + ":" + timePicker.getMonth() + ":" + timePicker.getDay());
-                break;
-            default:
-                break;
         }
     }
 

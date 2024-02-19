@@ -36,34 +36,28 @@ public class OutOfMemoryActivity extends AppCompatActivity implements ActionCall
     @Override
     public void onClickView(View view) {
         Runtime runtime;
-        switch (view.getId()) {
-            case R.id.button1:
-                int i = 0;
-                runtime = Runtime.getRuntime();
-                long max = runtime.maxMemory() - 1024 * 1024;
-                while (runtime.totalMemory() < max) {
-                    ((i++ % 2 == 0) ? mRetainedChunks : mTempChunks).add(new Chunk());
-                }
-                break;
-            case R.id.button2:
-                mTempChunks.clear();
-                System.gc();
-                break;
-            case R.id.button3:
-                runtime = Runtime.getRuntime();
-                binding.textViewRam.setText("HeapMax = " + toMB(runtime.maxMemory()));
+        int id = view.getId();
+        if (id == R.id.button1) {
+            int i = 0;
+            runtime = Runtime.getRuntime();
+            long max = runtime.maxMemory() - 1024 * 1024;
+            while (runtime.totalMemory() < max) {
+                ((i++ % 2 == 0) ? mRetainedChunks : mTempChunks).add(new Chunk());
+            }
+        } else if (id == R.id.button2) {
+            mTempChunks.clear();
+            System.gc();
+        } else if (id == R.id.button3) {
+            runtime = Runtime.getRuntime();
+            binding.textViewRam.setText("HeapMax = " + toMB(runtime.maxMemory()));
               /*  LogUtil.w(TAG, String.format("heap: %.2f/%.2f",
                         toMB(runtime.freeMemory()),
                         toMB(runtime.totalMemory())));*/
-                LogUtil.w(TAG, String.valueOf(toMB(runtime.freeMemory())));
-                LogUtil.w(TAG, String.valueOf(toMB(runtime.totalMemory())));
-                break;
-            case R.id.button4:
-                Bitmap bitmap = Bitmap.createBitmap(1024, 512, Bitmap.Config.ARGB_8888);
-                //about 2 MB size
-                break;
-            default:
-                break;
+            LogUtil.w(TAG, String.valueOf(toMB(runtime.freeMemory())));
+            LogUtil.w(TAG, String.valueOf(toMB(runtime.totalMemory())));
+        } else if (id == R.id.button4) {
+            Bitmap bitmap = Bitmap.createBitmap(1024, 512, Bitmap.Config.ARGB_8888);
+            //about 2 MB size
         }
     }
 

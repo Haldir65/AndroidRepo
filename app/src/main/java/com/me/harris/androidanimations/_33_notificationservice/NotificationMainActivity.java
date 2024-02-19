@@ -72,32 +72,25 @@ public class NotificationMainActivity extends Activity {
 
     public void buttonOnClicked(View view) {
         mTextView.setTextColor(Color.BLACK);
-        switch (view.getId()) {
-            case R.id.btnCreateNotify:
-                logNLS("Create notifications...");
-                createNotification(this);
-                mHandler.sendMessageDelayed(mHandler.obtainMessage(EVENT_SHOW_CREATE_NOS), 50);
-                break;
-            case R.id.btnClearLastNotify:
-                logNLS("Clear Last notification...");
-                clearLastNotification();
-                mHandler.sendMessageDelayed(mHandler.obtainMessage(EVENT_LIST_CURRENT_NOS), 50);
-                break;
-            case R.id.btnClearAllNotify:
-                logNLS("Clear All notifications...");
-                clearAllNotifications();
-                mHandler.sendMessageDelayed(mHandler.obtainMessage(EVENT_LIST_CURRENT_NOS), 50);
-                break;
-            case R.id.btnListNotify:
-                logNLS("List notifications...");
-                listCurrentNotification();
-                break;
-            case R.id.btnEnableUnEnableNotify:
-                logNLS("Enable/UnEnable notification...");
-                openNotificationAccess();
-                break;
-            default:
-                break;
+        int id = view.getId();
+        if (id == R.id.btnCreateNotify) {
+            logNLS("Create notifications...");
+            createNotification(this);
+            mHandler.sendMessageDelayed(mHandler.obtainMessage(EVENT_SHOW_CREATE_NOS), 50);
+        } else if (id == R.id.btnClearLastNotify) {
+            logNLS("Clear Last notification...");
+            clearLastNotification();
+            mHandler.sendMessageDelayed(mHandler.obtainMessage(EVENT_LIST_CURRENT_NOS), 50);
+        } else if (id == R.id.btnClearAllNotify) {
+            logNLS("Clear All notifications...");
+            clearAllNotifications();
+            mHandler.sendMessageDelayed(mHandler.obtainMessage(EVENT_LIST_CURRENT_NOS), 50);
+        } else if (id == R.id.btnListNotify) {
+            logNLS("List notifications...");
+            listCurrentNotification();
+        } else if (id == R.id.btnEnableUnEnableNotify) {
+            logNLS("Enable/UnEnable notification...");
+            openNotificationAccess();
         }
     }
 

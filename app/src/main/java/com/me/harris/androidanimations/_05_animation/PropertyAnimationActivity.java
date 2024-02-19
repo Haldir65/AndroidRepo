@@ -55,87 +55,75 @@ public class PropertyAnimationActivity extends BaseAppCompatActivity implements 
      */
     @Override
     public void onClickView(final View v) {
-        switch (v.getId()) {
-            case R.id.imageView:
-                final ObjectAnimator animator = ObjectAnimator
-                        .ofFloat(v, "WTF", 1f, 0.5f).setDuration(1500);//写成WTF不会崩，但还是少这么干
-               // ObjectAnimator visibleToInVisable = ObjectAnimator.ofFloat(v , "rotationX", 0.0f,90.0f);
-               // final ObjectAnimator invisibleToVisible = ObjectAnimator.ofFloat(, "rotationX", -90.0f,0.0f);
-                //   ObjectAnimator mAnimatorAlpha = ObjectAnimator.ofFloat(alphaListView, "alpha", 1.0f,0.0f);
-                // ObjectAnimator mAnimatorScaleX = ObjectAnimator.ofFloat(scaleListView, "scaleX", 1.0f,0.0f);
-                //
-                //
-                //
-                animator.setRepeatCount(2);
-                animator.setRepeatMode(REVERSE);
-                animator.start();
-                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        float cValue = (float) animation.getAnimatedValue();
-                        v.setAlpha(cValue);
-                        v.setScaleX(1.2f);
-                        v.setScaleY(1.2f);
-                    }
-                });
-                animator.addListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-
-                    }
-                });
-                break;
-            case R.id.imageView2:
-                ObjectAnimator animX = ObjectAnimator.ofFloat(v, "x", 50f);
-                animX.setInterpolator(new CustomInterpolator());  // Interpolartor用于控制时间输出，作为Evaluator的输入参数
-                ObjectAnimator animY = ObjectAnimator.ofFloat(v, "y", 100f);
-                animY.setEvaluator(new CustomEvaluator()); //Evaluator用于根据输出的时间fraction控制最终输出的对象属性的变化
-                AnimatorSet animSetXY = new AnimatorSet();
-                animSetXY.playTogether(animX, animY);
-                animSetXY.start();
-                break;
-            case R.id.imageView3:
-                PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", 50f);
-                PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", 100f);
-                ObjectAnimator.ofPropertyValuesHolder(v, pvhX, pvhY).start();
-                break;
-            case R.id.imageView4:
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    v.animate().x(v.getX()+50f).y(v.getY()+100f).z(120);
+        int id = v.getId();
+        if (id == R.id.imageView) {
+            final ObjectAnimator animator = ObjectAnimator
+                    .ofFloat(v, "WTF", 1f, 0.5f).setDuration(1500);//写成WTF不会崩，但还是少这么干
+            // ObjectAnimator visibleToInVisable = ObjectAnimator.ofFloat(v , "rotationX", 0.0f,90.0f);
+            // final ObjectAnimator invisibleToVisible = ObjectAnimator.ofFloat(, "rotationX", -90.0f,0.0f);
+            //   ObjectAnimator mAnimatorAlpha = ObjectAnimator.ofFloat(alphaListView, "alpha", 1.0f,0.0f);
+            // ObjectAnimator mAnimatorScaleX = ObjectAnimator.ofFloat(scaleListView, "scaleX", 1.0f,0.0f);
+            //
+            //
+            //
+            animator.setRepeatCount(2);
+            animator.setRepeatMode(REVERSE);
+            animator.start();
+            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    float cValue = (float) animation.getAnimatedValue();
+                    v.setAlpha(cValue);
+                    v.setScaleX(1.2f);
+                    v.setScaleY(1.2f);
                 }
-                break;
-            case R.id.imageView5:
-                AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this,
-                        R.animator.sequential_effects);
-                set.setTarget(v);
-                set.start();
-                break;
-            case R.id.imageView6:
-                ValueAnimator animator6 = ValueAnimator.ofInt(0, Utils.getScreenWidth(this) - v.getWidth() );
-                animator6.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        int animatorValue = (int)animation.getAnimatedValue();
-                        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
-                        marginLayoutParams.leftMargin = animatorValue;
-                        v.setLayoutParams(marginLayoutParams);
-                    }
-                });
-                animator6.setInterpolator(new AccelerateDecelerateInterpolator());
-                animator6.setEvaluator(new FloatEvaluator());
-                animator6.setDuration(3000);
-                animator6.setTarget(v);
-                animator6.start();
-                break;
-            case R.id.imageView7:
-                break;
-            case R.id.imageView8:
-                break;
-            case R.id.imageView9:
-                break;
-            default:
-                break;
+            });
+            animator.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
 
+                }
+            });
+        } else if (id == R.id.imageView2) {
+            ObjectAnimator animX = ObjectAnimator.ofFloat(v, "x", 50f);
+            animX.setInterpolator(new CustomInterpolator());  // Interpolartor用于控制时间输出，作为Evaluator的输入参数
+            ObjectAnimator animY = ObjectAnimator.ofFloat(v, "y", 100f);
+            animY.setEvaluator(new CustomEvaluator()); //Evaluator用于根据输出的时间fraction控制最终输出的对象属性的变化
+            AnimatorSet animSetXY = new AnimatorSet();
+            animSetXY.playTogether(animX, animY);
+            animSetXY.start();
+        } else if (id == R.id.imageView3) {
+            PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", 50f);
+            PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", 100f);
+            ObjectAnimator.ofPropertyValuesHolder(v, pvhX, pvhY).start();
+        } else if (id == R.id.imageView4) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                v.animate().x(v.getX() + 50f).y(v.getY() + 100f).z(120);
+            }
+        } else if (id == R.id.imageView5) {
+            AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this,
+                    R.animator.sequential_effects);
+            set.setTarget(v);
+            set.start();
+        } else if (id == R.id.imageView6) {
+            ValueAnimator animator6 = ValueAnimator.ofInt(0, Utils.getScreenWidth(this) - v.getWidth());
+            animator6.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    int animatorValue = (int) animation.getAnimatedValue();
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+                    marginLayoutParams.leftMargin = animatorValue;
+                    v.setLayoutParams(marginLayoutParams);
+                }
+            });
+            animator6.setInterpolator(new AccelerateDecelerateInterpolator());
+            animator6.setEvaluator(new FloatEvaluator());
+            animator6.setDuration(3000);
+            animator6.setTarget(v);
+            animator6.start();
+        } else if (id == R.id.imageView7) {
+        } else if (id == R.id.imageView8) {
+        } else if (id == R.id.imageView9) {
         }
     }
 

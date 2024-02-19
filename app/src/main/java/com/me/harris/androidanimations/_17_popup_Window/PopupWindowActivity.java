@@ -40,21 +40,15 @@ public class PopupWindowActivity extends BaseAppCompatActivity implements Action
 
     @Override
     public void onClickView(View view) {
-        switch (view.getId()) {
-            case R.id.button_1:
-                showPopTop();
-                break;
-            case R.id.button_2:
-                showPopBottom();
-                break;
-            case R.id.button_3:
-                showPopListView();
-                break;
-            case R.id.button_4:
-                showPopMenu();
-                break;
-            default:
-                break;
+        int id = view.getId();
+        if (id == R.id.button_1) {
+            showPopTop();
+        } else if (id == R.id.button_2) {
+            showPopBottom();
+        } else if (id == R.id.button_3) {
+            showPopListView();
+        } else if (id == R.id.button_4) {
+            showPopMenu();
         }
     }
 
@@ -113,22 +107,17 @@ public class PopupWindowActivity extends BaseAppCompatActivity implements Action
                     mCustomPopWindow.dissmiss();
                 }
                 String showContent = "";
-                switch (v.getId()){
-                    case R.id.menu1:
-                        showContent = "点击 Item菜单1";
-                        break;
-                    case R.id.menu2:
-                        showContent = "点击 Item菜单2";
-                        break;
-                    case R.id.menu3:
-                        showContent = "点击 Item菜单3";
-                        break;
-                    case R.id.menu4:
-                        showContent = "点击 Item菜单4";
-                        break;
-                    case R.id.menu5:
-                        showContent = "点击 Item菜单5" ;
-                        break;
+                int id = v.getId();
+                if (id == R.id.menu1) {
+                    showContent = "点击 Item菜单1";
+                } else if (id == R.id.menu2) {
+                    showContent = "点击 Item菜单2";
+                } else if (id == R.id.menu3) {
+                    showContent = "点击 Item菜单3";
+                } else if (id == R.id.menu4) {
+                    showContent = "点击 Item菜单4";
+                } else if (id == R.id.menu5) {
+                    showContent = "点击 Item菜单5";
                 }
                 Toast.makeText(PopupWindowActivity.this,showContent,Toast.LENGTH_SHORT).show();
             }

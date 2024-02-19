@@ -46,18 +46,14 @@ public class SwipeBackDemoActivity extends SwipeBackActivity implements View.OnC
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 int edgeFlag;
-                switch (checkedId) {
-                    case R.id.mode_left:
-                        edgeFlag = SwipeBackLayout.EDGE_LEFT;
-                        break;
-                    case R.id.mode_right:
-                        edgeFlag = SwipeBackLayout.EDGE_RIGHT;
-                        break;
-                    case R.id.mode_bottom:
-                        edgeFlag = SwipeBackLayout.EDGE_BOTTOM;
-                        break;
-                    default:
-                        edgeFlag = SwipeBackLayout.EDGE_ALL;
+                if (checkedId == R.id.mode_left) {
+                    edgeFlag = SwipeBackLayout.EDGE_LEFT;
+                } else if (checkedId == R.id.mode_right) {
+                    edgeFlag = SwipeBackLayout.EDGE_RIGHT;
+                } else if (checkedId == R.id.mode_bottom) {
+                    edgeFlag = SwipeBackLayout.EDGE_BOTTOM;
+                } else {
+                    edgeFlag = SwipeBackLayout.EDGE_ALL;
                 }
                 mSwipeBackLayout.setEdgeTrackingEnabled(edgeFlag);
                 saveTrackingMode(edgeFlag);
@@ -151,13 +147,11 @@ public class SwipeBackDemoActivity extends SwipeBackActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_start:
-                startActivity(new Intent(SwipeBackDemoActivity.this, SwipeBackDemoActivity.class));
-                break;
-            case R.id.btn_finish:
-                scrollToFinishActivity();
-                break;
+        int id = v.getId();
+        if (id == R.id.btn_start) {
+            startActivity(new Intent(SwipeBackDemoActivity.this, SwipeBackDemoActivity.class));
+        } else if (id == R.id.btn_finish) {
+            scrollToFinishActivity();
         }
     }
 }

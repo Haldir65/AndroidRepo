@@ -122,10 +122,9 @@ public class LoaderActivity extends BaseAppCompatActivity {
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.menu_configure_locale:
-                    configureLocale();
-                    return true;
+            if (item.getItemId() == R.id.menu_configure_locale) {
+                configureLocale();
+                return true;
             }
             return false;
         }

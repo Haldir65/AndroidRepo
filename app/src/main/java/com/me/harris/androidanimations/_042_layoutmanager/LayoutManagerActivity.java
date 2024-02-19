@@ -32,14 +32,9 @@ public class LayoutManagerActivity extends BaseAppCompatActivity implements View
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button1:
-
-                break;
-            case R.id.button2:
-                break;
-            default:
-                break;
+        int id = v.getId();
+        if (id == R.id.button1) {
+        } else if (id == R.id.button2) {
         }
     }
 }

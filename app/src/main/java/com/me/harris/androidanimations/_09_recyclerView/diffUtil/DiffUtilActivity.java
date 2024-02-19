@@ -36,16 +36,16 @@ public class DiffUtilActivity extends BaseAppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.sort_by_name:
-                mAdapter.swapItems(ActorRepository.getActorListSortedByName());
-                return true;
-            case R.id.sort_by_rating:
-                mAdapter.swapItems(ActorRepository.getActorListSortedByRating());
-                return true;
-            case R.id.sort_by_birth:
-                mAdapter.swapItems(ActorRepository.getActorListSortedByYearOfBirth());
-                return true;
+        int itemId = item.getItemId();
+        if (itemId == R.id.sort_by_name) {
+            mAdapter.swapItems(ActorRepository.getActorListSortedByName());
+            return true;
+        } else if (itemId == R.id.sort_by_rating) {
+            mAdapter.swapItems(ActorRepository.getActorListSortedByRating());
+            return true;
+        } else if (itemId == R.id.sort_by_birth) {
+            mAdapter.swapItems(ActorRepository.getActorListSortedByYearOfBirth());
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

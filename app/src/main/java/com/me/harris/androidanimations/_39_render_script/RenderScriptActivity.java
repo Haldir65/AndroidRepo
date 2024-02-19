@@ -111,15 +111,11 @@ public class RenderScriptActivity extends BaseAppCompatActivity implements View.
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.shuffle_button:
-                shuffle(view);
-                break;
-            case R.id.shift_button:
-                shift(view);
-                break;
-            default:
-                break;
+        int id = view.getId();
+        if (id == R.id.shuffle_button) {
+            shuffle(view);
+        } else if (id == R.id.shift_button) {
+            shift(view);
         }
     }
 

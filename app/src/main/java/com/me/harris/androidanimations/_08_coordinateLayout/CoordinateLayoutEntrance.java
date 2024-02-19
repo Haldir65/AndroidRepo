@@ -27,23 +27,16 @@ public class CoordinateLayoutEntrance extends BaseAppCompatActivity implements A
 
     @Override
     public void onClickView(View view) {
-        switch (view.getId()) {
-            case R.id.button1:
-                Intent intent1 = new Intent(this, CoordinateLayoutActivityOne.class);
-                startActivity(intent1);
-                break;
-            case R.id.button2:
-                Intent intent2 = new Intent(this, CoordinateLayoutActivityTwo.class);
-                startActivity(intent2);
-                break;
-            case R.id.button3:
-                break;
-            case R.id.button4:
-                break;
-            case R.id.button5:
-                break;
-            default:
-                break;
+        int id = view.getId();
+        if (id == R.id.button1) {
+            Intent intent1 = new Intent(this, CoordinateLayoutActivityOne.class);
+            startActivity(intent1);
+        } else if (id == R.id.button2) {
+            Intent intent2 = new Intent(this, CoordinateLayoutActivityTwo.class);
+            startActivity(intent2);
+        } else if (id == R.id.button3) {
+        } else if (id == R.id.button4) {
+        } else if (id == R.id.button5) {
         }
     }
 }

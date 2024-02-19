@@ -31,22 +31,15 @@ public class DayNightActivity extends BaseAppCompatActivity implements ActionCal
     
     @Override
     public void onClickView(View view) {
-        switch (view.getId()) {
-            case R.id.button1:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-            case R.id.button2:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-            case R.id.button3:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                break;
-            case R.id.button4:
-                setNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
-                break;
-            
-            default:
-                break;
+        int id = view.getId();
+        if (id == R.id.button1) {
+            setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } else if (id == R.id.button2) {
+            setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else if (id == R.id.button3) {
+            setNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        } else if (id == R.id.button4) {
+            setNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
         }
     }
     

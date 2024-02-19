@@ -46,16 +46,12 @@ public class IPCMainActivity extends BaseAppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button:
-                setupService();
-                break;
-            case R.id.button1:
-                Intent intent = new Intent(this, SocketIPCActivity.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
+        int id = view.getId();
+        if (id == R.id.button) {
+            setupService();
+        } else if (id == R.id.button1) {
+            Intent intent = new Intent(this, SocketIPCActivity.class);
+            startActivity(intent);
         }
     }
     /**

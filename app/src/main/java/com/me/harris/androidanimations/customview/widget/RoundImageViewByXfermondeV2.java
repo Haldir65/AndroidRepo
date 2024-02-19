@@ -68,18 +68,13 @@ public class RoundImageViewByXfermondeV2 extends View {
         for (int i = 0; i < n; i++)
         {
             int attr = a.getIndex(i);
-            switch (attr)
-            {
-                case R.styleable.RoundImageViewByXfermondeV2_src:
-                    mSrc = BitmapFactory.decodeResource(getResources(), a.getResourceId(attr, 0));
-                    break;
-                case R.styleable.RoundImageViewByXfermondeV2_type:
-                    type = a.getInt(attr, 0);// 默认为Circle
-                    break;
-                case R.styleable.RoundImageViewByXfermondeV2_borderRadius:
-                    mRadius= a.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10f,
-                            getResources().getDisplayMetrics()));// 默认为10DP
-                    break;
+            if (attr == R.styleable.RoundImageViewByXfermondeV2_src) {
+                mSrc = BitmapFactory.decodeResource(getResources(), a.getResourceId(attr, 0));
+            } else if (attr == R.styleable.RoundImageViewByXfermondeV2_type) {
+                type = a.getInt(attr, 0);// 默认为Circle
+            } else if (attr == R.styleable.RoundImageViewByXfermondeV2_borderRadius) {
+                mRadius = a.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10f,
+                        getResources().getDisplayMetrics()));// 默认为10DP
             }
         }
         a.recycle();

@@ -70,45 +70,37 @@ public class PlainActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button1:
-                flag = !flag;
-                mScrollView.setFitsSystemWindows( flag);
-                ToastUtils.showTextShort(this, "当前" + (flag ? "设置了fitSystemWindows" : ""));
-                break;
-            case R.id.button2:
-                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) mScrollView.getLayoutParams();
-                if (mScrollView.getTop() == Utils.getStatusBarHeight() && params.topMargin == Utils.getStatusBarHeight()) {
-                    params.setMargins(params.leftMargin, 0, params.rightMargin, params.bottomMargin);
-                    mScrollView.setLayoutParams(params);
-                    getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                    getWindow().clearFlags(FLAG_TRANSLUCENT_STATUS);
-                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);//这句话去掉黑色阴影
-                    getWindow().setStatusBarColor(ContextCompat.getColor(this, android.R.color.transparent));
-                    setDarkStatusIcon(true);
-                    ToastUtils.showTextShort(this,"进入全屏模式");
-                } else {
-                    params.setMargins(params.leftMargin, Utils.getStatusBarHeight(), params.rightMargin, params.bottomMargin);
-                    mScrollView.setLayoutParams(params);
-                    getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                    getWindow().clearFlags(FLAG_TRANSLUCENT_STATUS);
-                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);//这句话去掉黑色阴影
-                    getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.md_blue_800));
-                    setDarkStatusIcon(false);
-                    ToastUtils.showTextShort(this,"进入着色模式");
-                }
-                break;
-            case R.id.image:
-                break;
-            case R.id.button3:
-                setDarkStatusIcon(false);
-                break;
-            case R.id.button4:
+        int id = v.getId();
+        if (id == R.id.button1) {
+            flag = !flag;
+            mScrollView.setFitsSystemWindows(flag);
+            ToastUtils.showTextShort(this, "当前" + (flag ? "设置了fitSystemWindows" : ""));
+        } else if (id == R.id.button2) {
+            FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) mScrollView.getLayoutParams();
+            if (mScrollView.getTop() == Utils.getStatusBarHeight() && params.topMargin == Utils.getStatusBarHeight()) {
+                params.setMargins(params.leftMargin, 0, params.rightMargin, params.bottomMargin);
+                mScrollView.setLayoutParams(params);
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                getWindow().clearFlags(FLAG_TRANSLUCENT_STATUS);
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);//这句话去掉黑色阴影
+                getWindow().setStatusBarColor(ContextCompat.getColor(this, android.R.color.transparent));
                 setDarkStatusIcon(true);
-
-                break;
-            default:
-                break;
+                ToastUtils.showTextShort(this, "进入全屏模式");
+            } else {
+                params.setMargins(params.leftMargin, Utils.getStatusBarHeight(), params.rightMargin, params.bottomMargin);
+                mScrollView.setLayoutParams(params);
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                getWindow().clearFlags(FLAG_TRANSLUCENT_STATUS);
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);//这句话去掉黑色阴影
+                getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.md_blue_800));
+                setDarkStatusIcon(false);
+                ToastUtils.showTextShort(this, "进入着色模式");
+            }
+        } else if (id == R.id.image) {
+        } else if (id == R.id.button3) {
+            setDarkStatusIcon(false);
+        } else if (id == R.id.button4) {
+            setDarkStatusIcon(true);
         }
 
     }
