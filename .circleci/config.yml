@@ -22,7 +22,7 @@ jobs:
           paths:
             - app/build/outputs/apk/debug
       - store_artifacts:
-          path: DroidMedia/app/build/outputs/apk/debug
+          path: app/build/outputs/apk/debug
           destination: debugApk
 
 
@@ -34,5 +34,6 @@ workflows:
           filters:
             branches:
               only:
+                - master
                 - main
                 - release
