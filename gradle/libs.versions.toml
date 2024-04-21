@@ -1,8 +1,8 @@
 [versions]
 activity="1.9.0"
 activityKtx="1.9.0"
-adapterRxjava2="2.9.0"
 aspectjtools="1.9.22"
+adapterRxjava2="2.11.0"
 asynclayoutinflater="1.0.0"
 coilVersion="2.6.0"
 compiler="1.5.12"
