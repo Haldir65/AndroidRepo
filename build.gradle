@@ -2,7 +2,7 @@
 
 buildscript {
 
-ext.kotlin_version = '1.9.21'
+    ext.kotlin_version = '1.9.23'
 
     repositories {
         google()
@@ -10,7 +10,7 @@ ext.kotlin_version = '1.9.21'
     }
     dependencies {
 
-        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath libs.android.gradle.build.plugin
 //        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong

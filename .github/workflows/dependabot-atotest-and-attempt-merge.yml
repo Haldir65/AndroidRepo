@@ -1,0 +1,64 @@
+name: run debug build with jdk 21 when dependabot issue a new pull request
+
+on:
+  pull_request_target:
+    types:
+      - opened
+
+jobs:
+  BuildDebugWhendependabotCreateNewPr:
+    runs-on: ubuntu-latest
+    env:
+      builddir: app
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "most likely an dependabot pull request create event."
+      - run: echo "This job is running on a ${{ runner.os }} server hosted by GitHub! "
+      - run: echo "head.ref is  ${{  github.event.pull_request.head.ref }} "
+      - run: echo " fullname is ${{  github.event.pull_request.head.repo.full_name  }}  "
+      - name: Checkout the code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          # https://github.com/actions/checkout/issues/455
+
+      - run: echo "The ${{ github.repository }} repository has been cloned."
+      - run: echo "Setting up JDK"
+      - name: set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21    
+          distribution: 'temurin'
+          # distribution: 'temurin' # See 'Supported distributions' for available options
+          # java-version: '21'
+          cache: gradle
+      - run: echo "The workflow is now ready to test your code."
+      - name: install dependency
+        run: |
+          sudo apt update
+          sudo apt install tree -y
+        shell: bash
+      - name: show all files
+        run: ls -al
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - run: echo "Building Debug APK."
+      - name: Build with Gradle
+            # run: ./gradlew build
+        run: ./gradlew assembleDebug
+      - run: echo "Build status report=${{ job.status }}."
+      - name: Generate hashes
+        run: |
+          tree -L 4 ${{ env.builddir }}
+          for file in ${{ env.builddir }}/*; do
+            if [ -d "$file" ]; then
+              echo "this is an folder: $file"
+            else
+              sha256sum $file >> ${{ env.builddir }}/hashes.txt
+            fi
+          done
+
+
+   

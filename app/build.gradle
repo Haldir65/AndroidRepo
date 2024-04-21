@@ -13,7 +13,7 @@ android {
     namespace 'com.me.harris.androidanimations'
     
     java {
-        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+        toolchain.languageVersion.set(JavaLanguageVersion.of(21))
     }
 
     buildToolsVersion = '34.0.0'
@@ -151,8 +151,8 @@ android {
     }
 
     compileOptions {
-        targetCompatibility JavaVersion.VERSION_17
-        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_21
+        sourceCompatibility JavaVersion.VERSION_21
     }
 
     testOptions {
@@ -182,98 +182,95 @@ android {
 
 
 dependencies {
-    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation libs.androidx.cardview.cardview
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'com.google.android.material:material:1.11.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation libs.androidx.appcompat.appcompat
+    implementation libs.androidx.core.core.ktx
+    implementation libs.google.android.material.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.swiperefreshlayout
 // https://mvnrepository.com/artifact/androidx.asynclayoutinflater/asynclayoutinflater
-    implementation "androidx.asynclayoutinflater:asynclayoutinflater:1.0.0"
-    def activity_version = "1.4.0"
-    implementation("androidx.activity:activity:$activity_version")
-    implementation 'androidx.activity:activity-ktx:1.8.2'
-    implementation 'androidx.fragment:fragment-ktx:1.6.2'
-    def lifecycle_version = "2.4.1"
-    def arch_version = "2.1.0"
+    implementation libs.androidx.asynclayoutinflater
+    implementation(libs.androidx.activity)
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.fragment.ktx
     // ViewModelScope
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    implementation libs.androidx.lifecycle.lifecycle.viewmodel.ktx
     // LifecycleScope
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation libs.androidx.lifecycle.lifecycle.runtime.ktx
     // LiveData
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation libs.androidx.lifecycle.lifecycle.livedata.ktx
     // Annotation processor
 //    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation libs.androidx.lifecycle.common.java8
 
     // optional - helpers for implementing LifecycleOwner in a Service
-    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    implementation libs.androidx.lifecycle.service
 
     // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
-    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+    implementation libs.androidx.lifecycle.process
 
     // optional - ReactiveStreams support for LiveData
-    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+    implementation libs.androidx.lifecycle.reactivestreams
 
     // optional - Test helpers for LiveData
-    testImplementation "androidx.arch.core:core-testing:$arch_version"
+    testImplementation libs.androidx.core.testing
 
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation libs.androidx.recyclerview.recyclerview
+    testImplementation libs.junit.junit
+    androidTestImplementation libs.androidx.test.junit
+    androidTestImplementation libs.androidx.test.espresso.espresso.core
+    implementation libs.eventbus
 
 
     //ViewModel and LiveData
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
-    kapt("androidx.lifecycle:lifecycle-common-java8:2.7.0")
+    implementation libs.androidx.lifecycle.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.lifecycle.livedata.ktx
+    kapt(libs.androidx.lifecycle.common.java8)
 
     //Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    implementation libs.coroutines.core
+    implementation libs.coroutines.android
 
     //Image Loading
-    implementation("io.coil-kt:coil:2.4.0")
+    implementation(libs.coil.v240)
 
     //Webservices
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.12.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation libs.okhttp
+    implementation libs.retrofit
+    implementation libs.converter.gson
+    implementation libs.adapter.rxjava2
 
     // https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxandroid
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation libs.rxandroid3
     // https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxjava
-    implementation 'io.reactivex.rxjava3:rxjava:3.1.1'
+    implementation libs.rxjava3
 
 
     // https://mvnrepository.com/artifact/com.jdappel/android-gradle-aspectj
 //    implementation 'com.jdappel:android-gradle-aspectj:3.4.0'
 // https://mvnrepository.com/artifact/org.aspectj/aspectjtools
-    implementation 'org.aspectj:aspectjtools:1.6.2'
+    implementation libs.aspectjtools
 
     // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect
-    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.9.21'
+    implementation libs.kotlin.reflect
 
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
-    implementation 'com.github.bumptech.glide:okhttp3-integration:4.7.1@aar'
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    testImplementation 'junit:junit:4.13.2'
-    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+    implementation libs.glide
+    implementation libs.okhttp3.integration
+    implementation libs.okhttp
+    implementation libs.rxjava2.rxjava
+    implementation libs.rxjava2.rxandroid
+    testImplementation libs.junit.junit
+    implementation libs.ultra.ptr
     //添加下拉刷新组件
 //    if (true) {
 //
 //    }
     implementation project(':annotation')
     kapt project(":compiler")
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation libs.kotlin.stdlib
     implementation project(':pluginlib')
 }
 
