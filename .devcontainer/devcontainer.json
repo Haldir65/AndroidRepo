@@ -1,0 +1,11 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
+    "ghcr.io/devcontainers/features/java:1": {
+      "version":"21",
+      "installGradle":true
+    },
+    "ghcr.io/nordcominc/devcontainer-features/android-sdk:1": {}
+  }
+}
