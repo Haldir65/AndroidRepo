@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    alias(libs.plugins.compose.compiler)
 //    id 'com.github.dcendents.android-maven'
 }
 
@@ -19,9 +20,10 @@ android {
     buildToolsVersion = '34.0.0'
 
     buildFeatures {
-        viewBinding true
+        viewBinding =  true
         buildConfig true
         aidl true
+        compose = true
     }
 
 
@@ -126,9 +128,9 @@ android {
         disable 'MissingTranslation'
     }
 
-    dexOptions {
-//        javaMaxHeapSize "6g"# just delete this line , according to the google io 2017 talk
-    }
+//    dexOptions {
+////        javaMaxHeapSize "6g"# just delete this line , according to the google io 2017 talk
+//    }
 
     buildTypes {
 
@@ -272,5 +274,20 @@ dependencies {
     kapt project(":compiler")
     implementation libs.kotlin.stdlib
     implementation project(':pluginlib')
+
+    implementation project(':otherprojects:datastore')
+
+    implementation libs.androidx.datastore.preference
+
+    implementation(platform(libs.androidx.compose.bom))
+    implementation libs.androidx.compiler
+    implementation("androidx.activity:activity-compose")
+    implementation("androidx.compose.animation:animation")
+
+    // optional - RxJava2 support
+//    implementation libs.androidx.datastore.preferences.rxjava2
+//
+//    // optional - RxJava3 support
+//    implementation libs.androidx.datastore.preferences.rxjava3
 }
 

@@ -28,7 +28,7 @@ jobs:
           cache: gradle
 
       - name: Build the app
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug "-Dorg.gradle.jvmargs=-XX:+UseZGC -XX:+ZGenerational -Xmx8g"
 
       - name: show outputs
         shell: bash
