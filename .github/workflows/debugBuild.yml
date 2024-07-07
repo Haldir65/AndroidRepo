@@ -26,7 +26,10 @@ jobs:
           java-version: 21
           distribution: 'temurin'
           cache: gradle
-
+      - name: Cache Gradle packages
+        uses: ./.github/actions/cache-build-paths
+        with:
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }} 
       - name: Build the app
         run: ./gradlew assembleDebug "-Dorg.gradle.jvmargs=-XX:+UseZGC -XX:+ZGenerational -Xmx8g"
 

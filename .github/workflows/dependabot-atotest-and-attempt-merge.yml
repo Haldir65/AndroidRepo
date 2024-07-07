@@ -42,6 +42,10 @@ jobs:
         shell: bash
       - name: show all files
         run: ls -al
+      - name: Cache Gradle packages
+        uses: ./.github/actions/cache-build-paths
+        with:
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}        
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - run: echo "Building Debug APK."
