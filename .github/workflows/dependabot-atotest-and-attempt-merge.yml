@@ -5,6 +5,11 @@ on:
     types:
       - opened
 
+
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   BuildDebugWhendependabotCreateNewPr:
     runs-on: ubuntu-latest
@@ -50,9 +55,29 @@ jobs:
         run: chmod +x gradlew
       - run: echo "Building Debug APK."
       - name: Build with Gradle
+        id: build
             # run: ./gradlew build
         run: ./gradlew assembleDebug
       - run: echo "Build status report=${{ job.status }}."
+
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Approve the PR
+        if: steps.build.outcome == 'success'
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Auto-merge the PR
+        if: steps.build.outcome == 'success'
+        run: gh pr merge --rebase --auto "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Generate hashes
         run: |
           tree -L 4 ${{ env.builddir }}
