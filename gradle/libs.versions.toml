@@ -64,7 +64,7 @@ exfiinterface="1.3.7"
 #exoplayer = "2.19.1"
 media3_version ="1.4.0"
 camerax_version="1.3.4"
-compiler="1.5.14"
+compiler="1.5.15"
 
 room = "2.6.1"
 
