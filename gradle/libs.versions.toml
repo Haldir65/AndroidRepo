@@ -55,7 +55,7 @@ ultraPtr="1.0.11"
 x_crash="3.1.0"
 slfj-android="1.7.36"
 oboe_version="1.9.0"
-kspversion="2.0.10-1.0.24"
+kspversion="2.0.20-1.0.24"
 
 kotlinxDatetime = "0.6.1"
 kotlinxSerializationJson = "1.7.1"
