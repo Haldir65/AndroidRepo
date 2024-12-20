@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.me.harris.datastore"
-    compileSdk = 34
+    compileSdk = 35
 
     buildFeatures {
         viewBinding = true

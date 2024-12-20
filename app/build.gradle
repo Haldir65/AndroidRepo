@@ -9,7 +9,7 @@ plugins {
 //apply plugin: 'com.neenbedankt.android-apt'
 apply from: "${project.rootDir}/config.gradle"
 android {
-    compileSdk =  34
+    compileSdk =  35
 
     namespace 'com.me.harris.androidanimations'
     
@@ -17,7 +17,7 @@ android {
         toolchain.languageVersion.set(JavaLanguageVersion.of(21))
     }
 
-    buildToolsVersion = '34.0.0'
+    buildToolsVersion = '35.0.0'
 
     buildFeatures {
         viewBinding =  true
