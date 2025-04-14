@@ -1,7 +1,7 @@
 [versions]
 activity="1.10.0"
 activityKtx="1.10.1"
-aspectjtools="1.9.23"
+aspectjtools="1.9.24"
 adapterRxjava2="2.11.0"
 asynclayoutinflater="1.1.0"
 coilVersion="2.7.0"
