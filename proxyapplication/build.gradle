@@ -29,7 +29,7 @@ android {
         toolchain.languageVersion.set(JavaLanguageVersion.of(21))
     }
 
-    buildToolsVersion = '34.0.0'
+    buildToolsVersion = '35.0.0'
 
 
     defaultConfig {
