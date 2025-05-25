@@ -5,10 +5,10 @@ aspectjtools="1.9.24"
 adapterRxjava2="2.11.0"
 asynclayoutinflater="1.1.0"
 coilVersion="2.7.0"
-composeBom="2025.04.01"
+composeBom="2025.05.01"
 coreTesting="2.2.0"
 eventbus="3.3.1"
-fragmentKtx="1.8.6"
+fragmentKtx="1.8.7"
 glideVersion="4.13.2"
 lifecycleExtensions="2.2.0"
 minSdk="27"
@@ -23,7 +23,7 @@ targetSdk="29"
 androidGradlePlugin = "8.10.0"
 arrow = "2.1.1"
 glide = "4.16.0"
-kotlin_verison = "2.1.20"
+kotlin_verison = "2.1.21"
 gson = "2.13.1"
 retrofit = "2.11.0"
 cardview = "1.0.0"
@@ -38,7 +38,7 @@ androidx-activity-ktx="1.9.0"
 android-material="1.12.0"
 constraintLayout="2.2.0"
 coordinateLayout="1.3.0"
-lifecycle="2.8.7"
+lifecycle="2.9.0"
 hilt_version= "2.56.2"
 coil = "2.7.0"
 androidxHiltNavigationCompose = "1.2.0"
@@ -68,8 +68,8 @@ compiler="1.5.15"
 
 room = "2.7.1"
 
-mmkv = "2.2.1"
 kotlinxCollectionsImmutable = "0.4.0"
+mmkv = "2.2.2"
 material3Android = "1.3.2"
 material3 = "1.3.2"
 # other versions
@@ -134,8 +134,8 @@ androidx-lifecycle-lifecycle-viewmodel-ktx  = { module = "androidx.lifecycle:lif
 androidx-lifecycle-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 ##LiveData
 androidx-lifecycle-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
-androidx-datastore-preference = { module = "androidx.datastore:datastore-preferences", version = "1.1.3" }
-androidx-datastore-core= { module = "androidx.datastore:datastore-preferences-core", version = "1.1.4" }
+androidx-datastore-core= { module = "androidx.datastore:datastore-preferences-core", version = "1.1.7" }
+androidx-datastore-preference = { module = "androidx.datastore:datastore-preferences", version = "1.1.7" }
 
 google-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt_version" }
 google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt_version" }
