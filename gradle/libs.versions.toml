@@ -57,7 +57,7 @@ slfj-android="1.7.36"
 oboe_version="1.9.3"
 kspversion="2.1.21-2.0.2"
 
-kotlinxDatetime = "0.6.2"
+kotlinxDatetime = "0.7.0-0.6.x-compat"
 kotlinxSerializationJson = "1.8.1"
 ktor = "1.6.3"
 exfiinterface="1.4.1"
