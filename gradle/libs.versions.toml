@@ -58,7 +58,7 @@ oboe_version="1.9.3"
 kspversion="2.2.0-2.0.2"
 
 kotlinxDatetime = "0.7.0-0.6.x-compat"
-kotlinxSerializationJson = "1.8.1"
+kotlinxSerializationJson = "1.9.0"
 ktor = "1.6.3"
 exfiinterface="1.4.1"
 #exoplayer = "2.19.1"
