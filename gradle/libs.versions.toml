@@ -69,7 +69,7 @@ compiler="1.5.15"
 room = "2.7.2"
 
 kotlinxCollectionsImmutable = "0.4.0"
-mmkv = "2.2.2"
+mmkv = "2.2.3"
 material3Android = "1.3.2"
 material3 = "1.3.2"
 # other versions
