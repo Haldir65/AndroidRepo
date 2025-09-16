@@ -54,7 +54,7 @@ slfj="2.0.17"
 ultraPtr="1.0.11"
 x_crash="3.1.0"
 slfj-android="1.7.36"
-oboe_version="1.9.3"
+oboe_version="1.10.0"
 kspversion="2.2.20-2.0.3"
 
 kotlinxDatetime = "0.7.1-0.6.x-compat"
