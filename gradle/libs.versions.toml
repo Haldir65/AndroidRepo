@@ -1,6 +1,6 @@
 [versions]
 activity="1.10.1"
-activityKtx="1.10.1"
+activityKtx="1.11.0"
 aspectjtools="1.9.24"
 adapterRxjava2="3.0.0"
 asynclayoutinflater="1.1.0"
