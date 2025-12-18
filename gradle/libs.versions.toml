@@ -62,7 +62,7 @@ kotlinxSerializationJson = "1.9.0"
 ktor = "1.6.3"
 exfiinterface="1.4.2"
 #exoplayer = "2.19.1"
-media3_version ="1.8.0"
+media3_version ="1.9.0"
 camerax_version="1.5.2"
 compiler="1.5.15"
 
