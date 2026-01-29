@@ -63,7 +63,7 @@ ktor = "1.6.3"
 exfiinterface="1.4.2"
 #exoplayer = "2.19.1"
 media3_version ="1.9.1"
-camerax_version="1.5.2"
+camerax_version="1.5.3"
 compiler="1.5.15"
 
 room = "2.8.4"
